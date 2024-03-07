@@ -15,6 +15,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     impermanence.url = "github:nix-community/impermanence";
   };
 
@@ -37,6 +41,10 @@
           inherit username; inherit hostname;
         };
 	modules = [
+
+     inputs.disko.nixosModules.default
+        (import ./disko.nix { device = "/dev/nvme1n1"; })
+
 	  ./system.nix
 	  impermanence.nixosModules.impermanence
           home-manager.nixosModules.home-manager {
