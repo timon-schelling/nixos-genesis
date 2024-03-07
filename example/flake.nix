@@ -43,7 +43,7 @@
 	modules = [
 
      inputs.disko.nixosModules.default
-        (import ./disko.nix { device = "/dev/nvme1n1"; })
+        (import ./disk.nix { device = "/dev/nvme1n1"; })
 
 	  ./system.nix
 	  impermanence.nixosModules.impermanence
