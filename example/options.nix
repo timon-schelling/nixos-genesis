@@ -37,7 +37,7 @@ in {
   theSecondKBDLayout = "";
   theKBDVariant = "";
   theLCVariables = "en_US.UTF-8";
-  theTimezone = "Europe/Chicago";
+  theTimezone = "Europe/Berlin";
   theShell = "bash"; # Possible options: bash, zsh
   theKernel = "zen"; # Possible options: default, latest, lqx, xanmod, zen
   sdl-videodriver = "wayland"; # Either x11 or wayland ONLY. Games might require x11 set here
@@ -85,5 +85,4 @@ in {
   
   # Enable SyncThing
   syncthing = false;
-
 }

@@ -1,5 +1,5 @@
 {
-  description = "ZaneyOS";
+  description = "TimonOS";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -32,11 +32,11 @@
   in {
     nixosConfigurations = {
       "${hostname}" = nixpkgs.lib.nixosSystem {
-	specialArgs = { 
-          inherit system; inherit inputs; 
+	specialArgs = {
+          inherit system; inherit inputs;
           inherit username; inherit hostname;
         };
-	modules = [ 
+	modules = [
 	  ./system.nix
 	  impermanence.nixosModules.impermanence
           home-manager.nixosModules.home-manager {
