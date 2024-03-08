@@ -1,0 +1,4 @@
+linux:
+  installs:
+    cmd: cd ./terminal/iselec && cargo install --path .
+    depends: [/dev/rust]

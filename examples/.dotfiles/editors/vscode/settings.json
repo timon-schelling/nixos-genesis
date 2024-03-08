@@ -1,0 +1,146 @@
+{
+    "git.enableSmartCommit": true,
+    "terminal.integrated.scrollback": 10000,
+    "explorer.confirmDelete": false,
+    "remote.SSH.defaultExtensions": [
+        "gitpod.gitpod-remote-ssh"
+    ],
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "wubba-lubba-dub-dub-icons",
+    "remote.SSH.configFile": "~/.ssh/config",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.minimap.enabled": false,
+    "vim.smartRelativeLine": true,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "editor.renderWhitespace": "all",
+    "redhat.telemetry.enabled": false,
+    "files.autoSave": "onFocusChange",
+    "vim.leader": " ",
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "keyboard.dispatch": "keyCode",
+    "vim.easymotionKeys": "jfghdkslancurwozqpxmiebvyt",
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<tab>"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": ["<S-tab>"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before" : ["<leader>","x"],
+            "commands" : [
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        {
+            "before" : ["<leader>","e"],
+            "commands" : [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before" : ["<leader>","f"],
+            "commands" : [
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before" : ["<leader>","<S-f>"],
+            "commands" : [
+                "revealInExplorer"
+            ]
+        },
+        {
+            "before" : ["<leader>","d"],
+            "commands" : [
+                "workbench.view.scm"
+            ]
+        },
+        {
+            "before" : ["<leader>","s"],
+            "commands" : [
+                "workbench.view.search"
+            ]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "w"],
+            "commands": ["workbench.action.splitEditor"]
+        },
+        {
+            "before": ["<leader>", "q"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+            "before": ["<leader>", "h"],
+            "after": ["_"]
+        },
+        {
+            "before": ["<leader>", "l"],
+            "after": ["$"]
+        }
+    ],
+    "vim.sneakReplacesF": true,
+    "vim.sneak": true,
+    "jump.primaryCharset": "jfkdlshgncmxutiroewp",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "workbench.colorTheme": "wubba-lubba-dub-dub",
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": true,
+        "markdown": true
+    },
+    "editor.cursorSurroundingLines": 7,
+    "editor.lineNumbers": "relative",
+    "projectManager.git.baseFolders": [
+        "~/dev"
+    ],
+    "rust-analyzer.cargo.target": "x86_64-unknown-linux-gnu",
+    "rust-analyzer.diagnostics.disabled": [
+        "unresolved-proc-macro"
+    ],
+    "explorer.confirmDragAndDrop": false,
+    "git.confirmSync": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "terminal.external.linuxExec": "wezterm",
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "rnix-lsp",
+    "gitlens.graph.minimap.dataType": "lines",
+    "gitlens.graph.minimap.enabled": false,
+    "workbench.editor.empty.hint": "hidden",
+    "typst-lsp.exportPdf": "never",
+    "typst-lsp.experimentalFormatterMode": "on",
+    "typst-preview.partialRendering": false,
+    "[typst]": {
+        "editor.defaultFormatter": "nvarner.typst-lsp"
+    },
+    "cSpell.language": "en,de-DE",
+    "cSpell.enableFiletypes": [
+        "typst"
+    ],
+    "window.zoomLevel": 2,
+    "extensions.ignoreRecommendations": true,
+    "workbench.activityBar.location": "top",
+    "window.customTitleBarVisibility": "auto",
+    "window.menuBarVisibility": "toggle",
+    "workbench.sideBar.location": "right",
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "cSpell.userWords": [
+        "detailorientierten",
+        "divinatorische",
+        "divinatorischer",
+        "Rekonstruktionsprozess"
+    ]
+}

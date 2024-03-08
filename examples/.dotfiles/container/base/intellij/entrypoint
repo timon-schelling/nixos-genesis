@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+sudo chown -R $(id -u):$(id -g) /tmp
+
+rm ~/.config/**/*/.lock
+
+if [ ! -d /workspace ]; then
+  /opt/idea/bin/idea.sh --wait
+else
+  /opt/idea/bin/idea.sh --wait /workspace
+fi
+
+# while true; do
+#   sleep 1
+# done

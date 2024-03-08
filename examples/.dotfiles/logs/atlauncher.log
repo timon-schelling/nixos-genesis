@@ -1,0 +1,40 @@
+20:22:29.879 [ATL-Logging-Thread] INFO  - Organising filesystem
+
+20:22:29.881 [ATL-Logging-Thread] INFO  - ATLauncher Version: 3.4.35.7 [4dcf65971fdf8f6543afcd00fc727837d3c4572b]
+
+20:22:29.882 [ATL-Logging-Thread] INFO  - App Arguments: []
+
+20:22:29.883 [ATL-Logging-Thread] INFO  - JVM Arguments: []
+
+20:22:29.884 [ATL-Logging-Thread] INFO  - Java Version: Java 21 (21.0.1)
+
+20:22:29.885 [ATL-Logging-Thread] INFO  - Java Path: /usr/lib/jvm/java-21-openjdk-amd64
+
+20:22:29.886 [ATL-Logging-Thread] INFO  - 64 Bit Java: true
+
+20:22:29.886 [ATL-Logging-Thread] INFO  - RAM Available: 32025MB
+
+20:22:29.887 [ATL-Logging-Thread] INFO  - Launcher Directory: **USERSDIR**
+
+20:22:29.912 [ATL-Logging-Thread] INFO  - GPU: GA106 [GeForce RTX 3060 Lite Hash Rate] (NVIDIA Corporation (0x10de)) unknown 288MB VRAM
+
+20:22:30.234 [ATL-Logging-Thread] INFO  - CPU: AMD Ryzen 7 1700X Eight-Core Processor 8 cores/16 threads
+
+20:22:30.235 [ATL-Logging-Thread] INFO  - Operating System: Pop!_OS (22.04 LTS (unknown) build 6.6.10-76060610-generic)
+
+20:22:30.236 [ATL-Logging-Thread] INFO  - Bitness: 64
+
+20:22:30.237 [ATL-Logging-Thread] INFO  - Uptime: 9117
+
+20:22:30.238 [ATL-Logging-Thread] INFO  - Manufacturer: GNU/Linux
+
+20:22:30.239 [ATL-Logging-Thread] INFO  - Showing splash screen and loading everything
+
+20:22:30.240 [ATL-Logging-Thread] INFO  - Checking for updated files!
+
+20:22:31.082 [ATL-Logging-Thread] INFO  - Finished downloading updated files!
+
+20:22:31.087 [ATL-Logging-Thread] INFO  - Downloading Launcher Update
+
+20:22:33.390 [ATL-Logging-Thread] INFO  - Running launcher update with command [/usr/lib/jvm/java-21-openjdk-amd64/bin/java, -cp, **USERSDIR**/temp/mc-atl.jar, com.atlauncher.Update, **USERSDIR**/mc-atl.jar, **USERSDIR**/temp/mc-atl.jar]
+

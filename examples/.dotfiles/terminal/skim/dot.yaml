@@ -1,0 +1,4 @@
+linux:
+  installs:
+    cmd: cargo install skim
+    depends: [/dev/rust]

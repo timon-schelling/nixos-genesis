@@ -1,0 +1,4 @@
+linux:
+  installs:
+    cmd: cargo install tere
+    depends: [/dev/rust]

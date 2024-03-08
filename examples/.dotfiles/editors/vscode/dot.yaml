@@ -1,0 +1,7 @@
+linux:
+  links:
+    keybindings.json: ~/.config/Code/User/keybindings.json
+    settings.json: ~/.config/Code/User/settings.json
+    theme.vsix: ~/.config/Code/User/theme.vsix
+  installs:
+    cmd: code --install-extension ~/.config/Code/User/theme.vsix

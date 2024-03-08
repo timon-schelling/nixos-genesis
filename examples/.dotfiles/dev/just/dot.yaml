@@ -1,0 +1,4 @@
+linux:
+  installs:
+    cmd: cargo install just
+    depends: [/dev/rust]

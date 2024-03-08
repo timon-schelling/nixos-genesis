@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+if ! [ -z "$CODESPACES" ]; then
+    ln -s /workspaces/.codespaces/.persistedshare/dotfiles ~/.dotfiles
+fi
+
+./rotz link
+./rotz install

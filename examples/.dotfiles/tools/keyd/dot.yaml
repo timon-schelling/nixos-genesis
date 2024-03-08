@@ -1,0 +1,10 @@
+linux:
+  links:
+    default.conf: /etc/keyd/default.conf
+  installs:
+    cmd:
+      cd /tmp && sudo rm -r -f keyd &&
+      git clone https://github.com/rvaiya/keyd && cd keyd &&
+      make && sudo make install &&
+      sudo systemctl enable keyd && sudo systemctl start keyd &&
+      sudo chown {{ whoami.username }}:{{ whoami.username }} /etc/keyd

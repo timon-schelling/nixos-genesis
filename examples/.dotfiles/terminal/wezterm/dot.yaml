@@ -1,0 +1,6 @@
+linux:
+  links:
+    .: ~/.config/wezterm
+
+  installs:
+    cmd: cd /tmp && (rm wezterm.deb | exit 0) && curl -L https://github.com/wez/wezterm/releases/download/20240203-110809-5046fc22/wezterm-20240203-110809-5046fc22.Ubuntu22.04.deb -o wezterm.deb && sudo apt-get install -y ./wezterm.deb || exit 0

@@ -1,0 +1,43 @@
+[custom0]
+command='onagre'
+name='launcher'
+
+[custom1]
+binding='<Super>1'
+command='wezterm'
+name='terminal'
+
+[custom2]
+binding='<Super>2'
+command='code'
+name='text editor'
+
+[custom3]
+binding='<Super>3'
+command='firefox'
+name='browser'
+
+[custom4]
+binding='<Super>4'
+command='nautilus --new-window'
+name='files'
+
+[custom5]
+binding='<Super>5'
+command='/opt/enpass/Enpass'
+name='password manager'
+
+[custom6]
+binding='<Super>8'
+command='/opt/beeper/beeper.AppImage'
+name='beeper'
+
+[custom7]
+binding='<Super>6'
+command='code-insiders'
+name='code insiders'
+
+[custom8]
+binding='<Super>7'
+command='spotify'
+name='spotify'

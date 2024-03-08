@@ -1,0 +1,4 @@
+linux:
+  links:
+    .gitignore: ~/.gitignore
+    .gitconfig: ~/.gitconfig

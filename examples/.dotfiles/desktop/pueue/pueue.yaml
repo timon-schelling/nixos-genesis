@@ -1,0 +1,8 @@
+shared:
+  use_unix_socket: true
+  unix_socket_path: ~/.local/share/pueue.socket
+
+daemon:
+  default_parallel_tasks: 512
+  groups:
+    default: 512
