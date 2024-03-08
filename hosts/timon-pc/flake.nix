@@ -41,7 +41,9 @@
 
           impermanence.nixosModules.impermanence
 
-          ./system.nix
+
+
+          ../system.nix
 
           home-manager.nixosModules.home-manager
           {
