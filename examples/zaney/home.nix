@@ -11,6 +11,10 @@ in {
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "23.11";
 
+  imports = [
+    inputs.impermanence.nixosModules.home-manager.impermanence
+  ];
+
   home.persistence."/persist/home" = {
     directories = [
       "tmp"
