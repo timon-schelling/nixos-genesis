@@ -12,6 +12,9 @@ run the following command to generate the hardware configuration
 nixos-generate-config --show-hardware-config > hardware.nix
 ```
 
+edit `hardware.nix`
+
+
 replace `hostname` with your hostname
 
 ```

@@ -1,6 +1,4 @@
 {
-  description = "TimonOS";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
@@ -30,34 +28,36 @@
     pkgs = import nixpkgs {
       inherit system;
       config = {
-	    allowUnfree = true;
+        allowUnfree = true;
       };
     };
-  in {
+  in
+  {
     nixosConfigurations = {
       "${hostname}" = nixpkgs.lib.nixosSystem {
-	specialArgs = {
+        specialArgs = {
           inherit system; inherit inputs;
           inherit username; inherit hostname;
         };
-	modules = [
+        modules = [
 
-     inputs.disko.nixosModules.default
-        (import ./disk.nix { device = "/dev/nvme1n1"; })
+          inputs.disko.nixosModules.default
+          (import ./disk.nix { device = "/dev/nvme1n1"; })
 
-	  ./system.nix
-	  impermanence.nixosModules.impermanence
-          home-manager.nixosModules.home-manager {
-	    home-manager.extraSpecialArgs = {
-	      inherit username; inherit inputs;
-              inherit (inputs.nix-colors.lib-contrib {inherit pkgs;}) gtkThemeFromScheme;
+          ./system.nix
+          impermanence.nixosModules.impermanence
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = {
+              inherit username; inherit inputs;
+              inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) gtkThemeFromScheme;
             };
-	    home-manager.useGlobalPkgs = true;
+            home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-	    home-manager.users.${username} = import ./home.nix;
-	  }
-	];
+            home-manager.users.${username} = import ./home.nix;
+          }
+        ];
       };
     };
   };

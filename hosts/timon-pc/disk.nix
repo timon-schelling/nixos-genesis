@@ -1,10 +1,10 @@
 {
-  device ? throw "Set this to your disk device, e.g. /dev/sda",
+  drive ? throw "Set this to your disk device, e.g. /dev/nvmeXnX",
   ...
 }: {
   disko.devices = {
     disk.main = {
-      inherit device;
+      device = drive;
       type = "disk";
       content = {
         type = "gpt";
@@ -46,17 +46,14 @@
             content = {
               type = "btrfs";
               extraArgs = ["-f"];
-
               subvolumes = {
                 "/root" = {
                   mountpoint = "/";
                 };
-
                 "/persist" = {
                   mountOptions = ["subvol=persist" "noatime"];
                   mountpoint = "/persist";
                 };
-
                 "/nix" = {
                   mountOptions = ["subvol=nix" "noatime"];
                   mountpoint = "/nix";

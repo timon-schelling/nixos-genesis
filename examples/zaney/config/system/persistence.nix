@@ -1,7 +1,7 @@
 { config, pkgs, lib, username, ... }:
 
-let 
-  inherit ( import ../../options.nix ) username;
+let
+  inherit (import ../../options.nix) username;
 in
 {
   environment.persistence."/nix/persist" = {
@@ -18,19 +18,11 @@ in
     ];
     users.${username} = {
       directories = [
-	"Downloads"
-	"Music"
-	"Documents"
-	"Pictures"
-        "Videos"
-        "zaneyos"
-	".local/share/sddm"
-	".mozilla"
-	".cache"
-	".ssh"
-	".config/discord"
-	".config/obs-studio"
-	".steam"
+        "tmp"
+        ".local/share/sddm"
+        ".mozilla"
+        ".cache"
+        ".ssh"
       ];
       files = [
       ];
