@@ -11,7 +11,7 @@ in {
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "23.11";
 
-  persistence."/persist/home" = {
+  home.persistence."/persist/home" = {
     directories = [
       "tmp"
     ];
