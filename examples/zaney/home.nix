@@ -13,6 +13,10 @@ in {
 
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
+    inputs.nix-colors.homeManagerModules.default
+    inputs.nixvim.homeManagerModules.nixvim
+    inputs.hyprland.homeManagerModules.default
+    ./config/home
   ];
 
   home.persistence."/persist/home" = {
@@ -24,14 +28,6 @@ in {
 
   # Set The Colorscheme
   colorScheme = inputs.nix-colors.colorSchemes."${theme}";
-
-  # Import Program Configurations
-  imports = [
-    inputs.nix-colors.homeManagerModules.default
-    inputs.nixvim.homeManagerModules.nixvim
-    inputs.hyprland.homeManagerModules.default
-    ./config/home
-  ];
 
   # Define Settings For Xresources
   xresources.properties = {
