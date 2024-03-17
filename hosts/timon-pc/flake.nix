@@ -1,4 +1,14 @@
-{
+let
+  opts = {
+    host = "timon-pc";
+    drive = "/dev/nvme1n1";
+    users = {
+      timon = {
+
+      };
+    };
+  };
+in {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
@@ -17,32 +27,18 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, disko, impermanence, ... }:
-  {
+  outputs = { ... }: {
     nixosConfigurations = {
-      "${host}" = nixpkgs.lib.nixosSystem {
+      ${opts.host} = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
         };
         modules = [
-
-          disko.nixosModules.default
-          (import ./disk.nix { drive = options.drive; })
-
-          impermanence.nixosModules.impermanence
-
-
-
-          ../system.nix
-
-          home-manager.nixosModules.home-manager
+          ./../../main.nix
           {
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
+            config = {
+              inherit opts;
             };
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${options.username} = import ./home.nix;
           }
         ];
       };
