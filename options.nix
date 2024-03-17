@@ -11,7 +11,7 @@ let
     host = lib.mkOption {
       type = lib.types.str;
     };
-    swap = lib.submodule {
+    swap = lib.types.submodule {
       options = {
         enable = lib.mkOption {
           type = lib.types.bool;
@@ -37,13 +37,13 @@ let
   opts = lib.mkMerge [
     systemOpts
     {
-      users = with lib.types; attrsOf (submodule { options = userOpts; });
+      users = lib.types.attrsOf lib.types.submodule { options = userOpts; };
     }
   ];
 in {
   options = {
     opts = lib.mkOption {
-      type = submodule {
+      type = lib.types.submodule {
         options = opts;
       };
     };
