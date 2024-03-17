@@ -1,4 +1,6 @@
-{ config, lib, ... }: {
+{ config, lib, ... }:
+
+{
   disko.devices = {
     disk.main = {
       device = config.opts.drive;
@@ -26,19 +28,16 @@
               };
             };
           }
-        ] ++ (
-          if config.opts.swap.enable then [
-            {
-              swap = {
-                size = config.opts.swap.size;
-                content = {
-                  type = "swap";
-                  resumeDevice = true;
-                };
+          (lib.mkIf config.opts.swap.enable {
+            swap = {
+              size = config.opts.swap.size;
+              content = {
+                type = "swap";
+                resumeDevice = true;
               };
-            }
-          ] else [ ]
-        );
+            };
+          })
+        ];
       };
     };
     lvm_vg = {
