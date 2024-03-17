@@ -18,21 +18,11 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, disko, impermanence, ... }:
-  let
-    options = import ./options.nix;
-    pkgs = import nixpkgs {
-      system = architecture;
-      config = {
-        allowUnfree = true;
-      };
-    };
-  in
   {
     nixosConfigurations = {
       "${host}" = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
-          inherit options;
         };
         modules = [
 
@@ -49,7 +39,6 @@
           {
             home-manager.extraSpecialArgs = {
               inherit inputs;
-              inherit options;
             };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;

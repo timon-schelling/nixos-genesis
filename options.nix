@@ -1,0 +1,48 @@
+{ lib, ... }:
+let
+  systemOpts = {
+    architecture = lib.mkOption {
+      type = lib.types.str;
+      default = "x86_64-linux";
+    };
+    drive = lib.mkOption {
+      type = lib.types.path;
+    };
+    swap = lib.submodule {
+      options = {
+        enable = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+        };
+        size = lib.mkOption {
+          type = lib.types.str;
+          default = "32G";
+        };
+      };
+    };
+  };
+  userOpts = {
+    name = lib.mkOption {
+      type = lib.types.str;
+      default = "User";
+    };
+    email = lib.mkOption {
+      type = lib.types.str;
+      default = "";
+    };
+  };
+  opts = lib.mkMerge [
+    systemOpts
+    {
+      users = with lib.types; attrsOf (submodule { options = userOpts; });
+    }
+  ];
+in {
+  options = {
+    opts = lib.mkOption {
+      type = submodule {
+        options = opts;
+      };
+    };
+  };
+}
