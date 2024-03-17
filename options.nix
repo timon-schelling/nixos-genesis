@@ -8,6 +8,9 @@ let
     drive = lib.mkOption {
       type = lib.types.path;
     };
+    host = lib.mkOption {
+      type = lib.types.str;
+    };
     swap = lib.submodule {
       options = {
         enable = lib.mkOption {
