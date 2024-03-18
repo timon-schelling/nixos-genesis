@@ -53,6 +53,7 @@ let
           else unique include
         )
       );
+  mapUsers = users: mapAttrs (name: user: user // { name = name; }) users;
 in {
   inherit umport;
 }

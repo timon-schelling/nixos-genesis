@@ -12,39 +12,47 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     impermanence.url = "github:nix-community/impermanence";
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
   };
 
   outputs = { inputs, ... }:
 
     let
       lib = inputs.nixpkgs.lib;
+      libhome = inputs.home-manager.lib;
+      utils = import ./utils.nix { inherit lib; };
+      system = utils.umport { path = ./system; };
+      user = utils.umport { path = ./user; };
     in
     {
       nixosConfigurations = {
         ${opts.host} = lib.nixosSystem {
           specialArgs = {
             inherit inputs;
+            inherit utils;
           };
           modules = [
-            (
-              let
-                utils = import ./utils.nix { inherit lib; };
-                system = utils.umport { path = ./system; };
-                user = utils.umport { path = ./user; };
-                imports = system ++ user;
-              in
-              {
-                inherit imports;
-                config = {
-                  inherit opts;
-                };
-              }
-            )
+            inputs.nixpkgs.nixosModules.default
+            inputs.home-manager.nixosModules.default
+            inputs.disko.nixosModules.default
+            inputs.impermanence.nixosModules.default
+
+            {
+              imports = system;
+              config = {
+                inherit opts;
+              };
+            }
+            {
+              home-manager.extraSpecialArgs = {
+                inherit username; inherit inputs;
+                inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) gtkThemeFromScheme;
+              };
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.users.${username} = import ./home.nix;
+            }
+
           ];
         };
       };
