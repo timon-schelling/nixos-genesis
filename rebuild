@@ -5,4 +5,4 @@ git add .
 git commit -m "rebuild $(date +%F_%T)"
 git push
 
-nixos-rebuild switch --flake ./hosts/$(hostname)#
+nixos-rebuild switch --flake ./hosts/$(hostname)#$(hostname)
