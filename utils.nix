@@ -8,7 +8,7 @@ let
     (builtins.readDir dir);
   listDirRecursive = dir: lib.collect lib.isString (lib.mapAttrsRecursive (path: type: lib.concatStringsSep "/" path) (collectDirRecursive dir));
   searchDirForModules = dir: map
-    (file: ./. + "/${file}")
+    (file: dir + "/${file}")
     (lib.filter
       (file: lib.hasSuffix ".nix" file)
       (listDirRecursive dir));
