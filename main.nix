@@ -3,6 +3,7 @@
 let
   lib = inputs.nixpkgs.lib;
   utils = import ./utils.nix { inherit lib; };
+  options = import ./options.nix { inherit lib; };
   imports = utils.searchModules [
     ./system
     # ./user
@@ -20,6 +21,7 @@ in
         inputs.disko.nixosModules.default
         inputs.impermanence.nixosModules.impermanence
         {
+          inherit options;
           inherit imports;
           config = {
             inherit opts;
