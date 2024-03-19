@@ -85,7 +85,7 @@ in
                         };
                       });
                     };
-                  };
+                  }
                   {
                     users = lib.types.attrsOf (lib.types.submodule {
                       options = {
