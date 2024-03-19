@@ -10,7 +10,7 @@ let
   ];
 in
 {
-  nixosConfigurations = builtins.trace imports {
+  nixosConfigurations = builtins.trace opts {
     ${opts.host} = lib.nixosSystem {
       specialArgs = {
         inherit inputs;
