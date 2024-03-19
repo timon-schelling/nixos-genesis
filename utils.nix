@@ -17,5 +17,6 @@ let
     dirs);
 in
 {
+  inherit listDirRecursive;
   inherit searchModules;
 }
