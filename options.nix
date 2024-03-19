@@ -76,7 +76,7 @@ let
       default = [ ];
     };
   };
-  opts = lib.mkMerge [
+  opts2 = lib.mkMerge [
     systemOpts
     {
       users = lib.types.attrsOf (lib.types.submodule { options = userOpts; });
@@ -87,7 +87,7 @@ in
   options = {
     opts = lib.mkOption {
       type = lib.types.submodule {
-        options = opts;
+        options = opts2;
       };
     };
   };
