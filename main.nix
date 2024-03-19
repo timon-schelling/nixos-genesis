@@ -17,7 +17,7 @@ in
       modules = [
         inputs.home-manager.nixosModules.default
         inputs.disko.nixosModules.default
-        inputs.impermanence.nixosModules.default
+        inputs.impermanence.nixosModules.impermanence
         {
           inherit imports;
           config = {
