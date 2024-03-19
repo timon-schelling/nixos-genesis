@@ -1,6 +1,6 @@
 { config, lib, ... }:
 
-lib.mkMerge (lib.mapAttrsToList
+builtins.trace (lib.mapAttrsToList
   (name: user: {
     home-manager.users.${name} = {
       programs.git = {
