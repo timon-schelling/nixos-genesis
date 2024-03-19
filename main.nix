@@ -6,6 +6,7 @@ let
   utils = import ./utils.nix { inherit lib; };
   system = utils.umport { path = ./system; };
   user = utils.umport { path = ./user; };
+  imports = system ++ user;
 in
 {
   nixosConfigurations = {
@@ -19,24 +20,12 @@ in
         inputs.home-manager.nixosModules.default
         inputs.disko.nixosModules.default
         inputs.impermanence.nixosModules.default
-
         {
-          imports = system;
+          inherit imports;
           config = {
             inherit opts;
           };
         }
-        {
-          home-manager.extraSpecialArgs = {
-            inherit username; inherit inputs;
-            inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) gtkThemeFromScheme;
-          };
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.backupFileExtension = "backup";
-          home-manager.users.${username} = import ./home.nix;
-        }
-
       ];
     };
   };
