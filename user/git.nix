@@ -1,13 +1,13 @@
 { config, lib, ... }:
 
-builtins.trace (lib.mapAttrsToList
+lib.mkMerge (lib.mapAttrsToList
   (name: user: {
     home-manager.users.${name} = {
       programs.git = {
         enable = true;
-        userName = user.name;
-        userEmail = user.email;
+        userName = .name;
+        userEmail = config.opts.users.${user}.email;
       };
     };
   })
-  config.opts.users) {}
+  config.opts.users)
