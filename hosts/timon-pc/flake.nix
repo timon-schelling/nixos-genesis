@@ -8,4 +8,5 @@ let
       };
     };
   };
-in import ../../main.nix { inherit opts; }
+  base = import ../../main.nix { inherit opts; };
+in base { inherit opts; }
