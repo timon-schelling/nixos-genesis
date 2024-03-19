@@ -2,7 +2,6 @@
 
 let
   lib = inputs.nixpkgs.lib;
-  libhome = inputs.home-manager.lib;
   utils = import ./utils.nix { inherit lib; };
   system = utils.umport { path = ./system; };
   user = utils.umport { path = ./user; };
@@ -16,7 +15,7 @@ in
         inherit utils;
       };
       modules = [
-        inputs.nixpkgs.nixosModules.default
+        inputs.nixpkgs.default
         inputs.home-manager.nixosModules.default
         inputs.disko.nixosModules.default
         inputs.impermanence.nixosModules.default
