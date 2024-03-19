@@ -16,5 +16,5 @@
     let
       opts = import ./opts.nix;
       base = import ../../main.nix;
-    in base { inherit opts; };
+    in base { inherit inputs; inherit opts; };
 }

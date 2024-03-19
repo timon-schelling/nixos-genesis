@@ -1,4 +1,4 @@
-{ opts, ... }:
+{ inputs, opts, ... }:
 
 let
   lib = inputs.nixpkgs.lib;
