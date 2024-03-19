@@ -23,9 +23,7 @@ in
         ./options.nix
         {
           inherit imports;
-          config = {
-            inherit opts;
-          };
+          inherit opts;
         }
       ];
     };
