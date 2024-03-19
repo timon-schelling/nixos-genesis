@@ -23,35 +23,35 @@ let
         };
       };
     };
-    monitors = mkOption {
-      type = types.listOf (types.submodule {
+    monitors = lib.mkOption {
+      type = lib.types.listOf (types.submodule {
         options = {
           enabled = mkOption {
-            type = types.bool;
+            type = lib.types.bool;
             default = true;
           };
           name = mkOption {
-            type = types.str;
+            type = lib.types.str;
             example = "DP-1";
           };
           primary = mkOption {
-            type = types.bool;
+            type = lib.types.bool;
             default = false;
           };
           width = mkOption {
-            type = types.int;
+            type = lib.types.int;
             example = 1920;
           };
           height = mkOption {
-            type = types.int;
+            type = lib.types.int;
             example = 1080;
           };
           x = mkOption {
-            type = types.int;
+            type = lib.types.int;
             default = 0;
           };
           y = mkOption {
-            type = types.int;
+            type = lib.types.int;
             default = 0;
           };
         };
