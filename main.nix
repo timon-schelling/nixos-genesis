@@ -13,7 +13,7 @@ in
     ${opts.host} = lib.nixosSystem {
       specialArgs = {
         inherit inputs;
-        inherit utils;
+        # inherit utils;
       };
       modules = [
         inputs.home-manager.nixosModules.default
