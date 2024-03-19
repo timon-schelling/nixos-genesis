@@ -5,7 +5,7 @@ let
   utils = import ./utils.nix { inherit lib; };
   imports = utils.searchModules [
     ./system
-    # ./user
+    ./user
   ];
 in
 {
@@ -13,7 +13,6 @@ in
     ${opts.host} = lib.nixosSystem {
       specialArgs = {
         inherit inputs;
-        # inherit utils;
       };
       modules = [
         inputs.home-manager.nixosModules.default
