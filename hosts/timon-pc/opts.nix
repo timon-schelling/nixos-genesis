@@ -5,7 +5,7 @@
   swap = {
     enable = true;
     size = "32G";
-  }
+  };
   users = {
     timon = {
       name = "Timon Schelling";
