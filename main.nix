@@ -38,15 +38,17 @@ in
                   host = lib.mkOption {
                     type = lib.types.str;
                   };
-                  swap = lib.types.submodule {
-                    options = {
-                      enable = lib.mkOption {
-                        type = lib.types.bool;
-                        default = true;
-                      };
-                      size = lib.mkOption {
-                        type = lib.types.str;
-                        default = "32G";
+                  swap = lib.mkOption {
+                    type = lib.types.submodule {
+                      options = {
+                        enable = lib.mkOption {
+                          type = lib.types.bool;
+                          default = true;
+                        };
+                        size = lib.mkOption {
+                          type = lib.types.str;
+                          default = "32G";
+                        };
                       };
                     };
                   };
