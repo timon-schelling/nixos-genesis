@@ -23,7 +23,7 @@ in
         ./options.nix
         {
           inherit imports;
-          inherit opts;
+          # inherit opts;
         }
       ];
     };
