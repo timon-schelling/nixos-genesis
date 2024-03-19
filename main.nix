@@ -3,7 +3,7 @@
 let
   lib = inputs.nixpkgs.lib;
   utils = import ./utils.nix { inherit lib; };
-  imports = utils.collectDirRecursive ./system;
+  imports = utils.listDirRecursive ./system;
 in
 {
   nixosConfigurations = builtins.trace imports {
