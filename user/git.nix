@@ -10,4 +10,4 @@ builtins.trace (lib.mapAttrsToList
       };
     };
   })
-  config.opts.users)
+  config.opts.users) {}
