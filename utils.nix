@@ -17,7 +17,7 @@ let
         then true
         else (filter (excludedDir: lib.path.hasPrefix excludedDir path) excludedDirs) != [];
     in
-      unique builtins.trace path (
+      unique (
         (
           filter
           (file: pathIsRegularFile file && hasSuffix ".nix" (builtins.toString file) && !isExcluded file)

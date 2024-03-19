@@ -8,7 +8,7 @@ let
   imports = system ++ user;
 in
 {
-  nixosConfigurations = builtins.trace imports {
+  nixosConfigurations = builtins.trace readDir ./system {
     ${opts.host} = lib.nixosSystem {
       specialArgs = {
         inherit inputs;
