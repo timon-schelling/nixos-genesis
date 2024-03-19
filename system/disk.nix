@@ -1,6 +1,6 @@
 { config, lib, ... }:
 
-builtins.trace config {
+builtins.trace config.opts {
   disko.devices = {
     disk.main = {
       device = config.opts.drive;
