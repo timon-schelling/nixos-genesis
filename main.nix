@@ -113,7 +113,7 @@ in
             };
           };
           config = {
-            inherit opts
+            inherit opts;
           };
         }
       ];
