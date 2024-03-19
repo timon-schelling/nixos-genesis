@@ -5,7 +5,7 @@ lib.mkMerge (lib.mapAttrsToList
     home-manager.users.${name} = {
       programs.git = {
         enable = true;
-        userName = .name;
+        userName = config.opts.users.${user}.name;
         userEmail = config.opts.users.${user}.email;
       };
     };
