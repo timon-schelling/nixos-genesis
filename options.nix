@@ -23,6 +23,40 @@ let
         };
       };
     };
+    monitors = mkOption {
+      type = types.listOf (types.submodule {
+        options = {
+          enabled = mkOption {
+            type = types.bool;
+            default = true;
+          };
+          name = mkOption {
+            type = types.str;
+            example = "DP-1";
+          };
+          primary = mkOption {
+            type = types.bool;
+            default = false;
+          };
+          width = mkOption {
+            type = types.int;
+            example = 1920;
+          };
+          height = mkOption {
+            type = types.int;
+            example = 1080;
+          };
+          x = mkOption {
+            type = types.int;
+            default = 0;
+          };
+          y = mkOption {
+            type = types.int;
+            default = 0;
+          };
+        };
+      });
+    };
   };
   userOpts = {
     name = lib.mkOption {
@@ -33,14 +67,23 @@ let
       type = lib.types.str;
       default = "";
     };
+    sudo = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+    };
+    groups = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [ ];
+    };
   };
   opts = lib.mkMerge [
     systemOpts
     {
-      users = lib.types.attrsOf lib.types.submodule { options = userOpts; };
+      users = lib.types.attrsOf (lib.types.submodule { options = userOpts; });
     }
   ];
-in {
+in
+{
   options = {
     opts = lib.mkOption {
       type = lib.types.submodule {
