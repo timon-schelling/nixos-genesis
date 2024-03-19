@@ -11,5 +11,5 @@
         };
       };
     })
-    config.opts.users)
+    config.opts.users);
 }
