@@ -6,7 +6,7 @@ let
       if type == "directory" then collectDirRecursive "${dir}/${file}" else type
     )
     (builtins.readDir dir);
-  listDirRecursive = dir: lib.collect lib.isString (mapAttrsRecursive (path: type: lib.concatStringsSep "/" path) (collectDirRecursive dir));
+  listDirRecursive = dir: lib.collect lib.isString (lib.mapAttrsRecursive (path: type: lib.concatStringsSep "/" path) (collectDirRecursive dir));
   searchDirForModules = dir: map
     (file: ./. + "/${file}")
     (filter
