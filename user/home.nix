@@ -5,7 +5,7 @@ lib.mkMerge (lib.mapAttrsToList
     users.users.${name} = {
       isNormalUser = true;
       home = "/home/${name}";
-      description = ${user.name};
+      description = user.name;
       extraGroups =
         user.groups ++
         (if user.sudo then [ "wheel" ] else [ ]);
