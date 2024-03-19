@@ -86,26 +86,28 @@ in
                       };
                     });
                   };
-                  users = lib.types.attrsOf (lib.types.submodule {
-                    options = {
-                      name = lib.mkOption {
-                        type = lib.types.str;
-                        default = "User";
+                  users = lib.mkOption {
+                    type = lib.types.attrsOf (lib.types.submodule {
+                      options = {
+                        name = lib.mkOption {
+                          type = lib.types.str;
+                          default = "User";
+                        };
+                        email = lib.mkOption {
+                          type = lib.types.str;
+                          default = "";
+                        };
+                        sudo = lib.mkOption {
+                          type = lib.types.bool;
+                          default = false;
+                        };
+                        groups = lib.mkOption {
+                          type = lib.types.listOf lib.types.str;
+                          default = [ ];
+                        };
                       };
-                      email = lib.mkOption {
-                        type = lib.types.str;
-                        default = "";
-                      };
-                      sudo = lib.mkOption {
-                        type = lib.types.bool;
-                        default = false;
-                      };
-                      groups = lib.mkOption {
-                        type = lib.types.listOf lib.types.str;
-                        default = [ ];
-                      };
-                    };
-                  });
+                    });
+                  };
                 };
               };
             };
