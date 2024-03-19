@@ -27,7 +27,7 @@ in
             inherit opts;
           };
         }
-        (./hosts + "/${opts.host}/" + hardware.nix)
+        (./hosts + "/${opts.host}/hardware.nix")
       ];
     };
   };
