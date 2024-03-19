@@ -27,7 +27,7 @@ in
             inherit opts;
           };
         }
-        builtins.toPath "hosts/${opts.host}/hardware.nix"
+        (builtins.toPath "./hosts/${opts.host}/hardware.nix")
       ];
     };
   };
