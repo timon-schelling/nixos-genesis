@@ -12,7 +12,7 @@
     impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = {};
+  outputs = { ... }: {};
   # outputs = { inputs, ... }:
   #   let
   #     opts = import ./opts.nix;
