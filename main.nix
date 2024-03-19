@@ -3,7 +3,7 @@
 let
   lib = inputs.nixpkgs.lib;
   utils = import ./utils.nix { inherit lib; };
-  imports = searchModules [
+  imports = utils.searchModules [
     ./system
     ./user
   ];
