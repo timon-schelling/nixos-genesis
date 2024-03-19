@@ -3,12 +3,13 @@
 let
   lib = inputs.nixpkgs.lib;
   utils = import ./utils.nix { inherit lib; };
-  system = utils.umport { path = ./system; };
-  user = utils.umport { path = ./user; };
-  imports = system ++ user;
+  imports = searchModules [
+    ./system
+    ./user
+  ];
 in
 {
-  nixosConfigurations = builtins.trace (builtins.readDir ./system ) {
+  nixosConfigurations = builtins.trace imports {
     ${opts.host} = lib.nixosSystem {
       specialArgs = {
         inherit inputs;
