@@ -15,7 +15,6 @@ in
         inherit utils;
       };
       modules = [
-        inputs.nixpkgs.default
         inputs.home-manager.nixosModules.default
         inputs.disko.nixosModules.default
         inputs.impermanence.nixosModules.default
