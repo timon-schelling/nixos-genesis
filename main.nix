@@ -5,7 +5,7 @@ let
   utils = import ./utils.nix { inherit lib; };
   imports = utils.searchModules [
     ./system
-    ./user
+    # ./user
   ];
 in
 {
@@ -19,7 +19,6 @@ in
         inputs.home-manager.nixosModules.default
         inputs.disko.nixosModules.default
         inputs.impermanence.nixosModules.impermanence
-
         {
           inherit imports;
           config = {
