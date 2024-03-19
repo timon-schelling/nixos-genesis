@@ -24,33 +24,33 @@ let
       };
     };
     monitors = lib.mkOption {
-      type = lib.types.listOf (types.submodule {
+      type = lib.types.listOf (lib.types.submodule {
         options = {
-          enabled = mkOption {
+          enabled = lib.mkOption {
             type = lib.types.bool;
             default = true;
           };
-          name = mkOption {
+          name = lib.mkOption {
             type = lib.types.str;
             example = "DP-1";
           };
-          primary = mkOption {
+          primary = lib.mkOption {
             type = lib.types.bool;
             default = false;
           };
-          width = mkOption {
+          width = lib.mkOption {
             type = lib.types.int;
             example = 1920;
           };
-          height = mkOption {
+          height = lib.mkOption {
             type = lib.types.int;
             example = 1080;
           };
-          x = mkOption {
+          x = lib.mkOption {
             type = lib.types.int;
             default = 0;
           };
-          y = mkOption {
+          y = lib.mkOption {
             type = lib.types.int;
             default = 0;
           };
