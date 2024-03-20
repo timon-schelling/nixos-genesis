@@ -8,6 +8,7 @@
       (name: user: {
         ${name} = { ... }: {
           imports = [
+            ../options.nix
             ../home/state-version.nix
           ];
           config = {
