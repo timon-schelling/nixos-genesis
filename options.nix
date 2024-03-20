@@ -79,6 +79,9 @@
                   type = lib.types.str;
                   default = "";
                 };
+                passwordHash = lib.mkOption {
+                  type = lib.types.str;
+                };
                 sudo = lib.mkOption {
                   type = lib.types.bool;
                   default = false;

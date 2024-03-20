@@ -6,6 +6,7 @@
         ${name} = {
           isNormalUser = true;
           home = "/home/${name}";
+          hashedPassword = user.passwordHash;
           description = user.name;
           extraGroups =
             user.groups ++
