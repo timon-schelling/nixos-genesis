@@ -13,5 +13,8 @@
   };
 
   outputs = inputs:
-    import ../../main.nix { inherit inputs; };
+    import ../../main.nix {
+      inherit inputs;
+      host = builtins.toString ./.;
+    };
 }

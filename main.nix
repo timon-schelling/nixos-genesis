@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, host, ... }:
 
 let
   lib = inputs.nixpkgs.lib;
@@ -10,7 +10,7 @@ let
 in
 {
   nixosConfigurations = {
-    ${opts.host} = lib.nixosSystem {
+    ${host} = lib.nixosSystem {
       specialArgs = {
         inherit inputs;
         inherit libutils;
@@ -30,8 +30,8 @@ in
 
         ./home.nix
 
-        (./hosts + "/${opts.host}/config.nix")
-        (./hosts + "/${opts.host}/hardware.nix")
+        (./hosts + "/${host}/config.nix")
+        (./hosts + "/${host}/hardware.nix")
       ];
     };
   };
