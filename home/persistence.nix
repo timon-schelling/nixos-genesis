@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 {
-  home.persistence."/persist/home/${config.opts.name}" = {
+  home.persistence."/persist/users/${config.opts.name}" = {
     directories = [
       "dev"
       "data"
