@@ -5,6 +5,7 @@ let
   libutils = import ./utils.nix { inherit lib; };
   imports = libutils.searchModules [
     ./system
+    ./users
   ];
 in
 {
