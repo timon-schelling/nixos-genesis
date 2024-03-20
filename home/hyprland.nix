@@ -150,9 +150,9 @@
       bind = $mainMod, mouse_up, workspace, e-1
 
       bind = ALT, space, exec, anyrun
-      bind = $mainMod, 1, exec, sh -c "wezterm > ~/tmp/env-wezterm.txt"
+      bind = $mainMod, 1, exec, sh -c "wezterm > ~/tmp/env-wezterm.txt 2>&1"
       bind = $mainMod, 2, exec, code --ozone-platform="wayland" --enable-features="WaylandWindowDecorations"
-      bind = $mainMod, 3, exec, sh -c "firefox > ~/tmp/env-firefox.txt"
+      bind = $mainMod, 3, exec, sh -c "firefox > ~/tmp/env-firefox.txt 2>&1"
       bind = $mainMod, 4, exec, nautilus --new-window
       bind = $mainMod, 5, exec, /opt/enpass/Enpass
       bind = $mainMod, 6, exec, code-insiders --ozone-platform="wayland" --enable-features="WaylandWindowDecorations"
