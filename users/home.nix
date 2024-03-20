@@ -1,4 +1,4 @@
-{ libutils, ... }:
+{ lib, libutils, ... }:
 
 {
   home-manager = {
