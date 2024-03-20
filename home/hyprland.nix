@@ -160,6 +160,12 @@
       bind = $mainMod, 8, exec, /opt/beeper/beeper.AppImage
       # bind = $mainMod, 9, exec,
       # bind = $mainMod, 0, exec,
+
+      bind = $mainMod SHIFT, M, exit,
+      debug {
+          disable_logs = false
+      }
+
     '';
   };
 }
