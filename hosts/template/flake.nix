@@ -1,8 +1,8 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager?ref=master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {
@@ -12,9 +12,6 @@
     impermanence.url = "github:nix-community/impermanence";
   };
 
-  outputs = { inputs, ... }:
-    let
-      opts = import ./opts.nix;
-      base = import ../../main.nix;
-    in base { inherit inputs; inherit opts; };
+  outputs = inputs:
+    import ../../main.nix { inherit inputs; };
 }

@@ -1,5 +1,10 @@
 { lib, libutils, config, ... }:
 
+let
+  modules = libutils.searchModules [
+    ./home
+  ];
+in
 {
   home-manager = {
     useGlobalPkgs = true;
@@ -8,16 +13,14 @@
       (name: user: {
         ${name} = { ... }: {
           imports = [
-            ../options.nix
-            ../home/state-version.nix
-            ../home/git.nix
-          ];
+            ./options/home.nix
+          ] ++ modules;
           config = {
-            _module.args = {
-              username = name;
+            opts = {
+              system = config.opts.system;
+              inherit name;
               inherit user;
             };
-            opts = config.opts;
           };
         };
       })

@@ -13,8 +13,5 @@
   };
 
   outputs = inputs:
-    let
-      opts = import ./opts.nix;
-      base = import ../../main.nix;
-    in base { inherit inputs; inherit opts; };
+    import ../../main.nix { inherit inputs; };
 }

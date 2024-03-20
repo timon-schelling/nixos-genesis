@@ -1,4 +1,4 @@
-{ inputs, opts, ... }:
+{ inputs, ... }:
 
 let
   lib = inputs.nixpkgs.lib;
@@ -20,13 +20,17 @@ in
         inputs.disko.nixosModules.default
         inputs.impermanence.nixosModules.impermanence
 
-        ./options.nix
+        ./options/main.nix
         {
           inherit imports;
           config = {
             inherit opts;
           };
         }
+
+        ./home.nix
+
+        (./hosts + "/${opts.host}/config.nix")
         (./hosts + "/${opts.host}/hardware.nix")
       ];
     };

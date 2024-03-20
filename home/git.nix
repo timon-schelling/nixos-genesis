@@ -1,9 +1,9 @@
-{ config, lib, username, user, ... }:
+{ config, lib, ... }:
 
 {
   programs.git = {
     enable = true;
-    userName = user.name;
-    userEmail = user.email;
+    userName = config.opts.user.name;
+    userEmail = config.opts.user.email;
   };
 }
