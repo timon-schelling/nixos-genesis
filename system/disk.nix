@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 {
-  disko.devices = builtins.trace config.opts {
+  disko.devices = {
     disk.main = {
       device = config.opts.drive;
       type = "disk";
