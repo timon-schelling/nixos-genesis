@@ -13,7 +13,7 @@
             type = lib.types.str;
           };
           user = lib.mkOption {
-            type = import ./users.nix { inherit lib; };
+            type = import ./user.nix { inherit lib; };
             default = {};
           };
         };
