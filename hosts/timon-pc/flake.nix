@@ -15,6 +15,6 @@
   outputs = inputs:
     import ../../main.nix {
       inherit inputs;
-      host = builtins.toString ./.;
+      host = builtins.baseNameOf ./.;
     };
 }
