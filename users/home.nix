@@ -12,7 +12,7 @@
             inherit user;
           };
           imports = libutils.searchModules [
-            "./../home"
+            "./home"
           ];
         };
       })
