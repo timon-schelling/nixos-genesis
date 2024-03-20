@@ -5,6 +5,7 @@
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
+    enableNvidiaPatches = true;
     plugins = [
       # hyprplugins.hyprtrails
     ];
