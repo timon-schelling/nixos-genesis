@@ -161,7 +161,8 @@
       # bind = $mainMod, 9, exec,
       # bind = $mainMod, 0, exec,
 
-      bind = $mainMod SHIFT, M, exit,
+      bind = $mainMod SHIFT, Q, exit,
+      bind = $mainMod SHIFT, E, exec, sh -c "env > ~/tmp/env.txt"
       debug {
           disable_logs = false
       }
