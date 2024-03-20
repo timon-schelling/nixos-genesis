@@ -10,6 +10,7 @@
           imports = [
             ../options.nix
             ../home/state-version.nix
+            ../home/git.nix
           ];
           config = {
             _module.args = {
