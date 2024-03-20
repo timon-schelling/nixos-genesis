@@ -14,6 +14,9 @@
           imports = [
             ../home/state-version.nix
           ];
+          config = {
+            opts = config.opts;
+          };
         };
       })
       config.opts.users);
