@@ -1,4 +1,4 @@
-{ lib, libutils, config, ... }:
+{ lib, libutils, config, inputs, ... }:
 
 let
   modules = libutils.searchModules [
@@ -13,6 +13,7 @@ in
       (name: user: {
         ${name} = { ... }: {
           imports = [
+            inputs.impermanence.nixosModules.impermanence
             ./options/home.nix
           ] ++ modules;
           config = {
