@@ -7,14 +7,14 @@
     users = lib.mkMerge (lib.mapAttrsToList
       (name: user: {
         ${name} = { ... }: {
-          _module.args = {
-            username = name;
-            inherit user;
-          };
           imports = [
             ../home/state-version.nix
           ];
           config = {
+            _module.args = {
+              username = name;
+              inherit user;
+            };
             opts = config.opts;
           };
         };
