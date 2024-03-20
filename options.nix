@@ -32,6 +32,7 @@
                 };
               };
             };
+            default = {};
           };
           monitors = lib.mkOption {
             type = lib.types.listOf (lib.types.submodule {
