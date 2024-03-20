@@ -11,8 +11,8 @@
             username = name;
             inherit user;
           };
-          imports = libutils.searchModules [
-            "./home"
+          imports = [
+            ../home/state-version.nix
           ];
         };
       })
