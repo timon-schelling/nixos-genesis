@@ -5,6 +5,10 @@
     opts = lib.mkOption {
       type = lib.types.submodule {
         options = {
+          stateVersion = lib.mkOption {
+            type = lib.types.str;
+            default = "23.11";
+          };
           platform = lib.mkOption {
             type = lib.types.str;
             default = "x86_64-linux";
@@ -81,6 +85,10 @@
                 groups = lib.mkOption {
                   type = lib.types.listOf lib.types.str;
                   default = [ ];
+                };
+                stateVersion = lib.mkOption {
+                  type = lib.types.str;
+                  default = "23.";
                 };
               };
             });
