@@ -3,7 +3,7 @@
 let
   lib = inputs.nixpkgs.lib;
   libutils = import ./utils.nix { inherit lib; };
-  imports = utils.searchModules [
+  imports = libutils.searchModules [
     ./system
   ];
 in
@@ -12,7 +12,7 @@ in
     ${opts.host} = lib.nixosSystem {
       specialArgs = {
         inherit inputs;
-        libutils = utils;
+        inherit libutils;
       };
       modules = [
         inputs.home-manager.nixosModules.default
