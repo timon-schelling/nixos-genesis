@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
-sudo nixos-rebuild switch --flake ./hosts/$(hostname)#$(hostname)
+git pull
+git add .
+git commit -m "rebuild $(date +%F_%T)"
+git push
+
+sudo nixos-rebuild boot --flake ./hosts/$(hostname)#$(hostname)
