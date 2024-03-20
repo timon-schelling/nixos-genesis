@@ -1,5 +1,5 @@
 { config, ... }:
 
 {
-  system.stateVersion = config.opts.stateVersion;
+  system.stateVersion = config.opts.system.stateVersion;
 }

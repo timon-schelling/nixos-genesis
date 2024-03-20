@@ -3,7 +3,7 @@
 {
   disko.devices = {
     disk.main = {
-      device = config.opts.drive;
+      device = config.opts.system.drive;
       type = "disk";
       content = {
         type = "gpt";
@@ -28,9 +28,9 @@
               };
             };
           }
-          (lib.mkIf config.opts.swap.enable {
+          (lib.mkIf config.opts.system.swap.enable {
             swap = {
-              size = config.opts.swap.size;
+              size = config.opts.system.swap.size;
               content = {
                 type = "swap";
                 resumeDevice = true;
