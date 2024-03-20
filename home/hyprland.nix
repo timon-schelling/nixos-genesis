@@ -18,8 +18,6 @@
       env = XCURSOR_SIZE, 24
       env = WLR_NO_HARDWARE_CURSORS, 1
 
-      env = PATH, /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-
       input {
           # `compose:sclk` sets scrolllock as the compose key, needed by keyd
           kb_options = compose:sclk
