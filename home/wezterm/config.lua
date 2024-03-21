@@ -6,11 +6,7 @@ return {
     default_prog = { 'nu' },
     font = wezterm.font 'JetBrains Mono',
     font_size = 15.0,
-    color_scheme = 'wezland',
-    colors = {
-        -- background = '#2b2b2b',
-        -- foreground = '#f8f8f2',
-    },
+    color_scheme = 'theme',
     initial_cols = 98,
     initial_rows = 32,
     hide_tab_bar_if_only_one_tab = true,
