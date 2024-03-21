@@ -1,4 +1,4 @@
-{ config, lib, inputs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   programs.nushell = {
@@ -43,4 +43,8 @@
     enable = true;
     enableNushellIntegration = true;
   };
+
+  home.packages = [
+    pkgs.tere
+  ]
 }
