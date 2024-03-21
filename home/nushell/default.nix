@@ -30,7 +30,7 @@
   };
 
 
-  starship = {
+  programs.starship = {
     enable = true;
     enableNushellIntegration = true;
   };
@@ -39,7 +39,7 @@
     source = ./starship.toml;
   };
 
-  carapace = {
+  programs.carapace = {
     enable = true;
     enableNushellIntegration = true;
   };
