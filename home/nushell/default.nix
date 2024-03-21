@@ -27,9 +27,6 @@
     source = ./lib;
     recursive = true;
   };
-  config.opts.user.persist.files = [
-    "~/.config/nushell/history.txt"
-  ];
 
   programs.starship = {
     enable = true;
@@ -47,7 +44,9 @@
   home.packages = [
     pkgs.tere
   ];
+
   config.opts.user.persist.files = [
+    "~/.config/nushell/history.txt"
     "~/.cache/tere/history.json"
   ];
 
