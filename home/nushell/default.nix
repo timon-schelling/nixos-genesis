@@ -46,5 +46,5 @@
 
   home.packages = [
     pkgs.tere
-  ]
+  ];
 }
