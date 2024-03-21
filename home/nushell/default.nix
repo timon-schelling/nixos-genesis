@@ -45,7 +45,7 @@
     pkgs.tere
   ];
 
-  config.opts.user.persist.files = [
+  opts.user.persist.files = [
     "~/.config/nushell/history.txt"
     "~/.cache/tere/history.json"
   ];
