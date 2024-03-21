@@ -46,8 +46,8 @@
   ];
 
   opts.user.persist.files = [
-    "~/.config/nushell/history.txt"
-    "~/.cache/tere/history.json"
+    ".config/nushell/history.txt"
+    ".cache/tere/history.json"
   ];
 
 }
