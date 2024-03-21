@@ -5,7 +5,7 @@
   environment.persistence."/persist/system" = {
     hideMounts = true;
     directories = config.opts.system.persist.folders;
-    files = config.opts.system.persist.files
+    files = config.opts.system.persist.files;
   };
 
   systemd.services."create-persist-user-dir" = {
