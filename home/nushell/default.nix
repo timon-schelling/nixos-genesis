@@ -47,4 +47,6 @@
   home.packages = [
     pkgs.tere
   ];
+  # TODO: add persistence for tere via ~/.cache/tere/history.json
+
 }
