@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, inputs, ... }:
 
 {
   programs.nushell = {
@@ -22,6 +22,8 @@
     configFile.text = ''
       source lib.nu
     '';
+
+    package = inputs.nixpkgs-unstable.pkgs.nushell;
   };
 
   xdg.configFile."nushell/lib" = {
