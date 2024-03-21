@@ -1,4 +1,4 @@
-{ config, lib, pkgs ... }:
+{ config, lib, pkgs, ... }:
 
 {
   users.users = lib.mkMerge (lib.mapAttrsToList
