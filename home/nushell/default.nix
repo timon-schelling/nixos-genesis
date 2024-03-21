@@ -12,11 +12,11 @@
       }
 
       $env.NU_LIB_DIRS = [
-          ($nu.config-path | path dirname | path join 'lib')
+          $"(env.XDG_CONFIG_HOME)/nushell/lib"
       ]
 
       $env.NU_PLUGIN_DIRS = [
-          ($nu.config-path | path dirname | path join 'plugins')
+          $"(env.XDG_CONFIG_HOME)/nushell/plugins"
       ]
     '';
     configFile.text = ''
