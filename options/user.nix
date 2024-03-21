@@ -25,5 +25,24 @@ lib.types.submodule {
       type = lib.types.str;
       default = "23.";
     };
+    persist = lib.mkOption {
+      type = lib.types.submodule {
+        options = {
+          folders = lib.mkOption {
+            type = lib.types.listOf lib.types.str;
+            default = [
+              "dev"
+              "data"
+              "tmp"
+            ];
+          };
+          files = lib.mkOption {
+            type = lib.types.listOf lib.types.str;
+            default = [ ];
+          };
+        };
+      };
+      default = { };
+    };
   };
 }

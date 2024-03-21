@@ -23,18 +23,18 @@
       source lib.nu
     '';
   };
-
   xdg.configFile."nushell/lib" = {
     source = ./lib;
     recursive = true;
   };
-
+  config.opts.user.persist.files = [
+    "~/.config/nushell/history.txt"
+  ];
 
   programs.starship = {
     enable = true;
     enableNushellIntegration = true;
   };
-
   xdg.configFile."starship.toml" = {
     source = ./starship.toml;
   };
@@ -47,6 +47,8 @@
   home.packages = [
     pkgs.tere
   ];
-  # TODO: add persistence for tere via ~/.cache/tere/history.json
+  config.opts.user.persist.files = [
+    "~/.cache/tere/history.json"
+  ];
 
 }

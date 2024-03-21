@@ -2,11 +2,8 @@
 
 {
   home.persistence."/persist/user/${config.opts.name}/home" = {
-    directories = [
-      "dev"
-      "data"
-      "tmp"
-    ];
+    directories = config.opts.user.persist.folders;
+    files = config.opts.user.persist.files;
     allowOther = true;
   };
 }
