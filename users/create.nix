@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs ... }:
 
 {
   users.users = lib.mkMerge (lib.mapAttrsToList
@@ -11,6 +11,7 @@
           extraGroups =
             user.groups ++
             (if user.sudo then [ "wheel" ] else [ ]);
+          shell = pkgs.nushell;
         };
       })
     config.opts.users);

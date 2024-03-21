@@ -1,0 +1,10 @@
+source cmd/util.nu
+use cmd/task.nu
+source cmd/git.nu
+source cmd/kubectl.nu
+source cmd/exit.nu
+source cmd/tor.nu
+source cmd/notes.nu
+source cmd/dotfiles/lib.nu
+source cmd/apps/lib.nu
+source cmd/desktop/lib.nu
