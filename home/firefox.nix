@@ -4,14 +4,14 @@
   programs.firefox = {
     enable = true;
     profiles.main = {
-      extensions = with inputs.firefox-addons.packages.${config.opts.system.platform}; [
-        ublock-origin
-        sponsorblock
-        darkreader
-        vimium
-        multi-account-containers
-        youtube-shorts-block
-      ];
+      # extensions = with inputs.firefox-addons.packages.${config.opts.system.platform}; [
+      #   ublock-origin
+      #   sponsorblock
+      #   darkreader
+      #   vimium
+      #   multi-account-containers
+      #   youtube-shorts-block
+      # ];
       search = {
         force = true;
         engines = {
