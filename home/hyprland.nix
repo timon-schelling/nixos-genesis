@@ -15,7 +15,7 @@
       monitor = ,preferred, auto, auto
 
       # cursor settings
-      env = XCURSOR_SIZE, 24
+      # env = XCURSOR_SIZE, 24
       env = WLR_NO_HARDWARE_CURSORS, 1
 
       input {
