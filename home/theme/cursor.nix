@@ -5,11 +5,11 @@
     gtk.enable = true;
     package = pkgs.oreo-cursors-plus.override {
       cursorsConf = ''
-        custom = color: #1c1c1c, stroke: #aaaaaa, stroke-width: 1, stroke-opacity: 1
-        sizes = 18
+        custom = color: #1c1c1c, stroke: #eeeeee, stroke-width: 2, stroke-opacity: 1
+        sizes = 22
       '';
     };
     name = "oreo_custom_cursors";
-    size = 18;
+    size = 20;
   };
 }
