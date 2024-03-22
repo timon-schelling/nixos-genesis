@@ -9,7 +9,7 @@
         sizes = 18
       '';
     };
-    name = "custom";
+    name = "oreo_custom_cursors";
     size = 18;
   };
 }
