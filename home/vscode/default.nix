@@ -16,6 +16,15 @@
       alefragnani.project-manager
       github.copilot
       github.copilot-chat
+      streetsidesoftware.code-spell-checker
+      vscode-utils.buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "code-spell-checker-german";
+          publisher = "streetsidesoftware";
+          version = "2.3.1";
+          sha256 = "sha256-KeYE6/yO2n3RHPjnJOnOyHsz4XW81y9AbkSC/I975kQ=";
+        };
+      };
     ];
   };
 }
