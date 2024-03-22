@@ -5,7 +5,7 @@
     enable = true;
     theme = {
       package = pkgs.whitesur-gtk-theme;
-      name = "WhiteSur-Dark-solid-blue";
+      name = "WhiteSur-Dark-solid";
     };
 
     iconTheme = {
