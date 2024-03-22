@@ -24,7 +24,7 @@
           version = "2.3.1";
           sha256 = "sha256-KeYE6/yO2n3RHPjnJOnOyHsz4XW81y9AbkSC/I975kQ=";
         };
-      };
+      }
     ];
   };
 
