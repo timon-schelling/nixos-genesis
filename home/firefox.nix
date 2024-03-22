@@ -3,6 +3,31 @@
 {
   programs.firefox = {
     enable = true;
+    package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+      extraPolicies = {
+        CaptivePortal = false;
+        DisableFirefoxStudies = true;
+        DisablePocket = true;
+        DisableTelemetry = true;
+        DisableFirefoxAccounts = false;
+        NoDefaultBookmarks = true;
+        OfferToSaveLogins = false;
+        OfferToSaveLoginsDefault = false;
+        PasswordManagerEnabled = false;
+        FirefoxHome = {
+          Search = true;
+          Pocket = false;
+          Snippets = false;
+          TopSites = false;
+          Highlights = false;
+        };
+        UserMessaging = {
+          ExtensionRecommendations = false;
+          SkipOnboarding = true;
+        };
+      };
+    };
+
     profiles.main = {
       extensions = with inputs.firefox-addons.packages.${config.opts.system.platform}; [
         ublock-origin
@@ -73,6 +98,9 @@
             ];
             definedAliases = ["@hm"];
           };
+          "Amazon.com".metaData.hidden = true;
+          "Bing".metaData.hidden = true;
+          "eBay".metaData.hidden = true;
         };
       };
       settings = {
@@ -87,7 +115,14 @@
         "identity.fxaccounts.enabled" = false;
         "privacy.trackingprotection.enabled" = true;
         "signon.rememberSignons" = false;
+        "general.smoothScroll" = true;
       };
+      extraConfig = ''
+        user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+        user_pref("full-screen-api.ignore-widgets", true);
+        user_pref("media.ffmpeg.vaapi.enabled", true);
+        user_pref("media.rdd-vpx.enabled", true);
+      '';
     };
   };
 
