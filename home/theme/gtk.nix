@@ -4,13 +4,13 @@
   gtk = {
     enable = true;
     theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Grey-Darkest";
+      package = pkgs.whitesur-gtk-theme;
+      name = "WhiteSur-Dark-solid-blue";
     };
 
     iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.whitesur-icon-theme;
+      name = "WhiteSur-dark";
     };
 
     font = {
