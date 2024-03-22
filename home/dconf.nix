@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  programs.dconf.enable = true;
+  dconf.settings = { };
 }
