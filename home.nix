@@ -9,6 +9,9 @@ in
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    extraSpecialArgs = {
+      inherit inputs;
+    };
     users = lib.mkMerge (lib.mapAttrsToList
       (name: user: {
         ${name} = { ... }: {
