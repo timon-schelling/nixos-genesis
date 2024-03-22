@@ -1,10 +1,10 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 
 {
-    programs.firefox = {
+  programs.firefox = {
     enable = true;
     profiles.main = {
-      extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+      extensions = with inputs.firefox-addons.packages.${config.opts.system.platform}; [
         ublock-origin
         sponsorblock
         darkreader
