@@ -17,7 +17,7 @@
       github.copilot
       github.copilot-chat
       streetsidesoftware.code-spell-checker
-      vscode-utils.buildVscodeMarketplaceExtension {
+      pkgs.vscode-utils.buildVscodeMarketplaceExtension {
         mktplcRef = {
           name = "code-spell-checker-german";
           publisher = "streetsidesoftware";
