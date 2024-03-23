@@ -101,7 +101,7 @@
           };
         };
         in listToAttrs [
-          (extension "perfectdarktheme" "")
+          (extension "perfectdarktheme" "perfectdarktheme")
           (extension "darkreader" "addon@darkreader.org")
           # (extension "tree-style-tab" "treestyletab@piro.sakura.ne.jp")
           # (extension "uborigin" "uBlock0@raymondhill.net")
