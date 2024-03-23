@@ -54,6 +54,28 @@
         "browser.newtabpage.activity-stream.showSponsored" = false;
         "browser.newtabpage.activity-stream.system.showSponsored" = false;
         "extensions.InstallTrigger.enabled" = false;
+        "privacy.userContext.enabled" = false;
+        "browser.newtabpage.activity-stream.feeds.telemetry" = false;
+        "browser.newtabpage.activity-stream.telemetry" = false;
+        "browser.ping-centre.telemetry" = false;
+        "toolkit.telemetry.archive.enabled" = false;
+        "toolkit.telemetry.bhrPing.enabled" = false;
+        "toolkit.telemetry.enabled" = false;
+        "toolkit.telemetry.firstShutdownPing.enabled" = false;
+        "toolkit.telemetry.hybridContent.enabled" = false;
+        "toolkit.telemetry.newProfilePing.enabled" = false;
+        "toolkit.telemetry.reportingpolicy.firstRun" = false;
+        "toolkit.telemetry.shutdownPingSender.enabled" = false;
+        "toolkit.telemetry.unified" = false;
+        "toolkit.telemetry.updatePing.enabled" = false;
+        "experiments.activeExperiment" = false;
+        "experiments.enabled" = false;
+        "experiments.supported" = false;
+        "network.allow-experiments" = false;
+        "privacy.donottrackheader.enabled" = true;
+        "privacy.trackingprotection.enabled" = true;
+        "privacy.trackingprotection.socialtracking.enabled" = true;
+        "privacy.partition.network_state.ocsp_cache" = true;
       };
 
       ExtensionSettings = with builtins;
@@ -66,9 +88,8 @@
         };
         in listToAttrs [
           (extension "darkreader" "addon@darkreader.org")
-          (extension "tree-style-tab" "treestyletab@piro.sakura.ne.jp")
+          # (extension "tree-style-tab" "treestyletab@piro.sakura.ne.jp")
           (extension "uborigin" "uBlock0@raymondhill.net")
-          (extension "libredirect" "7esoorv3@alefvanoon.anonaddy.me")
           (extension "clearurls" "{74145f27-f039-47ce-a470-a662b129930a}")
         ];
         # To add additional extensions,find it on addons.mozilla.org, find
@@ -80,6 +101,7 @@
     };
 
     profiles.main = {
+      name = "main";
       search = {
         force = true;
         engines = {
