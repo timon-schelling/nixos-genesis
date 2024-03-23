@@ -7,7 +7,7 @@
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
       EnableTrackingProtection = {
-        Value= true;
+        Value = true;
         Locked = true;
         Cryptomining = true;
         Fingerprinting = true;
@@ -24,40 +24,51 @@
       SearchBar = "unified";
 
       Preferences = {
+        "browser.contentblocking.category" = "strict";
         "browser.disableResetPrompt" = true;
         "browser.download.panel.shown" = true;
+        "browser.formfill.enable" = false;
+        "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+        "browser.newtabpage.activity-stream.feeds.snippets" = false;
+        "browser.newtabpage.activity-stream.feeds.telemetry" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
+        "browser.newtabpage.activity-stream.showSponsored" = false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+        "browser.newtabpage.activity-stream.system.showSponsored" = false;
+        "browser.newtabpage.activity-stream.telemetry" = false;
+        "browser.ping-centre.telemetry" = false;
+        "browser.search.suggest.enabled.private" = false;
+        "browser.search.suggest.enabled" = false;
         "browser.shell.checkDefaultBrowser" = false;
         "browser.shell.defaultBrowserCheckCount" = 1;
         "browser.startup.homepage" = "https://start.duckduckgo.com";
+        "browser.topsites.contile.enabled" = false;
         "browser.uiCustomization.state" = ''{"placements":{"widget-overflow-fixed-list":[],"nav-bar":["back-button","forward-button","stop-reload-button","home-button","urlbar-container","downloads-button","library-button","ublock0_raymondhill_net-browser-action","_testpilot-containers-browser-action"],"toolbar-menubar":["menubar-items"],"TabsToolbar":["tabbrowser-tabs","new-tab-button","alltabs-button"],"PersonalToolbar":["import-button","personal-bookmarks"]},"seen":["save-to-pocket-button","developer-button","ublock0_raymondhill_net-browser-action","_testpilot-containers-browser-action"],"dirtyAreaCache":["nav-bar","PersonalToolbar","toolbar-menubar","TabsToolbar","widget-overflow-fixed-list"],"currentVersion":18,"newElementCount":4}'';
+        "browser.urlbar.showSearchSuggestionsFirst" = false;
+        "browser.urlbar.suggest.searches" = false;
         "dom.security.https_only_mode" = true;
-        "identity.fxaccounts.enabled" = false;
-        "privacy.trackingprotection.enabled" = true;
-        "signon.rememberSignons" = false;
-        "general.smoothScroll" = true;
-        "browser.contentblocking.category" = "strict";
+        "experiments.activeExperiment" = false;
+        "experiments.enabled" = false;
+        "experiments.supported" = false;
+        "extensions.InstallTrigger.enabled" = false;
         "extensions.pocket.enabled" = false;
         "extensions.screenshots.disabled" = true;
-        "browser.topsites.contile.enabled" = false;
-        "browser.formfill.enable" = false;
-        "browser.search.suggest.enabled" = false;
-        "browser.search.suggest.enabled.private" = false;
-        "browser.urlbar.suggest.searches" = false;
-        "browser.urlbar.showSearchSuggestionsFirst" = false;
-        "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
-        "browser.newtabpage.activity-stream.feeds.snippets" = false;
-        "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
-        "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
-        "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = false;
-        "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
-        "browser.newtabpage.activity-stream.showSponsored" = false;
-        "browser.newtabpage.activity-stream.system.showSponsored" = false;
-        "extensions.InstallTrigger.enabled" = false;
+        "full-screen-api.ignore-widgets" = true;
+        "general.smoothScroll" = true;
+        "identity.fxaccounts.enabled" = false;
+        "media.ffmpeg.vaapi.enabled" = true;
+        "media.rdd-vpx.enabled" = true;
+        "network.allow-experiments" = false;
+        "privacy.donottrackheader.enabled" = true;
+        "privacy.partition.network_state.ocsp_cache" = true;
+        "privacy.trackingprotection.enabled" = true;
+        "privacy.trackingprotection.socialtracking.enabled" = true;
         "privacy.userContext.enabled" = false;
-        "browser.newtabpage.activity-stream.feeds.telemetry" = false;
-        "browser.newtabpage.activity-stream.telemetry" = false;
-        "browser.ping-centre.telemetry" = false;
+        "signon.rememberSignons" = false;
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "toolkit.telemetry.archive.enabled" = false;
         "toolkit.telemetry.bhrPing.enabled" = false;
         "toolkit.telemetry.enabled" = false;
@@ -68,13 +79,11 @@
         "toolkit.telemetry.shutdownPingSender.enabled" = false;
         "toolkit.telemetry.unified" = false;
         "toolkit.telemetry.updatePing.enabled" = false;
-        "experiments.activeExperiment" = false;
-        "experiments.enabled" = false;
-        "experiments.supported" = false;
-        "network.allow-experiments" = false;
-        "privacy.donottrackheader.enabled" = true;
-        "privacy.trackingprotection.socialtracking.enabled" = true;
-        "privacy.partition.network_state.ocsp_cache" = true;
+        "widget.use-xdg-desktop-portal.file-picker" = true;
+        "widget.use-xdg-desktop-portal.location" = true;
+        "widget.use-xdg-desktop-portal.mime-handler" = true;
+        "widget.use-xdg-desktop-portal.open-uri" = true;
+        "widget.use-xdg-desktop-portal.settings" = true;
       };
 
       ExtensionSettings = with builtins;
@@ -101,8 +110,12 @@
 
     profiles.main = {
       name = "main";
+      extraConfig = ''
+
+      '';
       search = {
         force = true;
+        default = "DuckDuckGo";
         engines = {
           "Nix Packages" = {
             urls = [
@@ -167,12 +180,6 @@
           "eBay".metaData.hidden = true;
         };
       };
-      extraConfig = ''
-        user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-        user_pref("full-screen-api.ignore-widgets", true);
-        user_pref("media.ffmpeg.vaapi.enabled", true);
-        user_pref("media.rdd-vpx.enabled", true);
-      '';
     };
   };
 
