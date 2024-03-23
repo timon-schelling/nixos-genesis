@@ -121,7 +121,47 @@
 
       '';
       userChrome = ''
+
+        :root{--in-content-bg-dark:rgb(35, 35, 35);}
+
         .titlebar-buttonbox-container{ display:none }
+
+        @-moz-document plain-text-document(), media-document(all) {
+            :root {
+                background-color: var(--in-content-bg-dark) !important;
+            }
+            body:not([style*="background"], [class], [id]) {
+                background-color: transparent !important;
+            }
+        }
+        @-moz-document regexp("view-source:.*") {
+            :root,
+            body {
+                background-color: var(--in-content-bg-dark);
+            }
+        }
+        @-moz-document url-prefix("about:debugging") {
+            :root {
+                --box-background: var(--in-content-bg-dark) !important;
+            }
+        }
+        @-moz-document url-prefix("about:reader") {
+            body.dark {
+                --main-background: var(--in-content-bg-dark) !important;
+                --tooltip-background: color-mix(in srgb, black 40%, var(--in-content-bg-dark)) !important;
+            }
+        }
+
+        @-moz-document regexp("^(about:|chrome:|moz-extension:).*") {
+            html:not([role="dialog"]),
+            html:not([role="dialog"]) *,
+            html:not([role="dialog"]) body.activity-stream,
+            window:not([chromehidden]),
+            window:not([chromehidden]) > dialog {
+                --in-content-page-background: hsl(270, 3%, 12%) !important;
+                --newtab-background-color: var(--in-content-page-background) !important;
+            }
+        }
       '';
       search = {
         force = true;
