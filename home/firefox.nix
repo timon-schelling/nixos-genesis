@@ -73,7 +73,6 @@
         "experiments.supported" = false;
         "network.allow-experiments" = false;
         "privacy.donottrackheader.enabled" = true;
-        "privacy.trackingprotection.enabled" = true;
         "privacy.trackingprotection.socialtracking.enabled" = true;
         "privacy.partition.network_state.ocsp_cache" = true;
       };
