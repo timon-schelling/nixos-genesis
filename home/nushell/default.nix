@@ -1,6 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
+  opts.user.state.files = [
+    ".config/nushell/history.txt"
+    ".cache/tere/history.json"
+  ];
+
   programs.nushell = {
     enable = true;
     envFile.text = ''
@@ -44,10 +49,4 @@
   home.packages = [
     pkgs.tere
   ];
-
-  opts.user.persist.files = [
-    ".config/nushell/history.txt"
-    ".cache/tere/history.json"
-  ];
-
 }
