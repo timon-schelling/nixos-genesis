@@ -338,9 +338,6 @@
 in {
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
-    });
     style = css;
     settings = {mainBar = mainWaybarConfig;};
   };
