@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  opts.user.state.folders = [
+    ".config/Code"
+  ];
+
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
