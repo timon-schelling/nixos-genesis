@@ -34,7 +34,7 @@
         "dom.security.https_only_mode" = true;
         "identity.fxaccounts.enabled" = false;
         "privacy.trackingprotection.enabled" = true;
-        "signon.rememberSignons" = false;lock-
+        "signon.rememberSignons" = false;
         "general.smoothScroll" = true;
         "browser.contentblocking.category" = "strict";
         "extensions.pocket.enabled" = false;
