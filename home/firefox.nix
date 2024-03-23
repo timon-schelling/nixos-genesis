@@ -53,6 +53,7 @@
         "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
         "browser.newtabpage.activity-stream.showSponsored" = false;
         "browser.newtabpage.activity-stream.system.showSponsored" = false;
+        "extensions.InstallTrigger.enabled" = false;
       };
 
       ExtensionSettings = with builtins;
