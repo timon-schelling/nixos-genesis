@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyperland --user-menu";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd \"bash -c Hyperland\" --user-menu";
       };
     };
   };
