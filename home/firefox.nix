@@ -1,6 +1,11 @@
 { config, pkgs, inputs, ... }:
 
 {
+  opts.user.persist.folders = [
+    ".mozilla/firefox/main"
+    # ".cache/mozilla"
+  ];
+
   programs.firefox = {
     enable = true;
     policies = {
@@ -22,6 +27,7 @@
       DisplayBookmarksToolbar = "never";
       DisplayMenuBar = "default-off";
       SearchBar = "unified";
+      DefaultDownloadDirectory = "~/tmp";
 
       Preferences = {
         "browser.contentblocking.category" = "strict";
@@ -95,10 +101,11 @@
           };
         };
         in listToAttrs [
+          (extension "perfectdarktheme" "")
           (extension "darkreader" "addon@darkreader.org")
           # (extension "tree-style-tab" "treestyletab@piro.sakura.ne.jp")
-          (extension "uborigin" "uBlock0@raymondhill.net")
-          (extension "clearurls" "{74145f27-f039-47ce-a470-a662b129930a}")
+          # (extension "uborigin" "uBlock0@raymondhill.net")
+          # (extension "clearurls" "{74145f27-f039-47ce-a470-a662b129930a}")
         ];
         # To add additional extensions,find it on addons.mozilla.org, find
         # the short ID in the url (like https://addons.mozilla.org/en-US/firefox/addon/!SHORT_ID!/)
@@ -112,6 +119,9 @@
       name = "main";
       extraConfig = ''
 
+      '';
+      userChrome = ''
+        .titlebar-buttonbox-container{ display:none }
       '';
       search = {
         force = true;
@@ -182,9 +192,4 @@
       };
     };
   };
-
-#   opts.user.persist.files = [
-#     ".mozilla"
-#     ".cache/mozilla"
-#   ];
 }
