@@ -337,7 +337,7 @@
   '';
 in {
   programs.waybar = {
-    enable = true;
+    enable = false;
     package = pkgs.waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
     });

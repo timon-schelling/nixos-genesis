@@ -113,7 +113,7 @@
           background_color = 0x161616
       }
 
-      exec-once = waybar
+      exec-once = eww
       exec-once = nu ~/.dotfiles/startup/main.nu
 
 
