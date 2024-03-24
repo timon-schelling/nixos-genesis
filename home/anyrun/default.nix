@@ -2,7 +2,7 @@
 
 {
   imports = [
-    inputs.anyrun.falke.homeManagerModules.default
+    inputs.anyrun.homeManagerModules.default
   ];
   programs.anyrun = {
     enable = true;
@@ -16,7 +16,6 @@
       width = { fraction = 0.4; };
       x = { fraction = 0.5; };
       y = { fraction = 0.3; };
-      position = "top";
       verticalOffset = { absolute = 0; };
       hideIcons = false;
       ignoreExclusiveZones = false;
