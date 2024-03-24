@@ -2,7 +2,7 @@
 
 {
   imports = [
-    inputs.anyrun.homeManagerModules.default
+    inputs.anyrun.falke.homeManagerModules.default
   ];
   programs.anyrun = {
     enable = true;
