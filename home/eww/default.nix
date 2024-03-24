@@ -1,9 +1,7 @@
-{ config, lib, ... }:
+{ pkgs, ... }:
 
 {
-  programs.eww = {
-    enabled = true;
-  };
+  home.packages = [ pkgs.eww ];
 
   xdg.configFile."eww" = {
     source = ./config;
