@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "DroidSansMono",
+    "editor.fontFamily": "FiraCode, DroidSansMono",
     "git.enableSmartCommit": true,
     "terminal.integrated.scrollback": 10000,
     "explorer.confirmDelete": false,
