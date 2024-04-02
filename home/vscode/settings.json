@@ -1,4 +1,5 @@
 {
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace",
     "git.enableSmartCommit": true,
     "terminal.integrated.scrollback": 10000,
     "explorer.confirmDelete": false,
@@ -29,7 +30,7 @@
     "editor.inlayHints.enabled": "offUnlessPressed",
     "terminal.external.linuxExec": "wezterm",
     "nix.enableLanguageServer": true,
-    "nix.serverPath": "rnix-lsp",
+    "nix.serverPath": "nil",
     "workbench.editor.empty.hint": "hidden",
     "typst-lsp.exportPdf": "never",
     "typst-lsp.experimentalFormatterMode": "on",

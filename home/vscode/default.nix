@@ -33,4 +33,8 @@
 
   xdg.configFile."Code/User/settings.json".source = ./settings.json;
   xdg.configFile."Code/User/keybindings.json".source = ./keybindings.json;
+
+  home.packages = [
+    pkgs.nil
+  ];
 }
