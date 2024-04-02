@@ -1,9 +1,10 @@
-{ pkgs
-, config
-, ...
-}: {
+{ pkgs, ... }:
 
-  home.file.".config/waybar/config".source = ./config.json;
-  home.file.".config/waybar/style.css".source = ./style.css;
+{
+  home.packages = [
+    pkgs.waybar
+  ];
 
+  xdg.configFile.".config/waybar/config".source = ./config.json;
+  xdg.configFile.".config/waybar/style.css".source = ./style.css;
 }
