@@ -5,6 +5,6 @@
     pkgs.waybar
   ];
 
-  xdg.configFile.".config/waybar/config".source = ./config.json;
-  xdg.configFile.".config/waybar/style.css".source = ./style.css;
+  xdg.configFile."waybar/config".source = ./config.json;
+  xdg.configFile."waybar/style.css".source = ./style.css;
 }
