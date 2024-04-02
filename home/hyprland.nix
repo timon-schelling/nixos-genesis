@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -6,7 +6,7 @@
     xwayland.enable = true;
     systemd.enable = true;
     plugins = [
-       inputs.split-monitor-workspaces.packages.${config.opts.system.platform}.split-monitor-workspaces
+    #    inputs.split-monitor-workspaces.packages.${config.opts.system.platform}.split-monitor-workspaces
     ];
     extraConfig = ''
       monitor = DP-3, 2560x1440, 1200x250, 1
@@ -128,8 +128,8 @@
       bind = $mainMod, up, movefocus, u
       bind = $mainMod, down, movefocus, d
 
-      bind = $mainMod, page_up, split-workspace, e-1
-      bind = $mainMod, page_down, split-workspace, e+1
+      bind = $mainMod, page_up, workspace, r-1
+      bind = $mainMod, page_down, workspace, r+1
 
       bind = $mainMod, Q, killactive
       bind = $mainMod, M, fullscreen
@@ -151,8 +151,8 @@
       bind = $mainMod SHIFT, up, movewindow, u
       bind = $mainMod SHIFT, down, movewindow, d
 
-      bind = $mainMod, mouse_down, workspace, e+1
-      bind = $mainMod, mouse_up, workspace, e-1
+      bind = $mainMod, mouse_down, workspace, r+1
+      bind = $mainMod, mouse_up, workspace, r-1
 
       bind = ALT, space, exec, anyrun
       bind = $mainMod, 1, exec, wezterm
