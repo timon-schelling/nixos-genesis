@@ -131,6 +131,9 @@
       bind = $mainMod, page_up, workspace, r-1
       bind = $mainMod, page_down, workspace, r+1
 
+      bind = $mainMod, mouse_down, workspace, r+1
+      bind = $mainMod, mouse_up, workspace, r-1
+
       bind = $mainMod, Q, killactive
       bind = $mainMod, M, fullscreen
       bind = $mainMod, G, togglefloating
@@ -151,8 +154,8 @@
       bind = $mainMod SHIFT, up, movewindow, u
       bind = $mainMod SHIFT, down, movewindow, d
 
-      bind = $mainMod, mouse_down, workspace, r+1
-      bind = $mainMod, mouse_up, workspace, r-1
+      bind = $mainMod SHIFT, page_up, movetoworkspace, r-1
+      bind = $mainMod SHIFT, page_down, movetoworkspace, r+1
 
       bind = ALT, space, exec, anyrun
       bind = $mainMod, 1, exec, wezterm
@@ -166,7 +169,8 @@
       # bind = $mainMod, 9, exec,
       # bind = $mainMod, 0, exec,
 
-      bind = $mainMod SHIFT, Q, exit,
+      bind = $mainMod SHIFT, Q, exit
+      bind = $mainMod SHIFT, R, forcerendererreload
       debug {
           disable_logs = false
       }
