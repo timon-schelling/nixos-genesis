@@ -153,13 +153,11 @@
         u = S-M-pageup
         o = S-M-pagedown
 
-        space = M-enter
-
         h = M-g
         y = M-s
         n = M-o
         m = M-m
-
+        ; = M-f
         b = M-q
 
         [window_resize:M]

@@ -139,6 +139,7 @@
       bind = $mainMod, G, togglefloating
       bind = $mainMod, O, togglesplit
       bind = $mainMod, S, pseudo
+      bind = $mainMod, F, fakefullscreen
 
       bindm = $mainMod, mouse:273, resizewindow
 
