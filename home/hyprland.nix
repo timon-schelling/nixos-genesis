@@ -113,9 +113,13 @@
           background_color = 0x161616
       }
 
-      exec-once = eww
-      exec-once = nu ~/.dotfiles/startup/main.nu
+      plugin {
+          split-monitor-workspaces {
+              count = 100
+          }
+      }
 
+      exec-once = nu ~/.dotfiles/startup/main.nu
 
       $mainMod = SUPER
 
@@ -124,7 +128,9 @@
       bind = $mainMod, up, movefocus, u
       bind = $mainMod, down, movefocus, d
 
-      bind = $mainMod, C, exec, kitty
+      bind = $mainMod, page_up, split-workspace, e-1
+      bind = $mainMod, page_down, split-workspace, e+1
+
       bind = $mainMod, Q, killactive
       bind = $mainMod, M, fullscreen
       bind = $mainMod, G, togglefloating
@@ -149,11 +155,11 @@
       bind = $mainMod, mouse_up, workspace, e-1
 
       bind = ALT, space, exec, anyrun
-      bind = $mainMod, 1, exec, sh -c "wezterm > ~/tmp/env-wezterm.txt 2>&1"
+      bind = $mainMod, 1, exec, wezterm
       bind = $mainMod, 2, exec, code --ozone-platform="wayland" --enable-features="WaylandWindowDecorations"
-      bind = $mainMod, 3, exec, sh -c "firefox > ~/tmp/env-firefox.txt 2>&1"
+      bind = $mainMod, 3, exec, firefox
       bind = $mainMod, 4, exec, nautilus --new-window
-      bind = $mainMod, 5, exec, /opt/enpass/Enpass
+      bind = $mainMod, 5, exec, Enpass
       bind = $mainMod, 6, exec, code-insiders --ozone-platform="wayland" --enable-features="WaylandWindowDecorations"
       bind = $mainMod, 7, exec, spotify
       bind = $mainMod, 8, exec, /opt/beeper/beeper.AppImage
