@@ -17,7 +17,6 @@
       mhutchie.git-graph
       thenuprojectcontributors.vscode-nushell-lang
       ms-vscode.hexeditor
-      alefragnani.project-manager
       github.copilot
       github.copilot-chat
       streetsidesoftware.code-spell-checker
