@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, inputs, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -6,7 +6,7 @@
     xwayland.enable = true;
     systemd.enable = true;
     plugins = [
-      # hyprplugins.hyprtrails
+       inputs.split-monitor-workspaces.packages.${config.opts.system.platform}.split-monitor-workspaces
     ];
     extraConfig = ''
       monitor = DP-3, 2560x1440, 1200x250, 1
@@ -161,7 +161,6 @@
       # bind = $mainMod, 0, exec,
 
       bind = $mainMod SHIFT, Q, exit,
-      bind = $mainMod SHIFT, E, exec, sh -c "env > ~/tmp/env.txt"
       debug {
           disable_logs = false
       }
