@@ -120,6 +120,7 @@
       }
 
       exec-once = nu ~/.dotfiles/startup/main.nu
+      exec-once = waybar
 
       $mainMod = SUPER
 
