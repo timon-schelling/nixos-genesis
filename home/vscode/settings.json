@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontFamily": "DroidSansMono",
     "git.enableSmartCommit": true,
     "terminal.integrated.scrollback": 10000,
     "explorer.confirmDelete": false,
