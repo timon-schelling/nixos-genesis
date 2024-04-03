@@ -113,12 +113,6 @@
           background_color = 0x161616
       }
 
-      plugin {
-          split-monitor-workspaces {
-              count = 100
-          }
-      }
-
       exec-once = nu ~/.dotfiles/startup/main.nu
       exec-once = waybar
 
@@ -129,11 +123,11 @@
       bind = $mainMod, up, movefocus, u
       bind = $mainMod, down, movefocus, d
 
-      bind = $mainMod, page_up, workspace, r-1
-      bind = $mainMod, page_down, workspace, r+1
+      bind = $mainMod, page_up, workspace, m-1
+      bind = $mainMod, page_down, workspace, m+1
 
-      bind = $mainMod, mouse_down, workspace, r+1
-      bind = $mainMod, mouse_up, workspace, r-1
+      bind = $mainMod, mouse_down, workspace, m+1
+      bind = $mainMod, mouse_up, workspace, m-1
 
       bind = $mainMod, Q, killactive
       bind = $mainMod, M, fullscreen
@@ -156,8 +150,8 @@
       bind = $mainMod SHIFT, up, movewindow, u
       bind = $mainMod SHIFT, down, movewindow, d
 
-      bind = $mainMod SHIFT, page_up, movetoworkspace, r-1
-      bind = $mainMod SHIFT, page_down, movetoworkspace, r+1
+      bind = $mainMod SHIFT, page_up, movetoworkspace, m-1
+      bind = $mainMod SHIFT, page_down, movetoworkspace, m+1
 
       bind = ALT, space, exec, anyrun
       bind = $mainMod, 1, exec, wezterm
