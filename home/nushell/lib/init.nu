@@ -5,6 +5,7 @@ if $env.PWD == "/home/timon" {
         enter ~/dev/github.com
         enter ~/dev/github.com/timon-schelling
         enter ~/dev/gitlab.com/openknowledge1/projects
+        enter ~/data
         enter ~/cloud/personal
     }
     try {
