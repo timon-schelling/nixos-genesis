@@ -10,21 +10,21 @@
         "hyprland/workspaces"
         // "hyprland/window"
     ],
-    // "modules-center": [
-    //     "hyprland/workspaces"
-    // ],
-    // "modules-right": [
-    //     "custom/updates",
-    //     "pulseaudio",
-    //     "bluetooth",
-    //     "battery",
-    //     "network",
-    //     "group/hardware",
-    //     "custom/cliphist",
-    //     "idle_inhibitor",
-    //     "custom/exit",
-    //     "clock"
-    // ],
+    "modules-center": [
+        // "hyprland/workspaces"
+        "clock"
+    ],
+    "modules-right": [
+        // "custom/updates",
+        // "pulseaudio",
+        // "bluetooth",
+        // "battery",
+        // "network",
+        // "group/hardware",
+        // "custom/cliphist",
+        // "idle_inhibitor",
+        "custom/exit"
+    ],
 
     "hyprland/workspaces" : {
         "on-click": "activate",
@@ -35,7 +35,9 @@
 			"urgent": "",
 			"active": "",
 			"default": ""
-        }
+        },
+        "on-scroll-up": "hyprctl dispatch workspace r+1",
+        "on-scroll-down": "hyprctl dispatch workspace r-1"
     },
 
     // Taskbar
@@ -80,12 +82,9 @@
 
     // Clock
     "clock": {
-        "format": "{:%H:%M %a}",
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        // START CLOCK FORMAT
-        "format-alt": "{:%Y-%m-%d}"
-        // END CLOCK FORMAT
+        "format": "{:%Y-%m-%d %H:%M:%S}",
+        "interval": 1,
+        "timezone": "Europe/Berlin",
     },
 
     // System

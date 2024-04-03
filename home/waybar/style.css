@@ -3,7 +3,7 @@
 @define-color workspacesbackground1 #444444;
 @define-color workspacesbackground2 #CCCCCC;
 @define-color bordercolor #32a883;
-@define-color textcolor1 #4632a8;
+@define-color textcolor1 #CCCCCC;
 @define-color textcolor2 #4632a8;
 @define-color textcolor3 #757375;
 @define-color iconcolor #FFFFFF;
@@ -15,9 +15,6 @@
 }
 
 window#waybar {
-  background-color: rgba(0,0,0,0.8);
-  border-bottom: 0px solid #ffffff;
-  /* color: #FFFFFF; */
   background: transparent;
   transition-property: background-color;
   transition-duration: .5s;
@@ -70,19 +67,45 @@ window#waybar {
 }
 
 /* -----------------------------------------------------
+* Custom Exit
+* ----------------------------------------------------- */
+
+#custom-exit {
+  margin-top: 6px;
+  margin-left: 8px;
+  margin-right: 16px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  color: @iconcolor;
+}
+
+/* -----------------------------------------------------
+* Clock
+* ----------------------------------------------------- */
+
+#clock {
+  font-size: 14px;
+  color: @textcolor1;
+  border-radius: 15px;
+  margin-top: 6px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 0px;
+}
+
+/* -----------------------------------------------------
 * Tooltips
 * ----------------------------------------------------- */
 
 tooltip {
   border-radius: 10px;
   background-color: @backgroundlight;
-  opacity:0.8;
-  padding:20px;
-  margin:0px;
+  padding: 20px;
+  margin: 0px;
 }
 
 tooltip label {
-  color: @textcolor2;
+  color: @textcolor1;
 }
 
 /* -----------------------------------------------------
@@ -215,17 +238,6 @@ window#waybar.empty #window {
 }
 
 /* -----------------------------------------------------
-* Custom Exit
-* ----------------------------------------------------- */
-
-#custom-exit {
-  margin: 0px 20px 0px 0px;
-  padding:0px;
-  font-size:20px;
-  color: @iconcolor;
-}
-
-/* -----------------------------------------------------
 * Custom Updates
 * ----------------------------------------------------- */
 
@@ -280,21 +292,6 @@ window#waybar.empty #window {
 
 #language {
   margin-right:10px;
-}
-
-/* -----------------------------------------------------
-* Clock
-* ----------------------------------------------------- */
-
-#clock {
-  background-color: @backgrounddark;
-  font-size: 16px;
-  color: @textcolor1;
-  border-radius: 15px;
-  padding: 1px 10px 0px 10px;
-  margin: 3px 15px 3px 0px;
-  opacity:0.8;
-  border:3px solid @bordercolor;
 }
 
 /* -----------------------------------------------------
