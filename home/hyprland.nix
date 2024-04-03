@@ -150,8 +150,8 @@
       bind = $mainMod SHIFT, up, movewindow, u
       bind = $mainMod SHIFT, down, movewindow, d
 
-      bind = $mainMod SHIFT, page_up, movetoworkspace, m-1
-      bind = $mainMod SHIFT, page_down, movetoworkspace, m+1
+      bind = $mainMod SHIFT, page_up, movetoworkspace, r-1
+      bind = $mainMod SHIFT, page_down, movetoworkspace, r+1
 
       bind = ALT, space, exec, anyrun
       bind = $mainMod, 1, exec, wezterm
