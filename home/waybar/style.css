@@ -3,10 +3,10 @@
 @define-color workspacesbackground1 #444444;
 @define-color workspacesbackground2 #CCCCCC;
 @define-color bordercolor #32a883;
-@define-color textcolor1 #CCCCCC;
+@define-color textcolor1 #999999;
 @define-color textcolor2 #4632a8;
 @define-color textcolor3 #757375;
-@define-color iconcolor #FFFFFF;
+@define-color iconcolor #999999;
 
 * {
   font-family: "FiraMono Nerd Font";
@@ -86,6 +86,7 @@ window#waybar {
 #clock {
   font-size: 14px;
   color: @textcolor1;
+  font-weight: bold;
   border-radius: 15px;
   margin-top: 6px;
   margin-left: 8px;
