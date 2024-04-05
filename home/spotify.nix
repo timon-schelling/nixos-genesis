@@ -7,7 +7,7 @@
   ];
 
   home.packages = [
-    pkgs.spotify..overrideAttrs (e: rec {
+    pkgs.spotify.overrideAttrs (e: rec {
       # Add arguments to the .desktop entry
       desktopItem = e.desktopItem.override (d: {
         exec = "${d.exec} --enable-features=UseOzonePlatform --ozone-platform=wayland";
