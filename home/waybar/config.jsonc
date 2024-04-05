@@ -20,7 +20,7 @@
         // "bluetooth",
         // "battery",
         // "network",
-        // "group/hardware",
+        "group/hardware",
         // "custom/cliphist",
         // "idle_inhibitor",
         "custom/exit"
@@ -89,49 +89,44 @@
 
     // System
     "custom/system": {
-        "format": "",
+        "format": "",
         "tooltip": false
     },
 
     // CPU
     "cpu": {
-        "format": "/ C {usage}% ",
-        "on-click": "alacritty -e htop"
+        "interval": 1,
+        "format": " {usage}%",
     },
 
     // Memory
     "memory": {
-        "format": "/ M {}% ",
-        "on-click": "alacritty -e htop"
+        "interval": 1,
+        "format": " {}%",
     },
 
     // Harddisc space used
     "disk": {
         "interval": 30,
-        "format": "D {percentage_used}% ",
+        "format": " {percentage_used}%",
         "path": "/",
-        "on-click": "alacritty -e htop"
-    },
-
-    "hyprland/language": {
-        "format": "/ K {short}"
     },
 
     // Group Hardware
     "group/hardware": {
         "orientation": "inherit",
         "drawer": {
-            "transition-duration": 300,
+            "transition-duration": 200,
             "children-class": "not-memory",
             "transition-left-to-right": false
         },
         "modules": [
             "custom/system",
-            "disk",
             "cpu",
             "memory",
-            "hyprland/language"
-        ]
+            "disk"
+        ],
+        "on-click": "top"
     },
 
     // Group Settings

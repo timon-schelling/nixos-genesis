@@ -36,6 +36,7 @@ lib.types.submodule {
                   default = [
                     "dev"
                     "data"
+                    "media"
                     "tmp"
                   ];
                 };
