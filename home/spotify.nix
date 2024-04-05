@@ -7,8 +7,8 @@
   ];
 
   home.packages = [
-    (pkgs.spotify.override {
-      deviceScaleFactor = "1 --enable-features=UseOzonePlatform --ozone-platform=wayland";
-    })
+    (pkgs.runCommand "spotify-wayland" { buildInputs = [ pkgs.makeWrapper ]; } ''
+      makeWrapper ${pkgs.obs-studio}/bin/spotify $out/bin/spotify-wayland --enable-features=UseOzonePlatform --ozone-platform=wayland
+    '')
   ];
 }
