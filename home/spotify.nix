@@ -8,7 +8,7 @@
 
   home.packages = [
     (pkgs.runCommand "spotify-wayland" { buildInputs = [ pkgs.makeWrapper ]; } ''
-      makeWrapper ${pkgs.obs-studio}/bin/spotify $out/bin/spotify-wayland --enable-features=UseOzonePlatform --ozone-platform=wayland
+      makeWrapper ${pkgs.spotify}/bin/spotify $out/bin/spotify-wayland --enable-features=UseOzonePlatform --ozone-platform=wayland
     '')
   ];
 }
