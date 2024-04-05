@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  opts.user.state.folders = [
+  opts.user.persist.state.folders = [
     ".local/share/Enpass"
   ];
 

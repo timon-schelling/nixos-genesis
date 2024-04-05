@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  opts.user.state.files = [
+  opts.user.persist.state.files = [
     ".config/nushell/history.txt"
     ".cache/tere/history.json"
   ];

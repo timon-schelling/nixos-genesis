@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  opts.user.state.folders = [
+  opts.user.persist.state.folders = [
     ".mozilla/firefox/main"
     # ".cache/mozilla"
   ];

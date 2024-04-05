@@ -1,14 +1,14 @@
-{ config, lib, ... }:
+{ config, ... }:
 
 {
-  home.persistence."/persist/user/${config.opts.name}/home" = {
-    directories = config.opts.user.persist.folders;
-    files = config.opts.user.persist.files;
+  home.persistence."/persist/user/${config.opts.name}/data" = {
+    directories = config.opts.user.persist.data.folders;
+    files = config.opts.user.persist.data.files;
     allowOther = true;
   };
   home.persistence."/persist/user/${config.opts.name}/state" = {
-    directories = config.opts.user.state.folders;
-    files = config.opts.user.state.files;
+    directories = config.opts.user.persist.state.folders;
+    files = config.opts.user.persist.state.files;
     allowOther = true;
   };
 }
