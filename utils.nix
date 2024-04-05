@@ -16,7 +16,7 @@ let
     (dir: searchDirForModules dir)
     dirs);
 
-  mkNuScript = nupkg: name: script: lib.mk.writeTextFile {
+  mkNuScript = nupkg: name: script: lib.writeTextFile {
       inherit name;
       destination = "/bin/${name}";
       text = ''
