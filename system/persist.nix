@@ -4,7 +4,7 @@
   fileSystems."/persist".neededForBoot = true;
   environment.persistence."/persist/system" = {
     hideMounts = true;
-    directories = config.opts.system.persist.folders ++ [ "/var/log" ];
+    directories = config.opts.system.persist.folders;
     files = config.opts.system.persist.files ++ [ "/etc/machine-id" ];
   };
 
