@@ -11,6 +11,7 @@ in
     useUserPackages = true;
     extraSpecialArgs = {
       inherit inputs;
+      inherit libutils;
     };
     users = lib.mkMerge (lib.mapAttrsToList
       (name: user: {
