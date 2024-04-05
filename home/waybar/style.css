@@ -1,10 +1,10 @@
-@define-color backgroundlight #a83232;
+@define-color backgroundlight #444444;
 @define-color backgrounddark #a89232;
 @define-color workspacesbackground1 #444444;
 @define-color workspacesbackground2 #999999;
 @define-color bordercolor #32a883;
 @define-color textcolor1 #777777;
-@define-color textcolor2 #4632a8;
+@define-color textcolor2 #aaaaaa;
 @define-color textcolor3 #757375;
 @define-color iconcolor #777777;
 
@@ -64,27 +64,14 @@ window#waybar {
 }
 
 /* -----------------------------------------------------
-* Custom Exit
-* ----------------------------------------------------- */
-
-#custom-exit {
-  margin-top: 6px;
-  margin-left: 8px;
-  margin-right: 16px;
-  margin-bottom: 0px;
-  font-size: 14px;
-  color: @iconcolor;
-}
-
-/* -----------------------------------------------------
 * Clock
 * ----------------------------------------------------- */
 
 #clock {
-  font-size: 14px;
+  font-size: 16px;
   color: @textcolor1;
   font-weight: bold;
-  margin-top: 6px;
+  margin-top: 4px;
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 0px;
@@ -98,11 +85,11 @@ window#waybar {
 #cpu,
 #memory,
 #disk {
-  margin-top: 2px;
+  margin-top: 4px;
   margin-left: 0px;
   margin-right: 10px;
   margin-bottom: 0px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   /* min-width: 70px; */
   color: @iconcolor;
@@ -113,11 +100,11 @@ window#waybar {
 #custom-logout,
 #custom-reboot,
 #custom-poweroff {
-  margin-top: 2px;
+  margin-top: 4px;
   margin-left: 0px;
-  margin-right: 14px;
+  padding-right: 14px;
   margin-bottom: 0px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   color: @iconcolor;
 }
@@ -130,12 +117,12 @@ window#waybar {
 tooltip {
   border-radius: 10px;
   background-color: @backgroundlight;
-  padding: 20px;
+  padding: 12px;
   margin: 0px;
 }
 
 tooltip label {
-  color: @textcolor1;
+  color: @textcolor2;
 }
 
 /* -----------------------------------------------------

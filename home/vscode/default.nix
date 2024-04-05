@@ -3,6 +3,7 @@
 {
   opts.user.persist.state.folders = [
     ".config/Code"
+    ".vscode"
   ];
 
   programs.vscode = {
