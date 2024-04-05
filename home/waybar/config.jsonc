@@ -63,7 +63,7 @@
     },
     "disk": {
         "interval": 30,
-        "format": "󰗮 {percentage_used:02}",
+        "format": " {percentage_used:02}",
         "path": "/",
     },
     // "group/hardware": {
