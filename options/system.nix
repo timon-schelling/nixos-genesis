@@ -76,7 +76,9 @@ lib.types.submodule {
           };
           files = lib.mkOption {
             type = lib.types.listOf lib.types.str;
-            default = [ ];
+            default = [
+              "/etc/machine-id"
+            ];
           };
         };
       };
