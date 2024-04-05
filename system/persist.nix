@@ -4,8 +4,8 @@
   fileSystems."/persist".neededForBoot = true;
   environment.persistence."/persist/system" = {
     hideMounts = true;
-    directories = config.opts.system.persist.folders;
-    files = config.opts.system.persist.files;
+    directories = config.opts.system.persist.folders ++ [ "/var/log" ];
+    files = config.opts.system.persist.files ++ [ "/etc/machine-id" ];
   };
 
   systemd.services."create-persist-user-dir" = {

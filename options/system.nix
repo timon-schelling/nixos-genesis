@@ -70,15 +70,11 @@ lib.types.submodule {
         options = {
           folders = lib.mkOption {
             type = lib.types.listOf lib.types.str;
-            default = [
-              "/var/log"
-            ];
+            default = [];
           };
           files = lib.mkOption {
             type = lib.types.listOf lib.types.str;
-            default = [
-              "/etc/machine-id"
-            ];
+            default = [];
           };
         };
       };
