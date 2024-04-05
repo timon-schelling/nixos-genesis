@@ -60,7 +60,7 @@ window#waybar {
 
 #workspaces button.active {
   opacity: 1.0;
-  min-width: 14px;
+  min-width: 20px;
 }
 
 /* -----------------------------------------------------

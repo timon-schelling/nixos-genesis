@@ -109,7 +109,7 @@
     "group/power-menu": {
         "orientation": "inherit",
         "drawer": {
-            "transition-duration": 400,
+            "transition-duration": 250,
             "children-class": "not-memory",
             "transition-left-to-right": true
         },

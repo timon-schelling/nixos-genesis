@@ -15,7 +15,19 @@ let
   searchModules = dirs: lib.lists.flatten (map
     (dir: searchDirForModules dir)
     dirs);
+
+  mkNuScript = nupkg: name: script: lib.mk.writeTextFile {
+      inherit name;
+      destination = "/bin/${name}";
+      text = ''
+        #!${nupkg}/bin/nu
+
+        ${script}
+      '';
+      executable = true;
+    };
 in
 {
   inherit searchModules;
+  inherit mkNuScript;
 }

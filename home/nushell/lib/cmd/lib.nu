@@ -1,5 +1,4 @@
 source cmd/util.nu
-use cmd/task.nu
 source cmd/git.nu
 source cmd/kubectl.nu
 source cmd/exit.nu
