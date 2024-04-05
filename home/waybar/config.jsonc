@@ -20,10 +20,13 @@
         // "bluetooth",
         // "battery",
         // "network",
-        "group/hardware",
+        // "group/hardware",
+        "cpu",
+        "memory",
+        "disk",
         // "custom/cliphist",
         // "idle_inhibitor",
-        "custom/exit"
+        "group/power-menu"
     ],
 
     "hyprland/workspaces" : {
@@ -40,93 +43,83 @@
         "on-scroll-down": "hyprctl dispatch workspace r-1"
     },
 
-    // Taskbar
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 18,
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close",
-        "ignore-list": [
-           "Alacritty"
-        ],
-        "app_ids-mapping": {
-            "firefoxdeveloperedition": "firefox-developer-edition"
-        },
-        "rewrite": {
-            "Firefox Web Browser": "Firefox",
-            "Foot Server": "Terminal"
-        }
-    },
-
-    // Hyprland Window
-    "hyprland/window": {
-        "separate-outputs": true
-    },
-
-    // Cliphist
-    "custom/cliphist": {
-        "format": "",
-        "on-click": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh",
-        "on-click-right": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh d",
-        "on-click-middle": "sleep 0.1 && ~/dotfiles/scripts/cliphist.sh w",
-        "tooltip": false
-    },
-
-    // Power Menu
-    "custom/exit": {
-        "format": "",
-        "on-click": "wlogout",
-        "tooltip": false
-    },
-
-    // Clock
     "clock": {
         "format": "{:%Y-%m-%d %H:%M:%S}",
         "interval": 1,
         "timezone": "Europe/Berlin",
     },
 
-    // System
-    "custom/system": {
-        "format": "",
-        "tooltip": false
-    },
-
-    // CPU
+    // "custom/system": {
+    //     "format": "",
+    //     "tooltip": false
+    // },
     "cpu": {
         "interval": 1,
-        "format": " {usage}%",
+        "format": " {usage:02}",
     },
-
-    // Memory
     "memory": {
         "interval": 1,
-        "format": " {}%",
+        "format": " {percentage:02}",
     },
-
-    // Harddisc space used
     "disk": {
         "interval": 30,
-        "format": " {percentage_used}%",
+        "format": "󰗮 {percentage_used:02}",
         "path": "/",
     },
+    // "group/hardware": {
+    //     "orientation": "inherit",
+    //     "drawer": {
+    //         "transition-duration": 400,
+    //         "children-class": "not-memory",
+    //         "transition-left-to-right": false
+    //     },
+    //     "modules": [
+    //         "custom/system",
+    //         "cpu",
+    //         "memory",
+    //         "disk"
+    //     ],
+    // },
 
-    // Group Hardware
-    "group/hardware": {
+    "custom/suspend": {
+        "format": "󰒲",
+        "tooltip": false,
+        "on-click": "systemctl suspend"
+    },
+    "custom/hibernate": {
+        "format": "󰤄",
+        "tooltip": false,
+        "on-click": "systemctl hibernate"
+    },
+    "custom/logout": {
+        "format": "󰍃",
+        "tooltip": false,
+        "on-click": "hyperctl dispatch exit"
+    },
+    "custom/reboot": {
+        "format": "󰑓",
+        "tooltip": false,
+        "on-click": "systemctl reboot"
+    },
+    "custom/poweroff": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "systemctl poweroff"
+    },
+    "group/power-menu": {
         "orientation": "inherit",
         "drawer": {
-            "transition-duration": 200,
+            "transition-duration": 400,
             "children-class": "not-memory",
-            "transition-left-to-right": false
+            "transition-left-to-right": true
         },
         "modules": [
-            "custom/system",
-            "cpu",
-            "memory",
-            "disk"
-        ],
-        "on-click": "top"
+            "custom/poweroff",
+            "custom/reboot",
+            "custom/logout",
+            "custom/hibernate",
+            "custom/suspend"
+        ]
     },
 
     // Group Settings
