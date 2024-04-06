@@ -16,11 +16,11 @@ let
     (dir: searchDirForModules dir)
     dirs);
 
-  mkNuScript = nupkg: name: script: lib.writeScriptBin "${name}" ''
+  mkNuScript = builtins.trace lib (nupkg: name: script: lib.writeScriptBin "${name}" ''
     #!${nupkg}/bin/nu
 
     ${script}
-  '';
+  '');
 in
 {
   inherit searchModules;
