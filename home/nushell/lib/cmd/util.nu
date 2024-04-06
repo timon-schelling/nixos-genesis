@@ -34,43 +34,45 @@ def --env c [path?: path] {
     }
 }
 
-def fuzzy-finder [] {
+def fuzzy-finder [] {3k
     rg --files | sk --preview="bat {} --color=always"
 }
 
-def ff [] {
-    let file = (fuzzy-finder)
-    cat file
-}
 
-def --env ef [] {
-    let file = (fuzzy-finder)
-    if ($file != null) {
-        try {
-            enter $file
-        } catch {
-            enter ($file | path dirname)
-        }
-    }
-}
+# TODO: add fuzzy finder capabilitys
+# def ff [] {
+#     let file = (fuzzy-finder)
+#     cat $file
+# }
 
-def --env cf [] {
-    let file = (fuzzy-finder)
-    if ($file != null) {
-        try {
-            cd $file
-        } catch {
-            cd ($file | path dirname)
-        }
-    }
-}
+# def --env ef [] {
+#     let file = (fuzzy-finder)
+#     if ($file != null) {
+#         try {
+#             enter $file
+#         } catch {
+#             enter ($file | path dirname)
+#         }
+#     }
+# }
 
-def hf [] {
-    let file = (fuzzy-finder)
-    if ($file != null) {
-        code $"./($file)"
-    }
-}
+# def --env cf [] {
+#     let file = (fuzzy-finder)
+#     if ($file != null) {
+#         try {
+#             cd $file
+#         } catch {
+#             cd ($file | path dirname)
+#         }
+#     }
+# }
+
+# def hf [] {
+#     let file = (fuzzy-finder)
+#     if ($file != null) {
+#         code $"./($file)"
+#     }
+# }
 
 def --env dotfiles [] {
     enter ~/.dotfiles
