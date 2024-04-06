@@ -1,6 +1,8 @@
-{ lib, libutils, config, inputs, ... }:
+{ config, inputs, ... }:
 
 let
+  lib = inputs.nixpkgs.lib;
+  libutils = import ./utils.nix { inherit lib; };
   modules = libutils.searchModules [
     ./home
   ];
