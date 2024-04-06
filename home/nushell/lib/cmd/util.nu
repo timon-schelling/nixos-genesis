@@ -68,7 +68,7 @@ def --env cf [] {
 def hf [] {
     let file = (fuzzy-finder)
     if ($file != null) {
-        code $file
+        code $"./($file)"
     }
 }
 
