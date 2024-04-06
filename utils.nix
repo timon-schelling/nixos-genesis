@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, ... }:
 
 let
   collectDirRecursive = dir: lib.mapAttrs
@@ -16,11 +16,11 @@ let
     (dir: searchDirForModules dir)
     dirs);
 
-  mkNuScript = builtins.trace lib (nupkg: name: script: pkgs.writeScriptBin "${name}" ''
-    #!${nupkg}/bin/nu
+  mkNuScript = pkgs: name: script: pkgs.writeScriptBin "${name}" ''
+    #!${pkgs.nushell}/bin/nu
 
     ${script}
-  '');
+  '';
 in
 {
   inherit searchModules;
