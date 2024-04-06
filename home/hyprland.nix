@@ -1,8 +1,9 @@
-{ ... }:
+{ inputs, config, ... }:
 
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${config.opts.system.platform}.hyprland;
     xwayland.enable = true;
     systemd.enable = true;
     plugins = [
