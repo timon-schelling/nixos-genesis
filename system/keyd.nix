@@ -15,22 +15,23 @@
 
         capslock = overload(control, esc)
 
-        space = overloadt(shift, space, 250)
+        space = overloadt(shift, space, 300)
 
-        f = overloadt(nav, f, 250)
-        d = overloadt(edit, d, 250)
-        g = overloadt(visual, g, 250)
+        f = overloadt(nav, f, 300)
+        d = overloadt(edit, d, 300)
+        g = overloadt(visual, g, 300)
 
-        s = overloadt(app, s, 250)
-        a = overloadt(app_nav, a, 250)
+        s = overloadt(app, s, 300)
+        a = overloadt(app_nav, a, 300)
 
-        v = overloadt(view, v, 250)
+        v = overloadt(view, v, 300)
 
-        c = overloadt(window_edit, c, 250)
-        r = overloadt(window_resize, r, 250)
+        c = overloadt(window_edit, c, 300)
+        x = overloadt(window_resize, r, 300)
 
-        e = overloadt(launch_app, e, 250)
+        r = overloadt(run_app, e, 300)
 
+        e = overloadt(desktop, e, 300)
 
         [visual]
         esc = clear()
@@ -168,7 +169,7 @@
         j = C-S-M-left
         l = C-S-M-right
 
-        [launch_app]
+        [run_app:M]
         esc = clear()
 
         j = M-1
@@ -180,6 +181,12 @@
         u = M-7
         m = M-8
         ; = M-9
+
+        [desktop:M]
+        esc = clear()
+
+        h = M-b
+
 
         # compose key macros compose key is set to 'scrolllock'
         # compose table of special characters https://help.ubuntu.com/community/GtkComposeTable

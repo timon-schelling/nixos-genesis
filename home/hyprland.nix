@@ -154,6 +154,8 @@
       bind = $mainMod SHIFT, page_up, movetoworkspace, r-1
       bind = $mainMod SHIFT, page_down, movetoworkspace, r+1
 
+      bind = $mainMod, b, exec, waybar-toggle
+
       bind = ALT, space, exec, anyrun
       bind = $mainMod, 1, exec, wezterm
       bind = $mainMod, 2, exec, code --ozone-platform="wayland" --enable-features="WaylandWindowDecorations"
