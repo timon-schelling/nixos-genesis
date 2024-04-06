@@ -2,7 +2,7 @@
 
 let
   lib = inputs.nixpkgs.lib;
-  pkgs = inputs.nixpkgs.pkgs;
+  pkgs = inputs.nixpkgs;
   libutils = import ./utils.nix { inherit lib; inherit pkgs; };
   imports = libutils.searchModules [
     ./system
