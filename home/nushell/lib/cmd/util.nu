@@ -34,8 +34,17 @@ def --env c [path?: path] {
     }
 }
 
+def fuzzy-finder [] {
+    rg --files | sk --preview="bat {} --color=always"
+}
+
+def ff [] {
+    let file = (fuzzy-finder)
+    cat file
+}
+
 def --env ef [] {
-    let file = (sk)
+    let file = (fuzzy-finder)
     if ($file != null) {
         try {
             enter $file
@@ -46,7 +55,7 @@ def --env ef [] {
 }
 
 def --env cf [] {
-    let file = (sk)
+    let file = (fuzzy-finder)
     if ($file != null) {
         try {
             cd $file
@@ -57,7 +66,7 @@ def --env cf [] {
 }
 
 def hf [] {
-    let file = (sk)
+    let file = (fuzzy-finder)
     if ($file != null) {
         code $file
     }
@@ -65,5 +74,5 @@ def hf [] {
 
 def --env dotfiles [] {
     enter ~/.dotfiles
-    code --ozone-platform="wayland" --enable-features="WaylandWindowDecorations" .
+    code .
 }

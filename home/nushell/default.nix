@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   opts.user.persist.state.files = [
@@ -16,6 +16,13 @@
     recursive = true;
   };
 
+  home.packages = [
+    pkgs.tere
+    pkgs.skim
+    pkgs.bat
+    pkgs.ripgrep
+  ];
+
   programs.starship = {
     enable = true;
     enableNushellIntegration = true;
@@ -28,9 +35,4 @@
     enable = true;
     enableNushellIntegration = true;
   };
-
-  home.packages = [
-    pkgs.tere
-    pkgs.skim
-  ];
 }
