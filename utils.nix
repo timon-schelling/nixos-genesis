@@ -16,16 +16,11 @@ let
     (dir: searchDirForModules dir)
     dirs);
 
-  mkNuScript = nupkg: name: script: lib.writeTextFile {
-      inherit name;
-      destination = "/bin/${name}";
-      text = ''
-        #!${nupkg}/bin/nu
+  mkNuScript = nupkg: name: script: lib.writeScriptBin "${name}" ''
+    #!${nupkg}/bin/nu
 
-        ${script}
-      '';
-      executable = true;
-    };
+    ${script}
+  '';
 in
 {
   inherit searchModules;
