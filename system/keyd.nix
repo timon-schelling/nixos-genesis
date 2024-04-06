@@ -27,9 +27,9 @@
         v = overloadt(view, v, 300)
 
         c = overloadt(window_edit, c, 300)
-        x = overloadt(window_resize, r, 300)
+        x = overloadt(window_resize, x, 300)
 
-        r = overloadt(run_app, e, 300)
+        r = overloadt(run_app, r, 300)
 
         e = overloadt(desktop, e, 300)
 
