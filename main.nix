@@ -13,6 +13,7 @@ in
     ${host} = lib.nixosSystem {
       specialArgs = {
         inherit inputs;
+        inherit lib;
         inherit libutils;
       };
       modules = [
