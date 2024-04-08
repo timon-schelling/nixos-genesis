@@ -6,7 +6,7 @@
     settings = {
       cursor = "|";
       blinking-cursor = false;
-      padding-x = 7;
+      padding-x = 4;
       window = {
         width = 600;
         height = 400;
@@ -21,7 +21,7 @@
         args = [];
       };
       fonts = {
-        size = 20;
+        size = 22;
       };
     };
   };
