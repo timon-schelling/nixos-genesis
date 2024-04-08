@@ -12,7 +12,7 @@
         height = 400;
         mode = "Windowed";
         foreground-opacity = 1.0;
-        background-opacity = 0.8;
+        background-opacity = 1.0;
         blur = true;
         decorations = "Disabled";
       };
@@ -22,6 +22,11 @@
       };
       fonts = {
         size = 22;
+      };
+      colors = {
+        ackground = "#1c1c1c";
+        foreground = "#aaaaaa";
+        cursor = "#aaaaaa";
       };
     };
   };
