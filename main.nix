@@ -17,19 +17,18 @@ in
         inherit libutils;
       };
       modules = [
-        inputs.home-manager.nixosModules.default
+        ./options/main.nix
+
+        (./hosts + "/${host}/config.nix")
+        (./hosts + "/${host}/hardware.nix")
+
         inputs.disko.nixosModules.default
         inputs.impermanence.nixosModules.impermanence
-
-        ./options/main.nix
         {
           inherit imports;
         }
 
         ./home.nix
-
-        (./hosts + "/${host}/config.nix")
-        (./hosts + "/${host}/hardware.nix")
       ];
     };
   };
