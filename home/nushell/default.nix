@@ -16,19 +16,18 @@
     recursive = true;
   };
 
-  home.packages = [
-    pkgs.tere
-    pkgs.skim
-    pkgs.bat
-    pkgs.ripgrep
+  home.packages = with pkgs; [
+    bat
+    tere
+    fd
+    ripgrep
+    skim
   ];
 
   programs.starship = {
     enable = true;
     enableNushellIntegration = true;
-  };
-  xdg.configFile."starship.toml" = {
-    source = ./starship.toml;
+    settings = (builtins.fromTOML (builtins.readFile ./starship.toml));
   };
 
   programs.carapace = {
