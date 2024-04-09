@@ -17,7 +17,7 @@
         decorations = "Disabled";
       };
       shell = {
-        program = "/bin/sh";
+        program = "/usr/bin/env nu";
         args = [];
       };
       fonts = {
