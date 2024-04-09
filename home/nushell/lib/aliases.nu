@@ -1,3 +1,6 @@
+alias x = dexit
+alias xa = exit
+
 alias la = ls -a
 alias ll = ls -al
 

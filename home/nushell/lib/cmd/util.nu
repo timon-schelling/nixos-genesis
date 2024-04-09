@@ -34,47 +34,61 @@ def --env c [path?: path] {
     }
 }
 
-def fuzzy-finder [] {3k
-    rg --files | sk --preview="bat {} --color=always"
-}
+# TODO: Add fuzzy finding capabilities
+# def fuzzy-path-finder [] {
+#     ([ (rg --files | sk --preview="bat {} --color=always") ] | path expand).0
+# }
 
+# def fuzzy-finder [] {
+#     let input = sk -i -c "rg --line-number '{}'" -d ":" --preview="bat -n -H {2} --color=always {1}"
+#     let path = ([ (input) ] | path expand).0
+#     ( | split list ":").0
+# }
 
-# TODO: add fuzzy finder capabilitys
 # def ff [] {
 #     let file = (fuzzy-finder)
+#     if ($file != null) {
+#         cat $file
+#     }
+# }
+
+# def f [] {
+#     let file = (fuzzy-path-finder)
 #     cat $file
 # }
 
 # def --env ef [] {
-#     let file = (fuzzy-finder)
+#     let file = (fuzzy-path-finder)
 #     if ($file != null) {
 #         try {
 #             enter $file
 #         } catch {
 #             enter ($file | path dirname)
 #         }
+#         cat $file
 #     }
 # }
 
 # def --env cf [] {
-#     let file = (fuzzy-finder)
+#     let file = (fuzzy-path-finder)
 #     if ($file != null) {
 #         try {
 #             cd $file
 #         } catch {
 #             cd ($file | path dirname)
 #         }
+#         cat $file
 #     }
 # }
 
 # def hf [] {
 #     let file = (fuzzy-finder)
 #     if ($file != null) {
-#         code $"./($file)"
+#         code $file
 #     }
 # }
 
-def --env dotfiles [] {
-    enter ~/.dotfiles
-    code .
-}
+# def --env dotfiles [] {
+#     enter ~/.dotfiles
+#     code .
+# }
