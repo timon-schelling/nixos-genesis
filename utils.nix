@@ -17,7 +17,7 @@ let
     dirs);
 
   mkNuScript = pkgs: name: script: pkgs.writeScriptBin "${name}" ''
-    #!${pkgs.nushell}/bin/nu
+    #!${pkgs.nushell}/bin/nu --stdin
 
     ${script}
   '';
