@@ -1,4 +1,4 @@
-{ inputs, config, ... }:
+{ inputs, config, pkgs, libutils, ... }:
 
 {
   imports = [
@@ -12,6 +12,7 @@
         inputs.anyrun.packages.${config.opts.system.platform}.symbols
         inputs.anyrun.packages.${config.opts.system.platform}.rink
         inputs.anyrun.packages.${config.opts.system.platform}.websearch
+        inputs.anyrun.packages.${config.opts.system.platform}.randr
       ];
       width = { fraction = 0.4; };
       x = { fraction = 0.5; };
@@ -118,4 +119,11 @@
       )
     '';
   };
+
+  home.packages = [
+    (libutils.mkNuScript pkgs "anyrun-select" ''
+      input | ^anyrun --plugins "${inputs.anyrun.packages.${config.opts.system.platform}.stdin}"
+    '')
+  ];
+
 }
