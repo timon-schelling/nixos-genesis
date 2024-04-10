@@ -12,8 +12,9 @@
   systemd.user.services.clipcatd = {
     Unit = {
       Description = "Clipboard deamon";
-      WantedBy = [ "graphical-session.target" ];
+      PartOf = [ "graphical-session.target" ];
     };
+    Install.WantedBy = [ "graphical-session.target" ];
     Service = {
       ExecStart = (libutils.mkNuScript pkgs "clipcatd-start" ''
         env | save -f ~/tmp/clipcatd.env
@@ -29,6 +30,5 @@
         ${pkgs.clipcat}/bin/clipcatd --no-daemon --replace
       '');
     };
-    Install.WantedBy = [ "default.target" ];
   };
 }
