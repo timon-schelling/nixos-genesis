@@ -11,4 +11,6 @@
     nvidiaSettings = false;
     package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
   };
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.nvidia.acceptLicense = true;
 }
