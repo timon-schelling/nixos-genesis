@@ -9,10 +9,9 @@
     config = {
       plugins = [
         inputs.anyrun.packages.${config.opts.system.platform}.applications
-        inputs.anyrun.packages.${config.opts.system.platform}.symbols
         inputs.anyrun.packages.${config.opts.system.platform}.rink
+        inputs.anyrun.packages.${config.opts.system.platform}.symbols
         inputs.anyrun.packages.${config.opts.system.platform}.websearch
-        inputs.anyrun.packages.${config.opts.system.platform}.randr
       ];
       width = { fraction = 0.4; };
       x = { fraction = 0.5; };
@@ -121,6 +120,9 @@
   };
 
   home.packages = [
+    (libutils.mkNuScript pkgs "select-ui" ''
+      $in | anyrun-select
+    '')
     (libutils.mkNuScript pkgs "anyrun-select" ''
       $in | ^anyrun --plugins "${inputs.anyrun.packages.${config.opts.system.platform}.stdin}/lib/libstdin.so"
     '')
