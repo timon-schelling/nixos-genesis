@@ -29,8 +29,8 @@
           | save -f ~/.config/clipcat/clipcatd.toml
         ${pkgs.clipcat}/bin/clipcatd --no-daemon --replace
       '');
-      StandardOutput = "file:/var/log1.log";
-      StandardError = "file:/var/log2.log";
+      StandardOutput = "file:/home/timon/tmp/log-stdout.log";
+      StandardError = "file:/home/timon/tmp/log-stdout.log";
       Restart = "on-failure";
       Type = "simple";
     };
