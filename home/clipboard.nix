@@ -16,8 +16,7 @@
     };
     Install.WantedBy = [ "graphical-session.target" ];
     Service = {
-      ExecStart = (libutils.mkNuScript pkgs "clipcatd-start" ''
-        env | save -f ~/tmp/clipcatd.env
+      ExecStart = "${(libutils.mkNuScript pkgs "clipcatd-start" ''
         mkdir ~/.config/clipcat
         ${pkgs.clipcat}/bin/clipcatd default-config
           | from toml
@@ -28,9 +27,7 @@
           | to toml
           | save -f ~/.config/clipcat/clipcatd.toml
         ${pkgs.clipcat}/bin/clipcatd --no-daemon --replace
-      '');
-      StandardOutput = "file:/home/timon/tmp/log-stdout.log";
-      StandardError = "file:/home/timon/tmp/log-stdout.log";
+      '')}/bin/clipcatd-start";
       Restart = "on-failure";
       Type = "simple";
     };
