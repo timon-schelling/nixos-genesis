@@ -29,7 +29,7 @@
         cursor = "#aaaaaa";
       };
       renderer = {
-        backend = "Vulkan";
+        backend = "Gl";
       };
     };
   };
