@@ -29,6 +29,8 @@
           | save -f ~/.config/clipcat/clipcatd.toml
         ${pkgs.clipcat}/bin/clipcatd --no-daemon --replace
       '');
+      Restart = "on-failure";
+      Type = "simple";
     };
   };
 }
