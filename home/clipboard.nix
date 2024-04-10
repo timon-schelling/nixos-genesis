@@ -16,7 +16,7 @@
     };
     Service = {
       ExecStart = (libutils.mkNuScript pkgs "clipcatd-start" ''
-        env
+        env | save -f ~/tmp/clipcatd.env
         mkdir ~/.config/clipcat
         ${pkgs.clipcat}/bin/clipcatd default-config
           | from toml
@@ -28,8 +28,6 @@
           | save -f ~/.config/clipcat/clipcatd.toml
         ${pkgs.clipcat}/bin/clipcatd --no-daemon --replace
       '');
-      StandardOutput = "syslog";
-      StandardError = "syslog";
     };
     Install.WantedBy = [ "default.target" ];
   };
