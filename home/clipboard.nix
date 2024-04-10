@@ -1,8 +1,8 @@
 {  pkgs, libutils, ... }:
 
 {
-  opts.user.persist.state.files = [
-    ".cache/clipcat/clipcatd-history"
+  opts.user.persist.state.folders = [
+    ".cache/clipcat"
   ];
 
   home.packages = [
