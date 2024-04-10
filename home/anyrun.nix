@@ -122,7 +122,7 @@
 
   home.packages = [
     (libutils.mkNuScript pkgs "anyrun-select" ''
-      input | ^anyrun --plugins "${inputs.anyrun.packages.${config.opts.system.platform}.stdin}/lib/libstdin.so"
+      $in | ^anyrun --plugins "${inputs.anyrun.packages.${config.opts.system.platform}.stdin}/lib/libstdin.so"
     '')
   ];
 
