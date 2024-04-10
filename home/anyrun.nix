@@ -117,6 +117,12 @@
         engines: [Google, DuckDuckGo]
       )
     '';
+
+    extraConfigFiles."stdin.ron".text = ''
+      Config(
+        max_entries: 1000000
+      )
+    '';
   };
 
   home.packages = [
@@ -124,7 +130,7 @@
       $in | anyrun-select
     '')
     (libutils.mkNuScript pkgs "anyrun-select" ''
-      $in | ^anyrun --plugins "${inputs.anyrun.packages.${config.opts.system.platform}.stdin}/lib/libstdin.so"
+      $in | ^anyrun --plugins "${inputs.anyrun.packages.${config.opts.system.platform}.stdin}/lib/libstdin.so" --hide-plugin-info true
     '')
   ];
 
