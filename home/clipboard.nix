@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{  config, pkgs, libutils, ... }:
 
 {
   home.packages = [
@@ -10,7 +10,10 @@
       Description = "Clipboard deamon";
       WantedBy = [ "graphical-session.target" ];
     };
-    Service.ExecStart = "${pkgs.clipcat}/bin/clipcatd --no-daemon --replace";
-    Install.WantedBy = [ "graphical-session.target" ];
+    Service.ExecStart = (libutils.mkNuScript pkgs "clipcatd-start" ''
+      ${pkgs.clipcat}/bin/clipcatd default-config | save ~/.config/clipcat/clipcatd.toml
+      ${pkgs.clipcat}/bin/clipcatd --no-daemon --replace
+    '');
+    Install.WantedBy = [ "default.target" ];
   };
 }
