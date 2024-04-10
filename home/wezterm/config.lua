@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 return {
     front_end = 'WebGpu',
-    enable_wayland = false,
+    enable_wayland = false, -- TODO: set to true after nvidia fix
     window_decorations = "NONE",
     default_prog = { 'nu' },
     font = wezterm.font 'JetBrains Mono',
