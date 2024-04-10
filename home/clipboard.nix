@@ -16,7 +16,7 @@
     };
     Service.ExecStart = (libutils.mkNuScript pkgs "clipcatd-start" ''
       mkdir ~/.config/clipcat
-      ${pkgs.clipcat}/bin/clipcatd default-config | save ~/.config/clipcat/clipcatd.toml
+      ${pkgs.clipcat}/bin/clipcatd default-config | save -f ~/.config/clipcat/clipcatd.toml
       ${pkgs.clipcat}/bin/clipcatd --no-daemon --replace
     '');
     Install.WantedBy = [ "default.target" ];
