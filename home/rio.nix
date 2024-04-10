@@ -28,6 +28,9 @@
         foreground = "#aaaaaa";
         cursor = "#aaaaaa";
       };
+      renderer = {
+        backend = "Vulkan";
+      };
     };
   };
 }
