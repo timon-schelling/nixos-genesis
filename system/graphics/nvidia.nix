@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  services.xserver.videoDrivers = ["nouveau"];
+  services.xserver.videoDrivers = ["nvidia"];
   boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -10,13 +10,5 @@
     open = true;
     nvidiaSettings = false;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
-  };
-
-  environment.sessionVariables = {
-    WLR_DRM_NO_ATOMIC = "1";
-    WLR_NO_HARDWARE_CURSORS = "1";
-    LIBVA_DRIVER_NAME = "nvidia";
-    WLR_RENDERER = "gles2";
-    EGL_PLATFORM = "wayland";
   };
 }
