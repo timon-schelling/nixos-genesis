@@ -9,7 +9,7 @@
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = false;
-    package = config.boot.kernelPackages.nvidiaPackages.beta_vulkan;
+    package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
   };
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.nvidia.acceptLicense = true;
