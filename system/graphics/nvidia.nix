@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  services.kxserver.videoDrivers = ["mesa"];
+  services.xserver.videoDrivers = ["mesa"];
   boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
   hardware.nvidia = {
     modesetting.enable = true;
