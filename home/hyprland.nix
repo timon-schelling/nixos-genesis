@@ -155,9 +155,9 @@
       bind = $mainMod SHIFT, page_down, movetoworkspace, r+1
 
 
-      bind = CONTROL SHIFT, v, exec, clipboard-history
+      bind = $mainMod, V, exec, clipboard-history
 
-      bind = $mainMod, b, exec, waybar-toggle
+      bind = $mainMod, B, exec, waybar-toggle
 
       bind = ALT, space, exec, anyrun
 
