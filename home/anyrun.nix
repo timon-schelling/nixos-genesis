@@ -55,7 +55,7 @@
         Config(
           prefix: "$",
           symbols: {},
-          max_entries: 10000,
+          max_entries: 50,
         )
       '';
 
