@@ -14,7 +14,7 @@
         inputs.anyrun.packages.${config.opts.system.platform}.websearch
       ];
       width = { absolute = 1000; };
-      x = { fraction = 0.5;
+      x = { fraction = 0.5; };
       y = { absolute = 100; };
       hideIcons = false;
       ignoreExclusiveZones = false;
