@@ -5,15 +5,6 @@
     inputs.anyrun.homeManagerModules.default
   ];
 
-  home.packages = [
-    (libutils.mkNuScript pkgs "select-ui" ''
-      $in | anyrun-select
-    '')
-    (libutils.mkNuScript pkgs "anyrun-select" ''
-      $in | ^anyrun --plugins "${inputs.anyrun.packages.${config.opts.system.platform}.stdin}/lib/libstdin.so" --hide-plugin-info true
-    '')
-  ];
-
   programs.anyrun = {
     enable = true;
     config = {
@@ -67,6 +58,15 @@
       '';
     };
   };
+
+  home.packages = [
+    (libutils.mkNuScript pkgs "select-ui" ''
+      $in | anyrun-select
+    '')
+    (libutils.mkNuScript pkgs "anyrun-select" ''
+      $in | ^anyrun --plugins "${inputs.anyrun.packages.${config.opts.system.platform}.stdin}/lib/libstdin.so" --hide-plugin-info true
+    '')
+  ];
 
   programs.anyrun.extraCss = ''
     @define-color primary #00A380;
