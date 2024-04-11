@@ -14,15 +14,15 @@
         inputs.anyrun.packages.${config.opts.system.platform}.websearch
       ];
       width = { absolute = 1000; };
-      x = { fraction = 0.5; };
-      y = { fraction = 0.35; };
+      x = { fraction = 0.5;
+      y = { absolute = 100; };
       hideIcons = false;
       ignoreExclusiveZones = false;
       layer = "overlay";
       hidePluginInfo = false;
       closeOnClick = true;
       showResultsImmediately = true;
-      maxEntries = null;
+      maxEntries = 14;
     };
     extraCss = ''
       @define-color primary #00A380;
