@@ -87,7 +87,7 @@
 
         u = C-c
         ; = C-v
-        y = M-C-S-c
+        y = C-S-v
         b = C-x
 
         n = C-z

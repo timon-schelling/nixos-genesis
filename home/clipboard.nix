@@ -7,6 +7,12 @@
 
   home.packages = [
     pkgs.clipcat
+    (libutils.mkNuScript pkgs "clipboard-history" ''
+      let clipboard = (clipcatctl list | split list "\n" | each { |x| $x | parse --regex '(?P<id>\w*)\: (?P<text>.*)' }).0
+      let selection = ($clipboard | get text | str join "\n" | select-ui)
+      let selection_id = ($clipboard | where { |x| $x.text == $selection }).0.id
+      clipcatctl get $selection_id | wl-copy
+    '')
   ];
 
   systemd.user.services.clipcatd = {
