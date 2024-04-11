@@ -13,9 +13,9 @@
         inputs.anyrun.packages.${config.opts.system.platform}.symbols
         inputs.anyrun.packages.${config.opts.system.platform}.websearch
       ];
-      width = { fraction = 0.4; };
+      width = { absolut = 1000; };
       x = { fraction = 0.5; };
-      y = { fraction = 0.3; };
+      y = { fraction = 0.35; };
       hideIcons = false;
       ignoreExclusiveZones = false;
       layer = "overlay";
@@ -120,6 +120,7 @@
 
     extraConfigFiles."stdin.ron".text = ''
       Config(
+        allow_invalid: false,
         max_entries: 1000000
       )
     '';
