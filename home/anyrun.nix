@@ -36,6 +36,14 @@
     };
 
     extraConfigFiles = {
+      "applications.ron".text = ''
+        Config(
+          desktop_actions: true,
+          max_entries: 10,
+          terminal: Some("wezterm"),
+        )
+      '';
+
       "websearch.ron".text = ''
         Config(
           prefix: "?",
