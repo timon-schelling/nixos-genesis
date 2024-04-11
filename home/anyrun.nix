@@ -13,7 +13,7 @@
         inputs.anyrun.packages.${config.opts.system.platform}.symbols
         inputs.anyrun.packages.${config.opts.system.platform}.websearch
       ];
-      width = { absolut = 1000; };
+      width = { absolute = 1000; };
       x = { fraction = 0.5; };
       y = { fraction = 0.35; };
       hideIcons = false;
