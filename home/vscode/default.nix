@@ -34,6 +34,9 @@
         sha256 = "sha256-LxgftSpGk7+SIUdZcNpL7UZoAx8IMIcwPYIGqSfVuDc=";
       }
     ];
+    enableUpdateCheck = false;
+    enableExtensionUpdateCheck = false;
+    mutableExtensionsDir = false;
   };
 
   xdg.configFile."Code/User/settings.json".source = ./settings.json;
