@@ -51,5 +51,6 @@
     "editor.cursorBlinking": "solid",
     "editor.cursorSmoothCaretAnimation": "on",
     "telemetry.telemetryLevel": "off",
-    "update.showReleaseNotes": false
+    "update.showReleaseNotes": false,
+    "workbench.colorTheme": "One Monokai Darker"
 }

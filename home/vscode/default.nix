@@ -46,6 +46,12 @@
         version = "0.7.2";
         sha256 = "sha256-Bf0thdt4yxH7OsRhIXeqvaxD1tbHTrUc4QJcju7Hv90=";
       }
+      {
+        name = "victormejia";
+        publisher = "one-monokai-darker";
+        version = "1.0.5";
+        sha256 = "sha256-Bf0thdt4yxH7OsRhIXeqvaxD1tbHTrUc4QJcju7Hv90=";
+      }
     ];
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
