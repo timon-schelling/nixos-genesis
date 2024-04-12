@@ -68,5 +68,5 @@
     {
         "key": "ctrl+n",
         "command": "-workbench.action.files.newUntitledFile"
-    },
+    }
 ]
