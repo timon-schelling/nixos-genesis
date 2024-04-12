@@ -6,12 +6,7 @@ alias goto = g
 def --env g [shell?: int] {
     try {
         if ($shell == null) {
-            let iselec_installed = try { iselec "[]"; true } catch { false }
-            if ($iselec_installed) {
-                goto (iselec $"(goto | get path | to json -r | str replace -a $"($env.HOME)" '~')" | from json).0
-            } else {
-                goto (goto | get path | str replace -a $"($env.HOME)" '~' | input list -i -f)
-            }
+            goto (goto | get path | str replace -a $"($env.HOME)" '~' | input list -i -f)
         } else {
             goto $shell
         }
@@ -20,7 +15,9 @@ def --env g [shell?: int] {
 
 def --env e [path?: path] {
     if ($path == null) {
-        enter (tere)
+        try {
+            enter (run-external --redirect-stderr tere)
+        }
     } else {
         enter $path
     }
