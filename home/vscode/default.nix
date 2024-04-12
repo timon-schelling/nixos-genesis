@@ -33,6 +33,7 @@
       github.copilot
       github.copilot-chat
       streetsidesoftware.code-spell-checker
+      pkief.material-icon-theme
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "code-spell-checker-german";
@@ -47,9 +48,9 @@
         sha256 = "sha256-Bf0thdt4yxH7OsRhIXeqvaxD1tbHTrUc4QJcju7Hv90=";
       }
       {
-        name = "victormejia";
-        publisher = "one-monokai-darker";
-        version = "1.0.5";
+        name = "miguelsolorio";
+        publisher = "min-theme";
+        version = "1.5.0";
         sha256 = "sha256-Bf0thdt4yxH7OsRhIXeqvaxD1tbHTrUc4QJcju7Hv90=";
       }
     ];
