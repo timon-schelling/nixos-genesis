@@ -49,5 +49,7 @@
     "window.menuBarVisibility": "toggle",
     "workbench.sideBar.location": "right",
     "editor.cursorBlinking": "solid",
-    "editor.cursorSmoothCaretAnimation": "on"
+    "editor.cursorSmoothCaretAnimation": "on",
+    "telemetry.telemetryLevel": "off",
+    "update.showReleaseNotes": false
 }

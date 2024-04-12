@@ -162,11 +162,11 @@
       bind = ALT, space, exec, anyrun
 
       bind = $mainMod, 1, exec, wezterm
-      bind = $mainMod, 2, exec, code --ozone-platform="wayland" --enable-features="WaylandWindowDecorations"
+      bind = $mainMod, 2, exec, code
       bind = $mainMod, 3, exec, firefox
       bind = $mainMod, 4, exec, nautilus --new-window
       bind = $mainMod, 5, exec, Enpass
-      bind = $mainMod, 6, exec, code-insiders --ozone-platform="wayland" --enable-features="WaylandWindowDecorations"
+      bind = $mainMod, 6, exec, code-insiders
       bind = $mainMod, 7, exec, spotify
       bind = $mainMod, 8, exec, /opt/beeper/beeper.AppImage
       # bind = $mainMod, 9, exec,
