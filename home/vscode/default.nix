@@ -51,7 +51,7 @@
         publisher = "miguelsolorio";
         name = "min-theme";
         version = "1.5.0";
-        sha256 = "sha256-Bf0thdt4yxH7OsRhIXeqvaxD1tbHTrUc4QJcju7Hv90=";
+        sha256 = "sha256-DF/9OlWmjmnZNRBs2hk0qEWN38RcgacdVl9e75N8ZMY=";
       }
     ];
     enableUpdateCheck = false;
