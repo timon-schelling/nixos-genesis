@@ -7,6 +7,7 @@
 
   home.packages = [
     pkgs.clipcat
+    pkgs.wl-clipboard-rs
     (libutils.mkNuScript pkgs "clipboard-history" ''
       let clipboard = (clipcatctl list | split list "\n" | each { |x| $x | parse --regex '(?P<id>\w*)\: (?P<text>.*)' }).0
       let selection = ($clipboard | get text | str join "\n" | select-ui)

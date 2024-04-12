@@ -15,9 +15,7 @@ def --env g [shell?: int] {
 
 def --env e [path?: path] {
     if ($path == null) {
-        try {
-            enter (run-external --redirect-stderr tere)
-        }
+        enter (tere)
     } else {
         enter $path
     }
