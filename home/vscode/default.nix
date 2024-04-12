@@ -8,11 +8,17 @@
 
   programs.vscode = {
     enable = true;
-    package = (pkgs.runCommand "vscode-wayland" { buildInputs = [ pkgs.makeWrapper ]; } ''
-      makeWrapper ${pkgs.vscode}/bin/code $out/bin/code --set NIXOS_OZONE_WL 1
-      mkdir -p "$out/share/applications/"
-      cp "${pkgs.vscode}/share/applications/code.desktop" "$out/share/applications/"
-    '');
+    package = (pkgs.runCommand "vscode-wayland"
+      {
+        buildInputs = [ pkgs.makeWrapper ];
+        version = pkgs.vscode.version;
+      }
+      ''
+        makeWrapper ${pkgs.vscode}/bin/code $out/bin/code --set NIXOS_OZONE_WL 1
+        mkdir -p "$out/share/applications/"
+        cp "${pkgs.vscode}/share/applications/code.desktop" "$out/share/applications/"
+      ''
+    );
     extensions = with pkgs.vscode-extensions; [
       rust-lang.rust-analyzer
       serayuzgur.crates
