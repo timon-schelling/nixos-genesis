@@ -12,6 +12,7 @@
       {
         buildInputs = [ pkgs.makeWrapper ];
         version = pkgs.vscode.version;
+        pname = pkgs.vscode.pname;
       }
       ''
         makeWrapper ${pkgs.vscode}/bin/code $out/bin/code --set NIXOS_OZONE_WL 1
