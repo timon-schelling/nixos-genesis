@@ -36,20 +36,20 @@
       pkief.material-icon-theme
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
-        name = "code-spell-checker-german";
         publisher = "streetsidesoftware";
+        name = "code-spell-checker-german";
         version = "2.3.1";
         sha256 = "sha256-LxgftSpGk7+SIUdZcNpL7UZoAx8IMIcwPYIGqSfVuDc=";
       }
       {
-        name = "color-info";
         publisher = "bierner";
+        name = "color-info";
         version = "0.7.2";
         sha256 = "sha256-Bf0thdt4yxH7OsRhIXeqvaxD1tbHTrUc4QJcju7Hv90=";
       }
       {
-        name = "miguelsolorio";
-        publisher = "min-theme";
+        publisher = "miguelsolorio";
+        name = "min-theme";
         version = "1.5.0";
         sha256 = "sha256-Bf0thdt4yxH7OsRhIXeqvaxD1tbHTrUc4QJcju7Hv90=";
       }
