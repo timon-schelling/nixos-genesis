@@ -44,7 +44,7 @@
         name = "color-info";
         publisher = "bierner";
         version = "0.7.2";
-        sha256 = "sha256-LxgftSpGk7+SIUdZcNpL7UZoAx8IMIcwPYIGqSfVuDc=";
+        sha256 = "sha256-Bf0thdt4yxH7OsRhIXeqvaxD1tbHTrUc4QJcju7Hv90=";
       }
     ];
     enableUpdateCheck = false;
