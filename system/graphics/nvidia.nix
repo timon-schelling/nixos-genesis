@@ -1,5 +1,8 @@
 { config, ... }:
 
+let
+  driverPkg = config.boot.kernelPackages.nvidiaPackages.beta;
+in
 {
   services.xserver.videoDrivers = ["nvidia"];
   boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
@@ -9,8 +12,9 @@
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = false;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = driverPkg;
   };
+  hardware.opengl.package = driverPkg;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.nvidia.acceptLicense = true;
 }
