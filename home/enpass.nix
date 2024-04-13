@@ -28,7 +28,7 @@
     useDarkTheme=true
   '';
 
-  home.packages = [
-    pkgs.enpass
-  ];
+  # home.packages = [
+  #   pkgs.enpass
+  # ];
 }
