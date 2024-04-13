@@ -25,10 +25,10 @@
     autorunAtSystemStartup6=false
     avoidSubscriptionDialog=true
     hideDockIconOnClose=false
-    useDarkTheme=true
+    useDarkTheme=truekd
   '';
 
-  # home.packages = [
-  #   pkgs.enpass
-  # ];
+  home.packages = [
+    pkgs.enpass
+  ];
 }
