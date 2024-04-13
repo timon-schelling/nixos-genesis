@@ -1,10 +1,9 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   hardware.opengl = {
     enable = true;
     driSupport = false;
-    package = pkgs.mesa.drivers;
     # driSupport32Bit = true;
     # extraPackages = with pkgs; [
     #   vaapiVdpau
