@@ -2,8 +2,8 @@
 
 {
   hardware.opengl = {
-    enable = false;
-    # driSupport = true;
+    enable = true;
+    driSupport = false;
     # driSupport32Bit = true;
     # extraPackages = with pkgs; [
     #   vaapiVdpau
