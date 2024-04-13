@@ -117,6 +117,9 @@
       exec-once = nu ~/.dotfiles/startup/main.nu
       exec-once = waybar
 
+      # TODO: remove
+      exec-once = beeper --hidden
+
       $mainMod = SUPER
 
       bind = $mainMod, left, movefocus, l
