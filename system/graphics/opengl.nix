@@ -1,34 +1,15 @@
 { pkgs, ... }:
 
 {
-  nixpkgs.config.packageOverrides = pkgs: {
-    vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
-  };
   hardware.opengl = {
-    enable = true;
+    enable = false;
     driSupport = true;
-    driSupport32Bit = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      vaapiIntel
-      vaapiVdpau
-      libvdpau-va-gl
-    ];
+    # driSupport32Bit = true;
+    # extraPackages = with pkgs; [
+    #   vaapiVdpau
+    #   libvdpau-va-gl
+    # ];
   };
-
-  environment.variables = {
-    LIBVA_DRIVER_NAME = "iHD";
-    VDPAU_DRIVER = "va_gl";
-  };
-  # hardware.opengl = {
-  #   enable = true;
-  #   driSupport = true;
-  #   # driSupport32Bit = true;
-  #   # extraPackages = with pkgs; [
-  #   #   vaapiVdpau
-  #   #   libvdpau-va-gl
-  #   # ];
-  # };
 }
 
 # I am using the proprietary nvidia driver with this config:
