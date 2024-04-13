@@ -12,8 +12,7 @@
       }
       ''
         makeWrapper ${pkgs.beeper}/bin/beeper $out/bin/beeper --set NIXOS_OZONE_WL 1 --add-flags "--default-frame"
-        mkdir -p "$out/share/"
-        cp -r "${pkgs.beeper}/share/**/*" "$out/share/"
+        cp -r "${pkgs.beeper}/share" "$out/"
       ''
     )
   ];
