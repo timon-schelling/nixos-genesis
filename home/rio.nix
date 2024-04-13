@@ -30,6 +30,7 @@
       };
       renderer = {
         performance = "Low";
+        backend = "Vukan";
       };
     };
   };
