@@ -14,7 +14,11 @@ in
     nvidiaSettings = false;
     package = driverPkg;
   };
-  hardware.opengl.package = driverPkg;
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    package = driverPkg;
+  };
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.nvidia.acceptLicense = true;
 }
