@@ -168,7 +168,7 @@
       bind = $mainMod, 5, exec, Enpass
       bind = $mainMod, 6, exec, code-insiders
       bind = $mainMod, 7, exec, spotify
-      bind = $mainMod, 8, exec, /opt/beeper/beeper.AppImage
+      bind = $mainMod, 8, exec, beeper
       # bind = $mainMod, 9, exec,
       # bind = $mainMod, 0, exec,
 
