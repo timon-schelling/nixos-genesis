@@ -10,8 +10,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     impermanence.url = "github:nix-community/impermanence";
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = inputs:
-    import ../../main.nix { inherit inputs; };
+    import ../../main.nix {
+      inherit inputs;
+      host = builtins.baseNameOf ./.;
+    };
 }

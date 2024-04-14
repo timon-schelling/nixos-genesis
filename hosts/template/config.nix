@@ -1,8 +1,10 @@
+{ ... }:
+
 {
   opts = {
     system = {
       host = "timon-pc";
-      drive = "/dev/nvmeXnX";
+      drive = "/dev/nvme1n1";
     };
     users = {
       timon = {

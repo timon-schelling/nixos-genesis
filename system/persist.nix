@@ -24,4 +24,6 @@
       Group = "root";
     };
   };
+
+  programs.fuse.userAllowOther = true;
 }
