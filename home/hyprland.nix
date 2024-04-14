@@ -52,8 +52,8 @@
           # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 242deg
           # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(ff9300ee) rgba(8f0064ee) 242deg
           # col.active_border = rgba(ff9300ee) rgba(8f0064ee) 242deg
-          # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 242deg
-          col.active_border = rgba(2cc966ee)
+          col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 242deg
+          # col.active_border = rgba(2cc966ee)
 
           # col.active_border = rgba(007621ee)
 
@@ -91,7 +91,7 @@
           animation = workspaces, 1, 6, default
 
           bezier = liner, 0, 0, 1, 1
-          # animation = borderangle, 1, 400, liner, loop
+          animation = borderangle, 1, 400, liner, loop
           # animation = borderangle, 1, 200, liner, loop
           # animation = borderangle, 1, 1000, liner, loop
       }
