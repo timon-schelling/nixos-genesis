@@ -118,7 +118,7 @@
       exec-once = waybar
 
       # TODO: remove
-      exec-once = beeper --hidden
+      exec-once = sh -c "beeper --hidden > ~/tmp/beeper.log 2>&1"
 
       $mainMod = SUPER
 
@@ -171,7 +171,7 @@
       bind = $mainMod, 5, exec, Enpass
       bind = $mainMod, 6, exec, code-insiders
       bind = $mainMod, 7, exec, spotify
-      bind = $mainMod, 8, exec, beeper
+      bind = $mainMod, 8, exec, sh -c "beeper > ~/tmp/beeper-launch.log 2>&1"
       # bind = $mainMod, 9, exec,
       # bind = $mainMod, 0, exec,
 
