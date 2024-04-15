@@ -15,6 +15,12 @@ let
   searchModules = dirs: lib.lists.flatten (map
     (dir: searchDirForModules dir)
     dirs);
+  searchMolulesWithSuffix = dirs: suffix: (lib.filter
+      (file: lib.hasSuffix suffix (builtins.toString file))
+      (searchModules dirs)
+      );
+  searchSystemModules = dirs: searchMolulesWithSuffix dirs "/system.nix";
+  searchHomeModules = dirs: searchMolulesWithSuffix dirs "/home.nix";
 
   mkNuScript = pkgs: name: script: pkgs.writeScriptBin "${name}" ''
     #!${pkgs.nushell}/bin/nu --stdin
@@ -24,5 +30,7 @@ let
 in
 {
   inherit searchModules;
+  inherit searchSystemModules;
+  inherit searchHomeModules;
   inherit mkNuScript;
 }
