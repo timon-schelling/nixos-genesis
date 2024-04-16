@@ -11,7 +11,7 @@
         buildInputs = [ pkgs.makeWrapper ];
       }
       ''
-        makeWrapper ${pkgs.beeper}/bin/beeper $out/bin/beeper --set ELECTRON_OZONE_PLATFORM_HINT wayland --add-flags "--default-frame"
+        makeWrapper ${pkgs.beeper}/bin/beeper $out/bin/beeper --set NIXOS_OZONE_WL 1 --add-flags "--default-frame"
         cp -r "${pkgs.beeper}/share" "$out/"
       ''
     )
