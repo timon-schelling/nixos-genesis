@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
 {
-  # TODO: theme Qt apps like gtk
+  qt = {
+    enable = true;
+    platformTheme = "gtk3";
+    style.name = "adwaita-dark";
+  };
 }
