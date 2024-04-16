@@ -8,7 +8,7 @@
 
   home.packages = [
     (pkgs.runCommand "spotify-wayland" { buildInputs = [ pkgs.makeWrapper ]; } ''
-      makeWrapper ${pkgs.spotify}/bin/spotify $out/bin/spotify --set NIXOS_OZONE_WL 1
+      makeWrapper ${pkgs.spotify}/bin/spotify $out/bin/spotify --set ELECTRON_OZONE_PLATFORM_HINT wayland
       mkdir -p "$out/share/applications/"
       cp "${pkgs.spotify}/share/applications/spotify.desktop" "$out/share/applications/"
     '')
