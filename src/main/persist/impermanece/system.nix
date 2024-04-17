@@ -1,6 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
+  imports = [
+    inputs.impermanence.nixosModules.impermanence
+  ];
+
   fileSystems."/persist".neededForBoot = true;
   environment.persistence."/persist/system" = {
     hideMounts = true;

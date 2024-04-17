@@ -22,7 +22,6 @@ in
       (name: user: {
         ${name} = { ... }: {
           imports = [
-            inputs.impermanence.nixosModules.home-manager.impermanence
             ./options/home.nix
           ] ++ modules;
           config = {

@@ -1,6 +1,10 @@
-{ config, lib, ... }:
+{ config, inputs, lib, ... }:
 
 {
+  imports = [
+    inputs.disko.nixosModules.default
+  ];
+
   disko.devices = {
     disk.main = {
       device = config.opts.system.drive;

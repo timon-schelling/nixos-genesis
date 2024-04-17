@@ -21,9 +21,6 @@ in
 
         (./hosts + "/${host}/config.nix")
         (./hosts + "/${host}/hardware.nix")
-
-        inputs.disko.nixosModules.default
-        inputs.impermanence.nixosModules.impermanence
         {
           inherit imports;
         }
