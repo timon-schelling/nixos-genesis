@@ -1,7 +1,6 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
-  security.polkit.enable = true;
   # TODO: change group to something more specific
   security.polkit.extraConfig = ''
     polkit.addRule(function(action, subject) {
