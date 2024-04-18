@@ -18,10 +18,14 @@ in
         (../hosts + "/${host}/config.nix")
         (../hosts + "/${host}/hardware.nix")
         ({ config, ... }: {
-          imports = libutils.imports.systemModules {
+          imports = builtins.trace (libutils.imports.systemModules {
             dir = ./modules;
             opts = config.opts;
-          };
+          })
+          (libutils.imports.systemModules {
+            dir = ./modules;
+            opts = config.opts;
+          });
         })
 
         ./home.nix
