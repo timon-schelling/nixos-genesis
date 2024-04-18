@@ -10,6 +10,7 @@
         email = "me@timon.zip";
         passwordHash = "***REMOVED***";
         sudo = true;
+        desktops.hyprhot.enable = true;
       };
     };
   };

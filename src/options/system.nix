@@ -31,22 +31,6 @@ lib.types.submodule {
       };
       default = {};
     };
-    desktops = lib.mkOption {
-      type = lib.types.listOf (lib.types.submodule {
-        options = {
-          hyprhot = lib.mkOption {
-            type = lib.types.submodule {
-              options = {
-                enable = lib.mkOption {
-                  type = lib.types.bool;
-                  default = true;
-                };
-              };
-            };
-          };
-        };
-      });
-    };
     monitors = lib.mkOption {
       type = lib.types.listOf (lib.types.submodule {
         options = {

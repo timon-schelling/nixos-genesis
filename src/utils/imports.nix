@@ -25,7 +25,7 @@ let
     in
     if builtins.pathExists path then
       let
-        module = import path;
+        module = import path { inherit lib; };
       in
       if (builtins.hasAttr "${type}" module) then
         if (module."${type}" opts) then
