@@ -25,13 +25,13 @@
           ${name} = {
             imports = [
               ./options/home.nix
-            ] ++ libutils.imports.homeModules {
+            ] ++ (libutils.imports.homeModules {
               dir = ./modules;
               inherit opts;
-            };
-            config = {
-              inherit opts;
-            };
+            });
+
+            inherit opts;
+
           };
         }
       )
