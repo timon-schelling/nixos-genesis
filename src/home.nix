@@ -1,8 +1,8 @@
 { lib, libutils, config, inputs, ... }:
 
 let
-  modules = libutils.searchModules [
-    ./home
+  modules = libutils.imports.searchHomeModules [
+    ./modules
   ];
 in
 {

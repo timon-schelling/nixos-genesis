@@ -21,16 +21,9 @@ let
       );
   searchSystemModules = dirs: searchMolulesWithSuffix dirs "/system.nix";
   searchHomeModules = dirs: searchMolulesWithSuffix dirs "/home.nix";
-
-  mkNuScript = pkgs: name: script: pkgs.writeScriptBin "${name}" ''
-    #!${pkgs.nushell}/bin/nu --stdin
-
-    ${script}
-  '';
 in
 {
   inherit searchModules;
   inherit searchSystemModules;
   inherit searchHomeModules;
-  inherit mkNuScript;
 }
