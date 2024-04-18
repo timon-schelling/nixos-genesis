@@ -3,6 +3,7 @@
 let
   lib = inputs.nixpkgs.lib;
   libutils = import ./utils/lib.nix { inherit lib; };
+  opts = (import (../hosts + "/${host}/config.nix")).opts;
 in
 {
   nixosConfigurations = {
@@ -15,18 +16,14 @@ in
       modules = [
         ./options/main.nix
 
-        (../hosts + "/${host}/config.nix")
+
         (../hosts + "/${host}/hardware.nix")
-        ({ config, ... }: {
-          imports = builtins.trace (libutils.imports.systemModules {
+        {
+          imports = libutils.imports.systemModules {
             dir = ./modules;
-            opts = config.opts;
-          })
-          (libutils.imports.systemModules {
-            dir = ./modules;
-            opts = config.opts;
-          });
-        })
+            inherit opts;
+          };
+        }
 
         ./home.nix
       ];
