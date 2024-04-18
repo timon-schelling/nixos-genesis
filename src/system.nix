@@ -2,7 +2,7 @@
 
 let
   lib = inputs.nixpkgs.lib;
-  libutils = import ./utils.nix { inherit lib; };
+  libutils = import ./utils/lib.nix { inherit lib; };
 in
 {
   nixosConfigurations = {
