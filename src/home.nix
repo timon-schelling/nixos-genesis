@@ -25,7 +25,7 @@
           ${name} = { ... }: {
             imports = [
               ./options/home.nix
-            ] ++ libutils.imports.systemModules {
+            ] ++ libutils.imports.homeModules {
               dir = ./modules;
               inherit opts;
             };
