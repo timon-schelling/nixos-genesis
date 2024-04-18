@@ -1,6 +1,6 @@
-{ inputs, lib, config, pkgs, libutils, ... }:
+{ inputs, config, pkgs, libutils, ... }:
 
-lib.mkIf config.opts.system.desktops.hyprhot.enabled {
+{
   imports = [
     inputs.anyrun.homeManagerModules.default
   ];
