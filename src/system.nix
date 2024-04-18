@@ -16,8 +16,8 @@ in
       modules = [
         ./options/main.nix
 
-
         (../hosts + "/${host}/hardware.nix")
+
         {
           imports = libutils.imports.systemModules {
             dir = ./modules;

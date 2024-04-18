@@ -9,8 +9,8 @@ let
   collectModulesSubDir = { dir, type, opts }:
     lib.lists.flatten (
       lib.mapAttrsToList
-        (file: type:
-          if type == "directory" then
+        (file: kind:
+          if kind == "directory" then
             collectModule { dir = (dir + "/${file}"); inherit type opts; }
           else []
         )

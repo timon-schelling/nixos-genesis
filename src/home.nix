@@ -14,26 +14,27 @@
     };
     users = lib.mkMerge (lib.mapAttrsToList
       (name: user:
-      let
-        opts = {
-          system = config.opts.system;
-          inherit name;
-          inherit user;
-        };
-      in
-      {
-        ${name} = { config, ... }: {
-          imports = [
-            ./options/home.nix
-          ] ++ libutils.imports.systemModules {
-            dir = ./modules;
-            inherit opts;
+        let
+          opts = {
+            system = config.opts.system;
+            inherit name;
+            inherit user;
           };
-          config = {
-            inherit opts;
+        in
+        {
+          ${name} = { config, ... }: {
+            imports = [
+              ./options/home.nix
+            ] ++ libutils.imports.systemModules {
+              dir = ./modules;
+              inherit opts;
+            };
+            config = {
+              inherit opts;
+            };
           };
-        };
-      })
+        }
+      )
       config.opts.users);
   };
 }
