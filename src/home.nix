@@ -16,7 +16,7 @@
       (name: user: {
         ${name} = { config, ... }: {
           imports = [
-            ../options/home.nix
+            ./options/home.nix
           ] ++ libutils.imports.systemModules {
             dir = ./modules;
             opts = config.opts;

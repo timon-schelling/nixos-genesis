@@ -13,7 +13,7 @@ in
         inherit libutils;
       };
       modules = [
-        ../options/main.nix
+        ./options/main.nix
 
         (./hosts + "/${host}/config.nix")
         (./hosts + "/${host}/hardware.nix")
