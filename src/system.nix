@@ -3,7 +3,7 @@
 let
   lib = inputs.nixpkgs.lib;
   libutils = import ./utils/lib.nix { inherit lib; };
-  opts = (import (../hosts + "/${host}/config.nix")).opts;
+  opts = (import (../hosts + "/${host}/config.nix"));
 in
 {
   nixosConfigurations = {
