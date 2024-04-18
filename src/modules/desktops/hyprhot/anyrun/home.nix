@@ -60,10 +60,10 @@
   };
 
   home.packages = [
-    (libutils.mkNuScript pkgs "select-ui" ''
+    (libutils.nuscript.mkScript pkgs "select-ui" ''
       $in | anyrun-select
     '')
-    (libutils.mkNuScript pkgs "anyrun-select" ''
+    (libutils.nuscript.mkScript pkgs "anyrun-select" ''
       $in | ^anyrun --plugins "${inputs.anyrun.packages.${config.opts.system.platform}.stdin}/lib/libstdin.so" --hide-plugin-info true
     '')
   ];
