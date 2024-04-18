@@ -1,12 +1,6 @@
 { lib, libutils, config, inputs, ... }:
 
-let
-  modules = libutils.imports.searchHomeModules [
-    ./modules
-  ];
-in
 {
-
   imports = [
     inputs.home-manager.nixosModules.default
   ];
@@ -20,10 +14,13 @@ in
     };
     users = lib.mkMerge (lib.mapAttrsToList
       (name: user: {
-        ${name} = { ... }: {
+        ${name} = { config, ... }: {
           imports = [
             ./options/home.nix
-          ] ++ modules;
+          ] ++ libutils.imports.systemModules {
+            dir = ./modules;
+            opts = config.opts;
+          };
           config = {
             opts = {
               system = config.opts.system;

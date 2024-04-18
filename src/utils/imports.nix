@@ -1,29 +1,42 @@
 { lib, ... }:
 
 let
-  collectDirRecursive = dir: lib.mapAttrs
-    (file: type:
-      if type == "directory" then collectDirRecursive "${dir}/${file}" else type
-    )
-    (builtins.readDir dir);
-  listDirRecursive = dir: lib.collect lib.isString (lib.mapAttrsRecursive (path: type: lib.concatStringsSep "/" path) (collectDirRecursive dir));
-  searchDirForModules = dir: map
-    (file: dir + "/${file}")
-    (lib.filter
-      (file: lib.hasSuffix ".nix" file)
-      (listDirRecursive dir));
-  searchModules = dirs: lib.lists.flatten (map
-    (dir: searchDirForModules dir)
-    dirs);
-  searchMolulesWithSuffix = dirs: suffix: (lib.filter
-      (file: lib.hasSuffix suffix (builtins.toString file))
-      (searchModules dirs)
-      );
-  searchSystemModules = dirs: searchMolulesWithSuffix dirs "/system.nix";
-  searchHomeModules = dirs: searchMolulesWithSuffix dirs "/home.nix";
+  collectModuleFile = { dir, type, opts }:
+    let
+      path = dir + "/${type}.nix";
+    in
+    if (builtins.pathExists path) then [ path ] else [];
+  collectModulesSubDir = { dir, type, opts }:
+    lib.lists.flatten (
+      lib.mapAttrsToList
+        (file: type:
+          if type == "directory" then
+            collectModule { dir = (dir + "/${file}"); inherit type opts; }
+          else []
+        )
+        (builtins.readDir dir)
+    );
+  collectModuleDir = { dir, type, opts }:
+    collectModuleFile { inherit dir type opts; } ++
+    collectModulesSubDir { inherit dir type opts; };
+  collectModule = { dir, type, opts }:
+    let
+      path = dir + "/module.nix";
+    in
+    if builtins.pathExists path then
+      let
+        module = import path;
+      in
+      if (builtins.hasAttr "${type}" module) then
+        if (module."${type}" opts) then
+          collectModuleDir { inherit dir type opts; }
+        else []
+      else []
+    else collectModuleDir { inherit dir type opts; };
+
+  systemModules = { dir, opts }: collectModule { type = "system"; inherit dir opts; };
+  homeModules = { dir, opts }: collectModule { type = "home"; inherit dir opts; };
 in
 {
-  inherit searchModules;
-  inherit searchSystemModules;
-  inherit searchHomeModules;
+  inherit systemModules homeModules;
 }

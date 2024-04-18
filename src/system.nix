@@ -3,9 +3,6 @@
 let
   lib = inputs.nixpkgs.lib;
   libutils = import ./utils.nix { inherit lib; };
-  imports = libutils.imports.searchHomeModules [
-    ./modules
-  ];
 in
 {
   nixosConfigurations = {
@@ -20,9 +17,12 @@ in
 
         (./hosts + "/${host}/config.nix")
         (./hosts + "/${host}/hardware.nix")
-        {
-          inherit imports;
-        }
+        ({ config, ... }: {
+          imports = libutils.imports.systemModules {
+            dir = ./modules;
+            opts = config.opts;
+          };
+        })
 
         ./home.nix
       ];
