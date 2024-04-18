@@ -22,7 +22,7 @@
           };
         in
         {
-          ${name} = { config, ... }: {
+          ${name} = { ... }: {
             imports = [
               ./options/home.nix
             ] ++ libutils.imports.systemModules {

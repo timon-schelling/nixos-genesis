@@ -23,6 +23,8 @@ in
             dir = ./modules;
             inherit opts;
           };
+
+          inherit opts;
         }
 
         ./home.nix
