@@ -1,5 +1,8 @@
 { inputs, config, pkgs, libutils, ... }:
 
+let
+  pluginPkgs = inputs.anyrun.packages.${config.opts.system.platform};
+in
 {
   imports = [
     inputs.anyrun.homeManagerModules.default
@@ -8,11 +11,11 @@
   programs.anyrun = {
     enable = true;
     config = {
-      plugins = [
-        inputs.anyrun.packages.${config.opts.system.platform}.applications
-        inputs.anyrun.packages.${config.opts.system.platform}.rink
-        inputs.anyrun.packages.${config.opts.system.platform}.symbols
-        inputs.anyrun.packages.${config.opts.system.platform}.websearch
+      plugins = with pluginPkgs; [
+        applications
+        rink
+        symbols
+        websearch
       ];
       width = { absolute = 1000; };
       x = { fraction = 0.5; };
@@ -63,9 +66,11 @@
     (libutils.nuscript.mkScript pkgs "select-ui" ''
       $in | anyrun-select
     '')
-    (libutils.nuscript.mkScript pkgs "anyrun-select" ''
-      $in | ^anyrun --plugins "${inputs.anyrun.packages.${config.opts.system.platform}.stdin}/lib/libstdin.so" --hide-plugin-info true
-    '')
+    (libutils.nuscript.mkScript pkgs "anyrun-select"
+      (with pluginPkgs; ''
+        $in | ^anyrun --plugins "${stdin}/lib/libstdin.so" --hide-plugin-info true
+      '')
+    )
   ];
 
   programs.anyrun.extraCss = ''
