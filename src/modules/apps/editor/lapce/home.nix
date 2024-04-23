@@ -23,7 +23,12 @@ let
       lsp-path = "${pkgs.nil}/bin/nil";
     };
   };
-  keymaps = {};
+  keymaps = [
+    {
+      command = "open_log_file";
+      key = "Ctrl+Shift+L";
+    }
+  ];
   theme = {
     base = {
       white = "#fcfcfa";
@@ -150,7 +155,7 @@ in {
         "${appName}/settings.toml".source =
           toml.generate "settings.toml" settings;
         "${appName}/keymaps.toml".source =
-          toml.generate "keymaps.toml" keymaps;
+          toml.generate "keymaps.toml" { inherit keymaps; };
       };
       dataFile = {
         "${appName}/plugins".source = ./plugins;
