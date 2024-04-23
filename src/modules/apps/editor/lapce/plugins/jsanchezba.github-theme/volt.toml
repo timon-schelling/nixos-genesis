@@ -1,8 +1,0 @@
-name = "github-theme"
-version = "0.1.1"
-display-name = "GitHub Light"
-author = "jsanchezba"
-description = "GitHub Light Theme"
-icon = "github.png"
-repository = "https://github.com/jsanchezba/lapce-github-theme"
-color-themes = ["github-light.toml"]

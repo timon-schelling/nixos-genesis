@@ -1,1 +1,0 @@
-# Spaceduck theme for lapce

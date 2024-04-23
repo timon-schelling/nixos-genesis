@@ -1,2 +1,0 @@
-# milk-tea
-Lapce theme

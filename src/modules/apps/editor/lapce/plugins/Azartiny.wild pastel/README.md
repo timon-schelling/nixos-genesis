@@ -1,2 +1,0 @@
-Lapce "Wild pastel" theme
-

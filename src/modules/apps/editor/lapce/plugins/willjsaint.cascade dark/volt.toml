@@ -1,7 +1,0 @@
-name = "cascade dark"
-version = "0.0.1"
-display-name = "Cascade Dark"
-author = "willjsaint"
-description = "Pleasing dark theme originally based on Electron's Dark theme."
-repository = "https://github.com/willjsaint/Casecade-Dark"
-color-themes = ["cascade-dark.toml"]

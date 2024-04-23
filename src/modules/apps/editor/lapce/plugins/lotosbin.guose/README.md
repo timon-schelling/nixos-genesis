@@ -1,1 +1,0 @@
-# lapce-theme-guose
