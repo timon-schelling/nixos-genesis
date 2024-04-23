@@ -29,7 +29,7 @@
     extraConfigFiles = {
       "applications.ron".text = ''
         Config(
-          desktop_actions: true,
+          desktop_actions: false,
           max_entries: 10,
           terminal: Some("wezterm"),
         )
@@ -68,129 +68,85 @@
     '')
   ];
 
-  # programs.anyrun.extraCss = ''
-  #   @define-color primary #00A380;
-  #   @define-color primary #660053;
-  #   @define-color bg_0 #202020;
-  #   @define-color bg_1 #272727;
-  #   @define-color bg_2 #343434;
-  #   @define-color bg_3 #3F3F3F;
-  #   @define-color text_0 #AAAAAA;
-  #   @define-color text_1 #888888;
-  #   @define-color text_2 #666666;
-  #   @define-color text_3 #444444;
-
-  #   @define-color background @bg_0;
-  #   @define-color foreground @text_0;
-  #   @define-color launcher_border @bg_2;
-  #   @define-color entry_bg @bg_2;
-  #   @define-color entry_border @bg_2;
-  #   @define-color entry_selection @primary;
-  #   @define-color plug_icon_and_label_bg @bg_1;
-  #   @define-color plug_icon_and_label_fg @text_2;
-  #   @define-color result_bg @bg_1;
-  #   @define-color result_selected_bg @bg_2;
-  #   @define-color result_selected_fg @text_0;
-  #   @define-color result_selected_border @bg_2;
-
-  #   * {
-  #     all: unset;
-  #     font-family: "SF Pro Rounded", RecMonoLinear;
-  #     font-size: 16px;
-  #   }
-
-  #   box#main {
-  #     background: @background;
-  #     border: 3px solid @launcher_border;
-  #     border-radius: 16px;
-  #     padding: 14px 12px 0px 12px;
-  #     color: @foreground;
-  #   }
-
-  #   #entry {
-  #     background: @entry_bg;
-  #     border-radius: 12px;
-  #     padding: 10px;
-  #     border: 2px solid @entry_border;
-  #     font-size: 24px;
-  #     min-height: 44px;
-  #   }
-
-  #   #entry selection {
-  #     background: @entry_selection;
-  #   }
-
-  #   list#main{
-  #     padding: 10px 0px;
-  #   }
-
-  #   box > box#plugin.horizontal:first-child {
-  #     border-radius: 12px;
-  #     background: @plug_icon_and_label_bg;
-  #     color: @plug_icon_and_label_fg;
-  #     padding: 16px;
-  #   }
-
-  #   list#main > row {
-  #     margin: 2px 1px;
-  #   }
-
-  #   #match.activatable {
-  #     border-radius: 12px;
-  #     background: @result_bg;
-  #     margin: 0px 0px 12px 0px;
-  #     padding: 10px;
-  #     min-height: 44px;
-  #   }
-
-  #   #match:selected, #match:hover {
-  #     background: @result_selected_bg;
-  #     color: @result_selected_fg;
-  #     border: 2px solid @result_selected_border;
-  #     padding: 8px;
-  #   }
-
-  #   #match:hover {
-  #     opacity: 0.6;
-  #   }
-  # '';
   programs.anyrun.extraCss = ''
+    @define-color bg_0 #202020;
+    @define-color bg_1 #272727;
+    @define-color bg_2 #343434;
+    @define-color fg_0 #AAAAAA;
+    @define-color fg_1 #888888;
+    @define-color fg_2 #666666;
+
+    @define-color window_background @bg_0;
+    @define-color window_foreground @fg_0;
+    @define-color window_border @bg_2;
+    @define-color entry_bg @bg_1;
+    @define-color entry_fg @fg_1;
+    @define-color entry_border @bg_1;
+    @define-color result_bg @bg_1;
+    @define-color result_fg @fg_1;
+    @define-color result_selected_bg @bg_2;
+    @define-color result_selected_fg @fg_0;
+
     * {
-      transition: 200ms ease-out;
-      font-family: Lexend;
-      font-size: 1.3rem;
+      all: unset;
+      font-family: "SF Pro Rounded", RecMonoLinear;
+      font-size: 16px;
     }
 
-    #window,
-    #match,
-    #entry,
-    #plugin,
     #main {
-      background: transparent;
+      background: @window_background;
+      color: @window_foreground;
+      border: 3px solid @window_border;
+      border-radius: 18px;
+      padding: 12px 10px 12px 10px;
     }
 
-    #match:selected {
-      background: rgba(203, 166, 247, 0.7);
+    list#main {
+      border: 0px;
+      padding: 0px;
     }
 
-    #match {
-      padding: 3px;
-      border-radius: 16px;
+    #plugin.activatable {
+      padding: 0px 0px 12px 0px;
+    }
+
+    #plugin.activatable:first-child {
+      padding-top: 12px;
+    }
+
+    #plugin.activatable:last-child {
+      padding-bottom: 0px;
     }
 
     #entry {
-      border-radius: 16px;
+      background: @entry_bg;
+      color: @entry_fg;
+      border-radius: 12px;
+      padding: 10px;
+      font-size: 24px;
+      min-height: 44px;
     }
 
-    box#main {
-      background: rgba(30, 30, 46, 0.7);
-      border: 1px solid #28283d;
-      border-radius: 24px;
-      padding: 8px;
+    box > box#plugin.horizontal:first-child {
+      border-width: 0px;
     }
 
-    row:first-child {
-      margin-top: 6px;
+    #match.activatable {
+      border-radius: 12px;
+      background: @result_bg;
+      color: @result_fg;
+      margin: 0px 0px 12px 0px;
+      padding: 10px;
+      min-height: 44px;
+    }
+
+    #match.activatable:last-child {
+      margin: 0px 0px 0px 0px;
+    }
+
+    #match:selected, #match:hover {
+      background: @result_selected_bg;
+      color: @result_selected_fg;
     }
   '';
 }
