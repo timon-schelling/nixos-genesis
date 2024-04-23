@@ -18,7 +18,7 @@
   };
 
   outputs = inputs:
-    import ../../main.nix {
+    import ../../src/system.nix {
       inherit inputs;
       host = builtins.baseNameOf ./.;
     };
