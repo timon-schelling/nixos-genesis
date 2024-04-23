@@ -1,0 +1,8 @@
+name = "ocean-space-refined"
+version = "0.1.2"
+display-name = "Ocean Space Refined"
+author = "Mikastiv"
+description = "The Deep Oceanic Blue Theme"
+icon = "icon.png"
+repository = "https://github.com/Mikastiv/ocean-space-refined-lapce"
+color-themes = ["ocean-space-refined.toml"]

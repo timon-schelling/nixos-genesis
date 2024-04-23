@@ -1,0 +1,7 @@
+name = "discord"
+version = "0.2.1"
+display-name = "Discord"
+author = "sleepy-kitten"
+description = "Discord like theme"
+repository = "https://github.com/sleepy-kitten/lapce-discord"
+color-themes = ["discord.toml"]

@@ -1,0 +1,7 @@
+name = "aura-theme"
+version = "0.1.0"
+display-name = "Aura Theme"
+author = "ItzSwirlz"
+description = "A beautiful dark theme for Lapce"
+repository = "https://github.com/daltonmenezes/aura-theme"
+color-themes = ["aura-dark.toml"]

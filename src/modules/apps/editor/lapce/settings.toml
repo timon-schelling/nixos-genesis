@@ -1,0 +1,23 @@
+[core]
+color-theme = "Black Iris"
+custom-titlebar = false
+icon-theme = "Material Icons"
+
+[editor]
+font-family = """
+FiraCode Nerd Bold Font, monospace
+"""
+bracket-pair-colorization = true
+tab-width = 2
+cursor-surrounding-lines = 4
+font-size = 20
+highlight-matching-brackets = true
+render-whitespace = """
+trailing
+"""
+
+[ui]
+font-size = 18
+
+[lapce-nix]
+lsp-path = "nil"

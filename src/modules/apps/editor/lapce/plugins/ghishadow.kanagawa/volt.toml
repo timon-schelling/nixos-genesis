@@ -1,0 +1,12 @@
+name = "kanagawa"
+version = "0.0.6"
+display-name = "Kanagawa theme"
+author = "ghishadow"
+description = "dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai. (based on Neovim theme)"
+icon = "assets/icon.png"
+repository = "https://github.com/ghishadow/kanagawa"
+color-themes = [
+    "kanagawa-wave.toml",
+    "kanagawa-lotus.toml",
+    "kanagawa-dragon.toml",
+]

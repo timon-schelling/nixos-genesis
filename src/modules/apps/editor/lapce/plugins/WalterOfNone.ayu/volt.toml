@@ -1,0 +1,11 @@
+name = "ayu"
+version = "0.1.2"
+display-name = "Ayu"
+author = "WalterOfNone"
+description = "The Ayu theme"
+icon = "ayu-icon.png"
+repository = "https://github.com/walterofnone/ayu"
+color-themes = [
+    "ayu-dark.toml",
+    "ayu-mirage.toml",
+]

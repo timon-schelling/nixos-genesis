@@ -1,0 +1,8 @@
+name = "darcula"
+version = "0.3.0"
+display-name = "Darcula"
+author = "BillyDM"
+description = "Darcula color theme"
+icon = "icon.svg"
+repository = "https://github.com/BillyDM/lapce-color-theme-darcula"
+color-themes = ["darcula.toml"]

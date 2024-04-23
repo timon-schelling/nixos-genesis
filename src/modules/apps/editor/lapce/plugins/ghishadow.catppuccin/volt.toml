@@ -1,0 +1,13 @@
+name = "catppuccin"
+version = "0.1.18"
+display-name = "Catppuccin"
+author = "ghishadow"
+description = "🐭 Soothing pastel theme for Lapce"
+icon = "assets/logo.webp"
+repository = "catppuccin/lapce"
+color-themes = [
+    "catppuccin-latte.toml",
+    "catppuccin-frappe.toml",
+    "catppuccin-macchiato.toml",
+    "catppuccin-mocha.toml",
+]

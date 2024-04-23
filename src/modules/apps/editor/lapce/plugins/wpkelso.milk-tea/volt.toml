@@ -1,0 +1,8 @@
+name = "milk-tea"
+version = "0.0.2"
+display-name = "Milk Tea"
+author = "wpkelso"
+description = "Theme based around milk tea in its many forms"
+icon = "assets/logo.png"
+repository = "wpkelso/milk-tea-lapce-theme"
+color-themes = ["milk-tea.toml"]

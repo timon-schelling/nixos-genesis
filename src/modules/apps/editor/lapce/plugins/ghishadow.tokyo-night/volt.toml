@@ -1,0 +1,13 @@
+name = "tokyo-night"
+version = "0.2.0"
+display-name = "Tokyo Night"
+author = "ghishadow"
+description = "A clean, dark Lapce theme that celebrates the lights of Downtown Tokyo at night."
+icon = "assets/icon.png"
+repository = "https://github.com/syntacti/tokyo-night-lapce"
+color-themes = [
+    "tokyo-night.toml",
+    "tokyo-night-storm.toml",
+    "tokyo-night-light.toml",
+    "tokyo-night-oled.toml",
+]

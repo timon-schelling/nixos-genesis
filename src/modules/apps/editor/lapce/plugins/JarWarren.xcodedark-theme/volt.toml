@@ -1,0 +1,8 @@
+name = "xcodedark-theme"
+version = "0.1.1"
+display-name = "Xcode Dark Theme"
+author = "JarWarren"
+description = "Xcode's \"Default (Dark)\" theme."
+icon = "xcode.png"
+repository = "https://github.com/JarWarren/xcodedark-lapce"
+color-themes = ["xcodedark.toml"]

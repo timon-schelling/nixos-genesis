@@ -1,0 +1,8 @@
+name = "forest-night-theme"
+version = "0.1.1"
+display-name = "Forest Night"
+author = "Notiee"
+description = "A true black theme with tasteful forest green accents."
+icon = "icon.png"
+repository = "https://github.com/Notiee/Forest-Night-Lapce"
+color-themes = ["forest-night.toml"]

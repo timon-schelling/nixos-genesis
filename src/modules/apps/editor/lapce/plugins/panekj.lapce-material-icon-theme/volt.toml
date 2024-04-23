@@ -1,0 +1,7 @@
+name = "lapce-material-icon-theme"
+version = "0.0.1-beta1"
+display-name = "Material Icon Theme"
+author = "panekj"
+description = "Material icon theme for Lapce"
+repository = "https://github.com/panekj/lapce-material-icon-theme.git"
+icon-themes = ["material.toml"]

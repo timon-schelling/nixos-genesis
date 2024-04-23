@@ -1,0 +1,122 @@
+# Aura Dark theme by Dalton Menezes (https://github.com/daltonmenezes)
+# Color palettes - https://github.com/daltonmenezes/aura-theme/tree/main/packages/color-palettes
+# Reference files:
+# Sublime Text - https://github.com/daltonmenezes/aura-theme/tree/main/packages/sublime-text
+# VSCode - https://github.com/daltonmenezes/aura-theme/tree/main/packages/vscode
+# Aura Theme is licensed under MIT
+[color-theme]
+name = "Aura Dark"
+
+[ui]
+font-family = "Fira Code Mono"
+
+[color-theme.base]
+black = "#15141b"
+white = "#edecee"
+gray = "#6d6d6d"
+purple = "#a277ff"
+purple-fading = "#3d375e7f"
+green = "#61ffca"
+orange = "#ffca85"
+pink = "#f694ff"
+blue = "#82e2ff"
+red = "#ff6767"
+
+[color-theme.syntax]
+# Accent 1 usage
+keyword = "$purple"
+selfKeyword = "$purple"
+tag = "$purple"
+variable = "$purple"
+attribute = "$purple"
+operator = "$purple"
+"punctuation.delimiter" = "$purple"
+punctuation = "$yellow"  # only yellow usage
+
+# Accent 2 usage
+string = "$green"
+constant = "$green"
+number = "$green"
+
+# Accent 3 usage
+function = "$orange"
+
+# Accent 6 usage
+field = "#f694ff"
+embedded = "#f694ff"
+property = "#f694ff"
+"variable.other.member" = "#f694ff"
+
+# Accent 32 usage
+type = "$blue"
+typeAlias = "$blue"
+"type.builtin" = "$blue"
+"builtinType" = "$blue"
+interface = "$blue"
+class = "$blue"
+builtin = "$blue"
+constructor = "$blue"
+
+[color-theme.ui]
+"activity.background" = "$black"
+"activity.foreground" = "$green"
+
+"lapce.border" = "#000000"
+"lapce.error" = "$red"
+"lapce.dropdown_shadow" = "#0f0f0f"
+"lapce.scroll_bar" = "$black"
+
+"editor.background" = "$black"
+"editor.foreground" = "$white"
+"editor.caret" = "$white"
+"editor.focus" = "#a394f033"
+"editor.indent_guide" = "$gray"
+"editor.link" = "$purple"
+"editor.selection" = "#3d375e7f"
+"editor.current_line" = "#a394f033"
+
+"inlay_hint.background" = "#2e2b38"
+"inlay_hint.foreground" = "#cdccce"
+
+"error_lens.error.foreground" = "red"
+"error_lens.warning.foreground" = "$orange"
+
+"lapce.button.primary.background" = "$green"
+"lapce.button.primary.foreground" = "$black"
+
+"lapce.tab.active.background" = "#00000000"
+"lapce.tab.active.foreground" = "$green"
+"lapce.tab.separator" = "#000000"
+
+"lapce.tab.inactive.background" = "$black"
+"lapce.tab.inactive.foreground" = "$gray"
+
+"panel.background" = "#110f18"
+"panel.foreground" = "#cdccce"
+
+"source_control.added" = "#00d89023"
+"source_control.removed" = "#ff474720"
+"source_control.modified" = "$orange"
+
+"status.background" = "#121016"
+"status.foreground" = "#adacae"
+"status.border" = "#000000"
+
+"terminal.background" = "$black"
+"terminal.foreground" = "#cdccce"
+"terminal.black" = "$black"
+"terminal.blue" = "$purple"
+"terminal.bright_black" = "#2d2d2d"
+"terminal.bright_blue" = "$purple"
+"terminal.bright_cyan" = "$green"
+"terminal.bright_green" = "$purple"
+"terminal.bright_magenta" = "$green"
+"terminal.bright_red" = "$orange"
+"terminal.bright_white" = "$white"
+"terminal.bright_yellow" = "$orange"
+"terminal.cyan" = "$purple"
+"terminal.green" = "$green"
+"terminal.magenta" = "$green"
+"termimal.red" = "$red"
+"terminal.white" = "#cdccce"
+"terminal.yellow" = "$orange"

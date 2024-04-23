@@ -1,0 +1,8 @@
+name = "nordyu-theme"
+version = "0.1.0"
+display-name = "dyu's Nord Theme"
+author = "dyu"
+description = "Nord-based color scheme."
+icon = "icon.png"
+repository = "https://github.com/dyu/nordyu-lapce"
+color-themes = ["nord.toml"]

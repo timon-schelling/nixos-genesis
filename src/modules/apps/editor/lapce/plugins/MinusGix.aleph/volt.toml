@@ -1,0 +1,8 @@
+name = "aleph"
+version = "0.3.2"
+display-name = "Aleph"
+author = "MinusGix"
+description = "Dark and colorful theme"
+icon = "aleph.png"
+repository = "https://github.com/MinusGix/lapce-aleph"
+color-themes = ["aleph.toml"]

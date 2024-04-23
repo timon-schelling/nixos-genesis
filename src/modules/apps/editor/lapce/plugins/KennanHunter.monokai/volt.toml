@@ -1,0 +1,8 @@
+name = "monokai"
+version = "0.1.0"
+display-name = "Monokai"
+author = "KennanHunter"
+description = "The Classic Monokai Theme"
+icon = "icon.png"
+repository = "https://github.com/kennanhunter/lapce-monokai"
+color-themes = ["monokai.toml"]

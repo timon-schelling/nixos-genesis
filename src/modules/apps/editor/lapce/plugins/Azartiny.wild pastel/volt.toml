@@ -1,0 +1,6 @@
+name = "wild pastel"
+version = "0.1.1"
+display-name = "Wild pastel"
+author = "Azartiny"
+description = "A Wild pastel theme for Lapce"
+color-themes = ["wild_pastel.toml"]

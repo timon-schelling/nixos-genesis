@@ -1,0 +1,32 @@
+name = "lapce-rust"
+version = "0.3.1896"
+display-name = "Rust"
+author = "dzhou121"
+description = "Rust for Lapce: powered by Rust Analyzer"
+icon = "rust-logo.png"
+repository = "https://github.com/lapce/lapce-rust"
+wasm = "lapce-rust.wasm"
+
+[activation]
+language = ["rust"]
+workspace-contains = ["*/Cargo.toml"]
+
+[config."check.command"]
+default = "check"
+description = "Cargo command to use for `cargo check`."
+
+[config."diagnostics.enable"]
+default = true
+description = "Whether to show native rust-analyzer diagnostics."
+
+[config.serverPath]
+default = ""
+description = "Path to rust-analyzer executable. When empty, it points to the bundled binary."
+
+[config.checkOnSave]
+default = true
+description = "Run the check command for diagnostics on save."
+
+[config."diagnostics.experimental.enable"]
+default = true
+description = "Whether to show native rust-analyzer diagnostics."
