@@ -1,3 +1,0 @@
-linux:
-  installs:
-    cmd: cargo install --locked zellij

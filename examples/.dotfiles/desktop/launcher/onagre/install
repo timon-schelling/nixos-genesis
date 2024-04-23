@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-sudo apt install pkg-config libasound2-dev libssl-dev cmake libfreetype6-dev libexpat1-dev libxcb-composite0-dev -y
-cargo install --git https://github.com/timon-schelling/onagre --locked

@@ -1,6 +1,0 @@
-linux:
-  links:
-    .: ~/.config/nushell
-  installs:
-    cmd: cargo install nu
-    depends: [/dev/rust]

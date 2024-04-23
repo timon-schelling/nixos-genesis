@@ -1,4 +1,0 @@
-{ hostName, ... }: {
-  imports = [ ./${hostName} ./internationalisation ];
-
-}

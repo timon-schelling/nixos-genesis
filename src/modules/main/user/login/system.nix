@@ -4,13 +4,14 @@
   programs.regreet = {
     enable = true;
     settings = {
+      background = {
+        color = "#161616";
+      };
       GTK = {
+        theme_name = "adw-gtk3-dark";
         application_prefer_dark_theme = true;
-        # cursor_theme_name = "Adwaita";
-        # font_name = "SourceCodePro Regular 11";
-        # icon_theme_name = "Papirus";
-        # theme_name = "Colloid-Dark";
       };
     };
+    cageArgs = [ "-s" "-m" "last" ];
   };
 }

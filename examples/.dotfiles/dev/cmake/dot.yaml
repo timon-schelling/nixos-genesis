@@ -1,2 +1,0 @@
-linux:
-  installs: sudo apt-get install cmake -y

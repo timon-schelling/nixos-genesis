@@ -1,8 +1,0 @@
-linux:
-  links:
-    pueue.yaml: ~/.config/pueue/pueue.yml
-    # pueue.service: /etc/systemd/user/pueue.service
-  installs:
-    cmd:
-      cargo install pueue
-    depends: [/dev/rust]

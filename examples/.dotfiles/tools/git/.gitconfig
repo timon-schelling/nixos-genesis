@@ -1,8 +1,0 @@
-[user]
-	email = timon.schelling@outlook.de
-	name = Timon Schelling
-	signingkey = D192A25CA939EC83
-[core]
-	editor = code --wait
-[init]
-	defaultBranch = main
