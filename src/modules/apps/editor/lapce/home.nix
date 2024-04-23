@@ -24,20 +24,26 @@ let
     };
   };
   keybindings = {};
-  toml = pkgs.formats.toml { };
 in {
   # TODO: configure lapce
   home.packages = [
     pkgs.lapce
   ];
 
-  xdg.configFile."lapce/settings.toml".source =
-    toml.generate "settings.toml" settings;
-
-  xdg.configFile."lapce/keybindings.toml".source =
-    toml.generate "keybindings.toml" keybindings;
-
-  xdg.dataFile."lapce/plugins".source = ./plugins;
-
-  xdg.dataFile."lapce/themes".source = ./themes;
+  xdg =
+    let
+      appName = "lapce-stable";
+      toml = pkgs.formats.toml { };
+    in {
+      configFile = {
+        "${appName}/settings.toml".source =
+          toml.generate "settings.toml" settings;
+        "${appName}/keybindings.toml".source =
+          toml.generate "keybindings.toml" keybindings;
+      };
+      dataFile = {
+        "${appName}/plugins".source = ./plugins;
+        "${appName}/themes".source = ./themes;
+      };
+    };
 }
