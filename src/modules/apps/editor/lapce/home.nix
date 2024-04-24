@@ -18,6 +18,7 @@ let
     };
     ui = {
       font-size = 18;
+      open-editors-visible = false;
     };
     lapce-nix = {
       lsp-path = "${pkgs.nil}/bin/nil";

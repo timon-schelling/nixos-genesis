@@ -29,9 +29,7 @@
               dir = ./modules;
               inherit opts;
             });
-
             inherit opts;
-
           };
         }
       )
