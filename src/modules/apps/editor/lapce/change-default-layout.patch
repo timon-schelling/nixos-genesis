@@ -1,7 +1,7 @@
 diff --git a/lapce-app/src/panel/data.rs b/lapce-app/src/panel/data.rs
 --- lapce-app/src/panel/data.rs
 +++ lapce-app/src/panel/data.rs
-@@ -22,19 +22,28 @@
+@@ -22,19 +22,27 @@
      let mut order = PanelOrder::new();
      order.insert(
          PanelPosition::LeftTop,
@@ -21,20 +21,20 @@ diff --git a/lapce-app/src/panel/data.rs b/lapce-app/src/panel/data.rs
      order.insert(
 -        PanelPosition::BottomLeft,
 -        im::vector![PanelKind::Terminal, PanelKind::Search, PanelKind::Problem,],
+-    );
+-
 +        PanelPosition::BottomRight,
 +        im::vector![
 +            PanelKind::Terminal,
 +            PanelKind::Search,
 +            PanelKind::Problem,
 +        ],
-     );
--
-+
++    );
      order
  }
 
  #[derive(Clone, Copy, Serialize, Deserialize, Hash, PartialEq, Eq)]
-@@ -94,9 +103,9 @@
+@@ -94,9 +102,9 @@
          styles.insert(
              PanelPosition::LeftTop,
              PanelStyle {
@@ -45,7 +45,7 @@ diff --git a/lapce-app/src/panel/data.rs b/lapce-app/src/panel/data.rs
              },
          );
          styles.insert(
-@@ -110,9 +119,9 @@
+@@ -110,9 +118,9 @@
          styles.insert(
              PanelPosition::BottomLeft,
              PanelStyle {
@@ -56,7 +56,7 @@ diff --git a/lapce-app/src/panel/data.rs b/lapce-app/src/panel/data.rs
              },
          );
          styles.insert(
-@@ -126,9 +135,9 @@
+@@ -126,9 +134,9 @@
          styles.insert(
              PanelPosition::RightTop,
              PanelStyle {
