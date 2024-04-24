@@ -33,8 +33,8 @@ diff --git a/lapce-app/src/panel/data.rs b/lapce-app/src/panel/data.rs
      order
  }
 
- #[derive(Clone, Copy, Serialize, Deserialize, Hash, PartialEq, Eq)]
-@@ -94,9 +102,9 @@
+ #[derive(Clone, Serialize, Deserialize)]
+@@ -76,9 +84,9 @@
          styles.insert(
              PanelPosition::LeftTop,
              PanelStyle {
@@ -45,7 +45,7 @@ diff --git a/lapce-app/src/panel/data.rs b/lapce-app/src/panel/data.rs
              },
          );
          styles.insert(
-@@ -110,9 +118,9 @@
+@@ -92,9 +100,9 @@
          styles.insert(
              PanelPosition::BottomLeft,
              PanelStyle {
@@ -56,7 +56,7 @@ diff --git a/lapce-app/src/panel/data.rs b/lapce-app/src/panel/data.rs
              },
          );
          styles.insert(
-@@ -126,9 +134,9 @@
+@@ -108,9 +116,9 @@
          styles.insert(
              PanelPosition::RightTop,
              PanelStyle {
