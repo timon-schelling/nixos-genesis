@@ -20,9 +20,8 @@ let
       font-size = 18;
       open-editors-visible = false;
     };
-    lapce-nix = {
-      lsp-path = "${pkgs.nil}/bin/nil";
-    };
+    lapce-nix.lsp-path = "${pkgs.nil}/bin/nil";
+    lapce-rust.serverPath = "${pkgs.rust-analyzer}/bin/rust-analyzer";
   };
   keymaps = [
     {
