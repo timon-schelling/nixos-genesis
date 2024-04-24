@@ -143,7 +143,7 @@ let
 in {
   # TODO: configure lapce
   home.packages = [
-    (pkgs.lapce.override {
+    (pkgs.lapce.overrideAttrs {
       patches = [
         ./change-default-layout.patch
       ];
