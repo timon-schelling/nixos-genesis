@@ -144,9 +144,9 @@ in {
   # TODO: configure lapce
   home.packages = [
     (pkgs.lapce.overrideAttrs {
-      patches = [
-        ./change-default-layout.patch
-      ];
+      # patches = [
+      #   ./change-default-layout.patch
+      # ];
     })
   ];
 
