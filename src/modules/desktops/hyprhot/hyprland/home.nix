@@ -10,9 +10,9 @@
     #    inputs.split-monitor-workspaces.packages.${config.opts.system.platform}.split-monitor-workspaces
     ];
     extraConfig = ''
-      monitor = DP-3, 2560x1440, 1200x250, 1
-      monitor = DP-2, 1920x1200, 0x0, 1, transform, 1
-      monitor = DP-1, 1920x1200, 3760x0, 1, transform, 1
+      monitor = DP-3, 2560x1440, 1200x250, 1, bitdepth, 10
+      monitor = DP-2, 1920x1200, 0x0, 1, transform, 1, bitdepth, 10
+      monitor = DP-1, 1920x1200, 3760x0, 1, transform, 1, bitdepth, 10
       monitor = ,preferred, auto, auto
 
       # cursor settings
