@@ -20,6 +20,7 @@ let
       font-size = 18;
       open-editors-visible = false;
     };
+    nushell-lsp.command = "${pkgs.nushell}/bin/nu --lsp";
     lapce-nix.lsp-path = "${pkgs.nil}/bin/nil";
     lapce-rust.serverPath = "${pkgs.rust-analyzer}/bin/rust-analyzer";
   };
