@@ -165,7 +165,7 @@ in {
       dataFile = {
         "${appName}/plugins" = {
           source = ./plugins;
-          recusive = true;
+          recursive = true;
         };
         "${appName}/themes/custom.toml".source = toml.generate "custom.toml" {
           color-theme = {
