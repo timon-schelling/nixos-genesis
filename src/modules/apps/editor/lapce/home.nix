@@ -22,7 +22,7 @@ let
     };
     nushell-lsp = {
       path = "${pkgs.nushell}/bin/nu";
-      args = ( "--lsp" );
+      args = [ "--lsp" ];
     };
     lapce-nix.lsp-path = "${pkgs.nil}/bin/nil";
     lapce-rust.serverPath = "${pkgs.rust-analyzer}/bin/rust-analyzer";
