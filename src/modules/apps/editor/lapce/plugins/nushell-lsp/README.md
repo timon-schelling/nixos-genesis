@@ -1,4 +1,4 @@
-# Nushell LSP Lapce Extension
+# Nushell LSP Lapce Plugin
 
 A language server for Nushell.
 
