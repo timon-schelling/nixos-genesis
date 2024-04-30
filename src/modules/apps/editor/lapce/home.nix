@@ -163,7 +163,10 @@ in {
           toml.generate "keymaps.toml" { inherit keymaps; };
       };
       dataFile = {
-        "${appName}/plugins".source = ./plugins;
+        "${appName}/plugins" = {
+          source = ./plugins;
+          recusive = true;
+        };
         "${appName}/themes/custom.toml".source = toml.generate "custom.toml" {
           color-theme = {
             name = "Custom";
