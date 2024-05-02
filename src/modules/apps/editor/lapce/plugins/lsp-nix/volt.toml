@@ -5,7 +5,7 @@ author = "MrFoxPro"
 description = "Plugin for oxalica/nil: Nix Language server, an incremental analysis assistent for writing in Nix."
 icon = "icon.png"
 repository = "https://github.com/mrfoxpro/lapce-nix"
-wasm = "lapce-nix.wasm"
+wasm = "plugin.wasm"
 
 [activation]
 language = ["nix"]

@@ -3,9 +3,9 @@ version = "0.3.1896"
 display-name = "Rust"
 author = "dzhou121"
 description = "Rust for Lapce: powered by Rust Analyzer"
-icon = "rust-logo.png"
+icon = "icon.png"
 repository = "https://github.com/lapce/lapce-rust"
-wasm = "lapce-rust.wasm"
+wasm = "plugin.wasm"
 
 [activation]
 language = ["rust"]

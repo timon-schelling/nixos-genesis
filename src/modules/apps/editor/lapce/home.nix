@@ -26,6 +26,7 @@ let
     };
     lapce-nix.lsp-path = "${pkgs.nil}/bin/nil";
     lapce-rust.serverPath = "${pkgs.rust-analyzer}/bin/rust-analyzer";
+    typst-lsp.serverPath = "${pkgs.typst-lsp}/bin/typst-lsp";
   };
   keymaps = [
     {
