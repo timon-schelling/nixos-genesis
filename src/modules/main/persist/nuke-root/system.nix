@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ lib, ... }:
 
 {
   boot.initrd.postDeviceCommands = lib.mkAfter ''
