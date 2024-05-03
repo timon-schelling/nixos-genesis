@@ -2,8 +2,7 @@
 
 {
   opts.user.persist.state.folders = [
-    ".mozilla/firefox/main"
-    # ".cache/mozilla"
+    ".config/chromium"
   ];
 
   programs.chromium = {
