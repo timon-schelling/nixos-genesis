@@ -66,7 +66,6 @@
                   mountpoint = "/nix";
                 };
                 "/old_roots" = {
-                  mountOptions = [ "subvol=old_roots" "noatime" ];
                   mountpoint = "/old";
                 };
               };
