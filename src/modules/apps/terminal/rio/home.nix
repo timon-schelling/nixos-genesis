@@ -30,7 +30,7 @@
       };
       renderer = {
         performance = "Low";
-        backend = "Vukan";
+        backend = "Vulkan";
       };
     };
   };
