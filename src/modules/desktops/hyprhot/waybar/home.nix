@@ -1,8 +1,8 @@
-{ pkgs, libutils, ... }:
+{ pkgs, inputs, config, libutils, ... }:
 
 {
   home.packages = [
-    pkgs.waybar
+    (inputs.waybar.packages.${config.opts.system.platform}.waybar)
     (libutils.nuscript.mkScript pkgs "waybar-toggle" (builtins.readFile ./toggle.nu))
   ];
 
