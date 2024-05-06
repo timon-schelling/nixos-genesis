@@ -88,33 +88,42 @@
         "widget.use-xdg-desktop-portal.mime-handler" = true;
         "widget.use-xdg-desktop-portal.open-uri" = true;
         "widget.use-xdg-desktop-portal.settings" = true;
-        # "browser.uiCustomization.state" = (builtins.toJSON {
-        #   currentVersion = 1;
-        #   placements = {
-        #     PersonalToolbar = [
-        #       "import-button"
-        #       "personal-bookmarks"
-        #     ];
-        #     TabsToolbar = [
-        #       "tabbrowser-tabs"
-        #       "new-tab-button"
-        #       "alltabs-button"
-        #     ];
-        #     nav-bar = [
-        #       "back-button"
-        #       "forward-button"
-        #       "stop-reload-button"
-        #       "home-button"
-        #       "urlbar-container"
-        #       "downloads-button"
-        #       "library-button"
-        #     ];
-        #     toolbar-menubar = [
-        #       "menubar-items"
-        #     ];
-        #     widget-overflow-fixed-list = [ ];
-        #   };
-        # });
+        "browser.uiCustomization.state" = (builtins.toJSON {
+          currentVersion = 20;
+          dirtyAreaCache = [
+            "unified-extensions-area"
+            "nav-bar"
+            "toolbar-menubar"
+            "TabsToolbar"
+            "PersonalToolbar"
+          ];
+          newElementCount = 4;
+          placements = {
+            PersonalToolbar = [ "import-button" "personal-bookmarks" ];
+            TabsToolbar = [ "tabbrowser-tabs" "new-tab-button" "alltabs-button" ];
+            nav-bar = [
+              "back-button"
+              "forward-button"
+              "stop-reload-button"
+              "urlbar-container"
+              "downloads-button"
+              "fxa-toolbar-menu-button"
+              "reset-pbm-toolbar-button"
+              "unified-extensions-button"
+            ];
+            toolbar-menubar = [ "menubar-items" ];
+            unified-extensions-area = [
+              "addon_darkreader_org-browser-action"
+              "_a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7_-browser-action"
+            ];
+            widget-overflow-fixed-list = [ ];
+          };
+          seen = [
+            "addon_darkreader_org-browser-action"
+            "_a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7_-browser-action"
+            "developer-button"
+          ];
+        });
       };
 
       ExtensionSettings = with builtins;
