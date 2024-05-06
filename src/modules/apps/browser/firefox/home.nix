@@ -88,33 +88,33 @@
         "widget.use-xdg-desktop-portal.mime-handler" = true;
         "widget.use-xdg-desktop-portal.open-uri" = true;
         "widget.use-xdg-desktop-portal.settings" = true;
-        "browser.uiCustomization.state" = (builtins.toJSON {
-          currentVersion = 1;
-          placements = {
-            PersonalToolbar = [
-              "import-button"
-              "personal-bookmarks"
-            ];
-            TabsToolbar = [
-              "tabbrowser-tabs"
-              "new-tab-button"
-              "alltabs-button"
-            ];
-            nav-bar = [
-              "back-button"
-              "forward-button"
-              "stop-reload-button"
-              "home-button"
-              "urlbar-container"
-              "downloads-button"
-              "library-button"
-            ];
-            toolbar-menubar = [
-              "menubar-items"
-            ];
-            widget-overflow-fixed-list = [ ];
-          };
-        });
+        # "browser.uiCustomization.state" = (builtins.toJSON {
+        #   currentVersion = 1;
+        #   placements = {
+        #     PersonalToolbar = [
+        #       "import-button"
+        #       "personal-bookmarks"
+        #     ];
+        #     TabsToolbar = [
+        #       "tabbrowser-tabs"
+        #       "new-tab-button"
+        #       "alltabs-button"
+        #     ];
+        #     nav-bar = [
+        #       "back-button"
+        #       "forward-button"
+        #       "stop-reload-button"
+        #       "home-button"
+        #       "urlbar-container"
+        #       "downloads-button"
+        #       "library-button"
+        #     ];
+        #     toolbar-menubar = [
+        #       "menubar-items"
+        #     ];
+        #     widget-overflow-fixed-list = [ ];
+        #   };
+        # });
       };
 
       ExtensionSettings = with builtins;
@@ -128,12 +128,13 @@
         in listToAttrs [
           (extension "perfectdarktheme" "")
           (extension "darkreader" "addon@darkreader.org")
+          (extension "user-agent-string-switcher" "{a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7}")
           # (extension "tree-style-tab" "treestyletab@piro.sakura.ne.jp")
           # (extension "uborigin" "uBlock0@raymondhill.net")
           # (extension "clearurls" "{74145f27-f039-47ce-a470-a662b129930a}")
         ];
         # To add additional extensions,find it on addons.mozilla.org, find
-        # the short ID in the url (like https://addons.mozilla.org/en-US/firefox/addon/!SHORT_ID!/)
+        # the short ID in the url (like !SHORT_ID!/)
         # install it in firefox, then go to about:support#addons, or
         # download the XPI by filling it in to the install_url template, unzip it,
         # run `jq .browser_specific_settings.gecko.id manifest.json` or
