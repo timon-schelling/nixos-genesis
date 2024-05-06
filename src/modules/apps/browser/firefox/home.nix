@@ -88,51 +88,33 @@
         "widget.use-xdg-desktop-portal.mime-handler" = true;
         "widget.use-xdg-desktop-portal.open-uri" = true;
         "widget.use-xdg-desktop-portal.settings" = true;
-        "browser.uiCustomization.state" = ''
-          {
-            "placements": {
-              "widget-overflow-fixed-list": [],
-              "nav-bar": [
-                "back-button",
-                "forward-button",
-                "stop-reload-button",
-                "home-button",
-                "urlbar-container",
-                "downloads-button",
-                "library-button",
-                "ublock0_raymondhill_net-browser-action",
-                "_testpilot-containers-browser-action"
-              ],
-              "toolbar-menubar": [
-                "menubar-items"
-              ],
-              "TabsToolbar": [
-                "tabbrowser-tabs",
-                "new-tab-button",
-                "alltabs-button"
-              ],
-              "PersonalToolbar": [
-                "import-button",
-                "personal-bookmarks"
-              ]
-            },
-            "seen": [
-              "save-to-pocket-button",
-              "developer-button",
-              "ublock0_raymondhill_net-browser-action",
-              "_testpilot-containers-browser-action"
-            ],
-            "dirtyAreaCache": [
-              "nav-bar",
-              "PersonalToolbar",
-              "toolbar-menubar",
-              "TabsToolbar",
-              "widget-overflow-fixed-list"
-            ],
-            "currentVersion": 1,
-            "newElementCount": 1
-          }
-        '';
+        "browser.uiCustomization.state" = (builtins.toJSON {
+          currentVersion = 1;
+          placements = {
+            PersonalToolbar = [
+              "import-button"
+              "personal-bookmarks"
+            ];
+            TabsToolbar = [
+              "tabbrowser-tabs"
+              "new-tab-button"
+              "alltabs-button"
+            ];
+            nav-bar = [
+              "back-button"
+              "forward-button"
+              "stop-reload-button"
+              "home-button"
+              "urlbar-container"
+              "downloads-button"
+              "library-button"
+            ];
+            toolbar-menubar = [
+              "menubar-items"
+            ];
+            widget-overflow-fixed-list = [ ];
+          };
+        });
       };
 
       ExtensionSettings = with builtins;
