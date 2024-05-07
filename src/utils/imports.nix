@@ -36,7 +36,8 @@ let
 
   systemModules = { dir, opts }: collectModule { type = "system"; inherit dir opts; };
   homeModules = { dir, opts }: collectModule { type = "home"; inherit dir opts; };
+  overlays = { dir, opts }: collectModule { type = "overlay"; inherit dir opts; };
 in
 {
-  inherit systemModules homeModules;
+  inherit systemModules homeModules overlays;
 }

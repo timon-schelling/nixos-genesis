@@ -28,6 +28,13 @@ in
         }
 
         ./home.nix
+
+        {
+          nixpkgs.overlays = libutils.imports.overlays {
+            dir = ./overlays;
+            inherit opts;
+          };
+        }
       ];
     };
   };
