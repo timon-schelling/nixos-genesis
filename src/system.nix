@@ -29,12 +29,16 @@ in
 
         ./home.nix
 
-        {
-          nixpkgs.overlays = (map (e: import e) libutils.imports.overlays {
+        (
+          let overlays = (map (e: import e) libutils.imports.overlays {
             dir = ./overlays;
             inherit opts;
           });
-        }
+          in
+          {
+            nixpkgs.overlays = overlays;
+          }
+        )
       ];
     };
   };
