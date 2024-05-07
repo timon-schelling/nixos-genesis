@@ -5,7 +5,7 @@ self: super: {
       owner = "nushell";
       repo = "nushell";
       rev = "7a86b98f61e16ac4b1264e86d992aed7d83ca897";
-      sha = "";
+      sha256 = "";
     };
   });
 }
