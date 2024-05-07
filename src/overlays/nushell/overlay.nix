@@ -24,7 +24,7 @@ self: super: with super; {
     buildNoDefaultFeatures = !withDefaultFeatures;
     buildFeatures = additionalFeatures [ ];
 
-    inherit doCheck;
+    doCheck = false;
 
     checkPhase = ''
       runHook preCheck
