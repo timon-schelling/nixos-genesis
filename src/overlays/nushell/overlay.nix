@@ -8,5 +8,6 @@ self: super: {
       sha256 = "sha256-b7rKUnnKmZAaoxQOa4aCpIU3/LUPgt8bVj00WuCSYA4=";
     };
     cargoSha256 = "";
+    cargoHash = "";
   });
 }
