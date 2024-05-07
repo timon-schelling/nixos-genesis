@@ -13,13 +13,13 @@ self: super: with super; {
     cargoHash = "";
 
     nativeBuildInputs = [ pkg-config ]
-      ++ lib.optionals (withDefaultFeatures && stdenv.isLinux) [ python3 ]
+      ++ lib.optionals (stdenv.isLinux) [ python3 ]
       ++ lib.optionals stdenv.isDarwin [ rustPlatform.bindgenHook ];
 
     buildInputs = [ openssl zstd ]
       ++ lib.optionals stdenv.isDarwin [ zlib Libsystem Security ]
-      ++ lib.optionals (withDefaultFeatures && stdenv.isLinux) [ xorg.libX11 ]
-      ++ lib.optionals (withDefaultFeatures && stdenv.isDarwin) [ AppKit nghttp2 libgit2 ];
+      ++ lib.optionals (stdenv.isLinux) [ xorg.libX11 ]
+      ++ lib.optionals (stdenv.isDarwin) [ AppKit nghttp2 libgit2 ];
 
     doCheck = false;
 
