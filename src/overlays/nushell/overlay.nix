@@ -1,3 +1,3 @@
 self: super: {
-  nushell = (import ./pkg.nix) super;
+  nushell = self.callPackage (import ./pkg.nix) self;
 }
