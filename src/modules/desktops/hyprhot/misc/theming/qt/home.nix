@@ -3,7 +3,7 @@
 {
   qt = {
     enable = true;
-    platformTheme.name = "gtk3";
+    platformTheme = "gtk3";
     style.name = "adwaita-dark";
   };
 }
