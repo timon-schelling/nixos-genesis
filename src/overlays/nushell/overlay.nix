@@ -21,9 +21,6 @@ self: super: with super; {
       ++ lib.optionals (withDefaultFeatures && stdenv.isLinux) [ xorg.libX11 ]
       ++ lib.optionals (withDefaultFeatures && stdenv.isDarwin) [ AppKit nghttp2 libgit2 ];
 
-    buildNoDefaultFeatures = !withDefaultFeatures;
-    buildFeatures = additionalFeatures [ ];
-
     doCheck = false;
 
     checkPhase = ''
