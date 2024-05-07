@@ -30,10 +30,10 @@ in
         ./home.nix
 
         {
-          nixpkgs.overlays = libutils.imports.overlays {
+          nixpkgs.overlays = (map (e: import e) libutils.imports.overlays {
             dir = ./overlays;
             inherit opts;
-          };
+          });
         }
       ];
     };
