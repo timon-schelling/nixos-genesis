@@ -10,7 +10,7 @@ self: super: with super; {
       sha256 = "sha256-b7rKUnnKmZAaoxQOa4aCpIU3/LUPgt8bVj00WuCSYA4=";
     };
 
-    cargoHash = "";
+    cargoHash = "sha256-8K2Cr8wleoEniKc3lszJT1QcojXHUXiIv7c0ER9r7FM=";
 
     nativeBuildInputs = [ pkg-config ]
       ++ lib.optionals (stdenv.isLinux) [ python3 ]
