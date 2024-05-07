@@ -7,7 +7,7 @@ self: super: with super; {
       owner = "nushell";
       repo = "nushell";
       rev = "39156930f5241664801828adbb8df20c28ad60f7";
-      sha256 = "sha256-THU4SxM3MVANKhRClqxw7SmDVO5qkJnG39V0RkyyBaA=";
+      sha256 = "sha256-PXodkFHFV1IIWy318yJTBqzWSywbddnxpxjRSLfypGY=";
     };
 
     cargoHash = "sha256-8K2Cr8wleoEniKc3lszJT1QcojXHUXiIv7c0ER9r7FM=";
