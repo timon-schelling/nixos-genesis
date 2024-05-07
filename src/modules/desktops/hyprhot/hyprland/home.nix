@@ -57,7 +57,8 @@
 
           # col.active_border = rgba(007621ee)
 
-          col.inactive_border = rgba(595959aa)
+          # col.inactive_border = rgba(595959aa)
+          col.inactive_border = rgba(393939ff)
 
           layout = dwindle
 
