@@ -2,11 +2,11 @@ self: super: with super; {
   nushell = rustPlatform.buildRustPackage  {
     pname = "nushell";
 
-    version = "0.93.0-unstable-7a86b98f61e16ac4b1264e86d992aed7d83ca897";
+    version = "0.93.0-unstable-39156930f5241664801828adbb8df20c28ad60f7";
     src = fetchFromGitHub {
       owner = "nushell";
       repo = "nushell";
-      rev = "7a86b98f61e16ac4b1264e86d992aed7d83ca897";
+      rev = "39156930f5241664801828adbb8df20c28ad60f7";
       sha256 = "sha256-b7rKUnnKmZAaoxQOa4aCpIU3/LUPgt8bVj00WuCSYA4=";
     };
 
