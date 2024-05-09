@@ -15,13 +15,13 @@ self: super: with super; {
     in
     rustPlatform.buildRustPackage rec {
       pname = "lapce";
-      version = "main-611196c54c68bdfa974154e6544d0f4b6cfa6bc7";
+      version = "unstable-2024-05-09";
 
       src = fetchFromGitHub {
         owner = "timon-schelling";
         repo = "lapce";
         rev = "611196c54c68bdfa974154e6544d0f4b6cfa6bc7";
-        sha256 = "sha256-x/EObvrMZ3bkdHk5SbfQEarXA7jcQ9rEFZINQrHjcl4=";
+        hash = "sha256-JjR+/QMZlR2eCkpwWOozijs3PiMNveGCTme7646W0Lg=";
       };
 
       cargoLock = {
@@ -39,8 +39,6 @@ self: super: with super; {
           "wasi-experimental-http-wasmtime-0.10.0" = "sha256-FuF3Ms1bT9bBasbLK+yQ2xggObm/lFDRyOvH21AZnQI=";
         };
       };
-
-      cargoHash = "";
 
       env = {
         # Get openssl-sys to use pkg-config
