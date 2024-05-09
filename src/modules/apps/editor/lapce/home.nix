@@ -38,7 +38,7 @@ let
     base = {
       white = "#999999";
       black = "#191919";
-      grey = "#939293";
+      grey = "#444444";
       blue = "#1371be";
       red = "#ff6188";
       yellow = "#ffd866";
