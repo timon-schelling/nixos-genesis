@@ -39,7 +39,7 @@ lib.types.submodule {
     };
     stateVersion = lib.mkOption {
       type = lib.types.str;
-      default = "23.";
+      default = "23.11";
     };
     persist = lib.mkOption {
       type = lib.types.submodule {
