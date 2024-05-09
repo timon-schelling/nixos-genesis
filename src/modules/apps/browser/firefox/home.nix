@@ -258,6 +258,90 @@
             ];
             definedAliases = ["@hm"];
           };
+          "GitHub" = {
+            urls = [
+              {
+                template = "https://github.com/search";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            definedAliases = ["@gh"];
+          };
+          "GitLab" = {
+            urls = [
+              {
+                template = "https://gitlab.com/search";
+                params = [
+                  {
+                    name = "search";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            definedAliases = ["@gl"];
+          };
+          "YouTube" = {
+            urls = [
+              {
+                template = "https://www.youtube.com/results";
+                params = [
+                  {
+                    name = "search_query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            definedAliases = ["@yt"];
+          };
+          "DuckDuckGo" = {
+            urls = [
+              {
+                template = "https://duckduckgo.com/";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            definedAliases = ["@dg"];
+          };
+          "Google" = {
+            urls = [
+              {
+                template = "https://www.google.com/search";
+                params = [
+                  {
+                    name = "q";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            definedAliases = ["@g"];
+          };
+          "Wikipedia" = {
+            urls = [
+              {
+                template = "https://en.wikipedia.org/w/index.php";
+                params = [
+                  {
+                    name = "search";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            definedAliases = ["@w"];
+          };
           "Amazon.com".metaData.hidden = true;
           "Bing".metaData.hidden = true;
           "eBay".metaData.hidden = true;
