@@ -40,6 +40,8 @@ self: super: with super; {
         };
       };
 
+      cargoHash = "";
+
       env = {
         # Get openssl-sys to use pkg-config
         OPENSSL_NO_VENDOR = 1;
