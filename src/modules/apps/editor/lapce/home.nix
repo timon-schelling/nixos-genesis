@@ -146,18 +146,13 @@ let
     };
   };
 in {
-  # TODO: configure lapce
   home.packages = [
-    (pkgs.lapce.overrideAttrs {
-      # patches = [
-      #   ./change-default-layout.patch
-      # ];
-    })
+    pkgs.lapce
   ];
 
   xdg =
     let
-      appName = "lapce-stable";
+      appName = "lapce-nightly";
       toml = pkgs.formats.toml { };
     in {
       configFile = {
