@@ -36,7 +36,7 @@ let
   ];
   theme = {
     base = {
-      white = "#fcfcfa";
+      white = "#999999";
       black = "#191919";
       grey = "#939293";
       blue = "#1371be";
