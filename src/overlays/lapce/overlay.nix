@@ -15,19 +15,19 @@ self: super: with super; {
     in
     rustPlatform.buildRustPackage rec {
       pname = "lapce";
-      version = "unstable-2024-05-09";
+      version = "unstable-2024-05-12";
 
       src = fetchFromGitHub {
         owner = "timon-schelling";
         repo = "lapce";
-        rev = "611196c54c68bdfa974154e6544d0f4b6cfa6bc7";
-        hash = "sha256-JjR+/QMZlR2eCkpwWOozijs3PiMNveGCTme7646W0Lg=";
+        rev = "b46aa99ed1a13ff668f0e814af94e94be9e879f3";
+        hash = "sha256-YvfjTuoK04MeApBR2YBdMh9uGMo03Un4RU5T8eqVYUc=";
       };
 
       cargoLock = {
         lockFile = ./Cargo.lock;
         outputHashes = {
-          "floem-0.1.1" = "sha256-AH2HtfK2qKLlTNu6oMTSLd21yqeJGW3I82q/lbbJZfg=";
+          "floem-0.1.1" = "sha256-km+WcrOvg2Cd3OQXaHAyF8cfdFlPt5kmgU5lElPguh8=";
           "human-sort-0.2.2" = "sha256-tebgIJGXOY7pwWRukboKAzXY47l4Cn//0xMKQTaGu8w=";
           "lsp-types-0.95.1" = "sha256-+tWqDBM5x/gvQOG7V3m2tFBZB7smgnnZHikf9ja2FfE=";
           "psp-types-0.1.0" = "sha256-/oFt/AXxCqBp21hTSYrokWsbFYTIDCrHMUBuA2Nj5UU=";
