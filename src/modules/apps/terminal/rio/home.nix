@@ -11,6 +11,8 @@
         background = "#1c1c1c";
         foreground = "#aaaaaa";
         cursor = "#aaaaaa";
+        selection-background = "#888888";
+        selection-foreground = "#1c1c1c";
 
         #https://coolors.co/464646-dc4122-00df8a-ff9604-0068d0-c40089-00bdc4-727272
         black = "#464646";
@@ -41,7 +43,6 @@
         light-magenta = "#ff12b8";
         light-cyan = "#12f7ff";
         light-white = "#969696";
-
       };
       fonts = {
         family = "FiraMono Nerd Font";
