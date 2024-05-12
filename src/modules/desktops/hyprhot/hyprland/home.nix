@@ -119,9 +119,6 @@
       exec-once = nu ~/.dotfiles/startup/main.nu
       exec-once = waybar
 
-      # TODO: remove
-      exec-once = sh -c "beeper --hidden > ~/tmp/beeper.log 2>&1"
-
       $mainMod = SUPER
 
       bind = $mainMod, left, movefocus, l
@@ -166,14 +163,14 @@
 
       bind = ALT, space, exec, anyrun
 
-      bind = $mainMod, 1, exec, wezterm
+      bind = $mainMod, 1, exec, rio
       bind = $mainMod, 2, exec, code
       bind = $mainMod, 3, exec, firefox
       bind = $mainMod, 4, exec, nautilus --new-window
       bind = $mainMod, 5, exec, Enpass
-      bind = $mainMod, 6, exec, code-insiders
+      bind = $mainMod, 6, exec, wezterm
       bind = $mainMod, 7, exec, spotify
-      bind = $mainMod, 8, exec, sh -c "beeper > ~/tmp/beeper-launch.log 2>&1"
+      bind = $mainMod, 8, exec, beeper
       # bind = $mainMod, 9, exec,
       # bind = $mainMod, 0, exec,
 
