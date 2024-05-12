@@ -47,7 +47,7 @@
       fonts = {
         family = "FiraMono Nerd Font";
         size = 25;
-        regular.weight = 600;
+        regular.weight = 500;
       };
       window.decorations = "Disabled";
     };
