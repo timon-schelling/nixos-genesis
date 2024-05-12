@@ -45,7 +45,7 @@
         light-white = "#969696";
       };
       fonts = {
-        family = "FiraMono Nerd Font";
+        family = "JetBrainsMono Nerd Font";
         size = 25;
         regular.weight = 500;
       };
