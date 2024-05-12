@@ -3,6 +3,6 @@
 {
   fonts.fontconfig.enable = true;
   home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "SourceCodePro" "Noto" "OpenDyslexic" "RobotoMono"]; })
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "SourceCodePro" "JetBrainsMono" "Noto" "OpenDyslexic" "RobotoMono"]; })
   ];
 }
