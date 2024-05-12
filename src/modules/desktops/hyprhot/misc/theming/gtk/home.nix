@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home. sessionVariables = {
+  home.sessionVariables = {
     GTK_THEME = "WhiteSur-Dark-solid";
   };
   gtk = {
