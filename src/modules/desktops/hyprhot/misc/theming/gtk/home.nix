@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  home. sessionVariables = {
+    GTK_THEME = "WhiteSur-Dark-solid";
+  };
   gtk = {
     enable = true;
     theme = {
