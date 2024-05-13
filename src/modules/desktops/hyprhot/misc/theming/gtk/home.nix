@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.sessionVariables = {
+  systemd.user.sessionVariables = {
     GTK_THEME = "WhiteSur-Dark-solid";
   };
   gtk = {
