@@ -1,8 +1,11 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
+  home.sessionVariables = {
+    GTK_THEME = config.gtk.theme.name;
+  };
   systemd.user.sessionVariables = {
-    GTK_THEME = "WhiteSur-Dark-solid";
+    GTK_THEME = config.gtk.theme.name;
   };
   gtk = {
     enable = true;
