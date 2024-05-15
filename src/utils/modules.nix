@@ -24,11 +24,11 @@ let
 
   mkModule = conf: dir: options: config:
     let
-      enableOptionConfigPath = modulePathToEnableOptionConfigPath (builtins.trace (dirToModulePath dir) (dirToModulePath dir));
-      allOptions = (builtins.trace enableOptionConfigPath (enableOptionConfigPathToEnableOption enableOptionConfigPath)) // options;
+      enableOptionConfigPath = modulePathToEnableOptionConfigPath (dirToModulePath dir);
+      allOptions = enableOptionConfigPath (enableOptionConfigPathToEnableOption enableOptionConfigPath) // options;
     in
     {
-      options = builtins.trace allOptions allOptions;
+      options = allOptions;
       config = lib.mkIf (lib.attrsets.getAttrFromPath enableOptionConfigPath conf) config;
     }
   ;
