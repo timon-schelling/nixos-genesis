@@ -18,6 +18,7 @@ let
       {
         ${lib.head path} = lib.mkOption {
           type = lib.types.submodule (enableOptionConfigPathToEnableOption (lib.tail path));
+          default = {};
         };
       }
   ;
