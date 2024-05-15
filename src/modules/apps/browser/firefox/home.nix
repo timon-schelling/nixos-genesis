@@ -342,6 +342,7 @@
             ];
             definedAliases = ["@w"];
           };
+          "Wikipedia (en)".metaData.hidden = true;
           "Amazon.com".metaData.hidden = true;
           "Bing".metaData.hidden = true;
           "eBay".metaData.hidden = true;
