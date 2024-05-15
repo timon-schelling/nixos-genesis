@@ -25,9 +25,10 @@ let
   mkModule = conf: dir: options: config:
     let
       enableOptionConfigPath = modulePathToEnableOptionConfigPath (dirToModulePath dir);
+      allOptions = (enableOptionConfigPathToEnableOption enableOptionConfigPath) // options;
     in
     {
-      options = (enableOptionConfigPathToEnableOption enableOptionConfigPath) // options;
+      options = builtins.trace allOptions allOptions;
       config = lib.mkIf (lib.attrsets.getAttrFromPath enableOptionConfigPath conf) config;
     }
   ;
