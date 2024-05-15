@@ -17,7 +17,9 @@ let
     else
       {
         ${lib.head path} = lib.mkOption {
-          type = lib.types.submodule (enableOptionConfigPathToEnableOption (lib.tail path));
+          type = lib.types.submodule {
+            options = enableOptionConfigPathToEnableOption (lib.tail path);
+          };
           default = {};
         };
       }
