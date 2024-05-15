@@ -25,7 +25,7 @@ let
   mkModule = conf: dir: options: config:
     let
       enableOptionConfigPath = modulePathToEnableOptionConfigPath (dirToModulePath dir);
-      allOptions = enableOptionConfigPath (enableOptionConfigPathToEnableOption enableOptionConfigPath) // options;
+      allOptions = (enableOptionConfigPathToEnableOption enableOptionConfigPath) // options;
     in
     {
       options = allOptions;
