@@ -24,7 +24,7 @@ let
 
   mkModule = conf: dir: options: config:
     let
-      enableOptionConfigPath = modulePathToEnableOptionConfigPath (dirToModulePath dir);
+      enableOptionConfigPath = modulePathToEnableOptionConfigPath (builtins.trace (dirToModulePath dir) (dirToModulePath dir));
       allOptions = (builtins.trace enableOptionConfigPath (enableOptionConfigPathToEnableOption enableOptionConfigPath)) // options;
     in
     {
