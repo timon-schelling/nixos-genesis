@@ -3,7 +3,7 @@
 let
   modulesRoot = ../modules;
   dirToModulePath = dir: lib.strings.removePrefix "./" (lib.path.removePrefix modulesRoot dir);
-  modulePathToEnableOptionConfigPath = path: (["modules"] + (lib.strings.splitString "/" path));
+  modulePathToEnableOptionConfigPath = path: (["modules"] + (lib.strings.splitString path "/"));
   enableOptionConfigPathToEnableOption = path:
     if (lib.length path) == 0 then
       {
