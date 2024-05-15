@@ -5,7 +5,7 @@ let
   dirToModulePath = dir: lib.strings.removePrefix "./" (lib.path.removePrefix modulesRoot dir);
   modulePathToEnableOptionConfigPath = path: (["modules"] + (lib.strings.splitString "/" path) + ["enable"]);
   enableOptionConfigPathToEnableOption = path:
-    if lib.length == 0 then
+    if (lib.length path) == 0 then
       {
         enable = lib.mkOption {
           type = lib.types.bool;
