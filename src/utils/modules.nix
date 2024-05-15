@@ -3,7 +3,7 @@
 let
   modulesRoot = ../modules;
   dirToModulePath = dir: builtins.trace dir (lib.strings.removePrefix "./" (lib.path.removePrefix modulesRoot dir));
-  modulePathToEnableOptionConfigPath = path: builtins.trace path (["modules"] + (builtins.trace (lib.strings.splitString "/" path) (lib.strings.splitString "/" path)));
+  modulePathToEnableOptionConfigPath = path: builtins.trace ("test:" + path) (["modules"] + (builtins.trace (lib.strings.splitString "/" path) (lib.strings.splitString "/" path)));
   enableOptionConfigPathToEnableOption = path:
     if path == [] then
       {
