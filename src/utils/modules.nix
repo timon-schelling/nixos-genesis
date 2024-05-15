@@ -3,7 +3,7 @@
 let
   modulesRoot = ../modules;
   dirToModulePath = dir: lib.strings.removePrefix "./" (lib.path.removePrefix modulesRoot dir);
-  modulePathToEnableOptionConfigPath = path: (["modules"] + (builtins.trace (lib.strings.splitString "/" path) (lib.strings.splitString "/" path)));
+  modulePathToEnableOptionConfigPath = path: (["modules"] + (lib.strings.splitString "/" path));
   enableOptionConfigPathToEnableOption = path:
     if path == [] then
       {
@@ -25,7 +25,7 @@ let
   mkModule = conf: dir: options: config:
     let
       enableOptionConfigPath = modulePathToEnableOptionConfigPath (dirToModulePath dir);
-      allOptions = (enableOptionConfigPathToEnableOption enableOptionConfigPath) // options;
+      allOptions = (builtins.trace enableOptionConfigPath (enableOptionConfigPathToEnableOption enableOptionConfigPath)) // options;
     in
     {
       options = builtins.trace allOptions allOptions;
