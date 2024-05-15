@@ -32,7 +32,7 @@ let
     in
     {
       options = allOptions;
-      config = lib.mkIf (builtins.trace (lib.attrsets.getAttrFromPath enableOptionConfigPath conf) (lib.attrsets.getAttrFromPath enableOptionConfigPath conf)) config;
+      config = lib.mkIf (lib.attrsets.getAttrFromPath enableOptionConfigPath conf).enable config;
     }
   ;
 in
