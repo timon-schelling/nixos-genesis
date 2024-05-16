@@ -8,5 +8,5 @@
 
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
-  # modules.apps.browser.chromium.enable = true;
+  home-manager.timon.modules.apps.browser.chromium.enable = true;
 }
