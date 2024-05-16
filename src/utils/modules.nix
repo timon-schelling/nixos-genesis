@@ -16,12 +16,7 @@ let
       }
     else
       {
-        ${lib.head path} = lib.mkOption {
-          type = lib.types.submodule {
-            options = enableOptionConfigPathToEnableOption (lib.tail path);
-          };
-          default = {};
-        };
+        ${lib.head path} = enableOptionConfigPathToEnableOption (lib.tail path);
       }
   ;
 
