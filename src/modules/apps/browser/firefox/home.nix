@@ -1,5 +1,6 @@
-{ ... }:
+{ libutils, config, lib, pkgs, ... }:
 
+libutils.modules.mkModule config ./. {}
 {
   opts.user.persist.state.folders = [
     ".mozilla/firefox/main"
