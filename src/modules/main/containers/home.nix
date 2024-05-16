@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  opts.user.persist.folders = [
+  opts.user.persist.state.folders = [
     ".local/share/containers/storage"
   ];
 }
