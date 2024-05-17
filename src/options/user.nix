@@ -41,47 +41,5 @@ lib.types.submodule {
       type = lib.types.str;
       default = "23.11";
     };
-    persist = lib.mkOption {
-      type = lib.types.submodule {
-        options = {
-          data = lib.mkOption {
-            type = lib.types.submodule {
-              options = {
-                folders = lib.mkOption {
-                  type = lib.types.listOf lib.types.str;
-                  default = [
-                    "dev"
-                    "data"
-                    "media"
-                    "tmp"
-                  ];
-                };
-                files = lib.mkOption {
-                  type = lib.types.listOf lib.types.str;
-                  default = [ ];
-                };
-              };
-            };
-            default = { };
-          };
-          state = lib.mkOption {
-            type = lib.types.submodule {
-              options = {
-                folders = lib.mkOption {
-                  type = lib.types.listOf lib.types.str;
-                  default = [];
-                };
-                files = lib.mkOption {
-                  type = lib.types.listOf lib.types.str;
-                  default = [ ];
-                };
-              };
-            };
-            default = { };
-          };
-        };
-      };
-      default = { };
-    };
   };
 }

@@ -10,6 +10,12 @@
       passwordHash = "***REMOVED***";
       sudo = true;
       desktops.hyprhot.enable = true;
+      persist.data.folders = [
+        "dev"
+        "data"
+        "media"
+        "tmp"
+      ];
     };
   };
 }

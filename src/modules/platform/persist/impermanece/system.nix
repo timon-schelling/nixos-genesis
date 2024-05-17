@@ -8,8 +8,8 @@
   fileSystems."/persist".neededForBoot = true;
   environment.persistence."/persist/system" = {
     hideMounts = true;
-    directories = config.opts.system.persist.folders;
-    files = config.opts.system.persist.files ++ [ "/etc/machine-id" ];
+    directories = config.platform.system.persist.folders ++ config.opts.system.persist.folders;
+    files = config.platform.system.persist.files ++ config.opts.system.persist.folders;
   };
 
   systemd.services."create-persist-user-dir" = {

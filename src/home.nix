@@ -13,16 +13,16 @@
       inherit libutils;
     };
     users = lib.mkMerge (lib.mapAttrsToList
-      (name: user:
+      (username: user:
         let
           opts = {
             system = config.opts.system;
-            inherit name;
+            inherit username;
             inherit user;
           };
         in
         {
-          ${name} = {
+          ${username} = {
             imports = [
               ./options/home.nix
             ] ++ (libutils.imports.homeModules {
