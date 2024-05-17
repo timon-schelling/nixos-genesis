@@ -9,10 +9,8 @@
             type = import ./system.nix { inherit lib; };
             default = {};
           };
-          users = lib.mkOption {
-            type = lib.types.attrsOf (import ./user.nix { inherit lib; });
-          };
         };
+        default = {};
       };
     };
   };
