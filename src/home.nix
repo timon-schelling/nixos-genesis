@@ -1,38 +1,42 @@
-{ lib, libutils, config, inputs, ... }:
+{ lib, libutils, config, options, inputs, ... }:
 
 {
   imports = [
     inputs.home-manager.nixosModules.default
   ];
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    extraSpecialArgs = {
-      inherit inputs;
-      inherit libutils;
-    };
-    users = lib.mkMerge (lib.mapAttrsToList
-      (username: user:
-        let
-          opts = {
-            system = config.opts.system;
-            inherit username;
-            inherit user;
-          };
-        in
-        {
-          ${username} = {
-            imports = [
-              ./options/home.nix
-            ] ++ (libutils.imports.homeModules {
-              dir = ./modules;
+  options = {
+    opts.users = options.home-manager.users;
+  };
+  config = {
+    home-manager = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
+      extraSpecialArgs = {
+        inherit inputs;
+        inherit libutils;
+      };
+      users = lib.mkMerge (lib.mapAttrsToList
+        (username: user:
+          let
+            opts = {
+              system = config.opts.system;
+              inherit username;
+              inherit user;
+            };
+          in
+          {
+            ${username} = {
+              imports = [
+                ./options/home.nix
+              ] ++ (libutils.imports.homeModules {
+                dir = ./modules;
+                inherit opts;
+              });
               inherit opts;
-            });
-            inherit opts;
-          };
-        }
-      )
-      config.opts.users);
+            };
+          }
+        )
+        config.opts.users);
+    };
   };
 }
