@@ -5,7 +5,7 @@
     inputs.home-manager.nixosModules.default
   ];
   options = {
-    opts.users = options.home-manager.users;
+    opts.users = options.home-manager.users.timon;
   };
   config = {
     home-manager = {
