@@ -33,9 +33,11 @@ lib.types.submodule {
                 };
               };
             };
+            default = { };
           };
         };
       };
+      default = { };
     };
     stateVersion = lib.mkOption {
       type = lib.types.str;
