@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  opts.user.persist.state.folders = [
+  platform.user.persist.state.folders = [
     ".config/spotify"
     ".cache/spotify"
   ];

@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  opts.system.persist.folders = [
+  platform.system.persist.folders = [
     "/var/lib/containers"
   ];
 }

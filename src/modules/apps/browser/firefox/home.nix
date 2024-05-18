@@ -2,7 +2,7 @@
 
 libutils.modules.mkModule config ./. {}
 {
-  opts.user.persist.state.folders = [
+  platform.user.persist.state.folders = [
     ".mozilla/firefox/main"
     # ".cache/mozilla"
   ];

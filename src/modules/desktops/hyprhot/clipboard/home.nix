@@ -1,7 +1,7 @@
 {  pkgs, libutils, ... }:
 
 {
-  opts.user.persist.state.folders = [
+  platform.user.persist.state.folders = [
     ".cache/clipcat"
   ];
 
