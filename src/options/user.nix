@@ -21,6 +21,15 @@ lib.types.submodule {
       type = lib.types.listOf lib.types.str;
       default = [ ];
     };
+    persist = lib.mkOption {
+      type = lib.types.submodule {
+        options = let persistOption = import ./persist.nix { inherit lib; }; in {
+          data = persistOption;
+          state = persistOption;
+        };
+      };
+      default = { };
+    };
     desktops = lib.mkOption {
       type = lib.types.submodule {
         options = {

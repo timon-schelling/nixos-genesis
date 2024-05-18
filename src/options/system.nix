@@ -31,6 +31,7 @@ lib.types.submodule {
       };
       default = {};
     };
+    persist = import ./persist.nix { inherit lib; };
     monitors = lib.mkOption {
       type = lib.types.listOf (lib.types.submodule {
         options = {
