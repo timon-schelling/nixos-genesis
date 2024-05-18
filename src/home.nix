@@ -34,7 +34,7 @@
                 dir = ./modules;
                 opts = {};
               });
-
+              opts.username = username;
             };
           }
         )
