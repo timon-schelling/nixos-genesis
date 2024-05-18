@@ -2,7 +2,7 @@
 
 libutils.modules.mkModule config ./. {}
 {
-  platform.user.persist.state.folders = [
+  platform.user.persist.folders = [
     ".config/chromium"
   ];
 

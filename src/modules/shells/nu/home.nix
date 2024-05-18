@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  platform.user.persist.state.files = [
+  platform.user.persist.files = [
     ".config/nushell/history.txt"
     ".cache/tere/history.json"
   ];

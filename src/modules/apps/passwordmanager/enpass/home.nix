@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  platform.user.persist.state.folders = [
+  platform.user.persist.folders = [
     ".local/share/Enpass"
   ];
 

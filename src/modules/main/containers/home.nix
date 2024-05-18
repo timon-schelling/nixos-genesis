@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  platform.user.persist.state.folders = [
+  platform.user.persist.folders = [
     ".local/share/containers/storage"
   ];
 }
