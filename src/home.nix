@@ -10,7 +10,7 @@
     # };
   };
   config = {
-    opts.users = lib.mkAliasDefinitions (config.home-manager.users);
+    opts.users = lib.mkAliasDefinitions (options.home-manager.users);
 
     home-manager = {
       useGlobalPkgs = true;
