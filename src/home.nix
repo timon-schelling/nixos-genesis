@@ -5,7 +5,9 @@
     inputs.home-manager.nixosModules.default
   ];
   options = {
-    tmp = builtins.trace options.home-manager.users.type.functor.wrapped;
+    tmp = lib.mkOption {
+      type = options.home-manager.users.type.functor.wrapped;
+    };
     opts.users = options.tmp;
   };
   config = {
