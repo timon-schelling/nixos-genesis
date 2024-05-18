@@ -32,9 +32,9 @@
                 ./options/home.nix
               ] ++ (libutils.imports.homeModules {
                 dir = ./modules;
-                inherit opts;
+
               });
-              inherit opts;
+
             };
           }
         )
