@@ -5,7 +5,7 @@
     inputs.home-manager.nixosModules.default
   ];
   options = {
-    opts.users = builtins.trace options.home-manager.users options.home-manager.users;
+    opts.users = builtins.trace options.home-manager.users options.home-manager;
   };
   config = {
     home-manager = {
