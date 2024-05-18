@@ -9,7 +9,7 @@
             type = import ./system.nix { inherit lib; };
             default = {};
           };
-          name = lib.mkOption {
+          username = lib.mkOption {
             type = lib.types.str;
           };
           user = lib.mkOption {
