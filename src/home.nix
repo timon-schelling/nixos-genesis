@@ -6,8 +6,7 @@
   ];
   options = {
     opts.users = lib.mkOption {
-      type = options.home-manager.users.type.functor.wrapped;
-      default = { };
+      type = lib.types.attrsOf (options.home-manager.users.type.functor.wrapped);
     };
   };
   config = {
