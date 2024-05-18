@@ -8,10 +8,9 @@
     # opts.users = lib.mkOption {
     #   type = lib.types.attrsOf (options.home-manager.users.type.functor.wrapped);
     # };
+    opts.users = lib.mkAliasDefinitions (options.home-manager.users);
   };
   config = {
-    opts.users = lib.mkAliasDefinitions (options.home-manager.users);
-
     home-manager = {
       useGlobalPkgs = true;
       useUserPackages = true;
