@@ -5,10 +5,9 @@
     inputs.home-manager.nixosModules.default
   ];
   options = {
-    # opts.users = lib.mkOption {
-    #   type = lib.types.attrsOf (options.home-manager.users.type.functor.wrapped);
-    # };
-    opts.users = lib.mkAliasDefinitions (options.home-manager.users or {});
+    opts.users = lib.mkOption {
+      type = lib.types.attrsOf (options.home-manager.users.type.functor.wrapped);
+    };
   };
   config = {
     home-manager = {
