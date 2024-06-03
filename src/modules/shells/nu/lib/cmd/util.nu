@@ -6,7 +6,10 @@ alias goto = g
 def --env g [shell?: int] {
     try {
         if ($shell == null) {
-            goto (goto | get path | str replace -a $"($env.HOME)" '~' | input list -i -f)
+            let shell = goto | get path | each { |x| $x | str replace $"($env.HOME)" '~' } | input list -i -f
+            if ($shell != null) {
+                goto $shell
+            }
         } else {
             goto $shell
         }
