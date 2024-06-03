@@ -30,21 +30,47 @@ lib.types.submodule {
       };
       default = { };
     };
-    desktops = lib.mkOption {
+    apps = lib.mkOption {
       type = lib.types.submodule {
-        options = {
-          hyprhot = lib.mkOption {
-            type = lib.types.submodule {
-              options = {
-                enable = lib.mkOption {
-                  type = lib.types.bool;
-                  default = false;
+        options = lib.mapAttrs
+          (name: kind:
+            lib.mkOption {
+              type = lib.types.submodule {
+                options = (
+                  lib.mapAttrs
+                  (name: kind:
+                    lib.mkOption {
+                      type = lib.types.submodule {
+                        options = {
+                          enable = lib.mkOption {
+                            type = lib.types.bool;
+                            default = false;
+                          };
+                        };
+                      };
+                      default = { };
+                    }
+                  )
+                  (
+                    lib.mapAttrs
+                      (name: kind: kind == "directory")
+                      (builtins.readDir ../modules/apps + "/" + name)
+                  )
+                ) // {
+                  enable = lib.mkOption {
+                    type = lib.types.listOf lib.types.str;
+                    default = [ ];
+                  };
                 };
               };
-            };
-            default = { };
-          };
-        };
+              default = { };
+            }
+          )
+          (
+            lib.mapAttrs
+              (name: kind: kind == "directory")
+              (builtins.readDir ../modules/apps)
+          );
       };
       default = { };
     };
