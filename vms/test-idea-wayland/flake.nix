@@ -10,29 +10,41 @@
   outputs = { self, nixpkgs, microvm }:
     let
       system = "x86_64-linux";
+      name = "vm-test-idea-wayland";
     in {
       apps.${system} = {
-        default = self.apps.${system}.vm-test-idea-wayland;
-        vm-test-idea-wayland = {
+        default = self.apps.${system}.${name};
+        ${name} = {
           type = "app";
-          program = self.packages.${system}.vm-test-idea-wayland;
+          program = "${self.packages.${system}.${name}}/bin/microvm-run";
         };
       };
 
       packages.${system} = {
-        default = self.packages.${system}.vm-test-idea-wayland;
-        vm-test-idea-wayland = self.nixosConfigurations.vm-test-idea-wayland.config.microvm.declaredRunner;
+        default = self.packages.${system}.${name};
+        ${name} = self.nixosConfigurations.${name}.config.microvm.declaredRunner;
       };
 
       nixosConfigurations = {
-        vm-test-idea-wayland = nixpkgs.lib.nixosSystem (let pkgs = nixpkgs.pkgs; in {
+        ${name} = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             microvm.nixosModules.microvm
-            {
+            ({ pkgs, ... }: {
               microvm = {
                 vcpu = 4;
                 mem = 4096;
+                interfaces = [
+                  {
+                    type = "tap";
+                    id = "${name}-tap";
+                    # mac = "02:00:00:00:00:01";
+                    # macvtap = {
+                    #   link = "wlp7s0";
+                    #   mode = "bridge";
+                    # };
+                  }
+                ];
                 volumes = [ {
                   mountPoint = "/var";
                   image = "var.img";
@@ -53,7 +65,15 @@
                 socket = "vm-control.socket";
               };
 
-              nixpkgs.overlays = [ self.overlay ];
+              networking.useNetworkd = true;
+
+              systemd.network = {
+                networks."10-vm" = {
+                  matchConfig.Name = "vm-*";
+                  # Attach to the bridge that was configured above
+                  networkConfig.Bridge = "vms";
+                };
+              };
 
               services.getty.autologinUser = "user";
               users.users.user = {
@@ -93,12 +113,15 @@
               environment.systemPackages = with pkgs; [
                 xdg-utils # Required
                 jetbrains.idea-community-bin
+                ungoogled-chromium
+                firefox
+                vlc
               ];
 
               hardware.opengl.enable = true;
-            }
+            })
           ];
-        });
+        };
       };
     };
 }
