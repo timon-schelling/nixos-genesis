@@ -34,22 +34,22 @@
               microvm = {
                 vcpu = 4;
                 mem = 4096;
-                interfaces = [
-                  {
-                    type = "tap";
-                    id = "${name}-tap";
-                    # mac = "02:00:00:00:00:01";
-                    # macvtap = {
-                    #   link = "wlp7s0";
-                    #   mode = "bridge";
-                    # };
-                  }
-                ];
-                volumes = [ {
-                  mountPoint = "/var";
-                  image = "var.img";
-                  size = 256;
-                } ];
+                # interfaces = [
+                #   {
+                #     type = "tap";
+                #     id = "vms";
+                #     mac = "02:00:00:00:00:01";
+                #     macvtap = {
+                #       link = "vms";
+                #       mode = "bridge";
+                #     };
+                #   }
+                # ];
+                # volumes = [ {
+                #   mountPoint = "/var";
+                #   image = "var.img";
+                #   size = 256;
+                # } ];
                 shares = [ {
                   # use "virtiofs" for MicroVMs that are started by systemd
                   proto = "9p";
@@ -62,14 +62,14 @@
 
                 hypervisor = "crosvm";
                 graphics.enable = true;
-                socket = "vm-control.socket";
+                # socket = "vm-control.socket";
               };
 
-              networking.useNetworkd = true;
+              # networking.useNetworkd = true;
 
               systemd.network = {
                 networks."10-vm" = {
-                  matchConfig.Name = "vm-*";
+                  matchConfig.Type = "ether";
                   # Attach to the bridge that was configured above
                   networkConfig.Bridge = "vms";
                 };
