@@ -4,24 +4,31 @@
   networking.hostName = config.opts.system.host;
 
   systemd.network = {
-    netdevs."10-vms".netdevConfig = {
+    ebable = true;
+
+    netdevs."bridge".netdevConfig = {
       Kind = "bridge";
-      Name = "vms";
+      Name = "bridge";
     };
-    networks."10-vms" = {
-      matchConfig.Name = "vms";
+    networks."bridge" = {
+      matchConfig.Name = "bridge";
       networkConfig = {
         DHCPServer = true;
         IPv6SendRA = true;
       };
-      addresses = [ {
-        addressConfig.Address = "10.0.0.1/24";
-      } {
-        addressConfig.Address = "fd12:3456:789a::1/64";
-      } ];
-      ipv6Prefixes = [ {
-        ipv6PrefixConfig.Prefix = "fd12:3456:789a::/64";
-      } ];
+      addresses = [
+        {
+          addressConfig.Address = "10.0.0.1/24";
+        }
+        {
+          addressConfig.Address = "fd00:0:0:766d::1/64";
+        }
+      ];
+      ipv6Prefixes = [
+        {
+          ipv6PrefixConfig.Prefix = "fd00:0:0:766d::/64";
+        }
+      ];
     };
   };
 
