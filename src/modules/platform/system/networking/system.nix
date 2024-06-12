@@ -4,7 +4,7 @@
   networking.hostName = config.opts.system.host;
 
   systemd.network = {
-    ebable = true;
+    enable = true;
 
     netdevs."bridge".netdevConfig = {
       Kind = "bridge";
