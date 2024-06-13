@@ -1,6 +1,6 @@
-{ inputs, config, libutils, ... }:
+{ inputs, config, libutil, ... }:
 
-libutils.libutils config ./. {
+libutil.libutils config ./. {
   system = {
     config = {
       programs.hyprland = {
