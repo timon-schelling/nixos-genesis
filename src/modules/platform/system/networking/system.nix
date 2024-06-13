@@ -5,6 +5,7 @@
     networkmanager.enable = true;
     hostName = config.opts.system.host;
     useNetworkd = true;
+    usePredictableInterfaceNames = true;
   #   networking.bridges = {
   #     "host" = {
   #       interfaces = [
