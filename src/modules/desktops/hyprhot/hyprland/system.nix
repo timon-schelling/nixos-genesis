@@ -1,17 +1,16 @@
 { inputs, config, libutils, lib, ... }:
 
-let
-  local = config;
+let opts = config.opts;
 in
 {
   options = libutils.modules.mkOpts {
     user.desktops.hyprhot.enable = lib.mkEnableOption "hyprhot";
   };
-  config = lib.mkMerge [(libutils.modules.mkIfAnyUser local (_: user: user.desktops.hyprhot.enable) (
+  config = lib.mkMerge [(libutils.modules.mkIfAnyUser opts (_: user: user.desktops.hyprhot.enable) (
     {
       programs.hyprland = {
         enable = true;
-        package = inputs.hyprland.packages.${local.opts.system.platform}.hyprland;
+        package = inputs.hyprland.packages.${opts.system.platform}.hyprland;
       };
 
       xdg.portal = {
@@ -23,14 +22,14 @@ in
         substituters = [ "https://hyprland.cachix.org" ];
         trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
       };
-    } // libutils.modules.perUserHomeManager local (_: user: {
+    } // libutils.modules.perUserHomeManager opts (_: user: {
       wayland.windowManager.hyprland = {
         enable = true;
-        package = inputs.hyprland.packages.${local.opts.system.platform}.hyprland;
+        package = inputs.hyprland.packages.${opts.system.platform}.hyprland;
         xwayland.enable = true;
         systemd.enable = true;
         plugins = [
-        #    inputs.split-monitor-workspaces.packages.${config.opts.system.platform}.split-monitor-workspaces
+        #    inputs.split-monitor-workspaces.packages.${opts.system.platform}.split-monitor-workspaces
         ];
         extraConfig = ''
           monitor = DP-3, 2560x1440, 1200x250, 1
@@ -43,7 +42,7 @@ in
           env = WLR_NO_HARDWARE_CURSORS, 1
 
           # fix GTK Theme
-          env = GTK_THEME, ${config.gtk.theme.name}
+          env = GTK_THEME, WhiteSur-Dark-solid
 
           input {
               # `compose:sclk` sets scrolllock as the compose key, needed by keyd

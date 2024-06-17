@@ -1,45 +1,15 @@
 { lib, ... }:
 
 let
-  modulesRoot = ../modules;
-  dirToModulePath = dir: (lib.strings.removePrefix "./" (lib.path.removePrefix modulesRoot dir));
-  modulePathToEnableOptionConfigPath = path: ["modules"] ++ (lib.strings.splitString "/" path);
-  dirToModuleConfigPath = dir: modulePathToEnableOptionConfigPath (dirToModulePath dir);
-  modulePathToEnableOption = path:
-    if path == [] then
-      {
-        enable = lib.mkOption {
-          type = lib.types.bool;
-          default = false;
-          example = true;
-          description = "Enables module";
-        };
-      }
-    else
-      {
-        ${lib.head path} = modulePathToEnableOption (lib.tail path);
-      }
-  ;
-
-  mkModule = conf: dir: options: config:
-    let
-      moduleConfigPath = dirToModuleConfigPath dir;
-    in
-    {
-      options = (modulePathToEnableOption moduleConfigPath) // options;
-      config = lib.mkIf (lib.attrsets.getAttrFromPath moduleConfigPath conf).enable config;
-    }
-  ;
-
   anyMapAttrs = filter: attrs: lib.any (lib.mapAttrsToList (key: value: filter key value) attrs);
 
-  anyUser = config: filter: anyMapAttrs filter config.opts.users;
+  anyUser = opts: filter: anyMapAttrs filter opts.users;
 
   mkIfAnyUser = config: filter: content: lib.mkIf (anyUser config filter) content;
 
-  perUser = config: function: lib.mkMerge (lib.mapAttrsToList function config.opts.users);
+  perUser = opts: function: lib.mkMerge (lib.mapAttrsToList function opts.users);
 
-  perUserHomeManager = config: function: perUser config (name: user: {
+  perUserHomeManager = opts: function: perUser opts (name: user: {
     home-manager = {
       users = {
         ${name} = function name user;
