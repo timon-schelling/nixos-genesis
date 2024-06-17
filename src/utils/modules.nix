@@ -107,7 +107,4 @@ in
   inherit mkOpts;
   inherit perUser;
   inherit perUserHomeManager;
-
-
-  inherit mkModule;
 }
