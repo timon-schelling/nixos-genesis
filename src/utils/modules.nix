@@ -39,38 +39,6 @@ let
       default = {};
     };
   };
-
-  # mkUserModule = conf: dir: { user ? { options = {}; config = {}; }, system ? { options = {}; config = {}; }, ... }:
-  #   let
-  #     moduleConfigPath = dirToModuleConfigPath dir;
-  #     anyUserEnabledModule = (lib.attrsets.filterAttrs (name: value: (lib.attrsets.getAttrFromPath moduleConfigPath value).enable) user.config.home-manager.users) != [];
-  #   in
-  #   {
-  #     options = system.options or {};
-  #     config = lib.mkMerge
-  #       (lib.mkIf anyUserEnabledModule (system.config or {}))
-  #       {
-  #         home-manager = {
-  #           users = lib.mapAttrsToList
-  #           (username: user:
-  #             {
-  #               ${username} = {
-  #                 imports = [
-  #                   ({ ... }: {
-  #                     options = (modulePathToEnableOption moduleConfigPath) // user.options or {};
-  #                     config = lib.mkIf
-  #                       ((lib.attrsets.getAttrFromPath moduleConfigPath user.config.home-manager.users.${username}).enable)
-  #                       user.config;
-  #                   })
-  #                 ];
-  #               };
-  #             }
-  #           )
-  #           conf.home-manager.users;
-  #         };
-  #       };
-  #   }
-  # ;
 in
 {
   inherit mkIfAnyUser;
