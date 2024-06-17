@@ -3,13 +3,13 @@
 let
   anyMapAttrs = filter: attrs: lib.any (lib.mapAttrsToList (key: value: filter key value) attrs);
 
-  anyUser = opts: filter: anyMapAttrs filter opts.users;
+  anyUser = config: filter: anyMapAttrs filter config.opts.users;
 
-  mkIfAnyUser = config: filter: content: lib.mkIf (anyUser config filter) content;
+  mkIfAnyUser = config: filter: content: lib.mkIf (anyUser config filter) (lib.mkMerge [content]);
 
-  perUser = opts: function: lib.mkMerge (lib.mapAttrsToList function opts.users);
+  perUser = config: function: lib.mkMerge (lib.mapAttrsToList function config.opts.users);
 
-  perUserHomeManager = opts: function: perUser opts (name: user: {
+  perUserHomeManager = config: function: perUser config (name: user: {
     home-manager = {
       users = {
         ${name} = function name user;
