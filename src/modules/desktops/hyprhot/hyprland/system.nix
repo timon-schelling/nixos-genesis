@@ -6,21 +6,21 @@
   };
   config = lib.mkMerge [(libutils.modules.mkIfAnyUser config (_: user: user.desktops.hyprhot.enable) (
     {
-      programs.hyprland = {
-        enable = true;
-        package = inputs.hyprland.packages.${config.opts.system.platform}.hyprland;
-      };
+      # programs.hyprland = {
+      #   enable = true;
+      #   package = inputs.hyprland.packages.${config.opts.system.platform}.hyprland;
+      # };
 
-      xdg.portal = {
-        enable = true;
-        wlr.enable = true;
-      };
+      # xdg.portal = {
+      #   enable = true;
+      #   wlr.enable = true;
+      # };
 
-      nix.settings = {
-        substituters = [ "https://hyprland.cachix.org" ];
-        trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
-      };
-    } // libutils.modules.perUserHomeManager config (_: user: {
+      # nix.settings = {
+      #   substituters = [ "https://hyprland.cachix.org" ];
+      #   trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+      # };
+    } /* libutils.modules.perUserHomeManager config (_: user: {
       wayland.windowManager.hyprland = {
         enable = true;
         package = inputs.hyprland.packages.${config.opts.system.platform}.hyprland;
@@ -204,6 +204,6 @@
           }
         '';
       };
-    })
+    })*/
   ))];
 }
