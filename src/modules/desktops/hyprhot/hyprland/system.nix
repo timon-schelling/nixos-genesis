@@ -1,10 +1,10 @@
-{ inputs, config, libutil, lib, ... }:
+{ inputs, config, libutils, lib, ... }:
 
 {
-  options = libutil.modules.mkOpts {
+  options = libutils.modules.mkOpts {
     user.desktops.hyprhot.enable = lib.mkEnableOption "hyprhot desktop";
   };
-  config = libutil.modules.mkIfAnyUser config (_: user: user.desktops.hyprhot.enable) (
+  config = libutils.modules.mkIfAnyUser config (_: user: user.desktops.hyprhot.enable) (
     {
       programs.hyprland = {
         enable = true;
@@ -20,7 +20,7 @@
         substituters = [ "https://hyprland.cachix.org" ];
         trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
       };
-    } // libutil.modules.perUserHomeManager config (_: user: {
+    } // libutils.modules.perUserHomeManager config (_: user: {
       wayland.windowManager.hyprland = {
         enable = true;
         package = inputs.hyprland.packages.${config.opts.system.platform}.hyprland;
