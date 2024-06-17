@@ -4,7 +4,7 @@
   options = libutils.modules.mkOpts {
     user.desktops.hyprhot.enable = lib.mkEnableOption "hyprhot";
   };
-  config = lib.mkIf (libutils.modules.anyMapAttrs (_: user: user.desktops.hyprhot.enable) config.opts.users) (
+  config = lib.mkIf true (
     {
       programs.hyprland = {
         enable = true;
