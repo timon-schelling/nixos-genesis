@@ -4,7 +4,7 @@
   options = libutils.modules.mkOpts {
     user.desktops.hyprhot.enable = lib.mkEnableOption "hyprhot desktop";
   };
-  config = libutils.modules.mkIfAnyUser config (_: user: user.desktops.hyprhot.enable) (
+  config = lib.mkMerge (libutils.modules.mkIfAnyUser config (_: user: user.desktops.hyprhot.enable) (
     {
       programs.hyprland = {
         enable = true;
@@ -205,6 +205,5 @@
         '';
       };
     })
-  );
-
+  ));
 }
