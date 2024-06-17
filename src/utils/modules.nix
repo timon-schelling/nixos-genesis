@@ -48,17 +48,13 @@ let
   });
 
   mkOpts = { system ? {}, user ? {} }: {
-    opts = lib.mkOption {
-      type = lib.types.submodule {
-        options = (mkSystemOpts system) // (mkUserOpts user);
-      };
-      default = {};
-    };
+    opts.system = (mkSystemOpts system);
+    opts.users = (mkUserOpts user);
   };
 
   mkUserOpts = options: {
     users = lib.mkOption {
-      type = lib.types.lazyAttrsOf (lib.types.submodule {
+      type = lib.types.attrsetOf (lib.types.submodule {
         options = options;
       });
       default = {};
