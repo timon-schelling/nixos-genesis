@@ -58,7 +58,7 @@ let
 
   mkUserOpts = options: {
     users = lib.mkOption {
-      type = lib.types.attrsetOf (lib.types.submodule {
+      type = lib.types.lazyAttrsOf (lib.types.submodule {
         options = options;
       });
       default = {};
