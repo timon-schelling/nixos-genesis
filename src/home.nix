@@ -10,7 +10,7 @@
     useUserPackages = true;
     extraSpecialArgs = {
       inherit inputs;
-      lib = inputs.home-manager.lib.hm // { util = lib.util; };
+      libutil = lib.util;
     };
     users = lib.mkMerge (lib.mapAttrsToList
       (username: user:
