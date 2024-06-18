@@ -18,27 +18,24 @@ let
   });
 
   mkOpts = { system ? {}, user ? {} }: {
-    opts.system = (mkSystemOpts system);
-    opts.users = (mkUserOpts user);
+    opts.system = (mkSystemOpt system);
+    opts.users = (mkUserOpt user);
   };
 
-  mkUserOpts = options: {
-    users = lib.mkOption {
-      type = lib.types.attrsetOf (lib.types.submodule {
-        options = options;
-      });
-      default = {};
-    };
+  mkUserOpt = options: lib.mkOption {
+    type = lib.types.attrsetOf (lib.types.submodule {
+      options = options;
+    });
+    default = {};
   };
 
-  mkSystemOpts = options: {
-    system = lib.mkOption {
-      type = lib.types.submodule {
-        options = options;
-      };
-      default = {};
+  mkSystemOpt = options: lib.mkOption {
+    type = lib.types.submodule {
+      options = options;
     };
+    default = {};
   };
+
 in
 {
   inherit mkIfAnyUser;
