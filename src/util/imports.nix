@@ -17,7 +17,7 @@ let
         (builtins.readDir dir)
     );
   collectModule = type: dir:
-    collectModuleFile dir type ++ collectModulesSubDir dir type;
+    collectModuleFile type dir ++ collectModulesSubDir type dir;
 
   systemModules = dir: collectModule "system" dir;
   homeModules = dir: collectModule "home" dir;
