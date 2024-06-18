@@ -10,6 +10,7 @@
     useUserPackages = true;
     extraSpecialArgs = {
       inherit inputs;
+      lib = (lib.extend (_: _: inputs.home-manager.lib)).extend (_: _: { util = lib.util; });
     };
     users = lib.mkMerge (lib.mapAttrsToList
       (username: user:
@@ -23,9 +24,6 @@
         in
         {
           ${username} = { lib, ...}: {
-            _module.args = {
-              lib = lib // { util = systemLib.util; };
-            };
             imports = [
               ./options/home.nix
             ] ++ (systemLib.util.imports.homeModules ./modules);
