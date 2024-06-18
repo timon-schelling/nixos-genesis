@@ -1,6 +1,5 @@
-{ libutils, config, lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
-libutils.modules.mkModule config ./. {}
 {
   home.packages = [
     pkgs.tor-browser

@@ -1,9 +1,9 @@
-{ pkgs, inputs, config, libutils, ... }:
+{ pkgs, inputs, config, lib, ... }:
 
 {
   home.packages = [
     (inputs.waybar.packages.${config.opts.system.platform}.waybar)
-    (libutils.nuscript.mkScript pkgs "waybar-toggle" (builtins.readFile ./toggle.nu))
+    (lib.util.nuscript.mkScript pkgs "waybar-toggle" (builtins.readFile ./toggle.nu))
   ];
 
   xdg.configFile."waybar/config".source = ./config.jsonc;

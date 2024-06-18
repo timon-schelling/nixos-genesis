@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, libutils, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 let
   pluginPkgs = inputs.anyrun.packages.${config.opts.system.platform};
@@ -63,10 +63,10 @@ in
   };
 
   home.packages = [
-    (libutils.nuscript.mkScript pkgs "select-ui" ''
+    (lib.util.nuscript.mkScript pkgs "select-ui" ''
       $in | anyrun-select
     '')
-    (libutils.nuscript.mkScript pkgs "anyrun-select"
+    (lib.util.nuscript.mkScript pkgs "anyrun-select"
       (with pluginPkgs; ''
         $in | ^anyrun --plugins "${stdin}/lib/libstdin.so" --hide-plugin-info true
       '')

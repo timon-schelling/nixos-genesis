@@ -2,16 +2,16 @@
 
 let
   lib = inputs.nixpkgs.lib;
-  libutils = import ./utils/lib.nix { inherit lib; };
-  opts = (import (../hosts + "/${host}/config.nix"));
+  util = import ./util/lib.nix { inherit lib; };
+  opts = import (../hosts + "/${host}/config.nix");
 in
 {
   nixosConfigurations = {
     ${host} = lib.nixosSystem {
       specialArgs = {
         inherit inputs;
-        inherit lib;
-        inherit libutils;
+        lib = lib // { inherit util; };
+        inherit opts;
       };
       modules = [
         ./options/main.nix
@@ -19,7 +19,7 @@ in
         (../hosts + "/${host}/hardware.nix")
 
         {
-          imports = libutils.imports.systemModules {
+          imports = util.imports.systemModules {
             dir = ./modules;
             inherit opts;
           };
@@ -30,7 +30,7 @@ in
         ./home.nix
 
         {
-          nixpkgs.overlays = (map (e: import e) (libutils.imports.overlays {
+          nixpkgs.overlays = (map (e: import e) (util.imports.overlays {
             dir = ./overlays;
             inherit opts;
           }));

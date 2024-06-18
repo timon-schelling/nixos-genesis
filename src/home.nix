@@ -1,4 +1,4 @@
-{ lib, libutils, config, inputs, ... }:
+{ lib, config, inputs, ... }:
 
 {
   imports = [
@@ -9,8 +9,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {
-      inherit inputs;
-      inherit libutils;
+
     };
     users = lib.mkMerge (lib.mapAttrsToList
       (username: user:
@@ -25,7 +24,7 @@
           ${username} = {
             imports = [
               ./options/home.nix
-            ] ++ (libutils.imports.homeModules {
+            ] ++ (lib.util.imports.homeModules {
               dir = ./modules;
               inherit opts;
             });
