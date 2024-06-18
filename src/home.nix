@@ -9,7 +9,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {
-
+      inherit inputs;
     };
     users = lib.mkMerge (lib.mapAttrsToList
       (username: user:
