@@ -19,7 +19,7 @@ in
         (../hosts + "/${host}/hardware.nix")
 
         {
-          imports = util.imports.systemModules ./modules;
+          imports = (util.imports.systemModules ./modules);
           inherit opts;
         }
 
