@@ -65,6 +65,7 @@ lib.types.submodule {
           };
         };
       });
+      default = [];
     };
   };
 }
