@@ -19,21 +19,14 @@ in
         (../hosts + "/${host}/hardware.nix")
 
         {
-          imports = util.imports.systemModules {
-            dir = ./modules;
-            inherit opts;
-          };
-
+          imports = util.imports.systemModules ./modules;
           inherit opts;
         }
 
         ./home.nix
 
         {
-          nixpkgs.overlays = (map (e: import e) (util.imports.overlays {
-            dir = ./overlays;
-            inherit opts;
-          }));
+          nixpkgs.overlays = (map (e: import e) (util.imports.overlays ./overlays));
         }
       ];
     };

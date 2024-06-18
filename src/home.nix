@@ -24,10 +24,7 @@
           ${username} = {
             imports = [
               ./options/home.nix
-            ] ++ (lib.util.imports.homeModules {
-              dir = ./modules;
-              inherit opts;
-            });
+            ] ++ lib.util.imports.homeModules ./modules;
             inherit opts;
           };
         }
