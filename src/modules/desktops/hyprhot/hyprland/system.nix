@@ -1,4 +1,4 @@
-{ inputs, config, lib, ... }:
+{ opts, inputs, config, lib, ... }:
 
 {
   options = lib.util.modules.mkOpts {
@@ -8,7 +8,7 @@
     {
       programs.hyprland = {
         enable = true;
-        package = inputs.hyprland.packages.${config.opts.system.platform}.hyprland;
+        package = inputs.hyprland.packages.${opts.system.platform}.hyprland;
       };
 
       xdg.portal = {
@@ -20,14 +20,14 @@
         substituters = [ "https://hyprland.cachix.org" ];
         trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
       };
-    } // lib.util.modules.perUserHomeManager config (_: user: {
+    } // lib.util.modules.perUserHomeManager opts (_: user: {
       wayland.windowManager.hyprland = lib.mkIf user.desktops.hyprhot.enable ({
         enable = true;
-        package = inputs.hyprland.packages.${config.opts.system.platform}.hyprland;
+        package = inputs.hyprland.packages.${opts.system.platform}.hyprland;
         xwayland.enable = true;
         systemd.enable = true;
         plugins = [
-        #    inputs.split-monitor-workspaces.packages.${config.opts.system.platform}.split-monitor-workspaces
+        #    inputs.split-monitor-workspaces.packages.${opts.system.platform}.split-monitor-workspaces
         ];
         extraConfig = ''
           monitor = DP-3, 2560x1440, 1200x250, 1
