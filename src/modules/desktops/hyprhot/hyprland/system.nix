@@ -8,7 +8,7 @@
     {
       programs.hyprland = {
         enable = true;
-        package = inputs.hyprland.packages.${config.opts.system.platform}.hyprland;
+        package = inputs.hyprland.packages."x86_64-linux".hyprland;
       };
 
       xdg.portal = {
@@ -23,7 +23,7 @@
     } // libutils.modules.perUserHomeManager config (_: user: {
       wayland.windowManager.hyprland = lib.mkIf user.desktops.hyprhot.enable ({
         enable = true;
-        package = inputs.hyprland.packages.${config.opts.system.platform}.hyprland;
+        package = inputs.hyprland.packages."x86_64-linux".hyprland;
         xwayland.enable = true;
         systemd.enable = true;
         plugins = [
