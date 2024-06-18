@@ -3,7 +3,7 @@
 let
   collectModuleFile = type: dir:
     let
-      path = dir + "/${type}.nix";
+      path = builtins.trace dir (dir + "/${type}.nix");
     in
     if (builtins.pathExists path) then [ path ] else [];
   collectModulesSubDir = type: dir:
