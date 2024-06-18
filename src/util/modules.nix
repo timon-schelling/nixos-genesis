@@ -23,7 +23,7 @@ let
   };
 
   mkUserOpt = options: lib.mkOption {
-    type = lib.types.attrsetOf (lib.types.submodule {
+    type = lib.types.attrsOf (lib.types.submodule {
       options = options;
     });
     default = {};
