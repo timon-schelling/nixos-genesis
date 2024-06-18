@@ -18,7 +18,7 @@ let
   });
 
   mkOpts = { system ? {}, user ? {} }: {
-    opts.system = (mkSystemOpt system);
+    opts.system = system;
     opts.users = (mkUserOpt user);
   };
 
