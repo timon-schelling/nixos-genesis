@@ -12,7 +12,7 @@ let
   perUserHomeManager = opts: function: perUser opts (name: user: {
     home-manager = {
       users = {
-        ${name} = function name user;
+        ${name} = (function name user);
       };
     };
   });
