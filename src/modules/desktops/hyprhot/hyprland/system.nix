@@ -21,7 +21,7 @@
         trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
       };
     } // libutils.modules.perUserHomeManager config (_: user: {
-      wayland.windowManager.hyprland = {
+      wayland.windowManager.hyprland = lib.mkIf user.desktops.hyprhot.enable ({
         enable = true;
         package = inputs.hyprland.packages.${config.opts.system.platform}.hyprland;
         xwayland.enable = true;
@@ -203,7 +203,7 @@
               disable_logs = false
           }
         '';
-      };
+      });
     })
   );
 }
