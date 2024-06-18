@@ -1,7 +1,7 @@
 { lib, ... }:
 
 let
-  anyMapAttrs = filter: attrs: lib.any (lib.mapAttrsToList (key: value: filter key value) attrs);
+  anyMapAttrs = filter: attrs: lib.any (x: x) (lib.mapAttrsToList (key: value: filter key value) attrs);
 
   anyUser = opts: filter: anyMapAttrs filter opts.users;
 
