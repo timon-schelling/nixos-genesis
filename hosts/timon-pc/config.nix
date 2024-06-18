@@ -2,6 +2,7 @@
   system = {
     host = "timon-pc";
     drive = "/dev/nvme1n1";
+    platform = "x86_64-linux";
   };
   users = {
     timon = {
