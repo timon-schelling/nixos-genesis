@@ -28,7 +28,7 @@
             };
             imports = [
               ./options/home.nix
-            ] ++ (lib.util.imports.homeModules ./modules);
+            ] ++ (systemLib.util.imports.homeModules ./modules);
             inherit opts;
           };
         }
