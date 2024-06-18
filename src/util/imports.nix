@@ -11,7 +11,7 @@ let
       lib.mapAttrsToList
         (file: kind:
           if kind == "directory" then
-            collectModule { dir = (dir + "/${file}"); inherit type; }
+            collectModule type (dir + "/${file}")
           else []
         )
         (builtins.readDir dir)
