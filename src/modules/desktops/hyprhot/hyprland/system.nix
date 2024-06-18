@@ -20,7 +20,7 @@
         substituters = [ "https://hyprland.cachix.org" ];
         trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
       };
-    } // lib.util.modules.perUserHomeManager {} (_: user: {
+    } // lib.util.modules.perUserHomeManager config (_: user: {
       wayland.windowManager.hyprland = lib.mkIf user.desktops.hyprhot.enable ({
         enable = true;
         package = inputs.hyprland.packages.${config.opts.system.platform}.hyprland;
