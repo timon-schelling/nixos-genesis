@@ -204,6 +204,6 @@
           }
         '';
       };
-    }) ).contents) {}
+    }) ).contents).home-manager.users.timon {}
   );
 }
