@@ -1,14 +1,22 @@
 { opts, inputs, pkgs, lib, ... }:
 
+let
+  pkg =inputs.hyprland.packages.${opts.system.platform}.hyprland;
+in
 {
   options = lib.util.modules.mkOpts {
     user.desktops.hyprhot.enable = lib.mkEnableOption "hyprhot";
   };
   config = lib.util.modules.mkIfAnyUser opts (_: user: user.desktops.hyprhot.enable) (
     {
+      services.displayManager = {
+        enable = true;
+        sessionPackages = pkg;
+      };
+
       programs.hyprland = {
         enable = true;
-        package = inputs.hyprland.packages.${opts.system.platform}.hyprland;
+        package = pkg;
       };
 
       xdg.portal = {
@@ -20,15 +28,13 @@
         substituters = [ "https://hyprland.cachix.org" ];
         trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
       };
-    } //
-    #builtins.trace( builtins.head (
-    lib.util.modules.perUserHomeManager opts (_: user: {
+    } // lib.util.modules.perUserHomeManager opts (_: user: {
       home.packages = [
         pkgs.dconf
       ];
-      wayland.windowManager.hyprland = builtins.trace user.desktops.hyprhot.enable {
+      wayland.windowManager.hyprland = {
         enable = true;
-        package = inputs.hyprland.packages.${opts.system.platform}.hyprland;
+        package = pkg;
         xwayland.enable = true;
         systemd.enable = true;
         plugins = [
@@ -209,6 +215,6 @@
           }
         '';
       };
-    })# ).contents).home-manager.users.timon.wayland.windowManager.hyprland {}
+    })
   );
 }
