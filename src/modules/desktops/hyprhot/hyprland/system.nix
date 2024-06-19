@@ -1,4 +1,4 @@
-{ opts, inputs, config, lib, ... }:
+{ opts, inputs, pkgs, lib, ... }:
 
 {
   options = lib.util.modules.mkOpts {
@@ -22,7 +22,10 @@
       };
     } //
     #builtins.trace( builtins.head (
-      lib.util.modules.perUserHomeManager opts (_: user: {
+    lib.util.modules.perUserHomeManager opts (_: user: {
+      home.packages = [
+        pkgs.dconf
+      ];
       wayland.windowManager.hyprland = builtins.trace user.desktops.hyprhot.enable {
         enable = true;
         package = inputs.hyprland.packages.${opts.system.platform}.hyprland;
