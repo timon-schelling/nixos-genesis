@@ -5,7 +5,7 @@ let
 
   anyUser = opts: filter: anyMapAttrs filter opts.users;
 
-  mkIfAnyUser = opts: filter: content: lib.mkIf (builtins.trace (anyUser opts filter) (anyUser opts filter)) (lib.mkMerge [content]);
+  mkIfAnyUser = opts: filter: content: lib.mkIf (anyUser opts filter) content;
 
   perUser = opts: function: lib.mkMerge (lib.mapAttrsToList function opts.users);
 
