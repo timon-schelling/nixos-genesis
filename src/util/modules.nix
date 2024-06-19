@@ -10,11 +10,7 @@ let
   perUser = opts: function: lib.mkMerge (lib.mapAttrsToList function opts.users);
 
   perUserHomeManager = opts: function: perUser opts (name: user: {
-    home-manager = {
-      users = {
-        ${name} = (function name user);
-      };
-    };
+    home-manager.users."${name}" = (function name user);
   });
 
   mkOpts = { system ? {}, user ? {} }: {
