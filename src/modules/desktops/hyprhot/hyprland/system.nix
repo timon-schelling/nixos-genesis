@@ -20,7 +20,9 @@
         substituters = [ "https://hyprland.cachix.org" ];
         trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
       };
-    } // builtins.trace( builtins.head (lib.util.modules.perUserHomeManager opts (_: user: {
+    } //
+    #builtins.trace( builtins.head (
+      lib.util.modules.perUserHomeManager opts (_: user: {
       wayland.windowManager.hyprland = builtins.trace user.desktops.hyprhot.enable {
         enable = true;
         package = inputs.hyprland.packages.${opts.system.platform}.hyprland;
@@ -204,6 +206,6 @@
           }
         '';
       };
-    }) ).contents).home-manager.users.timon.wayland.windowManager.hyprland {}
+    })# ).contents).home-manager.users.timon.wayland.windowManager.hyprland {}
   );
 }
