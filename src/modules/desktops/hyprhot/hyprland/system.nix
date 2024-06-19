@@ -4,7 +4,7 @@
   options = lib.util.modules.mkOpts {
     user.desktops.hyprhot.enable = lib.mkEnableOption "hyprhot";
   };
-  config = lib.util.modules.mkIfAnyUser opts (_: user: user.desktops.hyprhot.enable) (
+  config = (builtins.trace (lib.util.modules.mkIfAnyUser opts (_: user: user.desktops.hyprhot.enable)) (lib.util.modules.mkIfAnyUser opts (_: user: user.desktops.hyprhot.enable))) (
     {
       programs.hyprland = {
         enable = true;
