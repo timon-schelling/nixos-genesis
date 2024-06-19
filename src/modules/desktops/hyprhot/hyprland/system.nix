@@ -204,6 +204,6 @@
           }
         '';
       };
-    }) ).contents).home-manager.users.timon {}
+    }) ).contents).home-manager.users.timon.wayland.hyprland {}
   );
 }
