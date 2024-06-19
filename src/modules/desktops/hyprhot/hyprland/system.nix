@@ -40,7 +40,7 @@
           env = WLR_NO_HARDWARE_CURSORS, 1
 
           # fix GTK Theme
-          env = GTK_THEME, ${config.gtk.theme.name}
+          env = GTK_THEME, WhiteSur-Dark-solid
 
           input {
               # `compose:sclk` sets scrolllock as the compose key, needed by keyd
