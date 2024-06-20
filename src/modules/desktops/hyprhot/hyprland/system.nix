@@ -1,4 +1,4 @@
-{ opts, inputs, pkgs, lib, ... }:
+{ opts, inputs, pkgs, lib, config, ... }:
 
 let
   pkg =inputs.hyprland.packages.${opts.system.platform}.hyprland;
@@ -9,7 +9,7 @@ in
   };
   config = lib.util.modules.mkIfAnyUser opts (_: user: user.desktops.hyprhot.enable) (
     {
-      platform.system.sessions = lib.mkForce [
+      platform.system.sessions = builtins.trace config.platform.system.sessions [
         {
           name = "hyprhot";
           command = "${pkg}/bin/Hyprland";
