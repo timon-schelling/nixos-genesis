@@ -9,11 +9,6 @@ in
   };
   config = lib.util.modules.mkIfAnyUser opts (_: user: user.desktops.hyprhot.enable) (
     {
-      services.displayManager = {
-        enable = true;
-        sessionPackages = pkg;
-      };
-
       programs.hyprland = {
         enable = true;
         package = pkg;
@@ -37,9 +32,6 @@ in
         package = pkg;
         xwayland.enable = true;
         systemd.enable = true;
-        plugins = [
-        #    inputs.split-monitor-workspaces.packages.${opts.system.platform}.split-monitor-workspaces
-        ];
         extraConfig = ''
           monitor = DP-3, 2560x1440, 1200x250, 1
           monitor = DP-2, 1920x1200, 0x0, 1, transform, 1
