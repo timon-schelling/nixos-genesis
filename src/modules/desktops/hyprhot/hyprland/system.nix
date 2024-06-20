@@ -9,6 +9,17 @@ in
   };
   config = lib.util.modules.mkIfAnyUser opts (_: user: user.desktops.hyprhot.enable) (
     {
+      platform.system.sessions = [
+        {
+          name = "hyprhot";
+          command = "${pkg}/bin/Hyprland";
+        }
+        {
+          name = "hyprhot 2";
+          command = "${pkg}/bin/Hyprland";
+        }
+      ];
+
       programs.hyprland = {
         enable = true;
         package = pkg;

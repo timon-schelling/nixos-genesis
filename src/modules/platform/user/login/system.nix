@@ -17,11 +17,7 @@
     };
   };
 
-  config =
-  let
-    sessionsJSON = ;
-  in
-  {
+  config = {
 
     # programs.regreet = {
     #   enable = true;
