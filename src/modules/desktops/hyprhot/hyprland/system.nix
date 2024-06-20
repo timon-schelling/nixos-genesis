@@ -9,7 +9,7 @@ in
   };
   config = lib.util.modules.mkIfAnyUser opts (_: user: user.desktops.hyprhot.enable) (
     {
-      platform.system.sessions = [
+      platform.system.sessions = lib.mkForce [
         {
           name = "hyprhot";
           command = "${pkg}/bin/Hyprland";
