@@ -24,7 +24,7 @@
       directory = "/var/cache/tuigreet";
       user = "greeter";
       group = "greeter";
-      permissions = "0755";
+      mode = "0755";
     }
   ];
 
