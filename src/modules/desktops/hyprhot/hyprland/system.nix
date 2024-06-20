@@ -23,17 +23,6 @@ in
         substituters = [ "https://hyprland.cachix.org" ];
         trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
       };
-    } // {
-      test.platform.system.sessions = builtins.trace config.platform.system.sessions [
-        {
-          name = "hyprhot";
-          command = "${pkg}/bin/Hyprland";
-        }
-        {
-          name = "hyprhot 2";
-          command = "${pkg}/bin/Hyprland";
-        }
-      ];
     } // lib.util.modules.perUserHomeManager opts (_: user: {
       home.packages = [
         pkgs.dconf
