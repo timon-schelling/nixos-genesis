@@ -34,7 +34,7 @@
       tuigreet_session =
         let
           session = "${pkgs.hyprland}/bin/Hyprland";
-          tuigreet = "${pkgs.greetd.tuigreet}";
+          tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
         in
         {
           command = "${tuigreet} --time --remember --remember-user-session --cmd ${session}";
