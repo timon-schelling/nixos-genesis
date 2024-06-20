@@ -17,7 +17,7 @@
     config.opts.users);
 
 
-      platform.system.sessions = builtins.trace config.platform.system.sessions [
+      platform.system.sessions = [
         {
           name = "hyprhot";
           command = "${pkgs.hyprland}/bin/Hyprland";
