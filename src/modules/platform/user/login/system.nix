@@ -46,7 +46,7 @@
       }
     ];
 
-    environment.systemPackages = [
+    environment.systemPackages = builtins.trace config.platform.system.sessions [
       (lib.util.nuscript.mkScript pkgs "select-session" ''
         let sessions = "${builtins.toJSON config.platform.system.sessions}" | from json
         let sessions_number = $sessions | length
