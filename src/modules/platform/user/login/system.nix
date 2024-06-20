@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   # programs.regreet = {
@@ -34,7 +34,7 @@
       tuigreet_session =
         let
           session = "${pkgs.hyprland}/bin/Hyprland";
-          tuigreet = "${lib.exe pkgs.greetd.tuigreet}";
+          tuigreet = "${pkgs.greetd.tuigreet}";
         in
         {
           command = "${tuigreet} --time --remember --remember-user-session --cmd ${session}";
