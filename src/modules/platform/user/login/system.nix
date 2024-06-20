@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # programs.regreet = {
@@ -14,8 +14,33 @@
   #   };
   #   cageArgs = [ "-s" "-m" "last" ];
   # };
-  services.displayManager.sddm = {
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   wayland.enable = true;
+  # };
+
+  platform.system.persist.folders = [
+    {
+      directory = "/var/cache/tuigreet";
+      owner = "greeter";
+      group = "greeter";
+      permissions = "0755";
+    }
+  ];
+
+  services.greetd = {
     enable = true;
-    wayland.enable = true;
+    settings = rec {
+      tuigreet_session =
+        let
+          session = "${pkgs.hyprland}/bin/Hyprland";
+          tuigreet = "${lib.exe pkgs.greetd.tuigreet}";
+        in
+        {
+          command = "${tuigreet} --time --remember --remember-user-session --cmd ${session}";
+          user = "greeter";
+        };
+      default_session = tuigreet_session;
+    };
   };
 }
