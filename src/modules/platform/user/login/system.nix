@@ -22,7 +22,7 @@
   platform.system.persist.folders = [
     {
       directory = "/var/cache/tuigreet";
-      owner = "greeter";
+      user = "greeter";
       group = "greeter";
       permissions = "0755";
     }
