@@ -3,7 +3,7 @@
 {
   options = {
     platform.system.sessions = lib.mkOption {
-      type = lib.types.listOf lib.types.submodule {
+      type = lib.types.listOf (lib.types.submodule {
         options = {
           name = lib.mkOption {
             type = lib.types.string;
@@ -12,7 +12,7 @@
             type = lib.types.string;
           };
         };
-      };
+      });
       default = [];
     };
   };
