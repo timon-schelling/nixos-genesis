@@ -48,7 +48,7 @@
 
     environment.systemPackages = [
       (lib.util.nuscript.mkScript pkgs "select-session" ''
-        let sessions = "${lib.toJSON config.platform.system.sessions}" | from json
+        let sessions = "${builtins.toJSON config.platform.system.sessions}" | from json
         let sessions_number = $sessions | length
 
         if ($sessions_number == 0) {
