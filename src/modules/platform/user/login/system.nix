@@ -14,7 +14,7 @@
   #   };
   #   cageArgs = [ "-s" "-m" "last" ];
   # };
-  services.sddm = {
+  services.displayManager.sddm = {
     enable = true;
   };
 }
