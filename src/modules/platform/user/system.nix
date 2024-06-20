@@ -16,7 +16,7 @@
       })
     config.opts.users);
 
-
+#TODO remove this
       platform.system.sessions = [
         {
           name = "hyprhot";
