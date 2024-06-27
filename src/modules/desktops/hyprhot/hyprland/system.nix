@@ -9,15 +9,10 @@ in
   };
   config = lib.util.modules.mkIfAnyUser opts (_: user: user.desktops.hyprhot.enable) (
     {
-      # programs.hyprland = {
+      # xdg.portal = {
       #   enable = true;
-      #   package = pkg;
+      #   wlr.enable = true;
       # };
-
-      xdg.portal = {
-        enable = true;
-        wlr.enable = true;
-      };
 
       nix.settings = {
         substituters = [ "https://hyprland.cachix.org" ];
