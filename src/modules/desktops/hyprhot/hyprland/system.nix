@@ -9,10 +9,10 @@ in
   };
   config = lib.util.modules.mkIfAnyUser opts (_: user: user.desktops.hyprhot.enable) (
     {
-      programs.hyprland = {
-        enable = true;
-        package = pkg;
-      };
+      # programs.hyprland = {
+      #   enable = true;
+      #   package = pkg;
+      # };
 
       xdg.portal = {
         enable = true;
