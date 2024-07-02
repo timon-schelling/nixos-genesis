@@ -1,6 +1,6 @@
 {
   system = {
-    host = "timon-pc";
+    host = "builtins.baseNameOf ./.";
     drive = "/dev/nvme1n1";
     platform = "x86_64-linux";
   };

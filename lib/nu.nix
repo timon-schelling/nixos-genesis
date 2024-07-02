@@ -1,4 +1,4 @@
-{ lib, pkgs, ... } @ args :
+{ pkgs, ... } :
 
 {
   writeNuBin = name: script: pkgs.writeScriptBin "${name}" ''

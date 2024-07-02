@@ -9,7 +9,7 @@ let
     };
     editor = {
       font-family = "FiraCode Nerd Bold Font, monospace";
-      font-size = 20;
+      font-size = 22;
       tab-width = 2;
       cursor-surrounding-lines = 4;
       render-whitespace = "all";
@@ -17,7 +17,7 @@ let
       highlight-matching-brackets = true;
     };
     ui = {
-      font-size = 18;
+      font-size = 20;
       open-editors-visible = false;
     };
     nushell-lsp = {

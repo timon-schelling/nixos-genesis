@@ -2,7 +2,7 @@
 
 let
   pkgs = inputs.nixpkgs;
-  lib = pkgs.lib // import ./lib { lib = pkgs.lib; inherit pkgs; };
+  lib = pkgs.lib // import ../lib { lib = pkgs.lib; inherit pkgs; };
   opts = import (../hosts + "/${host}/config.nix");
 in
 {
@@ -12,7 +12,6 @@ in
         inherit inputs lib;
       };
       modules = [
-        ./options/main.nix
 
         (../hosts + "/${host}/hardware.nix")
 
@@ -24,7 +23,7 @@ in
         ./users.nix
 
         {
-          nixpkgs.overlays = (map (e: import e) (lib.import.type "overlay" ./.));
+          nixpkgs.overlays = (map (e: import e) (lib.import.type "overlay" ../overlays));
         }
       ];
     };

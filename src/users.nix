@@ -1,8 +1,5 @@
 { lib, pkgs, inputs, config, ... }:
 
-let
-  userOpts
-in
 {
   imports = [
     inputs.home-manager.nixosModules.default
@@ -12,9 +9,6 @@ in
     opts.users = lib.mkOption {
       type = lib.types.attrsOf (lib.types.submodule {
         options = {
-          name = lib.mkOption {
-            type = lib.types.str;
-          };
           passwordHash = lib.mkOption {
             type = lib.types.str;
           };
@@ -25,6 +19,9 @@ in
           groups = lib.mkOption {
             type = lib.types.listOf lib.types.str;
             default = [ ];
+          };
+          home = lib.mkOption {
+            type = lib.types.anything;
           };
         };
       });
@@ -40,9 +37,7 @@ in
           home = "/home/${name}";
           hashedPassword = user.passwordHash;
           description = user.name;
-          extraGroups =
-            user.groups ++
-            (if user.admin then [ "admin" ] else [ ]);
+          extraGroups = user.groups ++ (if user.admin then [ "admin" ] else [ ]);
           shell = pkgs.nushell;
         };
       })
@@ -61,16 +56,26 @@ in
             opts = {
               system = config.opts.system;
               inherit username;
-              inherit user;
+              user = user.home;
             };
-            systemLib = lib;
+            # TODO: remove
+            # systemLib = lib;
           in
           {
             ${username} = { lib, ...}: {
               imports = [
                 ./options/home.nix
-              ] ++ (systemLib.import.type "home" ./.);
-              inherit opts;
+              ] ++ (lib.import.type "home" ./.);
+
+              options = {
+                opts.system = lib.mkOption {
+                  type = lib.types.anything;
+                };
+              };
+
+              config = {
+                inherit opts;
+              };
             };
           }
         )
@@ -78,6 +83,4 @@ in
       );
     };
   };
-
-
 }

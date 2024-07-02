@@ -1,4 +1,4 @@
-{ lib, pkgs, ... } @ args :
+args:
 
 let
   nu = import ./nu.nix args;
