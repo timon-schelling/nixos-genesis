@@ -1,1 +1,1 @@
-{ inputs, host } @ args : import ./src/main.nix args
+inputs: host : import ./src/main.nix { inherit inputs host; }
