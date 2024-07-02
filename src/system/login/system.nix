@@ -6,10 +6,10 @@
       type = lib.types.listOf (lib.types.submodule {
         options = {
           name = lib.mkOption {
-            type = lib.types.string;
+            type = lib.types.str;
           };
           command = lib.mkOption {
-            type = lib.types.string;
+            type = lib.types.str;
           };
         };
       });
