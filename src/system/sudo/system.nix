@@ -6,5 +6,4 @@
 
     %admin ALL=(ALL:ALL) ALL
   '';
-
 }
