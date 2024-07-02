@@ -1,4 +1,4 @@
-{ inputs, host, ... }:
+inputs: host:
 
 let
   pkgs = inputs.nixpkgs;
