@@ -1,3 +1,3 @@
 inputs: self: super: {
-  hyprland = inputs.hyprland.packages.${super.target}.hyprland;
+  hyprland = inputs.hyprland.packages.${super.system}.hyprland;
 }
