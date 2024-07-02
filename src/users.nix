@@ -37,7 +37,7 @@
           home = "/home/${name}";
           hashedPassword = user.passwordHash;
           description = user.home.name;
-          extraGroups = user.groups ++ (if user.admin then [ "admin" ] else [ ]);
+          extraGroups = user.groups ++ (if builtins.trace user.admin user.admin then [ "admin" ] else [ ]);
           shell = pkgs.nushell;
         };
       })
