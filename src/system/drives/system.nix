@@ -9,7 +9,7 @@
     opts = {
       system = {
         drive = {
-          type = lib.types.path;
+          type = lib.types.str;
         };
         swap = lib.mkOption {
           type = lib.types.submodule {
