@@ -16,14 +16,14 @@ in
         (../hosts + "/${host}/hardware.nix")
 
         {
-          # imports = (lib.import.type "system" ./.);
+          imports = (lib.import.type "system" ./.);
           inherit opts;
         }
 
         ./users.nix
 
         {
-          nixpkgs.overlays = (map (e: import e) (lib.import.type "overlay" ../overlays));
+          # nixpkgs.overlays = (map (e: import e) (lib.import.type "overlay" ../overlays));
         }
       ];
     };
