@@ -23,7 +23,7 @@ in
         ./users.nix
 
         {
-          nixpkgs.overlays = (map (e: import e) (lib.imports.type "overlay" ../overlays));
+          nixpkgs.overlays = (map (e: import e inputs) (lib.imports.type "overlay" ../overlays));
         }
       ];
     };

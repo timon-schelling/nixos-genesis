@@ -1,4 +1,4 @@
-self: super: with super; {
+inputs: self: super: with super; {
   lapce =
     let
       rpathLibs = lib.optionals stdenv.isLinux [

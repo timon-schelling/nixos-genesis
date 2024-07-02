@@ -1,4 +1,4 @@
-self: super: with super; {
+inputs: self: super: with super; {
   tere = rustPlatform.buildRustPackage {
     pname = "tere";
     version = "1.5.1-unstable-2024-04-01";

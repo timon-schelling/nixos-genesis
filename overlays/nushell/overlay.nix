@@ -1,4 +1,4 @@
-self: super: with super; {
+inputs: self: super: with super; {
   nushell = rustPlatform.buildRustPackage  {
     pname = "nushell";
 
