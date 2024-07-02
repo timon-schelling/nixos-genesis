@@ -20,6 +20,10 @@ in
           inherit opts;
         }
 
+        {
+          opts.system.host = "${host}";
+        }
+
         ./users.nix
 
         {
