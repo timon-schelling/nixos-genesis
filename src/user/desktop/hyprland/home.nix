@@ -13,7 +13,7 @@
 
       # cursor settings
       # env = XCURSOR_SIZE, 24
-      env = WLR_NO_HARDWARE_CURSORS, 1
+      # env = WLR_NO_HARDWARE_CURSORS, 1
 
       # fix GTK Theme
       env = GTK_THEME, WhiteSur-Dark-solid
