@@ -8,7 +8,7 @@
   options = {
     opts = {
       system = {
-        drive = {
+        drive = lib.mkOption{
           type = lib.types.str;
         };
         swap = lib.mkOption {
