@@ -2,7 +2,7 @@
 
 let
   pkgs = inputs.nixpkgs;
-  lib = pkgs.lib // import ../lib { lib = pkgs.lib; inherit pkgs; };
+  lib = pkgs.lib.extend (_: _: import ../lib { lib = pkgs.lib; inherit pkgs; });
   opts = import (../hosts + "/${host}/config.nix");
 in
 {
