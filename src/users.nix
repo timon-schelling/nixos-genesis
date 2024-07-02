@@ -36,7 +36,7 @@
           isNormalUser = true;
           home = "/home/${name}";
           hashedPassword = user.passwordHash;
-          description = user.name;
+          description = user.home.name;
           extraGroups = user.groups ++ (if user.admin then [ "admin" ] else [ ]);
           shell = pkgs.nushell;
         };
