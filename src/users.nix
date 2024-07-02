@@ -58,14 +58,11 @@
               inherit username;
               user = user.home;
             };
-            # TODO: remove
-            # systemLib = lib;
+            modules = lib.imports.type "home" ./.
           in
           {
             ${username} = { lib, ...}: {
-              imports = [
-                ./options/home.nix
-              ] ++ (lib.imports.type "home" ./.);
+              imports = modules;
 
               options = {
                 opts.system = lib.mkOption {
