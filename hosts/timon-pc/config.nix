@@ -5,16 +5,18 @@
   };
   users = {
     timon = {
-      name = "Timon Schelling";
-      email = "me@timon.zip";
       passwordHash = "***REMOVED***";
-      sudo = true;
+      admin = true;
       persist.data.folders = [
         "dev"
         "data"
         "media"
         "tmp"
       ];
+      home = {
+        name = "Timon Schelling";
+        email = "me@timon.zip";
+      };
       # desktops.hyprhot.enable = true;
     };
   };
