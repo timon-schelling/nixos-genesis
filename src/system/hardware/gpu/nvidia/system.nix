@@ -16,7 +16,6 @@ in
   };
   hardware.opengl = {
     enable = true;
-    driSupport = true;
     package = driverPkg;
   };
   nixpkgs.config.allowUnfree = true;
