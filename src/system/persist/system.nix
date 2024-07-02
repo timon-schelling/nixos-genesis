@@ -1,7 +1,7 @@
 { lib, ... }:
 
 let
-  persist = import ./persist.nix lib;
+  persist = import ./persist-option.nix lib;
 in
 {
   options = {
