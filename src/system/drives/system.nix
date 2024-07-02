@@ -5,7 +5,32 @@
     inputs.disko.nixosModules.default
   ];
 
-  disko.devices = {
+  options = {
+    opts = {
+      system = {
+        drive = {
+          type = lib.types.path;
+        };
+        swap = lib.mkOption {
+          type = lib.types.submodule {
+            options = {
+              enable = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+              };
+              size = lib.mkOption {
+                type = lib.types.str;
+                default = "32G";
+              };
+            };
+          };
+          default = {};
+        };
+      };
+    };
+  };
+
+  config.disko.devices = {
     disk.main = {
       device = config.opts.system.drive;
       type = "disk";
