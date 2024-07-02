@@ -16,7 +16,7 @@ in
         (../hosts + "/${host}/hardware.nix")
 
         {
-          imports = (lib.import.type "system" ./.);
+          # imports = (lib.import.type "system" ./.);
           inherit opts;
         }
 
