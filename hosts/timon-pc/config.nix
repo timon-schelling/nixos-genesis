@@ -15,7 +15,7 @@
         "media"
         "tmp"
       ];
-      desktops.hyprhot.enable = true;
+      # desktops.hyprhot.enable = true;
     };
   };
 }
