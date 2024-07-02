@@ -58,7 +58,7 @@
               inherit username;
               user = user.home;
             };
-            modules = lib.imports.type "home" ./.
+            modules = lib.imports.type "home" ./.;
           in
           {
             ${username} = { lib, ...}: {
