@@ -1,7 +1,7 @@
 { pkgs, inputs, config, lib, ... }:
 
 {
-  home.packages = builtins.trace lib.imports [
+  home.packages = [
     (inputs.waybar.packages.${config.opts.system.platform}.waybar)
     (lib.writeNuBin "waybar-toggle" (builtins.readFile ./toggle.nu))
   ];
