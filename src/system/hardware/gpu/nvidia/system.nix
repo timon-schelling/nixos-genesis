@@ -14,7 +14,7 @@ in
     nvidiaSettings = false;
     package = driverPkg;
   };
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     package = driverPkg;
   };
