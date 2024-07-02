@@ -2,9 +2,9 @@ args:
 
 let
   nu = import ./nu.nix args;
-  import = import ./import.nix args;
+  imports = import ./imports.nix args;
 in
 {
   writeNuBin = nu.writeNuBin;
-  inherit import;
+  inherit imports;
 }

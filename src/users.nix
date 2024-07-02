@@ -65,7 +65,7 @@
             ${username} = { lib, ...}: {
               imports = [
                 ./options/home.nix
-              ] ++ (lib.import.type "home" ./.);
+              ] ++ (lib.imports.type "home" ./.);
 
               options = {
                 opts.system = lib.mkOption {
