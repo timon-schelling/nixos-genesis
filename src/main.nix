@@ -6,7 +6,7 @@ let
   opts = import (../hosts + "/${host}/config.nix");
 in
 {
-  nixosConfigurations = builtins.trace pkgs {
+  nixosConfigurations = {
     ${host} = lib.nixosSystem {
       specialArgs = {
         inherit inputs lib;
