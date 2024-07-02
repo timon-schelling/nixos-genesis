@@ -8,7 +8,7 @@
   home.packages = [
     pkgs.clipcat
     pkgs.wl-clipboard-rs
-    (lib.util.nuscript.mkScript pkgs "clipboard-history" ''
+    (lib.writeNuBin "clipboard-history" ''
       let clipboard = (clipcatctl list | split list "\n" | each { |x| $x | parse --regex '(?P<id>\w*)\: (?P<text>.*)' }).0
       let selection = ($clipboard | get text | str join "\n" | select-ui)
       let selection_id = ($clipboard | where { |x| $x.text == $selection }).0.id
@@ -23,7 +23,7 @@
     };
     Install.WantedBy = [ "graphical-session.target" ];
     Service = {
-      ExecStart = "${(lib.util.nuscript.mkScript pkgs "clipcatd-start" ''
+      ExecStart = "${(lib.writeNuBin "clipcatd-start" ''
         mkdir ~/.config/clipcat
         ${pkgs.clipcat}/bin/clipcatd default-config
           | from toml

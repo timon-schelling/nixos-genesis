@@ -63,10 +63,10 @@ in
   };
 
   home.packages = [
-    (lib.util.nuscript.mkScript pkgs "select-ui" ''
+    (lib.writeNuBin "select-ui" ''
       $in | anyrun-select
     '')
-    (lib.util.nuscript.mkScript pkgs "anyrun-select"
+    (lib.writeNuBin "anyrun-select"
       (with pluginPkgs; ''
         $in | ^anyrun --plugins "${stdin}/lib/libstdin.so" --hide-plugin-info true
       '')
