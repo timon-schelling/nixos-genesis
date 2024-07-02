@@ -20,10 +20,10 @@ in
           inherit opts;
         }
 
-        ./users.nix
+        # ./users.nix
 
         {
-          # nixpkgs.overlays = (map (e: import e) (lib.import.type "overlay" ../overlays));
+          nixpkgs.overlays = (map (e: import e) (lib.import.type "overlay" ../overlays));
         }
       ];
     };
