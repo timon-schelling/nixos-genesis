@@ -3,10 +3,8 @@
 {
   security.sudo = {
     configFile = lib.mkForce ''
-      root ALL=(ALL:ALL) ALL
-
+      root ALL=(ALL:ALL) SETENV: ALL
       %admin ALL=(ALL:ALL) SETENV: ALL
     '';
-    extraRules = lib.mkForce [];
   };
 }
