@@ -2,7 +2,7 @@
 
 {
   security.sudo = {
-    configFile = ''
+    configFile = lib.mkForce ''
       root ALL=(ALL:ALL) ALL
 
       %admin ALL=(ALL:ALL) SETENV: ALL
