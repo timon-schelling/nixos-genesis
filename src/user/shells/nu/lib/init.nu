@@ -1,16 +1,10 @@
-if $env.PWD == "/home/timon" {
+if $env.PWD == $env.HOME {
     try {
         enter ~/tmp
         enter ~/dev
-        enter ~/dev/github.com
-        enter ~/dev/github.com/timon-schelling
-        enter ~/dev/gitlab.com/openknowledge-gmbh/projects
         enter ~/data
-        enter ~/cloud/personal
     }
     try {
         goto 0
     }
 }
-
-clear
