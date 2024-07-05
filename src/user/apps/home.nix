@@ -23,9 +23,20 @@ let
   apps = lib.map (path:
     lib.lists.init (lib.strings.splitString "/" (lib.strings.removePrefix "./" (lib.path.removePrefix appsFolder path)))
   ) appFiles;
+  buildAppTreeFromList = list: builtins.foldl' (a: e:
+    let
+      head = lib.lists.last (lib.lists.take 1 e);
+      tail = lib.lists.drop 1 e;
+    in
+    a // ({
+      "${head}" = if tail != [] then buildAppTreeFromList tail else {};
+    })
+  )
+  list;
+  appTree = buildAppTreeFromList apps;
 in
 {
-  options.apps = builtins.trace (builtins.toJSON apps) {
+  options.apps = builtins.trace (builtins.toJSON ({a = apps; b = appTree;})) {
 
   };
 }
