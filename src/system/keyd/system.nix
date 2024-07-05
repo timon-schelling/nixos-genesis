@@ -1,6 +1,15 @@
 { ... }:
 
 {
+  users.groups."input-local" = {};
+
+  environment.etc."keyd/default.conf" = {
+    group = "input-local";
+    mode = "0664";
+  };
+
+  # TODO: make settings overriteable by user
+
   services.keyd = {
     enable = true;
     keyboards.default = {
