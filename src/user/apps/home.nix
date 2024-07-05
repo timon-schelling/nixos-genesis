@@ -23,7 +23,7 @@ let
   apps = lib.map (path:
     lib.lists.init (lib.strings.splitString "/" (lib.strings.removePrefix "./" (lib.path.removePrefix appsFolder path)))
   ) appFiles;
-  buildAppTreeFromList = list: builtins.foldl' (a: e:
+  buildAppTreeFromList = list: builtins.foldl (a: e:
     let
       head = lib.lists.last (lib.lists.take 1 e);
       tail = lib.lists.drop 1 e;
