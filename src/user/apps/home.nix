@@ -21,7 +21,7 @@ let
   appsFolder = ./.;
   appFiles = lib.imports.type "app" appsFolder;
   apps = lib.map (path:
-    lib.list.init (lib.strings.splitString "/" (lib.strings.removePrefix "./" (lib.path.removePrefix appsFolder path)))
+    lib.lists.init (lib.strings.splitString "/" (lib.strings.removePrefix "./" (lib.path.removePrefix appsFolder path)))
   ) appFiles;
 in
 {
