@@ -36,7 +36,7 @@ let
   appTree = buildAppTreeFromList apps;
 in
 {
-  options.apps = builtins.trace ({a = apps; b = appTree;}) {
+  options.apps = builtins.trace appTree {
 
   };
 }
