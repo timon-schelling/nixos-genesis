@@ -1,23 +1,10 @@
+{ pkgs, ... }:
+
 {
-  browser = {
-    chromium = {};
-    firefox = {};
-  };
-  editor = {
-    vscode = {};
-    lapce = {};
-  };
-  terminal = {
-    wezterm = {};
-    rio = {};
-  };
-  other = {
-    useless = {
-      neovim = {};
-      emacs = {};
-    };
-    test = {
-      test = {};
-    };
-  };
+  home.packages = [
+    pkgs.wezterm
+  ];
+
+  xdg.configFile."wezterm/wezterm.lua".source = ./config.lua;
+  xdg.configFile."wezterm/colors/theme.toml".source = ./theme.toml;
 }
