@@ -40,7 +40,7 @@
           };
           other = {
             beeper.enable = true;
-            discord.enable = false;
+            discord.enable = true;
             discord-webcord.enable = true;
             spotify.enable = true;
           };
