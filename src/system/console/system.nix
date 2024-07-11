@@ -1,5 +1,6 @@
 { ... }:
 
 {
-  console.enable = false;
+  # console.enable = false;
+  console.earlySetup = true;
 }
