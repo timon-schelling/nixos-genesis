@@ -14,7 +14,7 @@
     enable = true;
     vt = 2;
     settings.default_session = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet -g '' --time --remember --remember-user-session --asterisks ";
+      command = "${pkgs.greetd.tuigreet}/bin/tuigreet -g '' --time --remember --remember-user-session --asterisks";
       user = "greeter";
     };
   };
