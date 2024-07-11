@@ -56,8 +56,8 @@
     # firewall.allowedUDPPorts = [ 67 ];
   };
 
-  systemd = {
-    targets.network-online.wantedBy = lib.mkForce []; # Normally ["multi-user.target"]
-    services.NetworkManager-wait-online.wantedBy = lib.mkForce []; # Normally ["network-online.target"]
-  };
+  # systemd = {
+  #   targets.network-online.wantedBy = lib.mkForce []; # Normally ["multi-user.target"]
+  #   services.NetworkManager-wait-online.wantedBy = lib.mkForce []; # Normally ["network-online.target"]
+  # };
 }
