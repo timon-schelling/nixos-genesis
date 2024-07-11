@@ -19,7 +19,14 @@
     };
   };
 
-  systemd.services.greetd.serviceConfig = {
-    Type = "idle";
+  boot.kernelParams = [ "console=tty1" ];
+
+  systemd.services.greetd = {
+    unitConfig = {
+         After = lib.mkOverride 0 [ "multi-user.target" ];
+    };
+    serviceConfig = {
+      Type = "idle";
+    };
   };
 }
