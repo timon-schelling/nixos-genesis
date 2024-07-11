@@ -34,7 +34,7 @@ in
         Config(
           desktop_actions: false,
           max_entries: 10,
-          terminal: Some("wezterm"),
+          terminal: Some("rio"),
         )
       '';
 
@@ -66,11 +66,9 @@ in
     (pkgs.nu.writeScriptBin "select-ui" ''
       $in | anyrun-select
     '')
-    (pkgs.nu.writeScriptBin "anyrun-select"
-      (with pluginPkgs; ''
-        $in | ^anyrun --plugins "${stdin}/lib/libstdin.so" --hide-plugin-info true
-      '')
-    )
+    (pkgs.nu.writeScriptBin "anyrun-select"''
+      $in | ^anyrun --plugins "${pluginPkgs.stdin}/lib/libstdin.so" --hide-plugin-info true
+    '')
   ];
 
   programs.anyrun.extraCss = ''
