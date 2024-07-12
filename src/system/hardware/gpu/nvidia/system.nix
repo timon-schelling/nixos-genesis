@@ -5,7 +5,7 @@ let
 in
 {
   services.xserver.videoDrivers = [ "nvidia" ];
-  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" "nvidia_uvm=1" "nvidia_drm.fbdev=1" "quiet" "splash"];
+  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" "nvidia_drm.fbdev=1" "quiet" "splash"];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement = {
