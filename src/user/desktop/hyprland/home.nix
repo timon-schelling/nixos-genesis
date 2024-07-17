@@ -124,7 +124,7 @@
         virtual-desktops {
           cycleworkspaces = 0
           notifyinit = 0
-          rememberlayout = monitors
+          # rememberlayout = monitors
         }
       }
 
