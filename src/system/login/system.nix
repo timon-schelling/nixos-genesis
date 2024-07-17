@@ -5,9 +5,17 @@ let
 in
 {
   options = {
-    opts.system.login.greeter = lib.mkOption {
-      type = lib.types.enum [ "tui" "tuigreet" "gui" "regreet" ];
-      default = "gui";
+    opts.system.login = lib.mkOption {
+      type = lib.types.submodule {
+        options = {
+          greeter = lib.mkOption {
+            description = "The greeter to use for the login screen";
+            type = lib.types.enum [ "tui" "tuigreet" "gui" "regreet" ];
+            default = "gui";
+          };
+        };
+      };
+      default = { };
     };
   };
 
