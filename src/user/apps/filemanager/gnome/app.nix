@@ -2,7 +2,7 @@
 
 {
   home.packages = [
-    pkgs.gnome.nautilus
-    pkgs.gnome.file-roller
+    pkgs.nautilus
+    pkgs.file-roller
   ];
 }
