@@ -2,7 +2,6 @@
   system = {
     drive = "/dev/nvme1n1";
     platform = "x86_64-linux";
-    login.greeter = "tui";
   };
   users = {
     timon = {
