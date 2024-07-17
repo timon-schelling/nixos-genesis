@@ -3,7 +3,6 @@
 let
   pkgs = inputs.nixpkgs;
   lib = pkgs.lib.extend (_: _: import ../lib { lib = pkgs.lib; inherit pkgs; });
-  opts = import (../hosts + "/${host}/config.nix");
 in
 {
   nixosConfigurations = {
@@ -13,11 +12,10 @@ in
       };
       modules = [
 
-        (../hosts + "/${host}/hardware.nix")
+        (../hosts + "/${host}/config.nix")
 
         {
           imports = (lib.imports.type "system" ./.);
-          inherit opts;
         }
 
         {
