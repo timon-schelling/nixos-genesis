@@ -1,29 +1,34 @@
 { pkgs, lib, config, ... }:
 
 {
-  platform.system.persist.folders = [
-    {
-      directory = "/var/cache/tuigreet";
-      user = "greeter";
-      group = "greeter";
-      mode = "0755";
-    }
-  ];
 
-  services.greetd = {
+  programs.regreet = {
     enable = true;
-    vt = 2;
-    settings.default_session = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet -g '' --time --remember --remember-user-session --asterisks";
-      user = "greeter";
-    };
   };
 
-  boot.kernelParams = [ "console=tty1" ];
+  # platform.system.persist.folders = [
+  #   {
+  #     directory = "/var/cache/tuigreet";
+  #     user = "greeter";
+  #     group = "greeter";
+  #     mode = "0755";
+  #   }
+  # ];
 
-  systemd.services.greetd = {
-    serviceConfig = {
-      Type = "idle";
-    };
-  };
+  # services.greetd = {
+  #   enable = true;
+  #   vt = 2;
+  #   settings.default_session = {
+  #     command = "${pkgs.greetd.tuigreet}/bin/tuigreet -g '' --time --remember --remember-user-session --asterisks";
+  #     user = "greeter";
+  #   };
+  # };
+
+  # boot.kernelParams = [ "console=tty1" ];
+
+  # systemd.services.greetd = {
+  #   serviceConfig = {
+  #     Type = "idle";
+  #   };
+  # };
 }
