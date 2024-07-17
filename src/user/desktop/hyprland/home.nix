@@ -122,7 +122,7 @@
 
       plugin {
         virtual-desktops {
-          cycleworkspaces = 1
+          cycleworkspaces = 0
           notifyinit = 0
         }
       }
