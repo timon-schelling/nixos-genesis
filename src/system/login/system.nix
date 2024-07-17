@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.system.login;
+  cfg = config.opts.system.login;
 in
 {
   options = {
