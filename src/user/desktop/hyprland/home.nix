@@ -11,9 +11,13 @@
       monitor = DP-1, 1920x1200, 3760x0, 1, transform, 1
       monitor = ,preferred, auto, auto
 
-      # cursor settings
-      # env = XCURSOR_SIZE, 24
-      # env = WLR_NO_HARDWARE_CURSORS, 1
+      env = LIBVA_DRIVER_NAME,nvidia
+      env = XDG_SESSION_TYPE,wayland
+      env = GBM_BACKEND,nvidia-drm
+      env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+      cursor {
+        no_hardware_cursors = true
+      }
 
       # fix GTK Theme
       env = GTK_THEME, WhiteSur-Dark-solid
