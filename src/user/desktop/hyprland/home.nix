@@ -119,7 +119,6 @@
           background_color = 0x161616
       }
 
-      exec-once = nu ~/.dotfiles/startup/main.nu
       exec-once = waybar
 
       $mainMod = SUPER

@@ -1,22 +1,26 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "git+https://github.com/nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager?ref=master";
+      url = "git+https://github.com/nix-community/home-manager?ref=master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     disko = {
-      url = "github:nix-community/disko";
+      url = "git+https://github.com/nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    impermanence.url = "github:nix-community/impermanence";
+    impermanence.url = "git+https://github.com/nix-community/impermanence";
     anyrun = {
-      url = "github:Kirottu/anyrun";
+      url = "git+https://github.com/Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=v0.41.2";
+    hyprland-plugin-virtual-desktops = {
+      url = "git+https://github.com/levnikmyskin/hyprland-virtual-desktops";
+      inputs.hyprland.follows = "hyprland";
+    };
     waybar = {
-      url = "github:Alexays/Waybar";
+      url = "git+https://github.com/Alexays/Waybar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
