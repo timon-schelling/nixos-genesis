@@ -2,6 +2,14 @@
 
 {
 
+  platform.system.persist.folders = [
+    {
+      directory = "/var/cache/regreet";
+      user = "greeter";
+      group = "greeter";
+      mode = "0755";
+    }
+  ];
   programs.regreet = {
     enable = true;
   };
