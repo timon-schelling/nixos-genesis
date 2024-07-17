@@ -14,7 +14,7 @@
       url = "git+https://github.com/Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=v0.41.2";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.41.2";
     hyprland-plugin-virtual-desktops = {
       url = "git+https://github.com/levnikmyskin/hyprland-virtual-desktops";
       inputs.hyprland.follows = "hyprland";
