@@ -5,7 +5,7 @@ let
 in
 {
   options = {
-    opts.system.login.greeter = {
+    opts.system.login.greeter = lib.mkOption {
       description = "The greeter to use for the login screen";
       type = lib.types.enum [ "tui" "tuigreet" "gui" "regreet" ];
       default = "gui";
