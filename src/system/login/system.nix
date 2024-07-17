@@ -12,6 +12,15 @@
   ];
   programs.regreet = {
     enable = true;
+    settings = {
+      GTK = {
+        application_prefer_dark_theme = true;
+      };
+    };
+    cageArgs = [
+      "-m"
+      "last"
+    ];
   };
 
   # platform.system.persist.folders = [
