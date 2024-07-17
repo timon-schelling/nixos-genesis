@@ -28,94 +28,94 @@
       env = GTK_THEME, WhiteSur-Dark-solid
 
       input {
-          # `compose:sclk` sets scrolllock as the compose key, needed by keyd
-          kb_options = compose:sclk
+        # `compose:sclk` sets scrolllock as the compose key, needed by keyd
+        kb_options = compose:sclk
 
-          follow_mouse = 1
-          touchpad {
-              natural_scroll = no
-          }
-          sensitivity = 0 # -1.0 - 1.0, 0 means no modification
+        follow_mouse = 1
+        touchpad {
+            natural_scroll = no
+        }
+        sensitivity = 0 # -1.0 - 1.0, 0 means no modification
       }
 
       general {
-          gaps_in = 5
-          gaps_out = 7
-          border_size = 4
+        gaps_in = 5
+        gaps_out = 7
+        border_size = 4
 
-          # col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-          # col.active_border = rgba(0052a5ee) rgba(760060ee) 30deg
-          # col.active_border = rgba(ffb500ee) rgba(760060ee) rgba(0052a5ee) 30deg
-          # col.active_border = rgba(ee00acee) rgba(ffb500ee) rgba(760060ee) rgba(0052a5ee) 30deg
-          # col.active_border = rgba(ffa200ee) rgba(b600a5ee) rgba(760060ee) rgba(0052a5ee) 30deg
-          # col.active_border = rgba(ff9300ee) rgba(b600a5ee) rgba(760060ee) rgba(0052a5ee) 30deg
-          # col.active_border = rgba(ff9300ee) rgba(6f004eee) rgba(6f004eee) rgba(0052a5ee) 30deg
-          # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 30deg
-          # col.active_border = rgba(ff9300ee) rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(0052a5ee) rgba(008c41ee) 30deg
-          # col.active_border = rgba(ff9300ee) rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(0052a5ee) rgba(04bf5bee) 30deg
-          # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(04bf5bee) 242deg
-          # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(00a64dee) 242deg
-          # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(00b849ee) 242deg
-          # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0091ffee) 242deg
-          # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 242deg
-          # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(ff9300ee) rgba(8f0064ee) 242deg
-          # col.active_border = rgba(ff9300ee) rgba(8f0064ee) 242deg
-          col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 242deg
-          # col.active_border = rgba(2cc966ee)
+        # col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+        # col.active_border = rgba(0052a5ee) rgba(760060ee) 30deg
+        # col.active_border = rgba(ffb500ee) rgba(760060ee) rgba(0052a5ee) 30deg
+        # col.active_border = rgba(ee00acee) rgba(ffb500ee) rgba(760060ee) rgba(0052a5ee) 30deg
+        # col.active_border = rgba(ffa200ee) rgba(b600a5ee) rgba(760060ee) rgba(0052a5ee) 30deg
+        # col.active_border = rgba(ff9300ee) rgba(b600a5ee) rgba(760060ee) rgba(0052a5ee) 30deg
+        # col.active_border = rgba(ff9300ee) rgba(6f004eee) rgba(6f004eee) rgba(0052a5ee) 30deg
+        # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 30deg
+        # col.active_border = rgba(ff9300ee) rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(0052a5ee) rgba(008c41ee) 30deg
+        # col.active_border = rgba(ff9300ee) rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(0052a5ee) rgba(04bf5bee) 30deg
+        # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(04bf5bee) 242deg
+        # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(00a64dee) 242deg
+        # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(00b849ee) 242deg
+        # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0091ffee) 242deg
+        # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 242deg
+        # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(ff9300ee) rgba(8f0064ee) 242deg
+        # col.active_border = rgba(ff9300ee) rgba(8f0064ee) 242deg
+        col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 242deg
+        # col.active_border = rgba(2cc966ee)
 
-          # col.active_border = rgba(007621ee)
+        # col.active_border = rgba(007621ee)
 
-          # col.inactive_border = rgba(595959aa)
-          col.inactive_border = rgba(393939ff)
+        # col.inactive_border = rgba(595959aa)
+        col.inactive_border = rgba(393939ff)
 
-          layout = dwindle
+        layout = dwindle
 
-          # resize_on_border = true
+        # resize_on_border = true
       }
 
       decoration {
-          rounding = 10
-          blur {
-              enabled = true
-              size = 3
-              passes = 1
-          }
-          drop_shadow = false
-          shadow_range = 20
-          shadow_render_power = 50
-          col.shadow = rgba(1a1a1aee)
+        rounding = 10
+        blur {
+            enabled = true
+            size = 3
+            passes = 1
+        }
+        drop_shadow = false
+        shadow_range = 20
+        shadow_render_power = 50
+        col.shadow = rgba(1a1a1aee)
       }
 
       animations {
-          enabled = yes
+        enabled = yes
 
-          bezier = windows, 0.05, 0.9, 0.1, 1.05
-          animation = windows, 1, 7, windows
-          animation = windowsOut, 1, 7, default, popin 80%
-          animation = border, 1, 10, default
-          animation = borderangle, 1, 8, default
-          animation = fade, 1, 7, default
-          animation = workspaces, 1, 6, default
+        bezier = windows, 0.05, 0.9, 0.1, 1.05
+        animation = windows, 1, 7, windows
+        animation = windowsOut, 1, 7, default, popin 80%
+        animation = border, 1, 10, default
+        animation = borderangle, 1, 8, default
+        animation = fade, 1, 7, default
+        animation = workspaces, 1, 6, default
 
-          bezier = liner, 0, 0, 1, 1
-          animation = borderangle, 1, 400, liner, loop
-          # animation = borderangle, 1, 200, liner, loop
-          # animation = borderangle, 1, 1000, liner, loop
+        bezier = liner, 0, 0, 1, 1
+        animation = borderangle, 1, 400, liner, loop
+        # animation = borderangle, 1, 200, liner, loop
+        # animation = borderangle, 1, 1000, liner, loop
       }
 
       dwindle {
-          pseudotile = yes
-          preserve_split = yes
+        pseudotile = yes
+        preserve_split = yes
       }
 
       gestures {
-          workspace_swipe = off
+        workspace_swipe = off
       }
 
       misc {
-          disable_hyprland_logo = true
-          disable_splash_rendering = true
-          background_color = 0x161616
+        disable_hyprland_logo = true
+        disable_splash_rendering = true
+        background_color = 0x161616
       }
 
       exec-once = waybar
@@ -178,7 +178,7 @@
       bind = $mainMod SHIFT, Q, exit
       bind = $mainMod SHIFT, R, forcerendererreload
       debug {
-          disable_logs = false
+        disable_logs = false
       }
     '';
   };
