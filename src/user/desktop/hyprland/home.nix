@@ -5,9 +5,9 @@
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
-    # plugins = {
-    #   packages.${pkgs.system}.virtual-desktops =
-    # };
+    plugins = [
+      inputs.hyprland-plugin-virtual-desktops.packages.${pkgs.system}.virtual-desktops
+    ];
     extraConfig = ''
       monitor = DP-3, 2560x1440, 1200x250, 1
       monitor = DP-2, 1920x1200, 0x0, 1, transform, 1
@@ -120,6 +120,13 @@
 
       exec-once = waybar
 
+      plugin {
+        virtual-desktops {
+          cycleworkspaces = 1
+          notifyinit = 0
+        }
+      }
+
       $mainMod = SUPER
 
       bind = $mainMod, left, movefocus, l
@@ -127,11 +134,11 @@
       bind = $mainMod, up, movefocus, u
       bind = $mainMod, down, movefocus, d
 
-      bind = $mainMod, page_up, workspace, m-1
-      bind = $mainMod, page_down, workspace, m+1
+      bind = $mainMod, page_up, backcyclevdesks
+      bind = $mainMod, page_down, cyclevdesks
 
-      bind = $mainMod, mouse_down, workspace, m+1
-      bind = $mainMod, mouse_up, workspace, m-1
+      bind = $mainMod, mouse_down, cyclevdesks
+      bind = $mainMod, mouse_up, backcyclevdesks
 
       bind = $mainMod, Q, killactive
       bind = $mainMod, M, fullscreen
@@ -154,8 +161,8 @@
       bind = $mainMod SHIFT, up, movewindow, u
       bind = $mainMod SHIFT, down, movewindow, d
 
-      bind = $mainMod SHIFT, page_up, movetoworkspace, r-1
-      bind = $mainMod SHIFT, page_down, movetoworkspace, r+1
+      bind = $mainMod SHIFT, page_up, movetoprevdesk
+      bind = $mainMod SHIFT, page_down, movetonextdesk
 
 
       bind = $mainMod, V, exec, clipboard-history

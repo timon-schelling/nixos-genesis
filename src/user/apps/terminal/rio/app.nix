@@ -47,7 +47,7 @@
       };
       fonts = {
         family = "JetBrainsMono Nerd Font";
-        size = 25;
+        size = 28;
         regular.weight = 600;
       };
       window.decorations = "Disabled";
