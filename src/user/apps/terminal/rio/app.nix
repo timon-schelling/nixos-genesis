@@ -7,6 +7,7 @@
       cursor = "|";
       blinking-cursor = false;
       padding-x = 4;
+      navigation.mode = "CollapsedTab";
       colors = {
         background = "#1c1c1c";
         foreground = "#aaaaaa";

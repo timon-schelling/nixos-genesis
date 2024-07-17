@@ -1,10 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
+    # plugins = {
+    #   packages.${pkgs.system}.virtual-desktops =
+    # };
     extraConfig = ''
       monitor = DP-3, 2560x1440, 1200x250, 1
       monitor = DP-2, 1920x1200, 0x0, 1, transform, 1
@@ -15,7 +18,9 @@
       env = XDG_SESSION_TYPE,wayland
       env = GBM_BACKEND,nvidia-drm
       env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+
       cursor {
+        inactive_timeout = 3
         no_hardware_cursors = true
       }
 
@@ -65,8 +70,6 @@
 
           layout = dwindle
 
-          cursor_inactive_timeout = 3
-
           # resize_on_border = true
       }
 
@@ -103,10 +106,6 @@
       dwindle {
           pseudotile = yes
           preserve_split = yes
-      }
-
-      master {
-          new_is_master = true
       }
 
       gestures {
