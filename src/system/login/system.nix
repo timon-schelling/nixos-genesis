@@ -5,7 +5,7 @@ let
 in
 {
   options = {
-    opts.system.login = lib.mkOptions {
+    opts.system.login = lib.mkOption {
       type = lib.types.submodule {
         options = {
           greeter = lib.mkOption {
