@@ -124,6 +124,7 @@
         virtual-desktops {
           cycleworkspaces = 0
           notifyinit = 0
+          rememberlayout = monitors
         }
       }
 
@@ -134,11 +135,11 @@
       bind = $mainMod, up, movefocus, u
       bind = $mainMod, down, movefocus, d
 
-      bind = $mainMod, page_up, backcyclevdesks
-      bind = $mainMod, page_down, cyclevdesks
+      bind = $mainMod, page_up, prevdesk
+      bind = $mainMod, page_down, nextdesk
 
-      bind = $mainMod, mouse_down, cyclevdesks
-      bind = $mainMod, mouse_up, backcyclevdesks
+      bind = $mainMod, mouse_down, nextdesk
+      bind = $mainMod, mouse_up, prevdesk
 
       bind = $mainMod, Q, killactive
       bind = $mainMod, M, fullscreen
