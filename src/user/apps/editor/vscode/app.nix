@@ -22,7 +22,6 @@
     );
     extensions = with pkgs.vscode-extensions; [
       rust-lang.rust-analyzer
-      serayuzgur.crates
       ms-vscode-remote.remote-ssh
       ms-vscode-remote.remote-containers
       nvarner.typst-lsp
@@ -35,6 +34,12 @@
       streetsidesoftware.code-spell-checker
       pkief.material-icon-theme
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        publisher = "fill-labs";
+        name = "dependi";
+        version = "0.7.2";
+        sha256 = "sha256-LxgftSpGk7+SIUdZcNpL7UZoAx8IMIcwPYIGqSfVuDc=";
+      }
       {
         publisher = "streetsidesoftware";
         name = "code-spell-checker-german";
