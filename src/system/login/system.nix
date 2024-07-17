@@ -10,11 +10,22 @@
       mode = "0755";
     }
   ];
+
+  environment.systemPackages = [
+    (pkgs.oreo-cursors-plus.override {
+      cursorsConf = ''
+        custom = color: #1c1c1c, stroke: #eeeeee, stroke-width: 2, stroke-opacity: 1
+        sizes = 22
+      '';
+    })
+  ];
+
   programs.regreet = {
     enable = true;
     settings = {
       GTK = {
         application_prefer_dark_theme = true;
+        cursor_theme_name = "oreo_custom_cursors";
       };
     };
     cageArgs = [
