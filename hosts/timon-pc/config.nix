@@ -7,7 +7,7 @@
     };
     users = {
       timon = {
-        passwordHash = "***REMOVED***";
+        passwordHash = "$6$rounds=262144$btdA4Fl2MtXbCcEw$wzDDnSCaBlgUYNIXQm0fK8dKjHQAPFP6AiQz6qpZi3l9/h69WmbMAhSNtPYN5qSGcEw4yJGQT4W0KdPFvAcYg0";
         admin = true;
         home = {
           name = "Timon Schelling";
