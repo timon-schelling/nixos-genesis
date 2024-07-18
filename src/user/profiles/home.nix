@@ -33,7 +33,7 @@ in
 {
   options.opts.user = {
     profile = lib.mkOption {
-      type = lib.types.enum (lib.lists.map (x: lib.strings.join "." x) profilePaths);
+      type = lib.types.enum (lib.lists.map (x: lib.strings.concatStringsSep "." x) profilePaths);
       default = "default";
     };
     profiles = mkprofileEnableOptionsRecursively profiles;
