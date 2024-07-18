@@ -34,4 +34,9 @@
     enable = true;
     enableNushellIntegration = true;
   };
+
+  programs.atuin = {
+    enable = true;
+    enableNushellIntegration = true;
+  };
 }
