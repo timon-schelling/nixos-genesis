@@ -38,7 +38,7 @@ in
     };
     profiles = mkprofileEnableOptionsRecursively profiles;
   };
-  config = lib.mkMerge (
+  config = lib.mkMerge ((
     lib.lists.map (
       e: (lib.mkIf ((lib.attrsets.getAttrFromPath e.fst config.opts.user.profiles).enable) (import e.snd args))
     ) (lib.lists.zipLists profilePaths profileFiles)
@@ -46,5 +46,5 @@ in
     {
       opts.user.profiles = lib.attrsets.setAttrByPath (lib.strings.splitString "." config.opts.user.profile) { enable = true; };
     }
-  ];
+  ]);
 }
