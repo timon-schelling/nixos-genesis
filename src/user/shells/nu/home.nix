@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   platform.user.persist.files = [
@@ -46,7 +46,7 @@
   programs.nushell.extraEnv = ''
     $env.ATUIN_NOBIND = true
   '';
-  programs.nushell.extraConfig = ''
+  programs.nushell.extraConfig = lib.mkAfter ''
     $env.config = (
       $env.config | upsert keybindings (
         $env.config.keybindings
