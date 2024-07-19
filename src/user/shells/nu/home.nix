@@ -38,6 +38,9 @@
   programs.atuin = {
     enable = true;
     enableNushellIntegration = true;
+    settings = {
+      style = "compact";
+    };
   };
   programs.nushell.extraEnv = ''
     $env.ATUIN_NOBIND = true
