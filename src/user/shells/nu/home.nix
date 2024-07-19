@@ -1,10 +1,15 @@
 { pkgs, lib, ... }:
 
 {
-  platform.user.persist.files = [
-    ".config/nushell/history.txt"
-    ".cache/tere/history.json"
-  ];
+  platform.user.persist = {
+    files = [
+      ".config/nushell/history.txt"
+      ".cache/tere/history.json"
+    ];
+    fodlers = [
+      ".local/share/atuin"
+    ];
+  };
 
   programs.nushell = {
     enable = true;
