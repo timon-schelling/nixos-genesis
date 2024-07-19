@@ -55,7 +55,7 @@
           modifier: shift
           keycode: up
           mode: [emacs, vi_normal, vi_insert]
-          event: { send: executehostcommand cmd: (_atuin_search_cmd) }
+          event: { send: executehostcommand cmd: (do { _atuin_search_cmd }) }
         }
       )
     )
