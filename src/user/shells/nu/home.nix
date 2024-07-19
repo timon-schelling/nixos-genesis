@@ -40,10 +40,13 @@
     enableNushellIntegration = true;
     settings = {
       style = "compact";
+
     };
   };
   programs.nushell.extraEnv = ''
     $env.ATUIN_NOBIND = true
+  '';
+  programs.nushell.extraConfig = ''
     $env.config = (
       $env.config | upsert keybindings (
         $env.config.keybindings
