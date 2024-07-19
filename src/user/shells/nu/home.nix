@@ -6,7 +6,7 @@
       ".config/nushell/history.txt"
       ".cache/tere/history.json"
     ];
-    fodlers = [
+    folders = [
       ".local/share/atuin"
     ];
   };
