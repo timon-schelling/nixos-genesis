@@ -39,4 +39,19 @@
     enable = true;
     enableNushellIntegration = true;
   };
+  programs.nushell.extraEnv = ''
+    $env.ATUIN_NOBIND = true
+    $env.config = (
+      $env.config | upsert keybindings (
+        $env.config.keybindings
+        | append {
+          name: atuin
+          modifier: shift
+          keycode: up
+          mode: [emacs, vi_normal, vi_insert]
+          event: { send: executehostcommand cmd: (_atuin_search_cmd) }
+        }
+      )
+    )
+  '';
 }
