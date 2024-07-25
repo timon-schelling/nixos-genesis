@@ -7,7 +7,7 @@
           "nixpkgs"
         ],
         "systems": [
-          "nix-systems-linux"
+          "nix-systems-default-linux"
         ]
       },
       "locked": {
@@ -141,7 +141,7 @@
           "nixpkgs"
         ],
         "systems": [
-          "nix-systems-linux"
+          "nix-systems-default-linux"
         ],
         "xdph": "xdph"
       },
@@ -306,7 +306,7 @@
         "url": "https://github.com/nix-community/impermanence"
       }
     },
-    "nix-systems-linux": {
+    "nix-systems-default-linux": {
       "locked": {
         "lastModified": 1689347949,
         "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
@@ -345,7 +345,7 @@
         "hyprland": "hyprland",
         "hyprland-plugin-virtual-desktops": "hyprland-plugin-virtual-desktops",
         "impermanence": "impermanence",
-        "nix-systems-linux": "nix-systems-linux",
+        "nix-systems-default-linux": "nix-systems-default-linux",
         "nixpkgs": "nixpkgs",
         "waybar": "waybar"
       }
