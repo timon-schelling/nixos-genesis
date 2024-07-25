@@ -4,10 +4,11 @@
       "inputs": {
         "flake-parts": "flake-parts",
         "nixpkgs": [
-          "inputs",
           "nixpkgs"
         ],
-        "systems": "systems"
+        "systems": [
+          "nix-systems-linux"
+        ]
       },
       "locked": {
         "lastModified": 1721135360,
@@ -26,7 +27,6 @@
     "disko": {
       "inputs": {
         "nixpkgs": [
-          "inputs",
           "nixpkgs"
         ]
       },
@@ -63,7 +63,6 @@
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
-          "inputs",
           "anyrun",
           "nixpkgs"
         ]
@@ -85,7 +84,6 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "inputs",
           "nixpkgs"
         ]
       },
@@ -107,17 +105,14 @@
     "hyprcursor": {
       "inputs": {
         "hyprlang": [
-          "inputs",
           "hyprland",
           "hyprlang"
         ],
         "nixpkgs": [
-          "inputs",
           "hyprland",
           "nixpkgs"
         ],
         "systems": [
-          "inputs",
           "hyprland",
           "systems"
         ]
@@ -143,10 +138,11 @@
         "hyprutils": "hyprutils",
         "hyprwayland-scanner": "hyprwayland-scanner",
         "nixpkgs": [
-          "inputs",
           "nixpkgs"
         ],
-        "systems": "systems_2",
+        "systems": [
+          "nix-systems-linux"
+        ],
         "xdph": "xdph"
       },
       "locked": {
@@ -169,11 +165,9 @@
     "hyprland-plugin-virtual-desktops": {
       "inputs": {
         "hyprland": [
-          "inputs",
           "hyprland"
         ],
         "nixpkgs": [
-          "inputs",
           "nixpkgs"
         ]
       },
@@ -194,13 +188,11 @@
     "hyprland-protocols": {
       "inputs": {
         "nixpkgs": [
-          "inputs",
           "hyprland",
           "xdph",
           "nixpkgs"
         ],
         "systems": [
-          "inputs",
           "hyprland",
           "xdph",
           "systems"
@@ -223,17 +215,14 @@
     "hyprlang": {
       "inputs": {
         "hyprutils": [
-          "inputs",
           "hyprland",
           "hyprutils"
         ],
         "nixpkgs": [
-          "inputs",
           "hyprland",
           "nixpkgs"
         ],
         "systems": [
-          "inputs",
           "hyprland",
           "systems"
         ]
@@ -255,12 +244,10 @@
     "hyprutils": {
       "inputs": {
         "nixpkgs": [
-          "inputs",
           "hyprland",
           "nixpkgs"
         ],
         "systems": [
-          "inputs",
           "hyprland",
           "systems"
         ]
@@ -282,12 +269,10 @@
     "hyprwayland-scanner": {
       "inputs": {
         "nixpkgs": [
-          "inputs",
           "hyprland",
           "nixpkgs"
         ],
         "systems": [
-          "inputs",
           "hyprland",
           "systems"
         ]
@@ -321,26 +306,19 @@
         "url": "https://github.com/nix-community/impermanence"
       }
     },
-    "inputs": {
-      "inputs": {
-        "anyrun": "anyrun",
-        "disko": "disko",
-        "home-manager": "home-manager",
-        "hyprland": "hyprland",
-        "hyprland-plugin-virtual-desktops": "hyprland-plugin-virtual-desktops",
-        "impermanence": "impermanence",
-        "nixpkgs": "nixpkgs",
-        "waybar": "waybar"
-      },
+    "nix-systems-linux": {
       "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-VS5C8BhScYdhfy4svHoYQsmoicq1SuWZ51oHRheNC7M=",
-        "path": "/nix/store/jaqi6fqzaksgknjrb62gg6d4kgca70qh-source",
-        "type": "path"
+        "lastModified": 1689347949,
+        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
+        "ref": "refs/heads/main",
+        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
+        "revCount": 5,
+        "type": "git",
+        "url": "https://github.com/nix-systems/default-linux"
       },
       "original": {
-        "path": "/nix/store/jaqi6fqzaksgknjrb62gg6d4kgca70qh-source",
-        "type": "path"
+        "type": "git",
+        "url": "https://github.com/nix-systems/default-linux"
       }
     },
     "nixpkgs": {
@@ -361,44 +339,21 @@
     },
     "root": {
       "inputs": {
-        "inputs": "inputs"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1689347949,
-        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
-        "owner": "nix-systems",
-        "repo": "default-linux",
-        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default-linux",
-        "type": "github"
-      }
-    },
-    "systems_2": {
-      "locked": {
-        "lastModified": 1689347949,
-        "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",
-        "owner": "nix-systems",
-        "repo": "default-linux",
-        "rev": "31732fcf5e8fea42e59c2488ad31a0e651500f68",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default-linux",
-        "type": "github"
+        "anyrun": "anyrun",
+        "disko": "disko",
+        "home-manager": "home-manager",
+        "hyprland": "hyprland",
+        "hyprland-plugin-virtual-desktops": "hyprland-plugin-virtual-desktops",
+        "impermanence": "impermanence",
+        "nix-systems-linux": "nix-systems-linux",
+        "nixpkgs": "nixpkgs",
+        "waybar": "waybar"
       }
     },
     "waybar": {
       "inputs": {
         "flake-compat": "flake-compat",
         "nixpkgs": [
-          "inputs",
           "nixpkgs"
         ]
       },
@@ -420,17 +375,14 @@
       "inputs": {
         "hyprland-protocols": "hyprland-protocols",
         "hyprlang": [
-          "inputs",
           "hyprland",
           "hyprlang"
         ],
         "nixpkgs": [
-          "inputs",
           "hyprland",
           "nixpkgs"
         ],
         "systems": [
-          "inputs",
           "hyprland",
           "systems"
         ]
