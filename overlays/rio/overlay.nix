@@ -14,7 +14,7 @@ inputs: self: super: {
       inherit name version src;
       cargoDeps = drv.cargoDeps.overrideAttrs (super.lib.const {
         inherit src version;
-        outputHash = "sha256-3FirYpHxTRvXgRQACVvmwlaCNTyJ8dLbZ258qv5vbsc=";
+        outputHash = "sha256-7xYZAKdn0v/dsPvdfs7Ijrz7z3eXepf2I/ogvMG79yI=";
       });
     }
   );
