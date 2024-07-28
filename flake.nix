@@ -25,10 +25,6 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
-    waybar = {
-      url = "git+https://github.com/Alexays/Waybar";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     anyrun = {
       url = "git+https://github.com/Kirottu/anyrun";
       inputs = {
