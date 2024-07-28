@@ -44,22 +44,6 @@
         "url": "https://github.com/nix-community/disko"
       }
     },
-    "flake-compat": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1696426674,
-        "narHash": "sha256-kvjfFW7WAETZlt09AgDn1MrtKzP7t90Vf7vypd3OL1U=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "0f9255e01c2351cc7d116c072cb317785dd33b33",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -346,29 +330,7 @@
         "hyprland-plugin-virtual-desktops": "hyprland-plugin-virtual-desktops",
         "impermanence": "impermanence",
         "nix-systems-default-linux": "nix-systems-default-linux",
-        "nixpkgs": "nixpkgs",
-        "waybar": "waybar"
-      }
-    },
-    "waybar": {
-      "inputs": {
-        "flake-compat": "flake-compat",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1721132432,
-        "narHash": "sha256-3lTjgEocdOKT0ioxzcOqvrL/pkxZvSFbfRRveWnHHdw=",
-        "ref": "refs/heads/master",
-        "rev": "3f61df4e6634a79f047c9aa3f8c035fd970159f9",
-        "revCount": 3583,
-        "type": "git",
-        "url": "https://github.com/Alexays/Waybar"
-      },
-      "original": {
-        "type": "git",
-        "url": "https://github.com/Alexays/Waybar"
+        "nixpkgs": "nixpkgs"
       }
     },
     "xdph": {

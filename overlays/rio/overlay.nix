@@ -6,7 +6,7 @@ inputs: self: super: {
     src = super.fetchFromGitHub {
       owner = "raphamorim";
       repo = "rio";
-      rev = "v${version}";
+      rev = "refs/tags/v${version}";
       hash = "sha256-Jp8f8u9CkY+pz6QaoWp6P6+OqsIjhzXH0eeoBiSDR0k=";
     };
 
