@@ -34,7 +34,7 @@
     };
 
     rioterm-v0-0-39-nixpkgs-02fae25be09e93f3ead9a159837457ad62a29e26.url =
-      "git+https://github.com/nixos/nixpkgs?ref=02fae25be09e93f3ead9a159837457ad62a29e26";
+      "git+https://github.com/nixos/nixpkgs?rev=02fae25be09e93f3ead9a159837457ad62a29e26";
 
   };
   outputs = inputs:
