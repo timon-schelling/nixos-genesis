@@ -321,22 +321,6 @@
         "url": "https://github.com/nixos/nixpkgs"
       }
     },
-    "rioterm-v0-0-39-nixpkgs-02fae25be09e93f3ead9a159837457ad62a29e26": {
-      "locked": {
-        "lastModified": 1718027036,
-        "narHash": "sha256-waA+ulvCyUhFdeRopAp/lWOrFCXlqBf5QiNf5SDq4oA=",
-        "ref": "refs/heads/master",
-        "rev": "02fae25be09e93f3ead9a159837457ad62a29e26",
-        "revCount": 637832,
-        "type": "git",
-        "url": "https://github.com/nixos/nixpkgs"
-      },
-      "original": {
-        "rev": "02fae25be09e93f3ead9a159837457ad62a29e26",
-        "type": "git",
-        "url": "https://github.com/nixos/nixpkgs"
-      }
-    },
     "root": {
       "inputs": {
         "anyrun": "anyrun",
@@ -346,8 +330,7 @@
         "hyprland-plugin-virtual-desktops": "hyprland-plugin-virtual-desktops",
         "impermanence": "impermanence",
         "nix-systems-default-linux": "nix-systems-default-linux",
-        "nixpkgs": "nixpkgs",
-        "rioterm-v0-0-39-nixpkgs-02fae25be09e93f3ead9a159837457ad62a29e26": "rioterm-v0-0-39-nixpkgs-02fae25be09e93f3ead9a159837457ad62a29e26"
+        "nixpkgs": "nixpkgs"
       }
     },
     "xdph": {
