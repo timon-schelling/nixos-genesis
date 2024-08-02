@@ -1,7 +1,7 @@
 {
   opts = {
     system = {
-      drive = "/dev/nvme1n1";
+      drive = "/dev/nvme0n1";
       platform = "x86_64-linux";
     };
     users = {
