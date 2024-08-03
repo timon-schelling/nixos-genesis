@@ -42,7 +42,7 @@
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
     graphics = {
-      package = (pkgs.mesa.override {
+      package = lib.mkForce (pkgs.mesa.override {
         galliumDrivers = [
           "nouveau"
           "virgl"
