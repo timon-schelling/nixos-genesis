@@ -34,14 +34,20 @@
     kernelModules = [ "kvm-intel" ];
   };
 
+  environment.variables = {
+    VDPAU_DRIVER = "va_gl";
+  };
   hardware = {
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
     graphics = {
       extraPackages = with pkgs; [
         intel-media-driver
-        vaapiVdpau
-        libvdpau-va-gl
+        intel-vaapi-driver
+      ];
+      extraPackages32 = with pkgs.driversi686Linux; [
+        intel-media-driver
+        intel-vaapi-driver
       ];
       enable32Bit = true;
     };
