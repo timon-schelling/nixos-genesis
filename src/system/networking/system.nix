@@ -3,7 +3,10 @@
 {
   platform.system.persist.folders = [ "/etc/NetworkManager/system-connections" ];
   networking = {
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi.scanRandMacAddress = false;
+    };
     hostName = config.opts.system.host;
     useNetworkd = true;
     usePredictableInterfaceNames = true;
