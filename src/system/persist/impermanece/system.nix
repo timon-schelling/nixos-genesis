@@ -20,7 +20,7 @@
     script = ''
       ${pkgs.coreutils}/bin/mkdir -p /persist/user
       ${pkgs.coreutils}/bin/chmod 755 /persist/user
-    '' + builtins.concatLists (lib.mapAttrsToList
+    '' + lib.concatStrings (lib.mapAttrsToList
       (name: user: ''
         ${pkgs.coreutils}/bin/mkdir -p /persist/user/${name}
         ${pkgs.coreutils}/bin/chmod 700 /persist/user/${name}
