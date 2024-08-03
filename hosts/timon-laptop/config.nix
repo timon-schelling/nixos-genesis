@@ -37,6 +37,7 @@
   environment.variables = {
     VDPAU_DRIVER = "va_gl";
   };
+  services.xserver.videoDrivers = [ "intel" ];
   hardware = {
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
