@@ -37,7 +37,7 @@
   hardware = {
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
-    opengl = {
+    graphics = {
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
