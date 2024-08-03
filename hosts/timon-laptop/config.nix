@@ -26,14 +26,14 @@
 
   boot = {
     initrd = {
-      availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+      availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "thunderbolt" ];
       kernelModules = [ "dm-snapshot" ];
     };
-    kernelModules = [ "kvm-amd" ];
+    kernelModules = [ "kvm-intel" ];
   };
 
   hardware = {
     enableRedistributableFirmware = true;
-    cpu.amd.updateMicrocode = true;
+    cpu.intel.updateMicrocode = true;
   };
 }
