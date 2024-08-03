@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{ config, inputs, pkgs, lib, ... }:
 
 {
   imports = [
@@ -20,7 +20,14 @@
     script = ''
       ${pkgs.coreutils}/bin/mkdir -p /persist/user
       ${pkgs.coreutils}/bin/chmod 755 /persist/user
-    '';
+    '' + lib.mkMerge (lib.mapAttrsToList
+      (name: user: ''
+        ${pkgs.coreutils}/bin/mkdir -p /persist/user/${name}
+        ${pkgs.coreutils}/bin/chmod 700 /persist/user/${name}
+        ${pkgs.coreutils}/bin/chown ${name}:users /persist/user/${name}
+      '')
+      config.opts.users
+    );
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
