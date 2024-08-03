@@ -38,8 +38,8 @@
     nvidia.prime = {
       offload = {
         enable = true;
+        enableOffloadCmd = lib.mkForce true;
       };
-      enableOffloadCmd = lib.mkForce true;
       nvidiaBusId = "PCI:1:0:0";
       intelBusId = "PCI:0:2:0";
     };
