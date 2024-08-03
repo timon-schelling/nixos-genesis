@@ -44,9 +44,6 @@
     graphics = {
       package = lib.mkForce (pkgs.mesa.override {
         galliumDrivers = [
-          "nouveau"
-          "virgl"
-          "swrast"
           "iris"
         ];
       }).drivers;
