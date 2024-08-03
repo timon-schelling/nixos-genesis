@@ -1,6 +1,7 @@
 { config, lib, ... }:
 
 {
+  platform.system.persist.folders = [ "/etc/NetworkManager/system-connections" ];
   networking = {
     networkmanager.enable = true;
     hostName = config.opts.system.host;
