@@ -39,6 +39,7 @@
   };
   services.xserver.videoDrivers = [ "intel" ];
   hardware = {
+    i915.enable = true;
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
     graphics = {
