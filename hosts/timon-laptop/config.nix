@@ -47,6 +47,7 @@
           "nouveau"
           "swrast"
           "iris"
+          "zink"
         ];
       }).drivers;
       extraPackages = with pkgs; [
