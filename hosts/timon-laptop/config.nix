@@ -43,6 +43,14 @@
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
     graphics = {
+      package = (pkgs.mesa.override {
+        galliumDrivers = [
+          "nouveau"
+          "virgl"
+          "swrast"
+          "iris"
+        ];
+      }).drivers;
       extraPackages = with pkgs; [
         intel-media-driver
         intel-vaapi-driver
