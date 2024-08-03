@@ -29,7 +29,7 @@
   boot = {
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "thunderbolt" ];
-      kernelModules = [ "dm-snapshot" ];
+      kernelModules = [ "dm-snapshot" "i915" ];
     };
     kernelModules = [ "kvm-intel" ];
   };
