@@ -28,15 +28,11 @@
   boot = {
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "thunderbolt" ];
-      kernelModules = [ "dm-snapshot" "i915" ];
+      kernelModules = [ "dm-snapshot" ];
     };
     kernelModules = [ "kvm-intel" ];
   };
 
-  environment.variables = {
-    VDPAU_DRIVER = "va_gl";
-  };
-  services.xserver.videoDrivers = [ "intel" ];
   hardware = {
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
