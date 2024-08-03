@@ -38,8 +38,6 @@
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
     graphics = {
-      driSupport = true;
-      driSupport32Bit = true;
       extraPackages = with pkgs; [
         intel-media-driver
         vaapiVdpau
