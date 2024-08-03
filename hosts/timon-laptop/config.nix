@@ -43,6 +43,7 @@
         vaapiVdpau
         libvdpau-va-gl
       ];
+      enable32Bit = true;
     };
     nvidia.prime = {
       offload = {
