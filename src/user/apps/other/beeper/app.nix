@@ -2,17 +2,17 @@
 
 {
   platform.user.persist.folders = [
-    ".config/Signal"
+    ".config/Beeper"
   ];
 
   home.packages = [
-    (pkgs.runCommand "signal-custom"
+    (pkgs.runCommand "beeper-custom"
       {
         buildInputs = [ pkgs.makeWrapper ];
       }
       ''
-        makeWrapper ${pkgs.signal-desktop}/bin/signal-desktop $out/bin/signal-desktop --set NIXOS_OZONE_WL 1
-        cp -r "${pkgs.signal-desktop}/share" "$out/"
+        makeWrapper ${pkgs.beeper}/bin/beeper $out/bin/beeper --set NIXOS_OZONE_WL 1 --add-flags "--default-frame"
+        cp -r "${pkgs.beeper}/share" "$out/"
       ''
     )
   ];
