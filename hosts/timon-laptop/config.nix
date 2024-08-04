@@ -25,6 +25,8 @@
     };
   };
 
+  opts.system.persist.folders = [ "/etc/NetworkManager/system-connections" ]; # persistent wifi etc.
+
   boot = {
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "thunderbolt" ];
