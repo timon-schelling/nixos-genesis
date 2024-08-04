@@ -18,6 +18,10 @@
         systems.follows = "nix-systems-default-linux";
       };
     };
+    hyprland-plugin-touch-gestures = {
+      url = "github:horriblename/hyprgrass";
+      inputs.hyprland.follows = "hyprland";
+    };
     hyprland-plugin-virtual-desktops = {
       url = "git+https://github.com/levnikmyskin/hyprland-virtual-desktops";
       inputs = {

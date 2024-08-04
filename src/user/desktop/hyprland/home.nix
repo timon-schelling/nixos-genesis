@@ -1,12 +1,13 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
-    plugins = [
-      inputs.hyprland-plugin-virtual-desktops.packages.${pkgs.system}.virtual-desktops
+    plugins = with pkgs.hyprland-plugins; [
+      touch-gestures
+      virtual-desktops
     ];
     extraConfig = ''
       monitor = DP-3, 2560x1440, 1200x250, 1
@@ -109,7 +110,9 @@
       }
 
       gestures {
-        workspace_swipe = off
+        workspace_swipe = on
+        workspace_swipe_fingers = 4;
+        workspace_swipe_forever = true;
       }
 
       misc {
@@ -188,6 +191,8 @@
       debug {
         disable_logs = false
       }
+
+
     '';
   };
 }
