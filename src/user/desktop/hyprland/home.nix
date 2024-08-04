@@ -111,8 +111,8 @@
 
       gestures {
         workspace_swipe = on
-        workspace_swipe_fingers = 4;
-        workspace_swipe_forever = true;
+        workspace_swipe_fingers = 4
+        workspace_swipe_forever = true
       }
 
       misc {
