@@ -16,6 +16,7 @@
     };
     other = {
       beeper.enable = lib.mkDefault true;
+      signal.enable = lib.mkDefault true;
       discord-webcord.enable = lib.mkDefault true;
       spotify.enable = lib.mkDefault true;
     };
