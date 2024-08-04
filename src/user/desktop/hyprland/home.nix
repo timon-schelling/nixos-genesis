@@ -10,9 +10,16 @@
       virtual-desktops
     ];
     extraConfig = ''
+
+      # desktop
       monitor = DP-3, 2560x1440, 1200x250, 1
       monitor = DP-2, 1920x1200, 0x0, 1, transform, 1
       monitor = DP-1, 1920x1200, 3760x0, 1, transform, 1
+
+      # laptop
+      monitor = eDP-1, 1920x1200, 0x0 ,1
+
+      # other monitors
       monitor = ,preferred, auto, auto
 
       env = LIBVA_DRIVER_NAME,nvidia
@@ -191,8 +198,6 @@
       debug {
         disable_logs = false
       }
-
-
     '';
   };
 }
