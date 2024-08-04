@@ -146,6 +146,26 @@
         "url": "https://github.com/hyprwm/Hyprland"
       }
     },
+    "hyprland-plugin-touch-gestures": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ]
+      },
+      "locked": {
+        "lastModified": 1722204548,
+        "narHash": "sha256-qqmHeGpxztku4kihvwAGBTXOra2FVrMBGkeyQggJHSE=",
+        "owner": "horriblename",
+        "repo": "hyprgrass",
+        "rev": "5c93341e2af3f16d2d2c67522ba205538ab1ecc4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "horriblename",
+        "repo": "hyprgrass",
+        "type": "github"
+      }
+    },
     "hyprland-plugin-virtual-desktops": {
       "inputs": {
         "hyprland": [
@@ -327,6 +347,7 @@
         "disko": "disko",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "hyprland-plugin-touch-gestures": "hyprland-plugin-touch-gestures",
         "hyprland-plugin-virtual-desktops": "hyprland-plugin-virtual-desktops",
         "impermanence": "impermanence",
         "nix-systems-default-linux": "nix-systems-default-linux",
