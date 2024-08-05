@@ -6,11 +6,23 @@
   networking = {
     networkmanager = {
       enable = true;
-      wifi = {
-        backend = "iwd";
-        scanRandMacAddress = false;
+      networkmanager.wifi.backend = "iwd";
+      wireless.enable = true;
+      dhcpcd.enable = false;
+      wireless.iwd = {
+        enable = true;
+        settings = {
+          General = {
+            EnableNetworkConfiguration = true;
+          };
+          Settings = {
+            AlwaysRandomizeAddress = true;
+          };
+          Network = {
+            EnableIPv6 = false;
+          };
+        };
       };
-      dhcp = "dhcpcd";
     };
     hostName = config.opts.system.host;
   };
