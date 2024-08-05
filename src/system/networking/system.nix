@@ -8,7 +8,6 @@
       enable = true;
       wifi.backend = "iwd";
     };
-    # wireless.iwd.enable = true;
     hostName = config.opts.system.host;
   };
   systemd.network.wait-online.enable = false;
