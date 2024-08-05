@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # NetworkManager setup TODO: replace
@@ -27,5 +27,8 @@
     };
     hostName = config.opts.system.host;
   };
+
+  environment.systemPackages = [pkgs.iwgtk];
+
   systemd.network.wait-online.enable = false;
 }
