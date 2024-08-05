@@ -6,7 +6,10 @@
   networking = {
     networkmanager = {
       enable = true;
-      wifi.backend = "iwd";
+      wifi = {
+        backend = "iwd";
+        scanRandMacAddress = false;
+      };
     };
     hostName = config.opts.system.host;
   };
