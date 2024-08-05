@@ -26,7 +26,7 @@
   };
 
   opts.system.persist.folders = [ "/etc/NetworkManager/system-connections" ]; # persistent wifi etc.
-  boot.kernelPackages = pkgs.linuxPackages_6_6;
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_6;
 
   boot = {
     initrd = {
