@@ -10,7 +10,6 @@
       };
       dhcpcd.enable = false;
       wireless = {
-        enable = true;
         iwd = {
           enable = true;
           settings = {
