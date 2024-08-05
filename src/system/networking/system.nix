@@ -2,12 +2,11 @@
 
 {
   # NetworkManager setup TODO: replace
-  platform.system.persist.folders = [ "/etc/NetworkManager/system-connections" ]; # persistent wifi etc.
+  # platform.system.persist.folders = [ "/etc/NetworkManager/system-connections" ]; # persistent wifi etc.
   networking = {
     networkmanager = {
       enable = true;
       wifi = {
-        backend = "iwd";
         scanRandMacAddress = false;
       };
     };
