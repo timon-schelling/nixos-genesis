@@ -26,7 +26,9 @@
   };
 
   opts.system.persist.folders = [ "/etc/NetworkManager/system-connections" ]; # persistent wifi etc.
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_6;
+
+  networking.networkmanager.wifi.backend = "iwd";
+  networking.wireless.iwd.enable = true;
 
   boot = {
     initrd = {
