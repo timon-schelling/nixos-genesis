@@ -10,6 +10,7 @@
         backend = "iwd";
         scanRandMacAddress = false;
       };
+      dhcp = "dhcpcd";
     };
     hostName = config.opts.system.host;
   };
