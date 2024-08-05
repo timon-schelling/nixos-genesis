@@ -25,11 +25,6 @@
     };
   };
 
-  opts.system.persist.folders = [ "/etc/NetworkManager/system-connections" ]; # persistent wifi etc.
-
-  networking.networkmanager.wifi.backend = "iwd";
-  networking.wireless.iwd.enable = true;
-
   boot = {
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "thunderbolt" ];
