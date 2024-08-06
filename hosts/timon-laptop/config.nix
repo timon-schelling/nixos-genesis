@@ -25,6 +25,8 @@
     };
   };
 
+  networking.interfaces.wlp0s20f3.useDHCP = true;
+
   boot = {
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "thunderbolt" ];
