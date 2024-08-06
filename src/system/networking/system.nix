@@ -22,10 +22,10 @@
       };
     };
 
-    networkmanager = {
-      enable = true;
-      wifi.backend = "iwd";
-    };
+    # networkmanager = {
+    #   enable = true;
+    #   wifi.backend = "iwd";
+    # };
 
     hostName = config.opts.system.host;
   };
