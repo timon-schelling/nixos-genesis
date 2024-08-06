@@ -8,11 +8,8 @@
       enable = true;
       wifi.scanRandMacAddress = false;
     };
-    dhcpcd.enable = false;
     hostName = config.opts.system.host;
   };
-
-  environment.systemPackages = [pkgs.iwgtk];
 
   systemd.network.wait-online.enable = false;
 }
