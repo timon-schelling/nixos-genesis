@@ -6,6 +6,7 @@
   networking = {
     networkmanager = {
       enable = true;
+      wifi.scanRandMacAddress = false;
     };
     dhcpcd.enable = false;
     hostName = config.opts.system.host;
