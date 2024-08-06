@@ -10,6 +10,9 @@
 
       # All options: https://iwd.wiki.kernel.org/networkconfigurationsettings
       settings = {
+        General = {
+          EnableNetworkConfiguration = true;
+        };
         Network = {
           EnableIPv6 = true;
           RoutePriorityOffset = 300;

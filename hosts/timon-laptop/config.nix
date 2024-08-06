@@ -25,7 +25,7 @@
     };
   };
 
-  networking.interfaces.wlp0s20f3.useDHCP = true;
+  # networking.interfaces.wlp0s20f3.useDHCP = true;
 
   boot = {
     initrd = {
