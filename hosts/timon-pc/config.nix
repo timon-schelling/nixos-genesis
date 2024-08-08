@@ -37,4 +37,5 @@
   };
 
   security.tpm2.enable = false;
+  boot.blacklistedKernelModules = [ "tpm" "tpm_atmel" "tpm_infineon" "tpm_nsc" "tpm_tis" "tpm_crb" ];
 }
