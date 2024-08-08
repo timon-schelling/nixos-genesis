@@ -200,13 +200,10 @@
       exec-once = waybar
 
       # see is a window runs in xwayland
-      windowrulev2 = bordercolor rgb(8da110), xwayland: 1
-
-       windowrulev2 = bordercolor rgb(8da110), xwayland: 1
+      windowrulev2 = bordercolor rgb(b53600), xwayland: 1
 
       # app specific rules
       windowrulev2 = float, class:^(.*iwgtk)$
-
     '';
   };
 }
