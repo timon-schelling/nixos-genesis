@@ -27,13 +27,13 @@
       env = GBM_BACKEND,nvidia-drm
       env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 
+      # fix GTK Theme
+      env = GTK_THEME, WhiteSur-Dark-solid
+
       cursor {
         inactive_timeout = 3
         no_hardware_cursors = true
       }
-
-      # fix GTK Theme
-      env = GTK_THEME, WhiteSur-Dark-solid
 
       input {
         # `compose:sclk` sets scrolllock as the compose key, needed by keyd
@@ -128,8 +128,6 @@
         background_color = 0x161616
       }
 
-      exec-once = waybar
-
       plugin {
         virtual-desktops {
           cycleworkspaces = 0
@@ -198,6 +196,17 @@
       debug {
         disable_logs = false
       }
+
+      exec-once = waybar
+
+      # see is a window runs in xwayland
+      windowrulev2 = bordercolor rgb(8da110), xwayland: 1
+
+       windowrulev2 = bordercolor rgb(8da110), xwayland: 1
+
+      # app specific rules
+      windowrulev2 = float, class:^(.*iwgtk)$
+
     '';
   };
 }
