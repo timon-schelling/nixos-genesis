@@ -51,12 +51,12 @@ let
 in
 rustPlatform.buildRustPackage rec {
   pname = "rio";
-  version = "0.0.39";
+  version = "main-d86ec56ab17629d4add2f75c50d8e676f7e9d0c4";
 
   src = fetchFromGitHub {
     owner = "raphamorim";
     repo = "rio";
-    rev = "v${version}";
+    rev = "d86ec56ab17629d4add2f75c50d8e676f7e9d0c4";
     hash = "sha256-pnU2wxgopHMWgJ7JGdO2P/MCfxqCY7MTEE39qtD0XKw=";
   };
 

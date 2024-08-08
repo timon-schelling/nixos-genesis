@@ -5,6 +5,7 @@
   # platform.system.persist.folders = [ "/etc/NetworkManager/system-connections" ]; # persistent wifi etc.
   networking = {
     # use iNet Wireless Daemon (instead of wpa_supplicant) for wireless device management
+    wireless.enable = false;
     wireless.iwd = {
       enable = true;
 
