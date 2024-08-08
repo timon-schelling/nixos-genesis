@@ -16,9 +16,9 @@ in
   home.packages = [
     (pkgs.runCommand "settings-wifi" { buildInputs = [ pkgs.makeWrapper ]; } ''
       makeWrapper ${pkgs.iwgtk}/bin/iwgtk $out/bin/settings-wifi
-      cp -r ${pkgs.iwgtk}/icons $out/icons
       mkdir -p "$out/share/applications/"
       cp "${desktopEntry}/share/applications/settings-wifi.desktop" "$out/share/applications/"
+      cp -r ${pkgs.iwgtk}/share/icons $out/share/
     '')
   ];
 }
