@@ -116,7 +116,7 @@
         "modules": [
             "custom/poweroff",
             "custom/reboot",
-            "custom/logout",
+            "custom/logout"
             // TODO: Implement these correctly
             // "custom/hibernate",
             // "custom/suspend"
