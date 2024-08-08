@@ -68,8 +68,10 @@
               imports = modules;
 
               options = {
-                opts.system = lib.mkOption {
-                  type = lib.types.anything;
+                opts = {
+                  system = lib.mkOption {
+                    type = lib.types.anything;
+                  };
                 };
               };
 
