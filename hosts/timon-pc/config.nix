@@ -35,4 +35,6 @@
     enableRedistributableFirmware = true;
     cpu.amd.updateMicrocode = true;
   };
+
+  security.tpm2.enable = false;
 }
