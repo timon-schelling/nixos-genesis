@@ -22,7 +22,7 @@
         enable = true;
         settings = {
           General = {
-            EnableNetworkConfiguration = true;
+            EnableNetworkConfiguration = false;
           };
           Network = {
             EnableIPv6 = true;

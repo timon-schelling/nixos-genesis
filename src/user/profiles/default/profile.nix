@@ -3,6 +3,9 @@
     terminal = {
       rio.enable = lib.mkDefault true;
     };
+    settings = {
+      wifi.enable = lib.mkDefault true;
+    };
     editor = {
       vscode.enable = lib.mkDefault true;
     };
