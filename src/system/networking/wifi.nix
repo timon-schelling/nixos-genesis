@@ -1,25 +1,17 @@
 { config, lib, pkgs, ... }:
 
-let
-  extension = { lib, ... }: {
-    options = {
-      opts.users = lib.mkOption {
-        type = lib.types.attrsOf (lib.types.submodule {
-          options = {
-            allowWifiSettings = lib.mkOption {
-              type = lib.types.bool;
-              default = true;
-            };
-          };
-        });
-      };
-    };
-  };
-in
 {
-  imports = [ extension ];
   options = {
-
+    opts.users = lib.mkOption {
+      type = lib.types.attrsOf (lib.types.submodule {
+        options = {
+          allowWifiSettings = lib.mkOption {
+            type = lib.types.bool;
+            default = true;
+          };
+        };
+      });
+    };
   };
 
   config = {
