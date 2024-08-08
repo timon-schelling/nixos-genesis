@@ -117,8 +117,9 @@
             "custom/poweroff",
             "custom/reboot",
             "custom/logout",
-            "custom/hibernate",
-            "custom/suspend"
+            // TODO: Implement these correctly
+            // "custom/hibernate",
+            // "custom/suspend"
         ]
     },
 

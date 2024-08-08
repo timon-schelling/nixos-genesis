@@ -64,10 +64,10 @@ in
 
   home.packages = [
     (pkgs.nu.writeScriptBin "select-ui" ''
-      $in | anyrun-select
+      anyrun-select
     '')
     (pkgs.nu.writeScriptBin "anyrun-select"''
-      $in | ^anyrun --plugins "${pluginPkgs.stdin}/lib/libstdin.so" --hide-plugin-info true
+      ^anyrun --plugins "${pluginPkgs.stdin}/lib/libstdin.so" --hide-plugin-info true
     '')
   ];
 
