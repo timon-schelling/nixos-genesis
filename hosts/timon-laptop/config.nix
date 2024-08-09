@@ -64,4 +64,6 @@
       intelBusId = "PCI:0:2:0";
     };
   };
+
+  services.printing.enable = true;
 }
