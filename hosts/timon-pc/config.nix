@@ -1,3 +1,5 @@
+{ config, ... }:
+
 {
   opts = {
     system = {
@@ -28,7 +30,8 @@
       availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
       kernelModules = [ "dm-snapshot" ];
     };
-    kernelModules = [ "kvm-amd" ];
+    extraModulePackages = [ config.boot.kernelPackages.ddcci-driver ];
+    kernelModules = [ "kvm-amd" "i2c-dev" "ddcci_backlight" ];
   };
 
   hardware = {
