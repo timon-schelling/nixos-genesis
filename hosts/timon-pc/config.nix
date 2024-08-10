@@ -38,6 +38,7 @@
           rev = "7853cbfc28bc62e87db79f612568b25315397dd0";
           hash = "sha256-QImfvYzMqyrRGyrS6I7ERYmteaTijd8ZRnC6+bA9OyM=";
         };
+        patches = [];
       }))
     ];
     kernelModules = [ "kvm-amd" "i2c-dev" "ddcci_backlight" ];
