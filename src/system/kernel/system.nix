@@ -6,7 +6,7 @@ in
 {
   boot = {
     kernelPackages = kernelPkgs;
-    kernelModules = [ "i2c-dev" "ddcci_backlight" ];
+    kernelModules = [ "i2c-dev" "ddcci" "ddcci_backlight" ];
     extraModulePackages = [
       (kernelPkgs.ddcci-driver.overrideAttrs (old: {
         src = pkgs.fetchFromGitLab {
