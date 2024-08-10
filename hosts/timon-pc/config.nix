@@ -39,6 +39,9 @@
           hash = "sha256-QImfvYzMqyrRGyrS6I7ERYmteaTijd8ZRnC6+bA9OyM=";
         };
         patches = [];
+        postInstall = ''
+          mv $out/lib/modules/6.10.3-gnu $out/lib/modules/6.10.3
+        '';
       }))
     ];
     kernelModules = [ "kvm-amd" "i2c-dev" "ddcci_backlight" ];
