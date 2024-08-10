@@ -35,11 +35,11 @@
         patches = [
           (pkgs.fetchpatch {
             url = "https://gitlab.com/ddcci-driver-linux/ddcci-driver-linux/-/commit/f53b127ca9d7fc0969c0ee3499d8c55aebfe8116.patch";
-            hash = "sha256-l5wFQb+xHd3mS9LlJHr33hQck8JjcVuSUK6blVE8HU8=";
+            hash = "sha256-+5NiAyM0xRZnlqJSTw3oauTTC+XVwVQrr6uEoGQ6yhI=";
           })
           (pkgs.fetchpatch {
             url = "https://gitlab.com/ddcci-driver-linux/ddcci-driver-linux/-/commit/7853cbfc28bc62e87db79f612568b25315397dd0.patch";
-            hash = "";
+            hash = "sha256-l5wFQb+xHd3mS9LlJHr33hQck8JjcVuSUK6blVE8HU8=";
           })
         ];
       }))
