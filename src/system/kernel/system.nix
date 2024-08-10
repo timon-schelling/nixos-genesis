@@ -5,7 +5,7 @@
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "i2c-dev" "ddcci_backlight" ];
     extraModulePackages = [
-      ((pkgs.linuxKernel.packages.linux_latest_libre.ddcci-driver.overrideAttrs (old: {
+      (pkgs.linuxPackages_latest.ddcci-driver.overrideAttrs (old: {
         src = pkgs.fetchFromGitLab {
           owner = "ddcci-driver-linux";
           repo = "ddcci-driver-linux";
@@ -13,7 +13,7 @@
           hash = "sha256-QImfvYzMqyrRGyrS6I7ERYmteaTijd8ZRnC6+bA9OyM=";
         };
         patches = [];
-      })).override { kernel = pkgs.linuxPackages_latest; })
+      }))
     ];
   };
   # security.lockKernelModules = true;
