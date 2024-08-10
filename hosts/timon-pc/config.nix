@@ -1,4 +1,4 @@
-{ config, ... }:
+{ pkgs, ... }:
 
 {
   opts = {
@@ -30,7 +30,7 @@
       availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
       kernelModules = [ "dm-snapshot" ];
     };
-    extraModulePackages = [ config.boot.kernelPackages.ddcci-driver ];
+    extraModulePackages = [ pkgs.linuxKernel.packages.linux_latest_libre.ddcci-driver ];
     kernelModules = [ "kvm-amd" "i2c-dev" "ddcci_backlight" ];
   };
 
