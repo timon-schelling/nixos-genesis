@@ -2,7 +2,7 @@
 
 {
   systemd.services."ddcci-load-i2c-devices" = {
-    enable = false;
+    enable = true;
     description = "Load ddcci devices on i2c bus via sysfs";
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
