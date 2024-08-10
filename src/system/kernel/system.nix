@@ -1,11 +1,14 @@
 { pkgs, ... }:
 
+let
+  kernelPkgs = pkgs.linuxPackages_latest;
+in
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = kernelPkgs;
     kernelModules = [ "i2c-dev" "ddcci_backlight" ];
     extraModulePackages = [
-      (pkgs.linuxPackages_latest.ddcci-driver.overrideAttrs (old: {
+      (kernelPkgs.ddcci-driver.overrideAttrs (old: {
         src = pkgs.fetchFromGitLab {
           owner = "ddcci-driver-linux";
           repo = "ddcci-driver-linux";
