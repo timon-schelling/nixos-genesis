@@ -35,7 +35,7 @@
         patches = [
           (pkgs.fetchpatch {
             url = "https://gitlab.com/ddcci-driver-linux/ddcci-driver-linux/-/commit/f53b127ca9d7fc0969c0ee3499d8c55aebfe8116.patch";
-            hash = "";
+            hash = "sha256-l5wFQb+xHd3mS9LlJHr33hQck8JjcVuSUK6blVE8HU8=";
           })
           (pkgs.fetchpatch {
             url = "https://gitlab.com/ddcci-driver-linux/ddcci-driver-linux/-/commit/7853cbfc28bc62e87db79f612568b25315397dd0.patch";
