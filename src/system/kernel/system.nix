@@ -19,5 +19,5 @@
       }))
     ];
   };
-  security.lockKernelModules = true;
+  # security.lockKernelModules = true;
 }
