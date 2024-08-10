@@ -16,7 +16,7 @@
         let target_files = $device_names | each { $"/sys/bus/i2c/devices/($in)/new_device" }
         $target_files | each { |it| try { "ddcci 0x37" | save -f $it } }
         print $target_files
-      '')}";
+      '')}/bin/ddcci-load-i2c-devices";
       RemainAfterExit = true;
       Restart = "on-failure";
     };
