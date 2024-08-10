@@ -30,7 +30,20 @@
       availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
       kernelModules = [ "dm-snapshot" ];
     };
-    extraModulePackages = [ pkgs.linuxKernel.packages.linux_latest_libre.ddcci-driver ];
+    extraModulePackages = [
+      pkgs.linuxKernel.packages.linux_latest_libre.ddcci-driver.overrideAttrs (old: {
+        patches = [
+          (pkgs.fetchpatch {
+            url = "https://gitlab.com/Sweenu/ddcci-driver-linux/-/commit/f53b127ca9d7fc0969c0ee3499d8c55aebfe8116.patch";
+            hash = "";
+          })
+          (pkgs.fetchpatch {
+            url = "https://gitlab.com/Sweenu/ddcci-driver-linux/-/commit/7853cbfc28bc62e87db79f612568b25315397dd0.patch";
+            hash = "";
+          })
+        ];
+      })
+    ];
     kernelModules = [ "kvm-amd" "i2c-dev" "ddcci_backlight" ];
   };
 
