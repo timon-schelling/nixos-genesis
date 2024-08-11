@@ -3,7 +3,7 @@
 {
   services.udev.extraRules = ''
     SUBSYSTEM=="i2c-dev", ACTION=="add",\
-      ATTR{name}=="NVIDIA i2c adapter*",\
+      ATTR{name}=="*i2c*",\
       TAG+="ddcci",\
       TAG+="systemd",\
       ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
