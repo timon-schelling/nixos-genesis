@@ -10,7 +10,7 @@
   '';
 
   systemd.services."ddcci@.service" = {
-    enable = false;
+    enable = true;
     description = "ddcci handler";
     after = [ "graphical.target" ];
     before = [ "shutdown.target" ];
