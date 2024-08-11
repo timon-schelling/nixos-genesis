@@ -2,11 +2,7 @@
 
 {
   services.udev.extraRules = ''
-    SUBSYSTEM=="i2c-dev", ACTION=="add",\
-      ATTR{name}=="*i2c*",\
-      TAG+="ddcci",\
-      TAG+="systemd",\
-      ENV{SYSTEMD_WANTS}+="ddcci@$kernel.service"
+    SUBSYSTEM=="i2c-dev", ACTION=="add", ATTR{name}=="*i2c*", TAG+="ddcci", TAG+="systemd", ENV{SYSTEMD_WANTS}+="ddcci@%k.service"
   '';
 
   systemd.services."ddcci@.service" = {
