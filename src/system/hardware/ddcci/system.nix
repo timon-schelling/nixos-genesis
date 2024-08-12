@@ -38,7 +38,7 @@ let
 in
 {
   environment.systemPackages = [ pkgs.dbus-listen ];
-  services.dbus.packages = [ dbusService ];
+  services.dbus.packages = [ dbusService dbusServicePolicy ];
   systemd.services."${systemdServiceName}" = {
     description = "Nvidia DDC/CI monitor fix";
     wantedBy = [ "graphical-session.target" ];
