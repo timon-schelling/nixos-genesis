@@ -28,7 +28,7 @@ let
       SystemdService=openrazer-daemon.service
     '';
   };
-  dbusServicePolicy = pkgs.writeTextDir "etc/dbus-1/system-services/${serviceName}.conf" ''
+  dbusServicePolicy = pkgs.writeTextDir "etc/dbus-1/system.d/${serviceName}.conf" ''
     <busconfig>
       <policy group="users">
         <allow send_destination="${serviceName}"/>
