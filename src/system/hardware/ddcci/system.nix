@@ -3,7 +3,8 @@
 let
   serviceName = "zip.timon.os.System.NvidiaDdcciMonitorFix";
   systemdServiceName = "nvidia-ddcci-monitor-fix";
-  serviceStartPkg = pkgs.nu.writeScript "ddcci-load-i2c-devices" ''
+  systemdUnitName = "${systemdServiceName}.service";
+  serviceStartPkg = pkgs.nu.writeScript systemdServiceName ''
     $env.DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/dbus/system_bus_socket"
     ${pkgs.dbus-listen}/bin/dbus-listen --interface ${serviceName} ${scriptPkg}
   '';
@@ -18,14 +19,14 @@ let
     $target_files | par-each { |it| try { "ddcci 0x37" | save -f $it } }
     print $target_files
   '';
-  dbusService = pkgs.writeTextFile rec {
-    name = "${serviceName}.service";
-    destination = "/share/dbus-1/system-services/${name}";
+  dbusService = pkgs.writeTextFile {
+    name = systemdUnitName;
+    destination = "/share/dbus-1/system-services/${systemdUnitName}";
     text = ''
       [D-BUS Service]
       Name=${serviceName}
       Exec=${serviceStartPkg}
-      SystemdService=openrazer-daemon.service
+      SystemdService=${systemdUnitName}
     '';
   };
   dbusServicePolicy = pkgs.writeTextDir "etc/dbus-1/system.d/${serviceName}.conf" ''
