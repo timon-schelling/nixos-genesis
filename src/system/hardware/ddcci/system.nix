@@ -20,7 +20,7 @@ let
   '';
   dbusService = pkgs.writeTextFile rec {
     name = "${serviceName}.service";
-    destination = "/share/dbus-1/services/${name}";
+    destination = "/share/dbus-1/system-services/${name}";
     text = ''
       [D-BUS Service]
       Name=${serviceName}
