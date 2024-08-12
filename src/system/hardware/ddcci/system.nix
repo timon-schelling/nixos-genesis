@@ -45,8 +45,7 @@ in
     wantedBy = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
     serviceConfig = {
-      Type = "dbus";
-      BusName = "${serviceName}";
+      Type = "simple";
       ExecStart = "${serviceStartPkg}";
       Restart = "always";
     };
