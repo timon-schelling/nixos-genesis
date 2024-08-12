@@ -32,7 +32,7 @@ in
 {
   environment.systemPackages = [ pkgs.dbus-listen ];
   services.dbus.packages = [ dbusService ];
-  systemd.user.services."${systemdServiceName}" = {
+  systemd.services."${systemdServiceName}" = {
     description = "Nvidia DDC/CI monitor fix";
     wantedBy = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
