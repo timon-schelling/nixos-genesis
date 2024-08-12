@@ -18,8 +18,9 @@ let
     $target_files | par-each { |it| try { "ddcci 0x37" | save -f $it } }
     print $target_files
   '';
-  dbusService = pkgs.writeTextFile {
-    destination = "/share/dbus-1/services/${serviceName}";
+  dbusService = pkgs.writeTextFile rec {
+    name = "${serviceName}.service";
+    destination = "/share/dbus-1/services/${name}";
     text = ''
       [D-BUS Service]
       Name=${serviceName}
