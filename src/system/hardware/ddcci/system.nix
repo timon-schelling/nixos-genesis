@@ -39,7 +39,7 @@ let
   '';
   callServicePkg = pkgs.nu.writeScriptBin callServicePkgName ''
     $env.DBUS_SYSTEM_BUS_ADDRESS = "unix:path=/run/dbus/system_bus_socket"
-    ${pkgs.dbus-send}/bin/dbus-send --system / ${serviceName}.${methodName}
+    ${pkgs.dbus}/bin/dbus-send --system / ${serviceName}.${methodName}
   '';
 in
 {
