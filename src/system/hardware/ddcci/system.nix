@@ -25,8 +25,6 @@ let
     text = ''
       [D-BUS Service]
       Name=${serviceName}
-      Exec=${serviceStartPkg}
-      SystemdService=${systemdUnitName}
     '';
   };
   dbusServicePolicy = pkgs.writeTextDir "etc/dbus-1/system.d/${serviceName}.conf" ''
