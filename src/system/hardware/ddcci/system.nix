@@ -11,7 +11,6 @@ let
     ${pkgs.dbus-listen}/bin/dbus-listen --system --interface ${serviceName} --member ${methodName} ${scriptPkg}
   '';
   scriptPkg = pkgs.nu.writeScript "ddcci-load-i2c-devices" ''
-
     let ddcutil_output = ${pkgs.ddcutil}/bin/ddcutil detect -t
     print $ddcutil_output
 
