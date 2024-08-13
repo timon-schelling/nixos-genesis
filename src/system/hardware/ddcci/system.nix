@@ -6,7 +6,7 @@ let
   systemdUnitName = "${systemdServiceName}.service";
   serviceStartPkg = pkgs.nu.writeScript systemdServiceName ''
     $env.DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/dbus/system_bus_socket"
-    ${pkgs.dbus-listen}/bin/dbus-listen --interface ${serviceName} ${scriptPkg}
+    ${pkgs.dbus-listen}/bin/dbus-listen --destination ${serviceName} ${scriptPkg}
   '';
   scriptPkg = pkgs.nu.writeScript "ddcci-load-i2c-devices" ''
     let ddcutil_output = ${pkgs.ddcutil}/bin/ddcutil detect -t
