@@ -1,14 +1,17 @@
 { pkgs, ... }:
 
 let
+  callServicePkgName = "monitor-fix-ddcci-nvidia";
   serviceName = "zip.timon.os.System.NvidiaDdcciMonitorFix";
+  methodName = "fix";
   systemdServiceName = "nvidia-ddcci-monitor-fix";
   systemdUnitName = "${systemdServiceName}.service";
   serviceStartPkg = pkgs.nu.writeScript systemdServiceName ''
-    $env.DBUS_SESSION_BUS_ADDRESS = "unix:path=/run/dbus/system_bus_socket"
-    ${pkgs.dbus-listen}/bin/dbus-listen --destination ${serviceName} ${scriptPkg}
+    $env.DBUS_SYSTEM_BUS_ADDRESS = "unix:path=/run/dbus/system_bus_socket"
+    ${pkgs.dbus-listen}/bin/dbus-listen --system --interface ${serviceName} --member ${methodName} ${scriptPkg}
   '';
   scriptPkg = pkgs.nu.writeScript "ddcci-load-i2c-devices" ''
+
     let ddcutil_output = ${pkgs.ddcutil}/bin/ddcutil detect -t
     print $ddcutil_output
 
@@ -21,7 +24,7 @@ let
   '';
   dbusService = pkgs.writeTextFile {
     name = systemdUnitName;
-    destination = "/share/dbus-1/system-services/${systemdUnitName}";
+    destination = "/share/dbus-1/system-services/${serviceName}.service";
     text = ''
       [D-BUS Service]
       Name=${serviceName}
@@ -34,9 +37,13 @@ let
       </policy>
     </busconfig>
   '';
+  callServicePkg = pkgs.nu.writeScriptBin callServicePkgName ''
+    $env.DBUS_SYSTEM_BUS_ADDRESS = "unix:path=/run/dbus/system_bus_socket"
+    ${pkgs.dbus-send}/bin/dbus-send --system / ${serviceName}.${methodName}
+  '';
 in
 {
-  environment.systemPackages = [ pkgs.dbus-listen ];
+  environment.systemPackages = [ callServicePkg ];
   services.dbus.packages = [ dbusService dbusServicePolicy ];
   systemd.services."${systemdServiceName}" = {
     description = "Nvidia DDC/CI monitor fix";
