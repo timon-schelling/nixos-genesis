@@ -61,6 +61,8 @@
         # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 30deg
         # col.active_border = rgba(ff9300ee) rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(0052a5ee) rgba(008c41ee) 30deg
         # col.active_border = rgba(ff9300ee) rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(0052a5ee) rgba(04bf5bee) 30deg
+        # col.active_border = rgba(8f0064ee) rgba(ff9300ee) rgba(ff9300ee) rgba(04bf5bee) rgba(04bf5bee) rgba(04bf5bee) rgba(029edbee) rgba(0052a5ee) 90deg
+        col.active_border = rgba(8f0064ee) rgba(8f0064ee) rgba(ff9300ee) rgba(ff9300ee) rgba(04bf5bee) rgba(04bf5bee) rgba(04bf5bee) rgba(029edbee) rgba(0052a5ee) rgba(0052a5ee) 40deg
         # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(04bf5bee) 242deg
         # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(00a64dee) 242deg
         # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) rgba(0052a5ee) rgba(00b849ee) 242deg
@@ -68,9 +70,8 @@
         # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 242deg
         # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(ff9300ee) rgba(8f0064ee) 242deg
         # col.active_border = rgba(ff9300ee) rgba(8f0064ee) 242deg
-        col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 242deg
+        # col.active_border = rgba(ff9300ee) rgba(8f0064ee) rgba(8f0064ee) rgba(8f0064ee) rgba(0052a5ee) 242deg
         # col.active_border = rgba(2cc966ee)
-
         # col.active_border = rgba(007621ee)
 
         # col.inactive_border = rgba(595959aa)
@@ -108,6 +109,7 @@
         bezier = liner, 0, 0, 1, 1
         animation = borderangle, 1, 400, liner, loop
         # animation = borderangle, 1, 200, liner, loop
+        # animation = borderangle, 1, 50, liner, loop
         # animation = borderangle, 1, 1000, liner, loop
       }
 
