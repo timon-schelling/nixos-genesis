@@ -9,6 +9,7 @@ let
     "Noto"
     "OpenDyslexic"
     "RobotoMono"
+    "NerdFontsSymbolsOnly"
   ];
 in
 {

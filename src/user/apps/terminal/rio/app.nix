@@ -48,6 +48,7 @@
       fonts = {
         family = "JetBrainsMono Nerd Font";
         size = 24;
+        extras = [ { family = "NerdFontsSymbolsOnly Nerd Font"; } ];
         regular.weight = 600;
       };
       window.decorations = "Disabled";
