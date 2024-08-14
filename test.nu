@@ -21,14 +21,19 @@ def get_device_names [] {
     $ddcutil_output | lines | where { str contains "/dev/" } | parse --regex ".*/dev/(?P<dev>i2c-.*)" | get dev
 }
 
-mut device_names = get_device_names
+mut device_names = (get_device_names)
+
+print $device_names
 
 while (($device_names | length) != 3) {
-    sleep 1sec
-    $device_names = get_device_names
+    sleep 2sec
+    $device_names = (get_device_names)
+    print $device_names
 }
 print $device_names
 
-let target_files = get_device_names | each { $"/sys/bus/i2c/devices/($in)/new_device" }
+sleep 5sec
+
+let target_files = $device_names | each { $"/sys/bus/i2c/devices/($in)/new_device" }
 $target_files | each { |it| try { "ddcci 0x37" | save -f $it } }
 print $target_files
