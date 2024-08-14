@@ -178,10 +178,10 @@
 
       bind = $mainMod, B, exec, waybar-toggle
 
-      bind = BRIGHTNESSUP, exec, monitor-set-brightness +10%
-      bind = BRIGHTNESDOWN, exec, monitor-set-brightness 10-%
-      bind = VOLUMEUP, exec, monitor-set-brightness +10%
-      bind = VOLUMEDOWN, exec, monitor-set-brightness 10-%
+      bind = , XF86MonBrightnessUp, exec, monitor-set-brightness +10%
+      bind = , XF86MonBrightnessDown, exec, monitor-set-brightness 10-%
+      # bind = , XF86AudioRaiseVolume, exec, monitor-set-brightness +10%
+      # bind = , XF86AudioLowerVolume, exec, monitor-set-brightness 10-%
 
       bind = ALT, space, exec, anyrun
 
