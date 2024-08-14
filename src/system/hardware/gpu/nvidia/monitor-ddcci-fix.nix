@@ -36,6 +36,7 @@ let
 
     print $device_names
 
+    # todo: make this configurable, probably count the number of monitors in an future opts.system.monitors option
     while (($device_names | length) != 3) {
         sleep 2sec
         $device_names = (get_device_names)
@@ -48,7 +49,6 @@ let
     let target_files = $device_names | each { $"/sys/bus/i2c/devices/($in)/new_device" }
     $target_files | each { |it| try { "ddcci 0x37" | save -f $it } }
     print $target_files
-
   '';
   dbusService = pkgs.writeTextFile {
     name = systemdUnitName;
