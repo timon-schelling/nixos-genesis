@@ -206,9 +206,9 @@
 
       exec-once = waybar
       ${
-        lib.mkIf config.opts.system.hardware.gpu.nvidia.monitorDdcciFixEnable ''
+        if config.opts.system.hardware.gpu.nvidia.monitorDdcciFixEnable then ''
           exec-once = ${pkgs.nu.writeScript "hyprland-monitor-fix-ddcci-nvidia" ''sleep 5sec; monitor-fix-ddcci-nvidia''}
-        ''
+        '' else ""
       }
 
       # see is a window runs in xwayland
