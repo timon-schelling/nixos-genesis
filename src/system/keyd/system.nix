@@ -152,7 +152,7 @@
         m = forward
 
 
-        [window_edit:M]
+        [window_edit]
         esc = clear()
 
         i = S-M-up
@@ -170,7 +170,7 @@
         ; = M-f
         b = M-q
 
-        [window_resize:M]
+        [window_resize]
         esc = clear()
 
         i = C-S-M-up
@@ -178,7 +178,7 @@
         j = C-S-M-left
         l = C-S-M-right
 
-        [run_app:M]
+        [run_app]
         esc = clear()
 
         j = M-1
@@ -191,11 +191,14 @@
         m = M-8
         ; = M-9
 
-        [desktop:M]
+        [desktop]
         esc = clear()
 
         h = M-b
-
+        u = volumeup
+        j = volumedown
+        i = brightnessup
+        k = brightnessdown
 
         # compose key macros compose key is set to 'scrolllock'
         # compose table of special characters https://help.ubuntu.com/community/GtkComposeTable

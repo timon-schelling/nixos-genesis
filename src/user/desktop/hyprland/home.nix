@@ -178,6 +178,11 @@
 
       bind = $mainMod, B, exec, waybar-toggle
 
+      bind = BRIGHTNESSUP, exec, monitor-set-brightness +10%
+      bind = BRIGHTNESDOWN, exec, monitor-set-brightness 10-%
+      bind = VOLUMEUP, exec, monitor-set-brightness +10%
+      bind = VOLUMEDOWN, exec, monitor-set-brightness 10-%
+
       bind = ALT, space, exec, anyrun
 
       bind = $mainMod, 1, exec, rio
