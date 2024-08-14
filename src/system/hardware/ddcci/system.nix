@@ -45,6 +45,7 @@ in
   environment.systemPackages = [ callServicePkg ];
   services.dbus.packages = [ dbusService dbusServicePolicy ];
   systemd.services."${systemdServiceName}" = {
+    enable = true;
     description = "Nvidia DDC/CI monitor fix";
     wantedBy = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
