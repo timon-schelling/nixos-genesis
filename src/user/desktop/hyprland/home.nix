@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -205,7 +205,11 @@
       }
 
       exec-once = waybar
-      # exec = monitor-fix-ddcci-nvidia
+      ${
+        lib.mkIf config.opts.system.hardware.gpu.nvidia.monitorDdcciFixEnable ''
+          exec-once = ${pkgs.nu.writeScript "hyprland-monitor-fix-ddcci-nvidia" ''sleep 5sec; monitor-fix-ddcci-nvidia''}
+        ''
+      }
 
       # see is a window runs in xwayland
       windowrulev2 = bordercolor rgb(b53600), xwayland: 1
