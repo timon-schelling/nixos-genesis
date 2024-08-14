@@ -5,6 +5,7 @@
     system = {
       drive = "/dev/nvme1n1";
       platform = "x86_64-linux";
+      hardware.gpu.nvidia.monitorDdcciFixEnable = true;
     };
     users = {
       timon = {
