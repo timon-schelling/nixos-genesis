@@ -24,4 +24,8 @@ in
     allowUnfree = true;
     nvidia.acceptLicense = true;
   };
+
+  imports = [
+    ./monitor-ddcci-fix.nix
+  ];
 }

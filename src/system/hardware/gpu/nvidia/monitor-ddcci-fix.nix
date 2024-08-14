@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 let
   callServicePkgName = "monitor-fix-ddcci-nvidia";
@@ -71,16 +71,21 @@ let
   '';
 in
 {
-  environment.systemPackages = [ callServicePkg ];
-  services.dbus.packages = [ dbusService dbusServicePolicy ];
-  systemd.services."${systemdServiceName}" = {
-    enable = true;
-    description = "Nvidia DDC/CI monitor fix";
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${serviceStartPkg}";
-      Restart = "always";
+  options = {
+    opts.system.hardware.gpu.nvidia.monitorDdcciFixEnable = lib.mkEnableOption "Enable Nvidia DDC/CI monitor fix";
+  };
+  config = lib.mkIf config.opts.system.hardware.gpu.nvidia.monitorDdcciFixEnable {
+    environment.systemPackages = [ callServicePkg ];
+    services.dbus.packages = [ dbusService dbusServicePolicy ];
+    systemd.services."${systemdServiceName}" = {
+      enable = true;
+      description = "Nvidia DDC/CI monitor fix";
+      wantedBy = [ "multi-user.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${serviceStartPkg}";
+        Restart = "always";
+      };
     };
   };
 }
