@@ -7,7 +7,7 @@
       def main [...args] {
         try { monitor-fix-ddcci-nvidia }
         ll /sys/class/backlight | get name | path basename | par-each {
-          ${pkgs.brightnessctl} -- --device $in set ...$args
+          ${pkgs.brightnessctl}/bin/brightnessctl --device $in set ...$args
         }
       }
     '')
