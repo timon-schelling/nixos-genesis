@@ -2,7 +2,7 @@
 
 stdenvNoCC.mkDerivation rec {
   name = "chrysanthi-unicode-font";
-
+  unpackPhase = "true";
   installPhase = ''
     runHook preInstall
 
