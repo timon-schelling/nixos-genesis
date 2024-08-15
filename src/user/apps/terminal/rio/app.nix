@@ -49,7 +49,6 @@
         family = "JetBrainsMono Nerd Font";
         size = 24;
         extras = [
-          { family = "Cascadia Code"; }
           { family = "Cascadia Mono"; }
         ];
         regular.weight = 600;
