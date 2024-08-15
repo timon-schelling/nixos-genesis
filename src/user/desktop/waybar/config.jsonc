@@ -35,9 +35,9 @@
         "all-outputs": false,
         "format": "{}",
         "format-icons": {
-			"urgent": "",
-			"active": "",
-			"default": ""
+            "urgent": "",
+            "active": "",
+            "default": ""
         },
         "on-scroll-up": "hyprctl dispatch workspace r+1",
         "on-scroll-down": "hyprctl dispatch workspace r-1"
@@ -53,6 +53,16 @@
     //     "format": "",
     //     "tooltip": false
     // },
+    "battery": {
+        "interval": 1,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity:02}",
+        "format-plugged": " {capacity:02}",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
     "cpu": {
         "interval": 1,
         "format": " {usage:02}",
@@ -157,22 +167,6 @@
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
         "on-click": "~/dotfiles/.settings/networkmanager.sh"
-    },
-
-    // Battery
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}   {capacity}%",
-        "format-charging": "  {capacity}%",
-        "format-plugged": "  {capacity}%",
-        "format-alt": "{icon}  {time}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": [" ", " ", " ", " ", " "]
     },
 
     // Pulseaudio

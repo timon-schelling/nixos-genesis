@@ -91,8 +91,20 @@ window#waybar {
   margin-bottom: 0px;
   font-size: 16px;
   font-weight: bold;
-  /* min-width: 70px; */
   color: @iconcolor;
+}
+
+#battery {
+  margin-top: 4px;
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  color: @iconcolor;
+}
+#battery.critical:not(.charging) {
+  color: #f53c3c;
 }
 
 #custom-suspend,
@@ -310,43 +322,6 @@ window#waybar.empty #window {
   background-color: transparent;
   padding: 0px;
   margin: 0px;
-}
-
-/* -----------------------------------------------------
-* Battery
-* ----------------------------------------------------- */
-
-#battery {
-  background-color: @backgroundlight;
-  font-size: 16px;
-  color: @textcolor2;
-  border-radius: 15px;
-  padding: 2px 15px 0px 10px;
-  margin: 5px 15px 5px 0px;
-  opacity: 0.8;
-}
-
-#battery.charging,
-#battery.plugged {
-  color: @textcolor2;
-  background-color: @backgroundlight;
-}
-
-@keyframes blink {
-  to {
-    background-color: @backgroundlight;
-    color: @textcolor2;
-  }
-}
-
-#battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: @textcolor3;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
 
 /* -----------------------------------------------------
