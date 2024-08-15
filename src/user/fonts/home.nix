@@ -16,6 +16,6 @@ in
   fonts.fontconfig.enable = true;
   home.packages = [
     (pkgs.nerdfonts.override { fonts = nerdfonts; })
-    pkgs.unifont
+    pkgs.chrysanthi-unicode-font
   ];
 }
