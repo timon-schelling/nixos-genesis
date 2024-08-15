@@ -9,7 +9,7 @@ let
     "Noto"
     "OpenDyslexic"
     "RobotoMono"
-    "DejaVu"
+    "DejaVuSansMono"
     "NerdFontsSymbolsOnly"
   ];
 in
