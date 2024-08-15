@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  fonts = [
+  nerdfonts = [
     "FiraCode"
     "FiraMono"
     "JetBrainsMono"
@@ -15,6 +15,7 @@ in
 {
   fonts.fontconfig.enable = true;
   home.packages = [
-    (pkgs.nerdfonts.override { inherit fonts; })
+    (pkgs.nerdfonts.override { inherit nerdfonts; })
+    pkgs.unifont
   ];
 }
