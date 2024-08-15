@@ -15,7 +15,7 @@ in
 {
   fonts.fontconfig.enable = true;
   home.packages = [
-    (pkgs.nerdfonts.override { inherit nerdfonts; })
+    (pkgs.nerdfonts.override { fonts = nerdfonts; })
     pkgs.unifont
   ];
 }
