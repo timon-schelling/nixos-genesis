@@ -1,13 +1,13 @@
 { stdenvNoCC, ... }:
 
-stdenvNoCC.mkDerivation rec {
+stdenvNoCC.mkDerivation {
   name = "chrysanthi-unicode-font";
   unpackPhase = "true";
   installPhase = ''
     runHook preInstall
 
-    cp ${./font.ttf} ./${name}.ttf
-    install -Dm644 -t $out/share/fonts/truetype/ *.ttf
+    cp -r ${./ttfs} ./
+    install -Dm644 -t $out/share/fonts/truetype/ ttfs/*.ttf
 
     runHook postInstall
   '';
