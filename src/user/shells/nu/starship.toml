@@ -25,8 +25,7 @@ truncation_length = 0
 
 [git_branch]
 style = 'yellow'
-format = '[$symbol$branch(:$remote_branch)]($style)'
-symbol = ""
+format = '[$branch(:$remote_branch)]($style)'
 
 [git_state]
 style = 'bold green'
