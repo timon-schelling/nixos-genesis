@@ -6,7 +6,7 @@ stdenvNoCC.mkDerivation rec {
   installPhase = ''
     runHook preInstall
 
-    mv ${./font.ttf} ./${name}.ttf
+    cp ${./font.ttf} ./${name}.ttf
     install -Dm644 -t $out/share/fonts/truetype/ *.ttf
 
     runHook postInstall
