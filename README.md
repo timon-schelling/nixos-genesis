@@ -45,5 +45,3 @@ sudo nix --extra-experimental-features "nix-command flakes" run --refresh 'githu
   - needs to be created with `<user>:users` with a service that runs before any user services
 
 - tere asks if shell is configured at first start https://github.com/mgunyho/tere/blob/ef69b8d9da3a97b73896516ee12680d0edae3053/src/main.rs#L13
-
-### t
