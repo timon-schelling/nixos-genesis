@@ -5,10 +5,10 @@
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
-    plugins = with pkgs.hyprland-plugins; [
-      touch-gestures
-      virtual-desktops
-    ];
+    # plugins = with pkgs.hyprland-plugins; [
+    #   touch-gestures
+    #   virtual-desktops
+    # ];
     extraConfig = ''
 
       # desktop
@@ -130,26 +130,12 @@
         background_color = 0x161616
       }
 
-      plugin {
-        virtual-desktops {
-          cycleworkspaces = 0
-          notifyinit = 0
-          # rememberlayout = monitors
-        }
-      }
-
       $mainMod = SUPER
 
       bind = $mainMod, left, movefocus, l
       bind = $mainMod, right, movefocus, r
       bind = $mainMod, up, movefocus, u
       bind = $mainMod, down, movefocus, d
-
-      bind = $mainMod, page_up, prevdesk
-      bind = $mainMod, page_down, nextdesk
-
-      bind = $mainMod, mouse_down, nextdesk
-      bind = $mainMod, mouse_up, prevdesk
 
       bind = $mainMod, Q, killactive
       bind = $mainMod, M, fullscreen
@@ -172,8 +158,27 @@
       bind = $mainMod SHIFT, up, movewindow, u
       bind = $mainMod SHIFT, down, movewindow, d
 
-      bind = $mainMod SHIFT, page_up, movetoprevdesk
-      bind = $mainMod SHIFT, page_down, movetonextdesk
+      # TODO: use vdesks after plugin is fixed
+      # plugin {
+      #   virtual-desktops {
+      #     cycleworkspaces = 0
+      #     notifyinit = 0
+      #     # rememberlayout = monitors
+      #   }
+      # }
+      # bind = $mainMod, page_up, prevdesk
+      # bind = $mainMod, page_down, nextdesk
+      # bind = $mainMod, mouse_up, prevdesk
+      # bind = $mainMod, mouse_down, nextdesk
+      # bind = $mainMod SHIFT, page_up, movetoprevdesk
+      # bind = $mainMod SHIFT, page_down, movetonextdesk
+
+      bind = $mainMod, page_up, workspace, m-1
+      bind = $mainMod, page_down, workspace, m+1
+      bind = $mainMod, mouse_up, workspace, m-1
+      bind = $mainMod, mouse_down, workspace, m+1
+      bind = $mainMod SHIFT, page_up, movetoworkspace, r-1
+      bind = $mainMod SHIFT, page_down, movetoworkspace, r+1
 
 
       bind = $mainMod, V, exec, clipboard-history
