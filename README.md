@@ -1,47 +1,13 @@
-# timonos
+# Genesis of my NixOS configuration
 
-## laptop install notes
+This repo contains the commits during the first chaotic days of my NixOS configuration journey. I started with a minimal configuration and added packages and configurations as I needed them. I also tried to keep the configuration as modular as possible. If you want to see the current state of my configuration, check the new repo.
 
-### command
+## Genesis
 
-installer iso:
-https://releases.nixos.org/nixos/22.05/nixos-22.05.4694.380be19fbd2/nixos-gnome-22.05.4694.380be19fbd2-x86_64-linux.iso
+In the beginning, there was a void, and from this void arose the chaos of disordered systems. Dependencies clashed, configurations were scattered across the system, and the world of software was in turmoil.
 
-boot it via ventoy in nomodset mode
+A developer saw this chaos and envisioned a system of order, where every package would exist in harmony, defined by its essence. This system would be pure, declarative, and reproducible, a foundation of stability in a world of flux.
 
-mount ventoy stick with this repo on it (gnome file explorer)
+The developer gathered his tools began the work. He wrote expressions, pure and immutable, that would bring order to the chaos. He defined packages, services, and configurations, each in its proper place, each with its dependencies resolved.
 
-connect wifi
-
-`passwd nixos` to set password for ssh
-
-`ifconfig -a` to get ip
-
-`ssh nixos@<ip>`
-
-`sudo dd if=/dev/zero of=/run/media/nixos/utils/.data/.nixos-install-tmp-swapfile bs=1024 count=41940000`
-
-`sudo chmod 600 /run/media/nixos/utils/.data/.nixos-install-tmp-swapfile`
-
-`sudo mkswap /run/media/nixos/utils/.data/.nixos-install-tmp-swapfile`
-
-`sudo swapon /run/media/nixos/utils/.data/.nixos-install-tmp-swapfile`
-
-`sudo mount -o remount,size=40G,noatime /nix/.rw-store`
-
-`cd <repo dir>`
-
-`git pull`
-
-```
-sudo nix --extra-experimental-features "nix-command flakes" run --refresh 'github:timon-schelling/nix-disko-install-fix#disko-install' -- --flake .#timon-laptop --disk main /dev/nvme0n1 --debug
-```
-
-### problems
-
-- `/etc/machine-id` is not created, leads to failing install or rebuild when using systemd-boot
-
-- `/persist/user/<user>` folder is not created, leads to error in `home-manager-<user>` service
-  - needs to be created with `<user>:users` with a service that runs before any user services
-
-- tere asks if shell is configured at first start https://github.com/mgunyho/tere/blob/ef69b8d9da3a97b73896516ee12680d0edae3053/src/main.rs#L13
+And so, the developer looked upon the creation and saw that it was good. Users who adopted this system found peace and stability, their configurations pure and their dependencies resolved. NixOS, a beacon for those seeking order in their digital lives.
